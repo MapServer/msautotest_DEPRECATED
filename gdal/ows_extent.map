@@ -17,7 +17,7 @@ LAYER
   STATUS default
   DATA data/grey_raw.tif
   METADATA
-    "wms_extent" "1000 1000 1400 1300"
+    "ows_extent" "1000 1000 1400 1300"
   END
 END
 
