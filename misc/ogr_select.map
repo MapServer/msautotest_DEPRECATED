@@ -1,5 +1,5 @@
 #
-# Simple OGR Render.
+# Test of using OGR SQL SELECT statement in map file.
 #   
 # REQUIRES: INPUT=OGR OUTPUT=PNG
 #
