@@ -29,8 +29,11 @@
 ###############################################################################
 # 
 # $Log$
-# Revision 1.2  2003/01/23 22:48:17  frank
-# updated from gdal
+# Revision 1.3  2003/03/02 19:54:03  frank
+# auto create result directory if missing
+#
+# Revision 1.3  2003/01/23 22:47:50  frank
+# removed python2.2 use of st_size
 #
 # Revision 1.2  2002/12/21 21:47:20  frank
 # preserved failed results
@@ -75,9 +78,6 @@ def compare_result( filename ):
         expected_stat = os.stat( expected_file )
     except OSError:
         return 'noexpected'
-
-#    if expected_stat.st_size != result_stat.st_size:
-#        return 'nomatch'
 
     if filecmp.cmp(expected_file,result_file,0,1):
         return 'match'
@@ -138,7 +138,11 @@ def run_tests( argv ):
     fail_count = 0
     succeed_count = 0
     init_count = 0
-    
+
+    ###########################################################################
+    # Create results directory if it does not already exist.
+    if not os.path.exists("result"):
+         os.mkdir("result")
     ###########################################################################
     # Establish paths to use for various testable programs.
     shp2img = 'shp2img' 
