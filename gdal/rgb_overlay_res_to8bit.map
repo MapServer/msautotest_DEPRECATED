@@ -1,7 +1,9 @@
 
 #
 # Tests overlaying an RGB image with a transparent value on a greyscale image
-# into an 8bit output file.
+# into an 8bit output file.  This test also verifies that if a user declares
+# an outputformat with a name conflicting with an internal default outputformat
+# that the users definition will be used ... not the internal one.
 #
 # NOTE: with resampling. 
 #
@@ -19,10 +21,10 @@ PROJECTION
   "datum=WGS84"
 END
 
-IMAGETYPE png8_t
+IMAGETYPE png24
 
 OUTPUTFORMAT
-  NAME png8_t
+  NAME png24
   DRIVER "GD/PNG"
   IMAGEMODE PC256
   TRANSPARENT OFF

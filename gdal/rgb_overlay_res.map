@@ -3,7 +3,9 @@
 # Tests overlaying an RGB image with a transparent value on a greyscale image
 # into an RGB output. 
 #
-# NOTE: with resampling. 
+# NOTE: with resampling. Also tests the new default PNG24 output format, and
+#       the change where default formats are still created even if there is
+#       a user defined format.
 #
 # REQUIRES: SUPPORTS=PROJ
 #
@@ -19,7 +21,7 @@ PROJECTION
   "datum=WGS84"
 END
 
-IMAGETYPE png8_t
+IMAGETYPE png24
 
 OUTPUTFORMAT
   NAME png8_t
