@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.3  2004/11/15 22:12:04  frank
+# for failed matches, look at checksums too
+#
 # Revision 1.2  2004/05/14 04:06:38  frank
 # added -shp2img option.
 #
@@ -74,7 +77,18 @@ def compare_result( filename ):
 
     if filecmp.cmp(expected_file,result_file,0,1):
         return 'match'
-    else:
+
+    try:
+	import gdal
+	res_ds = gdal.Open( result_file )
+	exp_ds = gdal.Open( expected_file )
+	for band_num in range(1,exp_ds.RasterCount+1):
+	    if res_ds.GetRasterBand(band_num).Checksum() != \
+                exp_ds.GetRasterBand(band_num).Checksum():
+		return 'nomatch'
+	return 'files_differ_image_match'
+
+    except:
         return 'nomatch'
     
     return 'match'
@@ -195,6 +209,9 @@ def run_tests( argv ):
                 succeed_count = succeed_count + 1
                 os.remove( 'result/' + out_file )
                 print '    results match.'
+            elif cmp ==  'files_differ_image_match':
+                succeed_count = succeed_count + 1
+                print '    result images match, though files differ.'
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
                 print '    results dont match, TEST FAILED.'
