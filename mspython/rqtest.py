@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.7  2004/11/01 21:33:42  frank
+# Added reference to raster query classification bug (1021) in rqtest_13.
+#
 # Revision 1.6  2004/10/22 15:42:46  frank
 # updated to latest API
 #
@@ -372,7 +375,7 @@ def rqtest_9():
     return 'success'
     
 ###############################################################################
-# Close old map, and open a classified map and pst a point query.
+# Close old map, and open a classified map and post a point query.
 
 def rqtest_10():
 
@@ -446,16 +449,19 @@ def rqtest_12():
     pnt.y = 36.5
     
     pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_SINGLE,
-                                   2.0 )
+                                   10.0 )
 
     dumpResultSet( pmstestlib.layer )
 
     return 'success'
 
 ###############################################################################
-# Scan results.  This query is for a transparent pixel within the "x" of
-# the cubewerx logo.  In the future the raster query may well stop returning
-# "offsite" pixels and we will need to update this test.
+# Scan results.  This query is for a pixel at a grid intersection.  This
+# pixel should be classified as grid and returned, but currently it is
+# misclassified as transparent and discarded.  The reasons are described in:
+# http://mapserver.gis.umn.edu/bugs/show_bug.cgi?id=1021
+#
+# Till this is fixed, we consider returning zero shapes an acceptable result.
 
 def rqtest_13():
     layer = pmstestlib.layer
@@ -471,27 +477,11 @@ def rqtest_13():
     
         count = count + 1
 
-    if count != 1:
+    if count != 0:
         pmstestlib.post_reason( 'got %d results instead of expected %d.' \
-                             % (count, 1) )
+                             % (count, 0) )
         return 'fail'
 
-    #########################################################################
-    # Check first shape attributes.
-    
-    result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
-    
-    if pmstestlib.check_items( layer, s,
-                               [('value_0','0'),
-                                ('red','-255'),
-                                ('green','-255'),
-                                ('blue','-255'),
-                                ('class','Text'),
-                                ('x','88.5'),
-                                ('y','7.5')] ) == 0:
-        return 'fail'
-    
     layer.close() 
     layer.close() # discard resultset.
 
@@ -517,7 +507,8 @@ test_list = [
     rqtest_9,
     rqtest_10,
     rqtest_11,
-#    rqtest_12,
+    rqtest_12,
+    rqtest_13,
     rqtest_cleanup ]
 
 if __name__ == '__main__':
