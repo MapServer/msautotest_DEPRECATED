@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.3  2004/05/27 17:34:46  frank
+# Updated to work with new or old APIs and names.
+#
 # Revision 1.2  2004/05/13 03:03:28  frank
 # added header
 #
@@ -50,7 +53,6 @@ def dumpResultSet( layer ):
         if result is None:
             break
         
-#        print '(%d,%d,%s)' % (result.shapeindex, result.tileindex,result.classindex)
         print '(%d,%d)' % (result.shapeindex, result.tileindex)
         
         s = layer.getShape( result.shapeindex, result.tileindex )
@@ -58,11 +60,31 @@ def dumpResultSet( layer ):
             print '%s: %s' % (layer.getItem(i), s.getValue(i))
             
     layer.close()
+
+def ngGetShape(layer, shapeindex, tileindex = 0):
+    shape = mapscript.shapeObj(layer.type)
+    layer.getShape( shape, tileindex, shapeindex )
+    return shape
     
 ###############################################################################
 # Open map and get working layer.
 
 def rqtest_1():
+    
+    try:
+        x = mapscript.Map
+        mapscript.Layer.ngGetShape = mapscript.Layer.getShape
+        
+    except:
+        mapscript.Map = mapscript.mapObj
+        mapscript.Line = mapscript.lineObj
+        mapscript.Point = mapscript.pointObj
+        mapscript.Line.addPoint = mapscript.Line.add
+        mapscript.Shape = mapscript.shapeObj
+        mapscript.Shape.addLine = mapscript.Shape.add
+        mapscript.layerObj.ngGetShape = ngGetShape
+        mapscript.Rect = mapscript.rectObj
+        
     pmstestlib.map = mapscript.Map('../gdal/tileindex.map')
     pmstestlib.layer = pmstestlib.map.getLayer(0)
 
@@ -112,7 +134,7 @@ def rqtest_3():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -123,12 +145,38 @@ def rqtest_3():
                                 ('x','39.5'),
                                 ('y','29.5')] ) == 0:
         return 'fail'
+
+    #########################################################################
+    # Check first shape geometry.
+    if s.type != mapscript.MS_SHAPE_POINT:
+        pmstestlib.post_reason( 'raster query result is not a point.' )
+        return 'fail'
+
+    if s.numlines != 1:
+        pmstestlib.post_reason( 'raster query has other than 1 lines.' )
+        return 'fail'
+
+    try:
+        l = s.getLine( 0 )
+    except:
+        l = s.get( 0 )
+    if l.numpoints != 1:
+        pmstestlib.post_reason( 'raster query has other than 1 points.' )
+        return 'fail'
+
+    try:
+        p = l.getPoint(0)
+    except:
+        p = l.get(0)
+    if p.x != 39.5 or p.y != 29.5:
+        pmstestlib.post_reason( 'got wrong point location.' )
+        return 'fail'
     
     #########################################################################
     # Check last shape attributes.
 
     result = layer.getResult( 54 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','132'),
@@ -181,7 +229,7 @@ def rqtest_5():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','123'),
@@ -193,7 +241,7 @@ def rqtest_5():
     # Check last shape attributes.
 
     result = layer.getResult( 8 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','107'),
@@ -246,7 +294,7 @@ def rqtest_7():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -300,7 +348,7 @@ def rqtest_9():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','148'),
@@ -316,7 +364,7 @@ def rqtest_9():
     # Check last shape attributes.
 
     result = layer.getResult( 99 )
-    s = layer.getShape( result.shapeindex, result.tileindex )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','132'),
@@ -326,6 +374,132 @@ def rqtest_9():
                                 ('values','132'),
                                 ('x','44.5'),
                                 ('y','25.5')] ) == 0:
+        return 'fail'
+    
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+    
+###############################################################################
+# Close old map, and open a classified map and pst a point query.
+
+def rqtest_10():
+
+    pmstestlib.layer = None
+    pmstestlib.map = None
+
+    pmstestlib.map = mapscript.Map('../gdal/classtest1.map')
+    pmstestlib.layer = pmstestlib.map.getLayer(0)
+    
+    pnt = mapscript.Point()
+    pnt.x = 88.5
+    pnt.y = 7.5
+    
+    pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_SINGLE,
+                                   10.0 )
+
+    return 'success'
+
+###############################################################################
+# Scan results.  This query is for a transparent pixel within the "x" of
+# the cubewerx logo.  In the future the raster query may well stop returning
+# "offsite" pixels and we will need to update this test.
+
+def rqtest_11():
+    layer = pmstestlib.layer
+    
+    #########################################################################
+    # Check result count.
+    layer.open()
+    count = 0
+    for i in range(1000):
+        result = layer.getResult( i )
+        if result is None:
+            break
+    
+        count = count + 1
+
+    if count != 1:
+        pmstestlib.post_reason( 'got %d results instead of expected %d.' \
+                             % (count, 1) )
+        return 'fail'
+
+    #########################################################################
+    # Check first shape attributes.
+    
+    result = layer.getResult( 0 )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    
+    if pmstestlib.check_items( layer, s,
+                               [('value_0','0'),
+                                ('red','-255'),
+                                ('green','-255'),
+                                ('blue','-255'),
+                                ('class','Text'),
+                                ('x','88.5'),
+                                ('y','7.5')] ) == 0:
+        return 'fail'
+    
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+    
+###############################################################################
+# Issue another point query, on colored text. 
+
+def rqtest_12():
+
+    pnt = mapscript.Point()
+    pnt.x = 13.5
+    pnt.y = 36.5
+    
+    pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_SINGLE,
+                                   2.0 )
+
+    dumpResultSet( pmstestlib.layer )
+
+    return 'success'
+
+###############################################################################
+# Scan results.  This query is for a transparent pixel within the "x" of
+# the cubewerx logo.  In the future the raster query may well stop returning
+# "offsite" pixels and we will need to update this test.
+
+def rqtest_13():
+    layer = pmstestlib.layer
+    
+    #########################################################################
+    # Check result count.
+    layer.open()
+    count = 0
+    for i in range(1000):
+        result = layer.getResult( i )
+        if result is None:
+            break
+    
+        count = count + 1
+
+    if count != 1:
+        pmstestlib.post_reason( 'got %d results instead of expected %d.' \
+                             % (count, 1) )
+        return 'fail'
+
+    #########################################################################
+    # Check first shape attributes.
+    
+    result = layer.getResult( 0 )
+    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    
+    if pmstestlib.check_items( layer, s,
+                               [('value_0','0'),
+                                ('red','-255'),
+                                ('green','-255'),
+                                ('blue','-255'),
+                                ('class','Text'),
+                                ('x','88.5'),
+                                ('y','7.5')] ) == 0:
         return 'fail'
     
     layer.close() 
@@ -351,6 +525,9 @@ test_list = [
     rqtest_7,
     rqtest_8,
     rqtest_9,
+    rqtest_10,
+    rqtest_11,
+#    rqtest_12,
     rqtest_cleanup ]
 
 if __name__ == '__main__':
