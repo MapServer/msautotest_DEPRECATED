@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.2  2004/05/14 04:06:38  frank
+# added -shp2img option.
+#
 # Revision 1.1  2003/03/05 15:28:58  frank
 # New
 #
@@ -128,15 +131,20 @@ def run_tests( argv ):
     fail_count = 0
     succeed_count = 0
     init_count = 0
+    shp2img = 'shp2img' 
 
+    ###########################################################################
+    # Process arguments.
+
+    for i in range(len(argv)):
+        if argv[i] == '-shp2img':
+            shp2img = argv[i+1]
+    
     ###########################################################################
     # Create results directory if it does not already exist.
     if not os.path.exists("result"):
          os.mkdir("result")
-    ###########################################################################
-    # Establish paths to use for various testable programs.
-    shp2img = 'shp2img' 
-    
+
     ###########################################################################
     # Get version info.
     version_info = os.popen( shp2img + ' -v' ).read()
@@ -175,7 +183,7 @@ def run_tests( argv ):
             
             command = string.replace( command, '[RESULT]', 'result/'+out_file )
             command = string.replace( command, '[MAPFILE]', map )
-            command = string.replace( command, '[SHP2IMG]', 'shp2img' )
+            command = string.replace( command, '[SHP2IMG]', shp2img )
             command = string.replace( command, '[LEGEND]', 'legend' )
             command = string.replace( command, '[SCALEBAR]', 'scalebar' )
 
