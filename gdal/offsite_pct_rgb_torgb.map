@@ -3,8 +3,7 @@
 # Tests support for OFFSITE used with RGB value of a colortable entry
 # for a pseudocolored input raster (through GDAL), to 24bit output. 
 #
-# REQUIRES: SUPPORTS=GD2_RGB
-#
+
 NAME TEST
 STATUS ON
 SIZE 400 300

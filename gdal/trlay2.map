@@ -4,8 +4,7 @@
 # Final result is RGBA and transparency from both input images, and the
 # layer TRANSPARENCY flag all have an influence.
 #
-# REQUIRES: SUPPORTS=GD2_RGB
-#
+
 NAME TEST
 STATUS ON
 SIZE 400 300

@@ -8,8 +8,6 @@
 #
 # NOTE: without resampling. 
 #
-# REQUIRES: SUPPORTS=GD2_RGB
-#
 NAME TEST
 STATUS ON
 SIZE 400 300
