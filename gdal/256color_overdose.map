@@ -22,6 +22,8 @@ IMAGETYPE png8_t
 OUTPUTFORMAT
   NAME png8_t
   DRIVER "GD/PNG"
+  EXTENSION "png"
+  MIMETYPE "image/png"
   IMAGEMODE PC256
   TRANSPARENT OFF
 END
@@ -34,7 +36,7 @@ LAYER
 END
 
 LAYER
-  NAME grid
+  NAME grid1
   TYPE raster
   STATUS default
   DATA data/grid.gif
