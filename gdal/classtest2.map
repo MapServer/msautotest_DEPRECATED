@@ -1,0 +1,27 @@
+
+#
+# Test classification methods on a pseudocolored input image.
+#
+# NOTE: without resampling.
+#
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png
+
+LAYER
+  NAME block
+  TYPE raster
+  STATUS default
+  DATA data/rgb.tif
+  CLASS 
+    NAME "Hole"
+    EXPRESSION ([pixel] == 111) 
+    COLOR 255 0 0
+  END
+END
+
+END # of map file
