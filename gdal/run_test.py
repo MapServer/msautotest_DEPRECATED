@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.2  2002/12/21 21:47:20  frank
+# preserved failed results
+#
 # Revision 1.1  2002/11/22 21:13:19  frank
 # New
 #
@@ -189,7 +192,6 @@ def run_tests( argv ):
                 print '    results match.'
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
-                os.remove( 'result/' + out_file )
                 print '    results dont match, TEST FAILED.'
             elif cmp == 'noresult':
                 fail_count = fail_count + 1
