@@ -1,7 +1,7 @@
 #
 # Test rotated output maps with a vector layer.
 #   
-# REQUIRES: OUTPUT=PNG
+# REQUIRES: OUTPUT=PNG SUPPORTS=PROJ
 #
 
 STATUS ON
