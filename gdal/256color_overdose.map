@@ -11,6 +11,10 @@
 #        we get to allocating a color for the grid.  This is an expected
 #        "error" in the results.
 #
+# UPDATE: Now mapdrawgdal.c constructs a colortable for greyscale images
+#         with only 128 entries instead of 256 so the "overload" no longer
+#         happens.  Preserve test with new results for posterity.
+#
 NAME TEST
 STATUS ON
 SIZE 400 300
