@@ -7,6 +7,9 @@
 #
 # Comment: The bug exists if you see the red scalebar.
 #
+# REQUIRES: INPUT=SHAPE OUTPUT=PNG
+# RUN_PARMS: tr_scalebar.png [SCALEBAR] [MAPFILE] [RESULT]
+#
 
 EXTENT -180 -90 180 90
 SIZE 400 300
