@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.9  2004/11/02 02:09:25  frank
+# adjust for renaming of values to value_list
+#
 # Revision 1.8  2004/11/02 01:32:45  frank
 # Added extra tests for projection cases.
 #
@@ -138,7 +141,7 @@ def rqtest_3():
                                 ('red','115'),
                                 ('green','115'),
                                 ('blue','115'),
-                                ('values','115'),
+                                ('value_list','115'),
                                 ('x','39.5'),
                                 ('y','29.5')] ) == 0:
         return 'fail'
@@ -352,7 +355,7 @@ def rqtest_9():
                                 ('red','148'),
                                 ('green','148'),
                                 ('blue','148'),
-                                ('values','148'),
+                                ('value_list','148'),
                                 ('x','35.5'),
                                 ('y','34.5')] ) == 0:
         return 'fail'
@@ -368,7 +371,7 @@ def rqtest_9():
                                 ('red','132'),
                                 ('green','132'),
                                 ('blue','132'),
-                                ('values','132'),
+                                ('value_list','132'),
                                 ('x','44.5'),
                                 ('y','25.5')] ) == 0:
         return 'fail'
