@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.6  2004/10/22 15:42:46  frank
+# updated to latest API
+#
 # Revision 1.5  2004/07/27 21:51:42  frank
 # reverted to *not* use next generation names, no longer promoted
 #
@@ -61,30 +64,17 @@ def dumpResultSet( layer ):
         
         print '(%d,%d)' % (result.shapeindex, result.tileindex)
         
-        s = layer.getShape( result.shapeindex, result.tileindex )
+        s = layer.getFeature( result.shapeindex, result.tileindex )
         for i in range(layer.numitems):
             print '%s: %s' % (layer.getItem(i), s.getValue(i))
             
     layer.close()
 
-def ngGetShape(layer, shapeindex, tileindex = 0):
-    shape = mapscript.shapeObj(layer.type)
-    layer.getShape( shape, tileindex, shapeindex )
-    return shape
-    
 ###############################################################################
 # Open map and get working layer.
 
 def rqtest_1():
     
-    try:
-        mapscript.layerObj.ngGetShape = mapscript.layerObj.getShape
-        
-    except:
-        mapscript.lineObj.addPoint = mapscript.lineObj.add
-        mapscript.shapeObj.addLine = mapscript.shapeObj.add
-        mapscript.layerObj.ngGetShape = ngGetShape
-        
     pmstestlib.map = mapscript.mapObj('../gdal/tileindex.map')
     pmstestlib.layer = pmstestlib.map.getLayer(0)
 
@@ -96,13 +86,13 @@ def rqtest_1():
 def rqtest_2():
 
     line = mapscript.lineObj()
-    line.addPoint( mapscript.pointObj( 35, 25 ) )
-    line.addPoint( mapscript.pointObj( 45, 25 ) )
-    line.addPoint( mapscript.pointObj( 45, 35 ) )
-    line.addPoint( mapscript.pointObj( 35, 25 ) )
+    line.add( mapscript.pointObj( 35, 25 ) )
+    line.add( mapscript.pointObj( 45, 25 ) )
+    line.add( mapscript.pointObj( 45, 35 ) )
+    line.add( mapscript.pointObj( 35, 25 ) )
 
     poly = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
-    poly.addLine( line )
+    poly.add( line )
 
     pmstestlib.layer.queryByShape( pmstestlib.map, poly )
 
@@ -134,7 +124,7 @@ def rqtest_3():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -176,7 +166,7 @@ def rqtest_3():
     # Check last shape attributes.
 
     result = layer.getResult( 54 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','132'),
@@ -229,7 +219,7 @@ def rqtest_5():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','123'),
@@ -241,7 +231,7 @@ def rqtest_5():
     # Check last shape attributes.
 
     result = layer.getResult( 8 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','107'),
@@ -294,7 +284,7 @@ def rqtest_7():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -348,7 +338,7 @@ def rqtest_9():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','148'),
@@ -364,7 +354,7 @@ def rqtest_9():
     # Check last shape attributes.
 
     result = layer.getResult( 99 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','132'),
@@ -429,7 +419,7 @@ def rqtest_11():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','0'),
@@ -490,7 +480,7 @@ def rqtest_13():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.ngGetShape( result.shapeindex, result.tileindex )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','0'),
