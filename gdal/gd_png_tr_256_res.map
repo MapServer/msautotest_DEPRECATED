@@ -1,6 +1,8 @@
 #
 # Tests transparent 8bit output via GD with resampling.
 #
+# REQUIRES: SUPPORTS=PROJ
+#
 NAME TEST
 STATUS ON
 SIZE 500 500

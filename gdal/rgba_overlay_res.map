@@ -6,6 +6,8 @@
 #
 # NOTE: with resampling. 
 #
+# REQUIRES: SUPPORTS=PROJ
+#
 NAME TEST
 STATUS ON
 SIZE 400 300

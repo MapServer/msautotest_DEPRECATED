@@ -5,6 +5,8 @@
 # NOTE: Input is transparent, but we see through to the opaque background
 # set via IMAGECOLOR directive.
 #
+# REQUIRES: SUPPORTS=PROJ
+#
 NAME TEST
 STATUS ON
 SIZE 500 500

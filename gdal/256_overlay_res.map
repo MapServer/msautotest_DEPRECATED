@@ -5,6 +5,8 @@
 #
 # NOTE: with resampling, colormapped.
 #
+# REQUIRES: SUPPORTS=PROJ
+#
 NAME TEST
 STATUS ON
 SIZE 400 300
