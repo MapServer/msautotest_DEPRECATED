@@ -1,5 +1,5 @@
 #
-# Simple OGR Render.
+# Tests multipoint rendering support. 
 #   
 # REQUIRES: INPUT=OGR OUTPUT=PNG
 #
