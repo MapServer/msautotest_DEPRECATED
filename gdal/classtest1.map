@@ -24,6 +24,7 @@ LAYER
   TYPE raster
   STATUS default
   DATA data/grid.gif
+  TEMPLATE "fake.html"
   CLASS 
     NAME "Text"
     EXPRESSION ([pixel] == 0)

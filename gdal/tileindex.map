@@ -21,6 +21,7 @@ LAYER
   TYPE raster
   STATUS default
   DUMP TRUE
+  TEMPLATE "fake.html"
   TILEINDEX "data/tile_index.shp"
   TILEITEM "location"
 END
