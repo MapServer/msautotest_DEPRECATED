@@ -1,0 +1,22 @@
+
+#
+# Tests support for NODATA used with a single value from an 8bit image.  This
+# is testing NODATA directive in a non-16bitclassification case.
+#
+NAME TEST
+STATUS ON
+SIZE 200 150
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DATA data/pct22.tif
+  PROCESSING "NODATA=22"
+END
+
+END # of map file
