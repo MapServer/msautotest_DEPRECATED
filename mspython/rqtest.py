@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.5  2004/07/27 21:51:42  frank
+# reverted to *not* use next generation names, no longer promoted
+#
 # Revision 1.4  2004/05/28 20:28:54  frank
 # Change rqtest_6 to operate against the map to ensure that works.
 #
@@ -75,20 +78,14 @@ def ngGetShape(layer, shapeindex, tileindex = 0):
 def rqtest_1():
     
     try:
-        x = mapscript.Map
-        mapscript.Layer.ngGetShape = mapscript.Layer.getShape
+        mapscript.layerObj.ngGetShape = mapscript.layerObj.getShape
         
     except:
-        mapscript.Map = mapscript.mapObj
-        mapscript.Line = mapscript.lineObj
-        mapscript.Point = mapscript.pointObj
-        mapscript.Line.addPoint = mapscript.Line.add
-        mapscript.Shape = mapscript.shapeObj
-        mapscript.Shape.addLine = mapscript.Shape.add
+        mapscript.lineObj.addPoint = mapscript.lineObj.add
+        mapscript.shapeObj.addLine = mapscript.shapeObj.add
         mapscript.layerObj.ngGetShape = ngGetShape
-        mapscript.Rect = mapscript.rectObj
         
-    pmstestlib.map = mapscript.Map('../gdal/tileindex.map')
+    pmstestlib.map = mapscript.mapObj('../gdal/tileindex.map')
     pmstestlib.layer = pmstestlib.map.getLayer(0)
 
     return 'success'
@@ -98,13 +95,13 @@ def rqtest_1():
 
 def rqtest_2():
 
-    line = mapscript.Line()
-    line.addPoint( mapscript.Point( 35, 25 ) )
-    line.addPoint( mapscript.Point( 45, 25 ) )
-    line.addPoint( mapscript.Point( 45, 35 ) )
-    line.addPoint( mapscript.Point( 35, 25 ) )
+    line = mapscript.lineObj()
+    line.addPoint( mapscript.pointObj( 35, 25 ) )
+    line.addPoint( mapscript.pointObj( 45, 25 ) )
+    line.addPoint( mapscript.pointObj( 45, 35 ) )
+    line.addPoint( mapscript.pointObj( 35, 25 ) )
 
-    poly = mapscript.Shape( mapscript.MS_SHAPE_POLYGON )
+    poly = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
     poly.addLine( line )
 
     pmstestlib.layer.queryByShape( pmstestlib.map, poly )
@@ -197,7 +194,7 @@ def rqtest_3():
 
 def rqtest_4():
 
-    pnt = mapscript.Point()
+    pnt = mapscript.pointObj()
     pnt.x = 35.5
     pnt.y = 25.5
     
@@ -263,7 +260,7 @@ def rqtest_5():
 
 def rqtest_6():
 
-    pnt = mapscript.Point()
+    pnt = mapscript.pointObj()
     pnt.x = 35.2
     pnt.y = 25.3
     
@@ -315,7 +312,7 @@ def rqtest_7():
 
 def rqtest_8():
 
-    rect = mapscript.Rect()
+    rect = mapscript.rectObj()
     rect.minx = 35
     rect.maxx = 45
     rect.miny = 25
@@ -392,10 +389,10 @@ def rqtest_10():
     pmstestlib.layer = None
     pmstestlib.map = None
 
-    pmstestlib.map = mapscript.Map('../gdal/classtest1.map')
+    pmstestlib.map = mapscript.mapObj('../gdal/classtest1.map')
     pmstestlib.layer = pmstestlib.map.getLayer(0)
     
-    pnt = mapscript.Point()
+    pnt = mapscript.pointObj()
     pnt.x = 88.5
     pnt.y = 7.5
     
@@ -454,7 +451,7 @@ def rqtest_11():
 
 def rqtest_12():
 
-    pnt = mapscript.Point()
+    pnt = mapscript.pointObj()
     pnt.x = 13.5
     pnt.y = 36.5
     
