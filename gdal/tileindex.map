@@ -20,6 +20,7 @@ LAYER
   NAME grey
   TYPE raster
   STATUS default
+  DUMP TRUE
   TILEINDEX "data/tile_index.shp"
   TILEITEM "location"
 END
