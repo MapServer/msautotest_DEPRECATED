@@ -16,6 +16,13 @@ PROJECTION
   "+proj=utm +zone=11 +datum=WGS84"
 END
 
+SCALEBAR
+  STATUS EMBED
+#  POSTLABELCACHE TRUE
+  SIZE 200 10
+  UNITS METERS
+END
+
 #
 # Start of layer definitions
 #
