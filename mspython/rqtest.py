@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.8  2004/11/02 01:32:45  frank
+# Added extra tests for projection cases.
+#
 # Revision 1.7  2004/11/01 21:33:42  frank
 # Added reference to raster query classification bug (1021) in rqtest_13.
 #
@@ -49,6 +52,7 @@
 #
 
 import sys
+import math
 
 sys.path.append( '../pymod' )
 import pmstestlib
@@ -488,6 +492,70 @@ def rqtest_13():
     return 'success'
     
 ###############################################################################
+# Revert to tileindex.map and do a test where we force reprojection
+
+def rqtest_14():
+
+    pmstestlib.map = mapscript.mapObj('../gdal/tileindex.map')
+    pmstestlib.layer = pmstestlib.map.getLayer(0)
+
+    pmstestlib.map.setProjection("+proj=utm +zone=30 +datum=WGS84")
+
+    pnt = mapscript.pointObj()
+    pnt.x =  889690
+    pnt.y =   55369
+    
+    pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_MULTIPLE,
+                                   200000.0 )
+
+    return 'success'
+
+###############################################################################
+# Check result count, and that the results are within the expected distance.
+# This also implicitly verifies the results were reprojected back to UTM
+# coordinates from the lat long system of the layer.
+
+def rqtest_15():
+    
+    layer = pmstestlib.layer
+    
+    pnt = mapscript.pointObj()
+    pnt.x =  889690
+    pnt.y =   55369
+    
+    #########################################################################
+    # Check result count.
+    layer.open()
+    count = 0
+    for i in range(1000):
+        result = layer.getResult( i )
+        if result is None:
+            break
+
+        count = count + 1
+
+        s = layer.getFeature( result.shapeindex, result.tileindex )
+        x = float(pmstestlib.get_item_value( layer, s, 'x' ))
+        y = float(pmstestlib.get_item_value( layer, s, 'y' ))
+        dist_sq = (x-pnt.x) * (x-pnt.x) + (y-pnt.y) * (y-pnt.y)
+        dist = math.pow(dist_sq,0.5)
+        if dist > 200000.0:
+            pmstestlib.post_reason(
+                'Got point %f from target, but tolerance was 200000.0.' % dst )
+            return 'fail'
+                
+    
+    if count != 4:
+        pmstestlib.post_reason( 'got %d results instead of expected %d.' \
+                             % (count, 10) )
+        return 'fail'
+
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+    
+###############################################################################
 # Cleanup.
 
 def rqtest_cleanup():
@@ -509,6 +577,8 @@ test_list = [
     rqtest_11,
     rqtest_12,
     rqtest_13,
+    rqtest_14,
+    rqtest_15,
     rqtest_cleanup ]
 
 if __name__ == '__main__':
