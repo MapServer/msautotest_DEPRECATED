@@ -7,7 +7,7 @@
 #       the change where default formats are still created even if there is
 #       a user defined format.
 #
-# REQUIRES: SUPPORTS=PROJ
+# REQUIRES: SUPPORTS=PROJ SUPPORTS=GD2_RGB
 #
 NAME TEST
 STATUS ON

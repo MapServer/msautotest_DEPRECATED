@@ -5,22 +5,18 @@
 #
 # NOTE: without resampling. 
 #
+# REQUIRES: SUPPORTS=GD2_RGB
+#
 NAME TEST
 STATUS ON
 SIZE 400 300
 EXTENT 0 0 400 300
 IMAGECOLOR 255 255 0
 
-PROJECTION
-  "proj=utm"
-  "zone=12"
-  "datum=WGS84"
-END
-
-IMAGETYPE png8_t
+IMAGETYPE png24_t
 
 OUTPUTFORMAT
-  NAME png8_t
+  NAME png24_t
   DRIVER "GDAL/PNG"
   IMAGEMODE RGB
   TRANSPARENT OFF
@@ -31,11 +27,6 @@ LAYER
   TYPE raster
   STATUS default
   DATA data/pct22.tif
-  PROJECTION
-    "proj=utm"
-    "zone=12"
-    "datum=WGS84"
-  END
 END
 
 LAYER
@@ -44,11 +35,6 @@ LAYER
   STATUS default
   DATA data/rgb.tif
   OFFSITE 111 222 111
-  PROJECTION
-    "proj=utm"
-    "zone=12"
-    "datum=WGS84"
-  END
 END
 
 END # of map file
