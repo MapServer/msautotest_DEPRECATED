@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.4  2004/05/28 20:28:54  frank
+# Change rqtest_6 to operate against the map to ensure that works.
+#
 # Revision 1.3  2004/05/27 17:34:46  frank
 # Updated to work with new or old APIs and names.
 #
@@ -255,7 +258,8 @@ def rqtest_5():
     return 'success'
     
 ###############################################################################
-# Execute multiple point query, and check result.
+# Execute multiple point query, and check result.  Also operates on map,
+# instead of layer.
 
 def rqtest_6():
 
@@ -263,8 +267,7 @@ def rqtest_6():
     pnt.x = 35.2
     pnt.y = 25.3
     
-    pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_SINGLE,
-                                   10.0 )
+    pmstestlib.map.queryByPoint( pnt, mapscript.MS_SINGLE, 10.0 )
 
     return 'success'
 
