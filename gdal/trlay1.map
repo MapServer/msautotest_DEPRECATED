@@ -32,7 +32,7 @@ LAYER
   DATA data/rgba.tif
 END
 LAYER
-  NAME grid
+  NAME grid1
   TYPE raster
   STATUS ON
   DATA data/grid.gif

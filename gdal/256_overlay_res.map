@@ -42,7 +42,7 @@ LAYER
 END
 
 LAYER
-  NAME grid
+  NAME grid1
   TYPE raster
   STATUS default
   DATA data/grid.gif
