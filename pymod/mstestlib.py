@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.4  2005/09/22 18:30:13  frank
+# added 'demime' support
+#
 # Revision 1.3  2004/11/15 22:12:04  frank
 # for failed matches, look at checksums too
 #
@@ -137,6 +140,19 @@ def read_test_directives( mapfile_name ):
             
 
 ###############################################################################
+# Strip Content-type and other http headers off this file.
+
+def demime_file( filename ):
+
+    data = open(filename,'r').read()
+
+    for i in range(len(data)-1):
+        if data[i] == '\n' and data[i+1] == '\n':
+            open(filename,'w').write(data[i+2:])
+            return
+    return
+
+###############################################################################
 # run_tests()
 
 def run_tests( argv ):
@@ -194,14 +210,24 @@ def run_tests( argv ):
         for run_item in runparms_list:
             out_file = run_item[0]
             command = run_item[1]
-            
+
+            if string.find(command,'[RESULT_DEMIME]'):
+                demime = 1
+            else:
+                demime = 0
+                
             command = string.replace( command, '[RESULT]', 'result/'+out_file )
+            command = string.replace( command, '[RESULT_DEMIME]', 'result/'+out_file )
             command = string.replace( command, '[MAPFILE]', map )
             command = string.replace( command, '[SHP2IMG]', shp2img )
+            command = string.replace( command, '[MAPSERV]', 'mapserv' )
             command = string.replace( command, '[LEGEND]', 'legend' )
             command = string.replace( command, '[SCALEBAR]', 'scalebar' )
 
             os.system( command )
+
+            if demime:
+                demime_file( 'result/'+out_file )
 
             cmp = compare_result( out_file )
             
