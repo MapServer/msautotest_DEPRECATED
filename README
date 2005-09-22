@@ -1,3 +1,5 @@
-See http://mapserver.gis.umn.edu/cgi-bin/wiki.pl?MSAutoTest
 
+See:
+  http://ms.gis.umn.edu/development/Tests/regression_testing/view?portal_status_message=Your%20changes%20have%20been%20saved.
+  
 Send new tests via MapServer bugzilla (component MSAutoTest).
