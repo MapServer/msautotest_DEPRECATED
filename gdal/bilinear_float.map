@@ -1,0 +1,27 @@
+#
+# Test bilinear resampling on floating point "raw" data format.
+#
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE out_float
+
+OUTPUTFORMAT
+  NAME out_float
+  DRIVER "GDAL/GTIFF"
+  FORMATOPTION "COMPRESS=DEFLATE"
+  IMAGEMODE FLOAT32
+END
+
+LAYER
+  NAME grid1
+  TYPE raster
+  STATUS default
+  DATA data/float.tif
+  PROCESSING "RESAMPLE=BILINEAR"
+END
+
+END # of map file
