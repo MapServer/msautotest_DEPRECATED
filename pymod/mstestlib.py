@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.5  2005/10/13 13:51:07  frank
+# Added 'deversion' support.
+#
 # Revision 1.4  2005/09/22 18:30:13  frank
 # added 'demime' support
 #
@@ -83,8 +86,14 @@ def compare_result( filename ):
 
     try:
 	import gdal
-	res_ds = gdal.Open( result_file )
+        gdal.PushErrorHandler()
 	exp_ds = gdal.Open( expected_file )
+        gdal.PopErrorHandler()
+        if exp_ds == None:
+            return 'nomatch'
+        
+	res_ds = gdal.Open( result_file )
+        
 	for band_num in range(1,exp_ds.RasterCount+1):
 	    if res_ds.GetRasterBand(band_num).Checksum() != \
                 exp_ds.GetRasterBand(band_num).Checksum():
@@ -153,6 +162,29 @@ def demime_file( filename ):
     return
 
 ###############################################################################
+# Strip MapServer version comment from file.
+
+def deversion_file( filename ):
+
+    data = open(filename,'r').read()
+
+    start = string.find( data, '<!-- MapServer version' )
+    if start == -1:
+        return
+
+    end = start+10
+    length = len(data)
+    while end < length - 5 and data[end:end+3] != '-->':
+        end = end+1
+
+    if data[end:end+3] != '-->':
+        return
+
+    new_data = data[:start-1] + data[end+4:]
+    open(filename,'w').write(new_data)
+    return
+
+###############################################################################
 # run_tests()
 
 def run_tests( argv ):
@@ -211,13 +243,19 @@ def run_tests( argv ):
             out_file = run_item[0]
             command = run_item[1]
 
-            if string.find(command,'[RESULT_DEMIME]'):
+            if string.find(command,'[RESULT_DEMIME]') != -1:
                 demime = 1
             else:
                 demime = 0
                 
+            if string.find(command,'[RESULT_DEVERSION]') != -1:
+                deversion = 1
+            else:
+                deversion = 0
+                
             command = string.replace( command, '[RESULT]', 'result/'+out_file )
             command = string.replace( command, '[RESULT_DEMIME]', 'result/'+out_file )
+            command = string.replace( command, '[RESULT_DEVERSION]', 'result/'+out_file )
             command = string.replace( command, '[MAPFILE]', map )
             command = string.replace( command, '[SHP2IMG]', shp2img )
             command = string.replace( command, '[MAPSERV]', 'mapserv' )
@@ -228,6 +266,8 @@ def run_tests( argv ):
 
             if demime:
                 demime_file( 'result/'+out_file )
+            if deversion:
+                deversion_file( 'result/'+out_file )
 
             cmp = compare_result( out_file )
             
