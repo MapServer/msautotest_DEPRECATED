@@ -5,7 +5,7 @@
 #
 #
 # Capabilities
-# RUN_PARMS: wms_cap.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities' > [RESULT]
+# RUN_PARMS: wms_cap.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities' > [RESULT_DEVERSION]
 #
 # Layer description
 # RUN_PARMS: wms_describe.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=DescribeLayer&LAYERS=road' > [RESULT]

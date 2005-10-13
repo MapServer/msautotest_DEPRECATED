@@ -5,7 +5,7 @@
 #
 #
 # Capabilities
-# RUN_PARMS: wfs_cap.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities' > [RESULT]
+# RUN_PARMS: wfs_cap.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities' > [RESULT_DEVERSION]
 #
 # Feature types description
 # RUN_PARMS: wfs_describe.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=DescribeFeatureType' > [RESULT]
