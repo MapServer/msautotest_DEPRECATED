@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.6  2005/11/15 21:43:11  frank
+# added the option to pass mapfiles on the commandline
+#
 # Revision 1.5  2005/10/13 13:51:07  frank
 # Added 'deversion' support.
 #
@@ -51,10 +54,20 @@ import string
 ###############################################################################
 # get_mapfile_list()
 
-def get_mapfile_list():
+def get_mapfile_list( argv ):
 
-    files = os.listdir('.')
     map_files = []
+
+    # use mapfile(s) passed in arg list if any.
+    for arg in argv:
+        if arg[-4:] == '.map':
+            map_files.append( arg )
+
+    if len(map_files) > 0:
+        return map_files
+    
+    # scan the current directory for mapfiles. 
+    files = os.listdir('.')
 
     for file in files:
         if file[-4:] == '.map':
@@ -225,7 +238,7 @@ def run_tests( argv ):
     
     ###########################################################################
     # Process all mapfiles.
-    map_files = get_mapfile_list()
+    map_files = get_mapfile_list( argv )
 
     for map in map_files:
 
