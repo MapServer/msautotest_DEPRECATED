@@ -91,7 +91,7 @@ Content-type: application/vnd.ogc.wms_xml
 <!-- WARNING: This layer has its status set to DEFAULT and will always be displayed when doing a GetMap request even if it is not requested by the client. This is not in line with the expected behavior of a WMS server. Using status ON or OFF is recommended. -->
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>pattern4</Name>
-        <Title>time</Title>
+        <Title>pattern4</Title>
         <SRS>EPSG:4326</SRS>
         <LatLonBoundingBox minx="-131.02" miny="33.65" maxx="-119.85" maxy="48.39" />
         <BoundingBox SRS="EPSG:4326"
