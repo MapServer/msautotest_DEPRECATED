@@ -72,7 +72,7 @@ Content-type: text/xml
         <Name>province</Name>
         <Title>province</Title>
         <SRS>EPSG:4269</SRS>
-        <LatLongBoundingBox minx="-66.7243" miny="41.7705" maxx="-57.7636" maxy="48.4773" />
+        <LatLongBoundingBox minx="-66.7243" miny="41.7705" maxx="-57.7217" maxy="48.4773" />
     </FeatureType>
 </FeatureTypeList>
 
