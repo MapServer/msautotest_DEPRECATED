@@ -117,8 +117,8 @@ END
 LAYER
   NAME pattern4
   METADATA
-    "DESCRIPTION" "time"
-    "wms_title" "time"
+    "DESCRIPTION" "pattern4"
+    "wms_title" "pattern4"
     "wms_timeitem"  "TIME"
     "wms_timeextent"  "2004-01-01/2004-02-01"   
   END
