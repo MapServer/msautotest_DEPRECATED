@@ -18,7 +18,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2587598.000000,404010.531250 2587598.000000,404010.531250</gml:coordinates>
+        		<gml:coordinates>-60.214963,46.123322 -60.214963,46.123322</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>

@@ -18,7 +18,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2281604.250000,340848.937500 2281604.250000,340848.937500</gml:coordinates>
+        		<gml:coordinates>-64.052355,46.980843 -64.052355,46.980843</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -49,7 +49,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2503805.500000,427872.656250 2503805.500000,427872.656250</gml:coordinates>
+        		<gml:coordinates>-60.981038,46.689323 -60.981038,46.689323</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -80,7 +80,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2499190.000000,194088.234375 2499190.000000,194088.234375</gml:coordinates>
+        		<gml:coordinates>-62.513078,44.911800 -62.513078,44.911800</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -111,7 +111,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2434957.000000,347013.593750 2434957.000000,347013.593750</gml:coordinates>
+        		<gml:coordinates>-62.272430,46.373272 -62.272430,46.373272</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -142,7 +142,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2578914.250000,292073.093750 2578914.250000,292073.093750</gml:coordinates>
+        		<gml:coordinates>-61.038743,45.311286 -61.038743,45.311286</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -173,7 +173,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2536072.750000,311524.968750 2536072.750000,311524.968750</gml:coordinates>
+        		<gml:coordinates>-61.379977,45.652307 -61.379977,45.652307</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -204,7 +204,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2494520.000000,285855.406250 2494520.000000,285855.406250</gml:coordinates>
+        		<gml:coordinates>-61.997375,45.639459 -61.997375,45.639459</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -235,7 +235,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2348711.750000,204294.062500 2348711.750000,204294.062500</gml:coordinates>
+        		<gml:coordinates>-64.109628,45.627963 -64.109628,45.627963</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -266,7 +266,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2377598.000000,135734.703125 2377598.000000,135734.703125</gml:coordinates>
+        		<gml:coordinates>-64.190057,44.971547 -64.190057,44.971547</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -297,7 +297,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2398677.250000,70608.140625 2398677.250000,70608.140625</gml:coordinates>
+        		<gml:coordinates>-64.333577,44.375794 -64.333577,44.375794</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -328,7 +328,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2388340.000000,19784.322266 2388340.000000,19784.322266</gml:coordinates>
+        		<gml:coordinates>-64.732816,44.020359 -64.732816,44.020359</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -359,7 +359,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2313364.750000,98278.921875 2313364.750000,98278.921875</gml:coordinates>
+        		<gml:coordinates>-65.114828,44.938161 -65.114828,44.938161</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -390,7 +390,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2279399.000000,39858.000000 2279399.000000,39858.000000</gml:coordinates>
+        		<gml:coordinates>-65.816024,44.611049 -65.816024,44.611049</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -421,7 +421,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2359906.500000,-30454.435547 2359906.500000,-30454.435547</gml:coordinates>
+        		<gml:coordinates>-65.318371,43.740118 -65.318371,43.740118</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -452,7 +452,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2325561.750000,294362.250000 2325561.750000,294362.250000</gml:coordinates>
+        		<gml:coordinates>-63.831979,46.431271 -63.831979,46.431271</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -483,7 +483,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2600377.000000,419421.718750 2600377.000000,419421.718750</gml:coordinates>
+        		<gml:coordinates>-59.972676,46.180945 -59.972676,46.180945</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -514,7 +514,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2449341.500000,253906.093750 2449341.500000,253906.093750</gml:coordinates>
+        		<gml:coordinates>-62.693006,45.589422 -62.693006,45.589422</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -545,7 +545,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2418051.500000,205002.203125 2418051.500000,205002.203125</gml:coordinates>
+        		<gml:coordinates>-63.335193,45.343302 -63.335193,45.343302</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -576,7 +576,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2329295.750000,218397.281250 2329295.750000,218397.281250</gml:coordinates>
+        		<gml:coordinates>-64.244044,45.818949 -64.244044,45.818949</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -607,7 +607,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2345781.250000,130999.546875 2345781.250000,130999.546875</gml:coordinates>
+        		<gml:coordinates>-64.569074,45.064729 -64.569074,45.064729</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -638,7 +638,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2382666.750000,60910.937500 2382666.750000,60910.937500</gml:coordinates>
+        		<gml:coordinates>-64.563218,44.365195 -64.563218,44.365195</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -669,7 +669,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2294923.750000,-55344.503906 2294923.750000,-55344.503906</gml:coordinates>
+        		<gml:coordinates>-66.158957,43.797703 -66.158957,43.797703</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -700,7 +700,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2574240.000000,416102.343750 2574240.000000,416102.343750</gml:coordinates>
+        		<gml:coordinates>-60.280661,46.276898 -60.280661,46.276898</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -731,7 +731,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2437026.000000,130358.351562 2437026.000000,130358.351562</gml:coordinates>
+        		<gml:coordinates>-63.570040,44.682792 -63.570040,44.682792</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -762,7 +762,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2402416.500000,461586.812500 2402416.500000,461586.812500</gml:coordinates>
+        		<gml:coordinates>-61.903099,47.404770 -61.903099,47.404770</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -793,7 +793,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2378567.250000,305099.781250 2378567.250000,305099.781250</gml:coordinates>
+        		<gml:coordinates>-63.167017,46.291191 -63.167017,46.291191</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
@@ -824,7 +824,7 @@ Content-type: text/xml
       <ms:popplace>
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
-        		<gml:coordinates>2431943.750000,118985.382812 2431943.750000,118985.382812</gml:coordinates>
+        		<gml:coordinates>-63.692011,44.615583 -63.692011,44.615583</gml:coordinates>
         	</gml:Box>
         </gml:boundedBy>
         <ms:msGeometry>
