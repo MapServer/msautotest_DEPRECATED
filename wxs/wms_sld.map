@@ -99,8 +99,8 @@ WEB
 END
 
 PROJECTION
-#  "init=./data/epsg2:42304"
-  "init=epsg:42304"
+  "init=./data/epsg2:42304"
+#  "init=epsg:42304"
 END
 
 
@@ -121,7 +121,8 @@ LAYER
   TYPE POINT
   STATUS ON
   PROJECTION
-    "init=epsg:42304"
+  "init=./data/epsg2:42304"
+#    "init=epsg:42304"
   END
 
   DUMP TRUE
@@ -146,7 +147,8 @@ LAYER
   TYPE POINT
   STATUS ON
   PROJECTION
-    "init=epsg:42304"
+  "init=./data/epsg2:42304"
+#    "init=epsg:42304"
   END
 
   DUMP TRUE
@@ -182,7 +184,8 @@ LAYER
   TYPE LINE
   STATUS ON
   PROJECTION
-    "init=epsg:42304"
+  "init=./data/epsg2:42304"
+#    "init=epsg:42304"
   END
 
   DUMP TRUE
