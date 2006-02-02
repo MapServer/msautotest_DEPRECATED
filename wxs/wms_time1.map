@@ -48,7 +48,7 @@
 # Draw a layer by using with multiples ranges time values specified with a 
 # smaller resolution
 #
-# RUN_PARMS: wms_time_multi_ranges_reso_hour.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern4&Time=2004-01-01%2014/2004-01-01%2015,2004-01-01%20:16/2004-01-01%20:17' > [RESULT_DEMIME]
+# RUN_PARMS: wms_time_multi_ranges_reso_hour.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern4&Time=2004-01-01%2014/2004-01-01%2015,2004-01-01%2016/2004-01-01%2017' > [RESULT_DEMIME]
 #
 #
 # Draw a layer by using time parameter set to null and no default time 
