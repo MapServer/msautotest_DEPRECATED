@@ -29,6 +29,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.10  2006/02/13 17:19:32  frank
+# Added msCleanup call.
+#
 # Revision 1.9  2004/11/02 02:09:25  frank
 # adjust for renaming of values to value_list
 #
@@ -591,4 +594,6 @@ if __name__ == '__main__':
     pmstestlib.run_tests( test_list )
 
     pmstestlib.summarize()
+
+    mapscript.msCleanup()
 
