@@ -1,19 +1,9 @@
 
 #
-# Tests layering a layer with transparency on a layer with 256 colors already.
-# This is intended to address case where colors are exausted before a 
-# transparent color can be allocated.
+# Tests the quantization option allowing conversion of 
+# RGB or RGBA images to 8bit just before saving to PNG.
 #
-# NOTE: without resampling.
-#
-# ISSUE: The resulting image has the grid drawn in a grey color instead of
-#        the natural red.  This is because the colormap is full by the time
-#        we get to allocating a color for the grid.  This is an expected
-#        "error" in the results.
-#
-# UPDATE: Now mapdrawgdal.c constructs a colortable for greyscale images
-#         with only 128 entries instead of 256 so the "overload" no longer
-#         happens.  Preserve test with new results for posterity.
+# See http://mapserver.gis.umn.edu/bugs/show_bug.cgi?id=1690
 #
 NAME TEST
 STATUS ON
