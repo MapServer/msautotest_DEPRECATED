@@ -1,7 +1,7 @@
 Content-type: application/vnd.ogc.wms_xml
 
 <?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
-<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/capabilities_1_1_1.dtd"
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
  [
  <!ELEMENT VendorSpecificCapabilities EMPTY>
  ]>  <!-- end of DOCTYPE declaration -->
@@ -98,6 +98,15 @@ Content-type: application/vnd.ogc.wms_xml
         </HTTP>
       </DCPType>
     </GetLegendGraphic>
+    <GetStyles>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetStyles>
   </Request>
   <Exception>
     <Format>application/vnd.ogc.se_xml</Format>
