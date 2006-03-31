@@ -36,15 +36,6 @@
 #
 # RUN_PARMS: wms_time_multi_reverse.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern4&Time=2004-01-01%2017:10:00,2004-01-01%2014:10:00' > [RESULT_DEMIME]
 #
-# Draw a layer by using with a range time values specified in reverse order
-#
-# RUN_PARMS: wms_time_single_range_reverse.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern4&Time=2004-01-01%2016:10:00/2004-01-01%2014:10:00' > [RESULT_DEMIME]
-#
-# Draw a layer by using with multiples ranges time values specified in reverse 
-# order 
-#
-# RUN_PARMS: wms_time_multi_ranges_reverse.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern4&Time=2004-01-01%2017:10:00/2004-01-01%2016:10:00,2004-01-01%2015:10:00/2004-01-01%2014:10:00' > [RESULT_DEMIME]
-#
 # Draw a layer by using with multiples ranges time values specified with a 
 # smaller resolution
 #
