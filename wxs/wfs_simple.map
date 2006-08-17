@@ -72,6 +72,7 @@ LAYER
     "wfs_title"         "province"
     "wfs_description"   "province"
     "wfs_result_fields" "NAME_E YEAR_EST AREA_KMSQ"
+    "wfs_featureid"     "NAME_E"
   END
   TYPE POINT
   STATUS ON
