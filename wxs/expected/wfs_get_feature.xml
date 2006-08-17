@@ -15,7 +15,7 @@ Content-type: text/xml
       	</gml:Box>
       </gml:boundedBy>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-60.211728,47.166385 -60.168776,47.192716</gml:coordinates>
@@ -33,7 +33,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Quebec">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-62.076968,47.191069 -61.433227,47.627593</gml:coordinates>
@@ -51,7 +51,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-61.595111,45.550449 -60.343533,47.031525</gml:coordinates>
@@ -69,7 +69,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Quebec">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-61.750964,47.255073 -61.719830,47.282116</gml:coordinates>
@@ -87,7 +87,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-60.897351,45.567064 -59.820005,46.261946</gml:coordinates>
@@ -105,7 +105,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-60.682556,46.068634 -60.310302,46.314326</gml:coordinates>
@@ -123,7 +123,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Prince Edward Island">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-64.464145,45.949816 -62.020645,47.040290</gml:coordinates>
@@ -141,7 +141,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-61.146404,45.458170 -60.903456,45.576146</gml:coordinates>
@@ -159,7 +159,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-60.977631,45.476290 -60.937854,45.494872</gml:coordinates>
@@ -177,7 +177,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Prince Edward Island">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-63.863796,46.578504 -63.775140,46.627388</gml:coordinates>
@@ -195,7 +195,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-66.236930,43.447966 -61.009794,45.982824</gml:coordinates>
@@ -213,7 +213,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-61.227514,45.504823 -61.180696,45.534739</gml:coordinates>
@@ -231,7 +231,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-62.626846,45.786892 -62.556139,45.815465</gml:coordinates>
@@ -249,7 +249,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-62.776183,45.739239 -62.728467,45.764021</gml:coordinates>
@@ -267,7 +267,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-60.117541,43.918413 -59.712843,44.010417</gml:coordinates>
@@ -285,7 +285,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-66.357560,44.252448 -66.251440,44.369088</gml:coordinates>
@@ -303,7 +303,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-66.432672,44.218506 -66.379694,44.257055</gml:coordinates>
@@ -321,7 +321,7 @@ Content-type: text/xml
       </ms:province>
     </gml:featureMember>
     <gml:featureMember>
-      <ms:province>
+      <ms:province fid="Nova Scotia">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4269">
         		<gml:coordinates>-65.687835,43.412311 -65.616482,43.476384</gml:coordinates>
