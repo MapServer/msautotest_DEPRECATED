@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.9  2006/08/25 17:34:02  frank
+# ensure demime and deversion use binary mode
+#
 # Revision 1.8  2006/08/25 17:06:38  frank
 # Small formatting change.
 #
@@ -173,11 +176,11 @@ def read_test_directives( mapfile_name ):
 
 def demime_file( filename ):
 
-    data = open(filename,'r').read()
+    data = open(filename,'rb').read()
 
     for i in range(len(data)-1):
         if data[i] == '\n' and data[i+1] == '\n':
-            open(filename,'w').write(data[i+2:])
+            open(filename,'wb').write(data[i+2:])
             return
     return
 
@@ -186,7 +189,7 @@ def demime_file( filename ):
 
 def deversion_file( filename ):
 
-    data = open(filename,'r').read()
+    data = open(filename,'rb').read()
 
     start = string.find( data, '<!-- MapServer version' )
     if start == -1:
@@ -201,7 +204,7 @@ def deversion_file( filename ):
         return
 
     new_data = data[:start-1] + data[end+4:]
-    open(filename,'w').write(new_data)
+    open(filename,'wb').write(new_data)
     return
 
 ###############################################################################
