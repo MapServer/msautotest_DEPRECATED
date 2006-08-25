@@ -28,6 +28,10 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.7  2006/08/25 16:13:27  frank
+# Improve test failure reporting ... indicate file in multi test maps,
+# and highlight failures with '*' in column 0.
+#
 # Revision 1.6  2005/11/15 21:43:11  frank
 # added the option to pass mapfiles on the commandline
 #
@@ -242,7 +246,7 @@ def run_tests( argv ):
 
     for map in map_files:
 
-        print 'Processing: %s' % map
+        print ' Processing: %s' % map
         (runparms_list, requires_list) = read_test_directives( map )
 
         if not has_requires( version_info, requires_list ):
@@ -255,6 +259,9 @@ def run_tests( argv ):
         for run_item in runparms_list:
             out_file = run_item[0]
             command = run_item[1]
+
+            if len(runparms_list) > 1:
+                print '   test ', out_file
 
             if string.find(command,'[RESULT_DEMIME]') != -1:
                 demime = 1
@@ -287,18 +294,18 @@ def run_tests( argv ):
             if cmp == 'match':
                 succeed_count = succeed_count + 1
                 os.remove( 'result/' + out_file )
-                print '    results match.'
+                print '     results match.'
             elif cmp ==  'files_differ_image_match':
                 succeed_count = succeed_count + 1
-                print '    result images match, though files differ.'
+                print '     result images match, though files differ.'
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
-                print '    results dont match, TEST FAILED.'
+                print '*    results dont match, TEST FAILED.'
             elif cmp == 'noresult':
                 fail_count = fail_count + 1
-                print '    no result file generated, TEST FAILED.'
+                print '*    no result file generated, TEST FAILED.'
             elif cmp == 'noexpected':
-                print '    no expected file exists, accepting result as expected.'
+                print '     no expected file exists, accepting result as expected.'
                 init_count = init_count + 1
                 os.rename( 'result/' + out_file, 'expected/' + out_file )
                 
