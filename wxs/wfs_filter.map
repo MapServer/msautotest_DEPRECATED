@@ -6,7 +6,7 @@
 #
 #
 # Verify PropertyIsEqualTo
-# RUN_PARMS: wfs_filter_property_is_equal.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></Filter>' > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
 #
 # Verify PropertyIsNotEqualTo
 # RUN_PARMS: wfs_filter_is_not_equal.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsNotEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsNotEqualTo></Filter>' > [RESULT]
