@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.8  2006/08/25 17:06:38  frank
+# Small formatting change.
+#
 # Revision 1.7  2006/08/25 16:13:27  frank
 # Improve test failure reporting ... indicate file in multi test maps,
 # and highlight failures with '*' in column 0.
@@ -261,7 +264,7 @@ def run_tests( argv ):
             command = run_item[1]
 
             if len(runparms_list) > 1:
-                print '   test ', out_file
+                print '   test %s' % out_file
 
             if string.find(command,'[RESULT_DEMIME]') != -1:
                 demime = 1
