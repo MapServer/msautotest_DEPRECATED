@@ -14,52 +14,52 @@
 # REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS SUPPORTS=WFS SUPPORTS=WCS
 #
 # Generate WMS Capabilities
-# RUN_PARMS: wms_get_caps.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&service=WMS&version=1.1.1&request=GetCapabilities' > [RESULT_DEVERSION]
+# RUN_PARMS: wms_get_caps.xml [MAPSERV] "QUERY_STRING=map=[MAPFILE]&service=WMS&version=1.1.1&request=GetCapabilities" > [RESULT_DEVERSION]
 #
 # Generate WMS DescribeLayer
-# RUN_PARMS: wms_describe_layer.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&service=WMS&version=1.1.1&request=DescribeLayer&layers=rivers' > [RESULT]
+# RUN_PARMS: wms_describe_layer.xml [MAPSERV] "QUERY_STRING=map=[MAPFILE]&service=WMS&version=1.1.1&request=DescribeLayer&layers=rivers" > [RESULT]
 #
 # Generate WMS GetMap
-# RUN_PARMS: wms_getmap.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetMap&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300' > [RESULT_DEMIME]
+# RUN_PARMS: wms_getmap.png [MAPSERV] "QUERY_STRING=map=[MAPFILE]&version=1.1.1&service=WMS&request=GetMap&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300" > [RESULT_DEMIME]
 #
 # Generate WMS GetFeatureInfo HTML format on vector data
-# RUN_PARMS: wms_get_feature_info_vector.html [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=rivers&info_format=text/html&x=141&y=91&radius=10' > [RESULT]
+# RUN_PARMS: wms_get_feature_info_vector.html [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=rivers&info_format=text/html&x=141&y=91&radius=10" > [RESULT]
 #
 # Generate WMS GetFeatureInfo GML format on vector data
-# RUN_PARMS: wms_get_feature_info_vector.gml [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=rivers&info_format=application/vnd.ogc.gml&x=141&y=91&radius=10' > [RESULT]
+# RUN_PARMS: wms_get_feature_info_vector.gml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=rivers&info_format=application/vnd.ogc.gml&x=141&y=91&radius=10" > [RESULT]
 #
 # Generate WMS GetFeatureInfo HTML format on raster data
-# RUN_PARMS: wms_get_feature_info_raster.html [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=land_shallow_topo_2048&info_format=text/html&x=141&y=91&radius=10' > [RESULT]
+# RUN_PARMS: wms_get_feature_info_raster.html [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=land_shallow_topo_2048&info_format=text/html&x=141&y=91&radius=10" > [RESULT]
 #
 # Generate WMS GetFeatureInfo GML format on raster data
-# RUN_PARMS: wms_get_feature_info_raster.gml [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=land_shallow_topo_2048&info_format=application/vnd.ogc.gml&x=141&y=91&radius=10' > [RESULT]
+# RUN_PARMS: wms_get_feature_info_raster.gml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=land_shallow_topo_2048&info_format=application/vnd.ogc.gml&x=141&y=91&radius=10" > [RESULT]
 #
 # Generate WMS GetLegendGraphic
-# RUN_PARMS: wms_get_legend_graphic.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=rivers&format=image/png' > [RESULT_DEMIME]
+# RUN_PARMS: wms_get_legend_graphic.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=rivers&format=image/png" > [RESULT_DEMIME]
 #
 # Generate WMS GetStyles
-# RUN_PARMS: wms_get_styles.sld [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.1.1&service=WMS&request=GetStyles&layers=rivers' > [RESULT]
+# RUN_PARMS: wms_get_styles.sld [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetStyles&layers=rivers" > [RESULT]
 #
 #
 #
 # Generate WFS Capabilities
-# RUN_PARMS: wfs_get_caps.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&service=WFS&version=1.0.0&request=GetCapabilities' > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_get_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
 #
 # Generate WFS DescribeFeatureType GML2 app schema
-# RUN_PARMS: wfs_describe_feature_type_gml2.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&service=WFS&version=1.0.0&request=DescribeFeatureType' > [RESULT]
+# RUN_PARMS: wfs_describe_feature_type_gml2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=DescribeFeatureType" > [RESULT]
 #
 # Generate WFS DescribeFeatureType GML3L0 app schema
-# RUN_PARMS: wfs_describe_feature_type_gml3l0.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&service=WFS&version=1.0.0&request=DescrbieFeatureType&outputFormat=SFE_XMLSCHEMA' > [RESULT]
+# RUN_PARMS: wfs_describe_feature_type_gml3l0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=DescrbieFeatureType&outputFormat=SFE_XMLSCHEMA" > [RESULT]
 #
 # Generate WFS GetFeature GML2
-# RUN_PARMS: wfs_get_feature_gml2.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.0.0&service=WFS&request=GetFeature&typename=rivers&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3ENAME%3C/PropertyName%3E%3CLiteral%3EGreat%20Bear%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&outputFormat=GML2' > [RESULT]
+# RUN_PARMS: wfs_get_feature_gml2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.0.0&service=WFS&request=GetFeature&typename=rivers&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3ENAME%3C/PropertyName%3E%3CLiteral%3EGreat%20Bear%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&outputFormat=GML2" > [RESULT]
 #
 # Generate WFS GetFeature GML3L0
-# RUN_PARMS: wfs_get_feature_gml3l0.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&version=1.0.0&service=WFS&request=GetFeature&typename=rivers&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3ENAME%3C/PropertyName%3E%3CLiteral%3EGreat%20Bear%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&outputFormat=GML3' > [RESULT]
+# RUN_PARMS: wfs_get_feature_gml3l0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.0.0&service=WFS&request=GetFeature&typename=rivers&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3ENAME%3C/PropertyName%3E%3CLiteral%3EGreat%20Bear%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&outputFormat=GML3" > [RESULT]
 
 
 # Generate WCS Capabilities
-# RUN_PARMS: wcs_get_caps.xml [MAPSERV] QUERY_STRING='map=[MAPFILE]&service=WCS&version=1.0.0&request=GetCapabilities' > [RESULT_DEVERSION]
+# RUN_PARMS: wcs_get_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WCS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
  
 MAP
 
