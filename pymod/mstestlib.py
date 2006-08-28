@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.10  2006/08/28 22:03:41  frank
+# added exponent processing into RESULT_DEVERSION
+#
 # Revision 1.9  2006/08/25 17:34:02  frank
 # ensure demime and deversion use binary mode
 #
@@ -208,6 +211,26 @@ def deversion_file( filename ):
     return
 
 ###############################################################################
+# Do windows exponential conversion on the file (e+0nn to e+nn).
+
+def fixexponent_file( filename ):
+
+    data = open(filename,'rb').read()
+    orig_data = data
+
+    start = string.find( data, 'e+0' )
+    while start != -1:
+        if data[start+3] in string.digits and data[start+4] in string.digits \
+            and data[start+5] == '"':
+            data = data[:start+2] + data[start+3:]
+        start = string.find( data, 'e+0', start+3 )
+
+    if data != orig_data:
+        open(filename,'wb').write(data)
+
+    return
+
+###############################################################################
 # run_tests()
 
 def run_tests( argv ):
@@ -294,6 +317,7 @@ def run_tests( argv ):
                 demime_file( 'result/'+out_file )
             if deversion:
                 deversion_file( 'result/'+out_file )
+                fixexponent_file( 'result/'+out_file )
 
             cmp = compare_result( out_file )
             
