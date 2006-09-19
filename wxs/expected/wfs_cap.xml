@@ -32,7 +32,6 @@ Content-type: text/xml
     <DescribeFeatureType>
       <SchemaDescriptionLanguage>
         <XMLSCHEMA/>
-        <SFE_XMLSCHEMA/>
       </SchemaDescriptionLanguage>
       <DCPType>
         <HTTP>
@@ -48,7 +47,6 @@ Content-type: text/xml
     <GetFeature>
       <ResultFormat>
         <GML2/>
-        <GML3/>
       </ResultFormat>
       <DCPType>
         <HTTP>
