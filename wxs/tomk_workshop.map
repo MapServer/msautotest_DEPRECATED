@@ -522,6 +522,9 @@ MAP
    # specify which fields to include when returning queries
    "gml_include_items" "all"
 
+   #For ID based lookups
+   "wfs_featureid"     "NAME"
+
   END
 
   # data is queryable
