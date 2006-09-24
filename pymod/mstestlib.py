@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.11  2006/09/24 04:03:28  frank
+# dont keep around matching images unless requested
+#
 # Revision 1.10  2006/08/28 22:03:41  frank
 # added exponent processing into RESULT_DEVERSION
 #
@@ -239,6 +242,7 @@ def run_tests( argv ):
     fail_count = 0
     succeed_count = 0
     init_count = 0
+    keep_pass = 0
     shp2img = 'shp2img' 
 
     ###########################################################################
@@ -247,6 +251,8 @@ def run_tests( argv ):
     for i in range(len(argv)):
         if argv[i] == '-shp2img':
             shp2img = argv[i+1]
+        if argv[i] == '-keep':
+            keep_pass = 1
     
     ###########################################################################
     # Create results directory if it does not already exist.
@@ -323,10 +329,13 @@ def run_tests( argv ):
             
             if cmp == 'match':
                 succeed_count = succeed_count + 1
-                os.remove( 'result/' + out_file )
+                if keep_pass == 0:
+                    os.remove( 'result/' + out_file )
                 print '     results match.'
             elif cmp ==  'files_differ_image_match':
                 succeed_count = succeed_count + 1
+                if keep_pass == 0:
+                    os.remove( 'result/' + out_file )
                 print '     result images match, though files differ.'
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
