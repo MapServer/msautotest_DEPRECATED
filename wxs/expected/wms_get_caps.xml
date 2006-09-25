@@ -1,7 +1,7 @@
 Content-type: application/vnd.ogc.wms_xml
 
 <?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
-<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/WMS_MS_Capabilities.dtd"
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengeospatial.net/wms/1.1.1/capabilities_1_1_1.dtd"
  [
  <!ELEMENT VendorSpecificCapabilities EMPTY>
  ]>  <!-- end of DOCTYPE declaration -->
