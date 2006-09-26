@@ -15,7 +15,7 @@ Content-type: text/xml
       	</gml:Box>
       </gml:boundedBy>
     <gml:featureMember>
-      <ms_ogc_workshop:rivers>
+      <ms_ogc_workshop:rivers fid="Great Bear">
         <gml:boundedBy>
         	<gml:Box srsName="EPSG:4326">
         		<gml:coordinates>-125.383850,64.878967 -117.252357,67.112030</gml:coordinates>
