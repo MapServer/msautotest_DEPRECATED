@@ -2,6 +2,7 @@ Content-type: text/xml
 
 <?xml version='1.0' encoding="ISO-8859-1" ?>
 <ms_ogc_workshop:msFeatureCollection
+   version="1.0.0"
    xmlns:ms_ogc_workshop="http://localhost/ms_ogc_workshop"
    xmlns:gml="http://www.opengis.net/gml"
    xmlns:ogc="http://www.opengis.net/ogc"
@@ -14,7 +15,7 @@ Content-type: text/xml
       	</gml:Envelope>
       </gml:boundedBy>
     <gml:featureMember>
-      <ms_ogc_workshop:rivers>
+      <ms_ogc_workshop:rivers gml:id="Great Bear">
         <gml:boundedBy>
         	<gml:Envelope srsName="EPSG:4326">
         		<gml:pos>-125.383850 64.878967</gml:pos>
