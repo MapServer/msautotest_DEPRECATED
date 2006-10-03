@@ -5,7 +5,7 @@
 #
 #Pattern 1 "%Y%m%d
 #
-# Note:  Pattern 1 "%Y%m%d"  : does not work (on windows at least) : problem with strptime (parsing of the year is done like this (line 408) ret = strtol (buf, &s, 10) (where buffer =20040101 so the return year is 20040101
+# Note:  Pattern 1 "%Y%m%d"  : does not work (on windows at least, MS970) : problem with strptime (parsing of the year is done like this (line 408) ret = strtol (buf, &s, 10) (where buffer =20040101 so the return year is 20040101
 #
 # Draw a layer by using single time value
 #
