@@ -5,23 +5,23 @@
 #
 #Pattern 1 "%Y%m%d
 #
-# Note:  Pattern 1 "%Y%m%d"  : does not work (on windows at least, MS970) : problem with strptime (parsing of the year is done like this (line 408) ret = strtol (buf, &s, 10) (where buffer =20040101 so the return year is 20040101
+# Note:  Pattern 1 "%Y%m%d"  : does not work (on windows at least, MS970 and MS1926) : problem with strptime (parsing of the year is done like this (line 408) ret = strtol (buf, &s, 10) (where buffer =20040101 so the return year is 20040101#)
 #
 # Draw a layer by using single time value
 #
-# RUN_PARMS: wms_time_pattern1a.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101" > [RESULT_DEMIME]
+# wms_time_pattern1a.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101" > [RESULT_DEMIME]
 #
-# Draw a layer by using multiple time values
+# Draw a layer by using multiple time values (See note above)
 #
-# RUN_PARMS: wms_time_pattern1b.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101,20040102" > [RESULT_DEMIME]
+# wms_time_pattern1b.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101,20040102" > [RESULT_DEMIME]
 #
-# Draw a layer by using a range time values
+# Draw a layer by using a range time values (See note above)
 #
-# RUN_PARMS: wms_time_pattern1c.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101/20040102" > [RESULT_DEMIME]
+# wms_time_pattern1c.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101/20040102" > [RESULT_DEMIME]
 #
-# Draw a layer by using multiple ranges time values
+# Draw a layer by using multiple ranges time values (See note above)
 #
-# RUN_PARMS: wms_time_pattern1d.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101/20040102,20040103/20040104" > [RESULT_DEMIME]
+# wms_time_pattern1d.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101/20040102,20040103/20040104" > [RESULT_DEMIME]
 #
 #Pattern2 : "%Y-%m-%dT%H:%M:%SZ"
 #
@@ -37,9 +37,9 @@
 #
 # RUN_PARMS: wms_time_pattern2c.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern2&Time=2004-01-01T14:10:00Z/2004-01-01T15:10:00Z" > [RESULT_DEMIME]
 #
-# Draw a layer by using multiple ranges time values
+# Draw a layer by using multiple ranges time values (See note above)
 #
-# RUN_PARMS: wms_time_pattern2d.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern2&Time=20040101/20040102,20040103/20040104" > [RESULT_DEMIME]
+# wms_time_pattern2d.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern2&Time=20040101/20040102,20040103/20040104" > [RESULT_DEMIME]
 #
 #Pattern3 : "%Y-%m-%dT%H:%M:%S"
 #
