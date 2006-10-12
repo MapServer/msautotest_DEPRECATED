@@ -21,7 +21,7 @@
 #
 # Draw a layer by using multiple ranges time values (See note above)
 #
-# RUN_PARMS: wms_time_pattern1d.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101/20040102,20040103/20040104" > [RESULT_DEMIME]
+# wms_time_pattern1d.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern1&Time=20040101/20040102,20040103/20040104" > [RESULT_DEMIME]
 #
 #Pattern2 : "%Y-%m-%dT%H:%M:%SZ"
 #
