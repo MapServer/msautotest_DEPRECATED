@@ -682,6 +682,10 @@ MAP
    
    # rangeset description
    "wcs_rangeset_description" "Bands for Landsat 5 TM"
+
+   # specify which fields to include when returning queries
+   "gml_include_items" "all"
+
   END
  END
 END
