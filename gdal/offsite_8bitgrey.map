@@ -1,0 +1,22 @@
+
+#
+# Test support for OFFSITE on simple greyscale (1 band, no colormap) inputs.
+# http://mapserver.gis.umn.edu/bugs/show_bug.cgi?id=2024
+#
+NAME TEST
+STATUS ON
+SIZE 200 150
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DATA data/grey.tif
+  OFFSITE 255 255 255
+END
+
+END # of map file
