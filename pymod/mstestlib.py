@@ -28,6 +28,9 @@
 ###############################################################################
 # 
 # $Log$
+# Revision 1.12  2007/04/25 13:46:02  frank
+# Remove obsolete argument from filecmp.cmp().
+#
 # Revision 1.11  2006/09/24 04:03:28  frank
 # dont keep around matching images unless requested
 #
@@ -110,7 +113,7 @@ def compare_result( filename ):
     except OSError:
         return 'noexpected'
 
-    if filecmp.cmp(expected_file,result_file,0,1):
+    if filecmp.cmp(expected_file,result_file,0):
         return 'match'
 
     try:
