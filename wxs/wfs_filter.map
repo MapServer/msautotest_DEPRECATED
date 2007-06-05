@@ -63,6 +63,9 @@
 # RUN_PARMS: wfs_filter_dwithin.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><DWithin><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>2587598.000000,404010.531250</gml:coordinates></gml:Point><Distance units='m'>1000</Distance></DWithin></Filter>" > [RESULT]
 #
 
+# Verify BEYOND
+# RUN_PARMS: wfs_filter_beyond.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><Beyond><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>2587598.000000,404010.531250</gml:coordinates></gml:Point><Distance units='m'>1000</Distance></Beyond></Filter>" > [RESULT]
+#
 
 NAME WFS_FILTER
 STATUS ON
