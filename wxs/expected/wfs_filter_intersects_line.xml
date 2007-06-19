@@ -1,0 +1,8 @@
+Content-type: text/xml
+
+<ServiceExceptionReport
+xmlns="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/ogc http://ogc.dmsolutions.ca/wms/1.1.1/OGC-exception.xsd">
+  <ServiceException>
+msWFSGetFeature(): WFS server error. Invalid or Unsupported FILTER in GetFeature : &lt;Filter&gt;&lt;Intersect&gt;&lt;PropertyName&gt;Geometry&lt;/PropertyName&gt;&lt;gml:Line&gt;&lt;gml:coordinates&gt;2338382.77,339580.61 2366578.03,262230.79&lt;/gml:coordinates&gt;&lt;/gml:Line&gt;&lt;/Intersect&gt;&lt;/Filter&gt;
+  </ServiceException>
+</ServiceExceptionReport>
