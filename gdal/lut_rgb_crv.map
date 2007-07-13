@@ -1,0 +1,21 @@
+
+#
+# Test GIMP curve file support: 3 curve. 
+#
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE PNG24
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DATA data/rgb.tif
+  PROCESSING "LUT=data/munich_rgb.crv"
+END
+
+END # of map file
