@@ -4,7 +4,7 @@
 # A joined field is used for the EXPRESSION used to classify the returned 
 # polygons.
 #   
-# REQUIRES: INPUT=OGR OUTPUT=PNG
+# REQUIRES: INPUT=OGR OUTPUT=PNG INPUT=SDE
 #
 
 STATUS ON
