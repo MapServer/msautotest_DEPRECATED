@@ -65,7 +65,8 @@ Content-type: text/xml
       </RangeSet>
     </rangeSet>
     <supportedCRSs>
-      <requestResponseCRSs>EPSG:32611 EPSG:4326</requestResponseCRSs>
+      <requestResponseCRSs>EPSG:32611</requestResponseCRSs>
+      <requestResponseCRSs>EPSG:4326</requestResponseCRSs>
       <nativeCRSs>EPSG:32611</nativeCRSs>
     </supportedCRSs>
     <supportedFormats nativeFormat="GeoTIFF">
