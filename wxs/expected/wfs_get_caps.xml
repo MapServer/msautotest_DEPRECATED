@@ -91,7 +91,14 @@ Content-type: text/xml
 <ogc:Filter_Capabilities>
   <ogc:Spatial_Capabilities>
     <ogc:Spatial_Operators>
+      <ogc:Equals/>
+      <ogc:Disjoint/>
+      <ogc:Touches/>
+      <ogc:Within/>
+      <ogc:Overlaps/>
+      <ogc:Crosses/>
       <ogc:Intersect/>
+      <ogc:Contains/>
       <ogc:DWithin/>
       <ogc:BBOX/>
     </ogc:Spatial_Operators>
