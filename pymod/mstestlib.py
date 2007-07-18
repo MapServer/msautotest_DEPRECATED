@@ -237,6 +237,32 @@ def fixexponent_file( filename ):
     return
 
 ###############################################################################
+# Do windows number of decimal truncation.
+
+def truncate_one_decimal( filename ):
+    import re
+    
+    data = open(filename,'rb').read()
+
+    numbers_found = re.compile('[0-9]+\.[0-9]{6}', re.M)
+
+    start = 0
+    new_data = ''
+    for number in numbers_found.finditer(data):
+        end = number.end() - 1
+        new_data = new_data + data[start:end] 
+        start = number.end()
+
+    if new_data != '':
+        new_data = new_data + data[start:] 
+
+
+    if new_data != '' and new_data != data:
+        open(filename,'wb').write(new_data)
+
+    return
+
+###############################################################################
 # run_tests()
 
 def run_tests( argv ):
@@ -327,6 +353,7 @@ def run_tests( argv ):
             if deversion:
                 deversion_file( 'result/'+out_file )
                 fixexponent_file( 'result/'+out_file )
+                truncate_one_decimal( 'result/'+out_file )
 
             cmp = compare_result( out_file )
             
