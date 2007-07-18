@@ -26,12 +26,6 @@
 #  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #  DEALINGS IN THE SOFTWARE.
 ###############################################################################
-# 
-# $Log$
-# Revision 1.1  2004/05/13 03:17:23  frank
-# New
-#
-#
 
 import sys
 import os

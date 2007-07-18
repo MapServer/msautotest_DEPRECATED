@@ -26,45 +26,6 @@
 #  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #  DEALINGS IN THE SOFTWARE.
 ###############################################################################
-# 
-# $Log$
-# Revision 1.12  2007/04/25 13:46:02  frank
-# Remove obsolete argument from filecmp.cmp().
-#
-# Revision 1.11  2006/09/24 04:03:28  frank
-# dont keep around matching images unless requested
-#
-# Revision 1.10  2006/08/28 22:03:41  frank
-# added exponent processing into RESULT_DEVERSION
-#
-# Revision 1.9  2006/08/25 17:34:02  frank
-# ensure demime and deversion use binary mode
-#
-# Revision 1.8  2006/08/25 17:06:38  frank
-# Small formatting change.
-#
-# Revision 1.7  2006/08/25 16:13:27  frank
-# Improve test failure reporting ... indicate file in multi test maps,
-# and highlight failures with '*' in column 0.
-#
-# Revision 1.6  2005/11/15 21:43:11  frank
-# added the option to pass mapfiles on the commandline
-#
-# Revision 1.5  2005/10/13 13:51:07  frank
-# Added 'deversion' support.
-#
-# Revision 1.4  2005/09/22 18:30:13  frank
-# added 'demime' support
-#
-# Revision 1.3  2004/11/15 22:12:04  frank
-# for failed matches, look at checksums too
-#
-# Revision 1.2  2004/05/14 04:06:38  frank
-# added -shp2img option.
-#
-# Revision 1.1  2003/03/05 15:28:58  frank
-# New
-#
 
 import sys
 import os
