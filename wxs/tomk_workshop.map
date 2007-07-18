@@ -420,6 +420,9 @@ MAP
    # sets /WMT_MS_Capabilities/Capability/Layer/*/DataURL/OnlineResource/@xlink:href
    "wms_dataurl_href" "http://earthobservatory.nasa.gov/Newsroom/BlueMarble/Images/land_shallow_topo_2048.tif"
 
+   #To expose the RGB values
+   "gml_include_items" "all"
+
    # OGC:WFS specific tags
    # None!  This is raster data, not covered by OGC:WFS
   END
