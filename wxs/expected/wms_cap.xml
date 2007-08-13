@@ -12,6 +12,8 @@ Content-type: application/vnd.ogc.wms_xml
   <Name>OGC:WMS</Name>
   <Title>Test simple wms</Title>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/>
+  <ContactInformation>
+  </ContactInformation>
 </Service>
 
 <Capability>
@@ -32,6 +34,7 @@ Content-type: application/vnd.ogc.wms_xml
       <Format>image/jpeg</Format>
       <Format>image/wbmp</Format>
       <Format>image/tiff</Format>
+      <Format>image/svg+xml</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
