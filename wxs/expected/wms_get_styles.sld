@@ -10,6 +10,7 @@ Content-type: application/vnd.ogc.sld+xml
 <LineSymbolizer>
 <Stroke>
 <CssParameter name="stroke">#0000ff</CssParameter>
+<CssParameter name="stroke-opacity">1.00</CssParameter>
 <CssParameter name="stroke-width">1</CssParameter>
 </Stroke>
 </LineSymbolizer>
