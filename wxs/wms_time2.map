@@ -8,7 +8,7 @@
 # Draw a layer by using time parameter set to null and a default time 
 # specified in the map
 #
-# RUN_PARMS: wms_time_default_value.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=pattern4&Time=" > [RESULT_DEMIME]
+# RUN_PARMS: wms_time_default_value.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-131,5,-68,68&FORMAT=image/png&WIDTH=400&HEIGHT=300&LAYERS=pattern4&STYLES=&Time=" > [RESULT_DEMIME]
 #
 
 NAME WMS_TIME_DEFAULT_VALUE
