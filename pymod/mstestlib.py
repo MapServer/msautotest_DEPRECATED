@@ -205,7 +205,7 @@ def truncate_one_decimal( filename ):
     
     data = open(filename,'rb').read()
 
-    numbers_found = re.compile('[0-9]+\.[0-9]{6}', re.M)
+    numbers_found = re.compile('[0-9]+\.[0-9]{18}', re.M)
 
     start = 0
     new_data = ''
