@@ -70,7 +70,8 @@ Content-type: text/xml
       <nativeCRSs>EPSG:32611</nativeCRSs>
     </supportedCRSs>
     <supportedFormats nativeFormat="GeoTIFF">
-      <formats>GEOTIFF_16 GDPNG</formats>
+      <formats>GEOTIFF_16</formats>
+      <formats>GDPNG</formats>
     </supportedFormats>
     <supportedInterpolations default="nearest neighbour">
       <interpolationMethod>nearest neighbor</interpolationMethod>
