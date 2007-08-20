@@ -12,6 +12,8 @@ Content-type: application/vnd.ogc.wms_xml
   <Name>OGC:WMS</Name>
   <Title>Test WMS time support</Title>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/mswms_time?"/>
+  <ContactInformation>
+  </ContactInformation>
   <Fees>none</Fees>
 </Service>
 
@@ -33,6 +35,7 @@ Content-type: application/vnd.ogc.wms_xml
       <Format>image/jpeg</Format>
       <Format>image/wbmp</Format>
       <Format>image/tiff</Format>
+      <Format>image/svg+xml</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/mswms_time?"/></Get>
