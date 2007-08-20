@@ -233,17 +233,20 @@ def run_tests( argv ):
     succeed_count = 0
     init_count = 0
     keep_pass = 0
+    valgrind = 0 
     shp2img = 'shp2img' 
 
     ###########################################################################
     # Process arguments.
-
+    
     for i in range(len(argv)):
         if argv[i] == '-shp2img':
             shp2img = argv[i+1]
         if argv[i] == '-keep':
             keep_pass = 1
-    
+        if argv[i] == '-valgrind':
+            valgrind = 1
+
     ###########################################################################
     # Create results directory if it does not already exist.
     if not os.path.exists("result"):
@@ -306,9 +309,11 @@ def run_tests( argv ):
             command = string.replace( command, '[MAPSERV]', 'mapserv' )
             command = string.replace( command, '[LEGEND]', 'legend' )
             command = string.replace( command, '[SCALEBAR]', 'scalebar' )
-
+            
+            if valgrind:
+                command = command.strip()
+                command = 'valgrind --tool=memcheck --leak-check=full %s 2>result/%s.txt'%(command, out_file+".vgrind.txt")
             os.system( command )
-
             if demime:
                 demime_file( 'result/'+out_file )
             if deversion:
