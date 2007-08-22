@@ -61,28 +61,6 @@ Content-type: application/vnd.ogc.wms_xml
         </HTTP>
       </DCPType>
     </DescribeLayer>
-    <GetLegendGraphic>
-      <Format>image/png</Format>
-      <Format>image/gif</Format>
-      <Format>image/png; mode=24bit</Format>
-      <Format>image/jpeg</Format>
-      <Format>image/wbmp</Format>
-      <DCPType>
-        <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
-        </HTTP>
-      </DCPType>
-    </GetLegendGraphic>
-    <GetStyles>
-      <Format>text/xml</Format>
-      <DCPType>
-        <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
-        </HTTP>
-      </DCPType>
-    </GetStyles>
   </Request>
   <Exception>
     <Format>application/vnd.ogc.se_xml</Format>
