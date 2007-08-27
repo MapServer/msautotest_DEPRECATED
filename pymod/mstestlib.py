@@ -205,7 +205,7 @@ def truncate_one_decimal( filename ):
     
     data = open(filename,'rb').read()
 
-    numbers_found = re.compile('[0-9]+\.[0-9]{18}', re.M)
+    numbers_found = re.compile('[0-9]+\.[0-9]{6,24}', re.M)
 
     start = 0
     new_data = ''
@@ -222,7 +222,21 @@ def truncate_one_decimal( filename ):
         open(filename,'wb').write(new_data)
 
     return
+###############################################################################
+# Replace CR+LF by CR
 
+def crlf( filename ):
+      data = open(filename, "rb").read()
+
+      #This is a binary file
+      if '\0' in data:
+          return
+      
+      newdata = data.replace("\r\n", "\n")
+      if newdata != data:
+          f = open(filename, "wb")
+          f.write(newdata)
+          f.close() 
 ###############################################################################
 # run_tests()
 
@@ -320,7 +334,8 @@ def run_tests( argv ):
                 deversion_file( 'result/'+out_file )
                 fixexponent_file( 'result/'+out_file )
                 truncate_one_decimal( 'result/'+out_file )
-
+                
+            crlf('result/'+out_file)
             cmp = compare_result( out_file )
             
             if cmp == 'match':
