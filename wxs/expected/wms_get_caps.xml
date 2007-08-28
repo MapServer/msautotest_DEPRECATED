@@ -149,7 +149,7 @@ Content-type: application/vnd.ogc.wms_xml
         <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90" />
         <BoundingBox SRS="EPSG:4326"
                     minx="-180" miny="-90" maxx="180" maxy="90"
-                    resx="0.1757825" resy="0.1757825" />
+                    resx="0.17578125" resy="0.17578125" />
         <MetadataURL type="FGDC">
           <Format>text/html</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://earthobservatory.nasa.gov/Newsroom/BlueMarble/"/>
