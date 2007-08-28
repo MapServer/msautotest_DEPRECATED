@@ -71,7 +71,7 @@ IMAGECOLOR 255 255 255
 SHAPEPATH ./data
 SYMBOLSET etc/symbols.sym
 FONTSET etc/fonts.txt
-
+CONFIG "PROJ_LIB" "./data/"
 
 OUTPUTFORMAT
   NAME GDPNG
@@ -99,7 +99,7 @@ WEB
 END
 
 PROJECTION
-  "init=./data/epsg2:42304"
+  "init=epsg2:42304"
 #  "init=epsg:42304"
 END
 
@@ -121,7 +121,7 @@ LAYER
   TYPE POINT
   STATUS ON
   PROJECTION
-  "init=./data/epsg2:42304"
+  "init=epsg2:42304"
 #    "init=epsg:42304"
   END
 
@@ -147,7 +147,7 @@ LAYER
   TYPE POINT
   STATUS ON
   PROJECTION
-  "init=./data/epsg2:42304"
+  "init=epsg2:42304"
 #    "init=epsg:42304"
   END
 
@@ -184,7 +184,7 @@ LAYER
   TYPE LINE
   STATUS ON
   PROJECTION
-  "init=./data/epsg2:42304"
+  "init=epsg2:42304"
 #    "init=epsg:42304"
   END
 
