@@ -73,7 +73,7 @@
 # RUN_PARMS: wfs_filter_overlaps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=province&FILTER=<Filter><Overlaps><PropertyName>Geometry</PropertyName><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>2229029.24,261981.27 2363767.62,261981.27 2363767.62,360789.41 2229029.24,360789.41</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></Overlaps></Filter>" > [RESULT]
 
 
-# Verify WITHIN Results:  Quebes, Iles de la Madeleine (3 islands)
+# Verify WITHIN Results:  Quebec, Iles de la Madeleine (3 islands)
 # RUN_PARMS: wfs_filter_within.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=province&FILTER=<Filter><Within><PropertyName>Geometry</PropertyName><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>2364765.68,430653.76 2450599.02,430653.76 2450599.02,505508.41 2364765.68,505508.41</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></Within></Filter>" > [RESULT]
 
 # Verify CONTAINS Result:  Quebec, Iles de la Madeleine
