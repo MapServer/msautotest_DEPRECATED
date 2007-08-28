@@ -71,8 +71,8 @@ Content-type: text/xml
   <name>grey</name>
   <label>Test label</label>
     <lonLatEnvelope srsName="WGS84(DD)">
-      <gml:pos>-121.488743889689 0</gml:pos>
-      <gml:pos>-121.485160277178 0.00270582611334856</gml:pos>
+      <gml:pos>-121.48874388968 0</gml:pos>
+      <gml:pos>-121.48516027717 0.0027058261133485</gml:pos>
     </lonLatEnvelope>
   <keywords>
     <keyword>test</keyword>
