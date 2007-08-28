@@ -93,8 +93,8 @@ Content-type: text/xml
   <name>toronto</name>
   <label>Landsat 5 TM - Toronto</label>
     <lonLatEnvelope srsName="WGS84(DD)">
-      <gml:pos>-81.5452675343945 42.7135512181083</gml:pos>
-      <gml:pos>-78.3874252671819 44.7672915258482</gml:pos>
+      <gml:pos>-81.545267534394 42.713551218108</gml:pos>
+      <gml:pos>-78.387425267181 44.767291525848</gml:pos>
     </lonLatEnvelope>
   <keywords>
     <keyword>landsat</keyword>
