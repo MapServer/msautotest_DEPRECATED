@@ -49,7 +49,7 @@
 # RUN_PARMS: wfs_describe_feature_type_gml2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=DescribeFeatureType" > [RESULT]
 #
 # Generate WFS DescribeFeatureType GML3L0 app schema
-# RUN_PARMS: wfs_describe_feature_type_gml3l0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=DescrbieFeatureType&outputFormat=SFE_XMLSCHEMA" > [RESULT]
+# RUN_PARMS: wfs_describe_feature_type_gml3l0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=DescribeFeatureType&outputFormat=SFE_XMLSCHEMA" > [RESULT]
 #
 # Generate WFS GetFeature GML2
 # RUN_PARMS: wfs_get_feature_gml2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.0.0&service=WFS&request=GetFeature&typename=rivers&filter=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3ENAME%3C/PropertyName%3E%3CLiteral%3EGreat%20Bear%3C/Literal%3E%3C/PropertyIsEqualTo%3E%3C/Filter%3E&outputFormat=GML2" > [RESULT]
