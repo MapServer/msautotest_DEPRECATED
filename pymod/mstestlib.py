@@ -31,6 +31,8 @@ import sys
 import os
 import string
 
+have_pdiff = None
+
 ###############################################################################
 # get_mapfile_list()
 
@@ -77,6 +79,9 @@ def compare_result( filename ):
     if filecmp.cmp(expected_file,result_file,0):
         return 'match'
 
+    ###################################################################
+    # Check image checksums with GDAL if it is available.
+    
     try:
 	import gdal
         gdal.PushErrorHandler()
@@ -86,18 +91,49 @@ def compare_result( filename ):
             return 'nomatch'
         
 	res_ds = gdal.Open( result_file )
-        
+
+        match = 1
 	for band_num in range(1,exp_ds.RasterCount+1):
 	    if res_ds.GetRasterBand(band_num).Checksum() != \
                 exp_ds.GetRasterBand(band_num).Checksum():
-		return 'nomatch'
-	return 'files_differ_image_match'
+		match = 0
 
+        if match == 1:
+            return 'files_differ_image_match'
     except:
-        return 'nomatch'
-    
-    return 'match'
+        pass
 
+    ###################################################################
+    # Test with perceptualdiff.  If we discover we don't have it, then
+    # set have_pdiff to 'false' so we will know.
+    
+    global have_pdiff
+
+    if have_pdiff != 'false':
+    
+        try:
+            cmd = 'perceptualdiff %s %s > pd.out' % (result_file,expected_file)
+            os.system( cmd )
+            pdout = open('pd.out').read()
+            os.remove( 'pd.out' )
+            
+            if string.find(pdout,'PASS:') != -1 \
+               and string.find(pdout,'binary identical'):
+                return 'files_differ_image_match'
+        
+            if string.find(pdout,'PASS:') != -1 \
+               and string.find(pdout,'indistinguishable'):
+                return 'files_differ_image_nearly_match'
+
+            if string.find(pdout,'PASS:') == -1 \
+               and string.find(pdout,'FAIL:') == -1:
+                have_pdiff = 'false'
+
+        except:
+            pass
+        
+    return 'nomatch'
+    
 ###############################################################################
 # has_requires()
 
@@ -348,6 +384,11 @@ def run_tests( argv ):
                 if keep_pass == 0:
                     os.remove( 'result/' + out_file )
                 print '     result images match, though files differ.'
+            elif cmp ==  'files_differ_image_nearly_match':
+                succeed_count = succeed_count + 1
+                if keep_pass == 0:
+                    os.remove( 'result/' + out_file )
+                print '     result images perceptually match, though files differ.'
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
                 print '*    results dont match, TEST FAILED.'
