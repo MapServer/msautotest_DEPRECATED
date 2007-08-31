@@ -118,11 +118,11 @@ def compare_result( filename ):
             os.remove( 'pd.out' )
             
             if string.find(pdout,'PASS:') != -1 \
-               and string.find(pdout,'binary identical'):
+               and string.find(pdout,'binary identical') != -1:
                 return 'files_differ_image_match'
         
             if string.find(pdout,'PASS:') != -1 \
-               and string.find(pdout,'indistinguishable'):
+               and string.find(pdout,'indistinguishable') != -1:
                 return 'files_differ_image_nearly_match'
 
             if string.find(pdout,'PASS:') == -1 \
