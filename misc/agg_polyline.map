@@ -1,5 +1,5 @@
 #
-# Simple AGG polygon rendering test.
+# AGG polyline rendering test (thick, fine and dashed)
 #   
 # REQUIRES: OUTPUT=PNG SUPPORTS=AGG
 #

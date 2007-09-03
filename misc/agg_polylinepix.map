@@ -1,5 +1,5 @@
 #
-# Simple AGG polygon rendering test.
+# pixmap-brushed polyline AGG rendering test 
 #   
 # REQUIRES: OUTPUT=PNG SUPPORTS=AGG
 #
