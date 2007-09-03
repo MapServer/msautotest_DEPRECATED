@@ -7,8 +7,13 @@
 STATUS ON
 EXTENT 478300 4762880 481650 4765610
 SIZE 400 300
-SYMBOLSET "symbols.sym"
 IMAGETYPE aggpng24
+
+SYMBOL
+  NAME "linebrush"
+  TYPE PIXMAP
+  IMAGE "data/linemarker.png"
+END
 
 LAYER
   NAME shppoly

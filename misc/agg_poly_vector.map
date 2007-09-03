@@ -1,5 +1,5 @@
 #
-# pixmap-textured AGG polygon rendering test.
+# vector-textured AGG polygon rendering test.
 #   
 # REQUIRES: OUTPUT=PNG SUPPORTS=AGG
 #
@@ -10,9 +10,15 @@ SIZE 400 300
 IMAGETYPE aggpng24
 
 SYMBOL
-  NAME "marker"
-  TYPE PIXMAP
-  IMAGE "data/linemarker.png"
+  TYPE VECTOR
+  NAME 'tent'
+  FILLED FALSE
+  POINTS
+    0 1
+    0.5 0
+    1 1
+  END
+  GAP 1
 END
 
 LAYER
@@ -22,10 +28,13 @@ LAYER
   STATUS default
   CLASSITEM "AREA"
   CLASS
-    SYMBOL "marker"
-    NAME "test1"
-    COLOR 0 255 0
-    OUTLINECOLOR 255 0 0
+    STYLE
+      SYMBOL "tent"
+      COLOR 0 255 0
+      WIDTH 2
+      SIZE 8
+      ANGLE 38
+    END
   END
 END
 
