@@ -1,0 +1,27 @@
+#
+# Simple AGG polygon rendering test.
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+
+STATUS ON
+EXTENT 478300 4762880 481650 4765610
+SIZE 400 300
+SYMBOLSET "symbols.sym"
+IMAGETYPE aggpng24
+
+LAYER
+  NAME shppoly
+  TYPE polygon
+  DATA "data/shppoly/poly.shp"
+  STATUS default
+  CLASSITEM "AREA"
+  CLASS
+    SYMBOL "marker"
+    NAME "test1"
+    COLOR 0 255 0
+    OUTLINECOLOR 255 0 0
+  END
+END
+
+END
