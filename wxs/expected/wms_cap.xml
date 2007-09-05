@@ -74,6 +74,8 @@ Content-type: application/vnd.ogc.wms_xml
     <Title>Test simple wms</Title>
     <SRS>EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326</SRS>
     <LatLonBoundingBox minx="-69.3381" miny="38.6757" maxx="-50.1471" maxy="50.514" />
+    <BoundingBox SRS="EPSG:4326"
+                minx="-69.3381" miny="38.6757" maxx="-50.1471" maxy="50.514" />
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>road</Name>
         <Title>road</Title>
