@@ -21,7 +21,7 @@ NAME WFS_TEST
 STATUS ON
 SIZE 400 300
 #EXTENT   2018000 -73300 3410396 647400
-EXTENT -66.42 43.40 -59.80 47.28
+EXTENT -69.3381 38.6757 -50.1471 50.514
 UNITS METERS
 IMAGECOLOR 255 255 255
 SHAPEPATH ./data
@@ -49,13 +49,13 @@ WEB
   METADATA
     "wfs_title"		   "Test simple wfs"
     "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?"
-    "wfs_srs"		   "EPSG:4269 EPSG:4326"
+    "wfs_srs"		   "EPSG:4326 EPSG:4269"
     "ows_schemas_location" "http://ogc.dmsolutions.ca"
   END
 END
 
 PROJECTION
-  "init=epsg:4269"
+  "init=epsg:4326"
 END
 
 
