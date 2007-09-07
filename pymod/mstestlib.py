@@ -70,7 +70,7 @@ def compare_result( filename ):
         result_stat = os.stat( result_file )
     except OSError:
         return 'noresult'
-    
+
     try:
         expected_stat = os.stat( expected_file )
     except OSError:
@@ -109,10 +109,16 @@ def compare_result( filename ):
     
     global have_pdiff
 
-    if have_pdiff != 'false':
-    
+    result = open(result_file, "rb").read()
+
+    #If PerceptualDiff is installed and this is an image file
+    if have_pdiff != 'false' and \
+       ('\x49\x49\x2A\x00' in result \
+       or '\x49\x49\x00\x2A' in result \
+       or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result):
+
         try:
-            cmd = 'perceptualdiff %s %s > pd.out' % (result_file,expected_file)
+            cmd = 'perceptualdiff %s %s > pd.out 2>/dev/null' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
@@ -262,17 +268,22 @@ def truncate_one_decimal( filename ):
 # Replace CR+LF by CR
 
 def crlf( filename ):
-      data = open(filename, "rb").read()
+    
+    try:
+        file_stat = os.stat( filename )
+    except OSError:
+        return
+    data = open(filename, "rb").read()
 
-      #This is a binary file
-      if '\0' in data:
-          return
+    #This is a binary file
+    if '\0' in data:
+        return
       
-      newdata = data.replace("\r\n", "\n")
-      if newdata != data:
-          f = open(filename, "wb")
-          f.write(newdata)
-          f.close() 
+    newdata = data.replace("\r\n", "\n")
+    if newdata != data:
+        f = open(filename, "wb")
+        f.write(newdata)
+        f.close() 
 ###############################################################################
 # run_tests()
 
