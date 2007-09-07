@@ -118,10 +118,11 @@ def compare_result( filename ):
        or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result):
 
         try:
-            cmd = 'perceptualdiff %s %s > pd.out 2>/dev/null' % (result_file,expected_file)
+            cmd = 'perceptualdiff %s %s > pd.out 2>pd.err' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
+            os.remove( 'pd.err' )
             
             if string.find(pdout,'PASS:') != -1 \
                and string.find(pdout,'binary identical') != -1:
