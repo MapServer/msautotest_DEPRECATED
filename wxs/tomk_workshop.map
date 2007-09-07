@@ -43,7 +43,7 @@
 #
 #
 # Generate WFS Capabilities
- # RUN_PARMS: wfs_get_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_get_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
 #
 # Generate WFS DescribeFeatureType GML2 app schema
 # RUN_PARMS: wfs_describe_feature_type_gml2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WFS&version=1.0.0&request=DescribeFeatureType" > [RESULT]
