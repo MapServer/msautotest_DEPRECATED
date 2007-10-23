@@ -33,7 +33,7 @@ Content-type: application/vnd.ogc.wms_xml
       <Format>image/gif</Format>
       <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
-      <Format>image/wbmp</Format>
+      <Format>image/vnd.wap.wbmp</Format>
       <Format>image/tiff</Format>
       <Format>image/svg+xml</Format>
       <DCPType>
