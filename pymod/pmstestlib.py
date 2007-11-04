@@ -30,6 +30,9 @@
 import sys
 import os
 import string
+from testlib import *
+
+keep_pass = 0
 
 success_counter = 0
 failure_counter = 0
@@ -37,6 +40,8 @@ blow_counter = 0
 skip_counter = 0
 
 reason = None
+
+post_test_msg = None
 
 def setup_run( name ):
     global success_counter, failure_counter, blow_counter, skip_counter
@@ -46,7 +51,7 @@ def setup_run( name ):
 
 def run_tests( test_list ):
     global success_counter, failure_counter, blow_counter, skip_counter
-    global cur_name, reason
+    global cur_name, reason, post_test_msg
 
     for test_item in test_list:
         if test_item is None:
@@ -76,6 +81,10 @@ def run_tests( test_list ):
 
         if reason is not None:
             print '    ' + reason
+
+        if post_test_msg is not None:
+            print post_test_msg
+            post_test_msg = None
 
         if result == 'success':
             success_counter = success_counter + 1
@@ -125,8 +134,8 @@ def check_items( layer, shape_obj, nv_list ):
             return 0
 
     return 1
-            
-    
+
+          
 ###############################################################################
 
 def run_all( dirlist, option_list = [] ):
@@ -177,3 +186,49 @@ def run_all( dirlist, option_list = [] ):
         # to load the tool files.
         sys.path = old_path
 
+
+###############################################################################
+#
+
+def compare_and_report( out_file ):
+
+    global post_test_msg
+    
+    cmp = compare_result( out_file )
+    
+    if cmp == 'match':
+        if keep_pass == 0:
+            os.remove( 'result/' + out_file )
+        post_test_msg = '     results match.'
+        return 'success'
+        
+    elif cmp ==  'files_differ_image_match':
+        if keep_pass == 0:
+            os.remove( 'result/' + out_file )
+        post_test_msg = '     result images match, though files differ.'
+        return 'success'
+        
+    elif cmp ==  'files_differ_image_nearly_match':
+        if keep_pass == 0:
+            os.remove( 'result/' + out_file )
+        post_test_msg = '     result images perceptually match, though files differ.'
+        return 'success'
+
+    elif cmp ==  'nomatch':
+        post_test_msg = '*    results dont match, TEST FAILED.'
+        return 'fail'
+        
+    elif cmp == 'noresult':
+        post_test_msg = '*    no result file generated, TEST FAILED.'
+        return 'fail'
+    
+    elif cmp == 'noexpected':
+        post_test_msg = '     no expected file exists, accepting result as expected.'
+        os.rename( 'result/' + out_file, 'expected/' + out_file )
+        return 'skip'
+
+    else:
+        post_test_msg = 'unexpected cmp value: ' + cmp
+        return 'fail'
+    
+    
