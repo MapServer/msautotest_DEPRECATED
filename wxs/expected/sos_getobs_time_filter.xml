@@ -1,0 +1,77 @@
+Content-type: text/xml
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<om:ObservationCollection xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows" xmlns:swe="http://www.opengis.net/swe" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:om="http://www.opengis.net/om" gml:id="Water" xsi:schemaLocation="http://www.opengis.net/om http://schemas.opengis.net/om/1.0.0/om.xsd">
+  <gml:description xmlns:gml="http://www.opengis.net/gml">This is for water</gml:description>
+  <gml:name xmlns:gml="http://www.opengis.net/gml">Water</gml:name>
+  <gml:boundedBy>
+    <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
+      <gml:lowerCorner>-141 42</gml:lowerCorner>
+      <gml:upperCorner>-52 84</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+  <om:samplingTime>
+    <gml:TimePeriod>
+      <gml:beginPosition>1990</gml:beginPosition>
+      <gml:endPosition>2007</gml:endPosition>
+    </gml:TimePeriod>
+  </om:samplingTime>
+  <om:member>
+    <om:Observation>
+      <om:samplingTime>
+        <gml:TimeInstant>
+          <gml:timePosition>2002-10-30T18:31:38Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:samplingTime>
+      <om:procedure xlink:href="urn:ogc:def:procedure:35"/>
+      <observedProperty>WaterQuality</observedProperty>
+      <om:result>
+        <gml:featureMember xmlns:gml="http://www.opengis.net/gml" gml:id="377">
+          <obs>
+            <gml:boundedBy>
+              <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
+                <gml:lowerCorner>-75 45</gml:lowerCorner>
+                <gml:upperCorner>-75 45</gml:upperCorner>
+              </gml:Envelope>
+            </gml:boundedBy>
+            <msGeometry>
+              <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
+                <gml:pos>-75 45</gml:pos>
+              </gml:Point>
+            </msGeometry>
+            <Value>93.9</Value>
+          </obs>
+        </gml:featureMember>
+      </om:result>
+    </om:Observation>
+  </om:member>
+  <om:member>
+    <om:Observation>
+      <om:samplingTime>
+        <gml:TimeInstant>
+          <gml:timePosition>2000-10-30T18:24:39Z</gml:timePosition>
+        </gml:TimeInstant>
+      </om:samplingTime>
+      <om:procedure xlink:href="urn:ogc:def:procedure:604"/>
+      <observedProperty>WaterQuality</observedProperty>
+      <om:result>
+        <gml:featureMember xmlns:gml="http://www.opengis.net/gml" gml:id="964">
+          <obs>
+            <gml:boundedBy>
+              <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
+                <gml:lowerCorner>-122 49</gml:lowerCorner>
+                <gml:upperCorner>-122 49</gml:upperCorner>
+              </gml:Envelope>
+            </gml:boundedBy>
+            <msGeometry>
+              <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
+                <gml:pos>-122 49</gml:pos>
+              </gml:Point>
+            </msGeometry>
+            <Value>99.9</Value>
+          </obs>
+        </gml:featureMember>
+      </om:result>
+    </om:Observation>
+  </om:member>
+</om:ObservationCollection>

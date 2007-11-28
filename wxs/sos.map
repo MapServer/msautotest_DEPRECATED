@@ -1,0 +1,118 @@
+#
+# Test SOS
+#
+# REQUIRES: INPUT=OGR SUPPORTS=PROJ SUPPORTS=SOS_SERVER
+#
+# Capabilities
+# RUN_PARMS: sos_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
+#
+# DescribeSensor
+# RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&sensorId=35&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
+#
+# GetObservation (all observations)
+# RUN_PARMS: sos_getobs_all.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality" > [RESULT]
+#
+# GetObservation (DataBlock format)
+# RUN_PARMS: sos_getobs_datablock.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&resultModel=om:Observation" > [RESULT]
+#
+# GetObservation (filter by procedure)
+# RUN_PARMS: sos_getobs_proc.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&procedure=2147" > [RESULT]
+#
+# GetObservation (filter by PropertyIsEqualTo)
+# RUN_PARMS: sos_getobs_filter.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsEqualTo><PropertyName>value</PropertyName><Literal>103.5</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# 
+# GetObservation (eventTime)
+# RUN_PARMS: sos_getobs_time.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>" > [RESULT]
+#
+# GetObservation (featureOfInterest)
+# RUN_PARMS: sos_getobs_foi.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&featureOfInterest=<gml:Envelope><gml:lowerCorner srsName="EPSG:4326">-76 44</gml:lowerCorner><gml:upperCorner srsName="EPSG:4326">-64 47</gml:upperCorner></gml:Envelope>" > [RESULT]
+#
+# GetObservation (time and filter)
+# RUN_PARMS: sos_getobs_time_filter.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsGreaterThan><PropertyName>value</PropertyName><Literal>89.9</Literal></PropertyIsGreaterThan></Filter>&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>" > [RESULT]
+
+MAP
+ NAME sostest
+ IMAGETYPE PNG
+ STATUS ON
+ DEBUG ON
+ EXTENT -141.089000 36.392987 -52.089000 89.784987 # Canada
+ SIZE 500 300
+ SYMBOLSET "./etc/symbols.sym"
+ FONTSET   "./etc/fonts.txt"
+ IMAGECOLOR 125 125 125
+ PROJECTION
+  "init=epsg:4326"
+ END
+ DEBUG ON
+ TRANSPARENT ON
+ WEB
+  HEADER "templates/query_header.html"
+  FOOTER "templates/query_footer.html"
+  IMAGEPATH "./tmp"
+  IMAGEURL  "/ms_tmp"
+  METADATA
+   # OWS common metadata
+   "ows_title"    "Test SOS Title"
+   "ows_abstract"    "Test SOS Abstract"
+   "ows_keywordlist" "ogc,sos,sensorml,om"
+   "ows_service_onlineresource" "http://localhost"
+   "ows_onlineresource"    "http://localhost/cgi-bin/sostest"
+   "ows_fees" "none"
+   "ows_accessconstraints" "none"
+   "ows_addresstype" "postal"
+   "ows_address"     "123 SomeRoad Road"
+   "ows_city" "Toronto"
+   "ows_stateorprovince" "Ontario"
+   "ows_postcode" "xxx-xxx"
+   "ows_country" "Canada"
+   "ows_contactelectronicmailaddress" "tomkralidis@xxxxxxx.xxx"
+   "ows_contactvoicetelephone" "+xx-xxx-xxx-xxxx"
+   "ows_contactfacsimiletelephone" "+xx-xxx-xxx-xxxx"
+   "ows_contactperson" "Tom Kralidis"
+   "ows_contactorganization" "MapServer"
+   "ows_contactposition" "self"
+   "ows_hoursofservice" "0800h - 1600h EST"
+   "ows_contactinstructions" "during hours of service"
+   "ows_role" "staff"
+   # OGC:WMS
+   "ows_maxfeatures" "90210"
+   END
+ END
+ LAYER
+  NAME obs
+  DEBUG ON
+  TYPE POINT
+  STATUS ON
+  DUMP TRUE
+  DATA "./data/obs.shp"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    NAME "obs"
+    COLOR 255 0 0
+    SIZE 10
+  END
+  METADATA
+   "sos_offering_id" "Water" # mandatory to tie layers to groups
+   "sos_offering_name" "Water"
+   "sos_offering_description" "This is for water"
+   "sos_offering_extent" "-141,42,-52,84"
+   "sos_offering_timeextent" "1990/2007"   
+   "sos_offering_intendedapplication" "for SOS demos"   
+   "ows_srs" "EPSG:4326"  
+   "sos_observedproperty_id" "WaterQuality"
+   "sos_observedproperty_name" "WaterQuality"
+   "sos_value_alias" "Value"
+   "sos_value_componenturl" "http://localhost/sos#value"
+   "sos_value_definition" "mydef"
+   "sos_value_uom" "meters"
+   "ows_timeitem" "datetime"
+   "sos_procedure"  "35 2147 604"
+   "sos_procedure_item"  "stn_id"
+   "sos_describesensor_url" "http://localhost/sml/%procedure%.xml"
+   "gml_featureid" "id"
+   "gml_include_items" "all"
+  END
+ END    
+END
