@@ -4,9 +4,29 @@
 # REQUIRES: INPUT=OGR SUPPORTS=PROJ SUPPORTS=SOS_SERVER
 #
 # Capabilities
+#
+#  Exceptions
+#
+# RUN_PARMS: sos_se0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS" > [RESULT]
+# RUN_PARMS: sos_se1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0" > [RESULT]
+# RUN_PARMS: sos_se2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=FOO" > [RESULT]
+# RUN_PARMS: sos_se3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.3.0&request=GetCapabilities" > [RESULT]
+#
+#  Valid
+#
 # RUN_PARMS: sos_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
 #
 # DescribeSensor
+#
+#  Exceptions
+#
+# RUN_PARMS: sos_se4.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor" > [RESULT]
+# RUN_PARMS: sos_se5.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&sensorid=2147" > [RESULT]
+# RUN_PARMS: sos_se6.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&sensorid=2147&outputFormat=XML" > [RESULT]
+# RUN_PARMS: sos_se7.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&sensorid=20147&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
+#
+#  Valid
+#
 # RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&sensorId=35&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
 #
 # GetObservation (all observations)
