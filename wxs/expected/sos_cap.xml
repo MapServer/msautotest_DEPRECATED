@@ -141,7 +141,7 @@ Content-type: text/xml
       </ogc:Comparison_Operators>
     </ogc:Scalar_Capabilities>
   </ogc:Filter_Capabilities>
-  <sos:Content>
+  <sos:Contents>
     <sos:ObservationOfferingList>
       <sos:ObservationOffering gml:id="Water">
         <gml:description>This is for water</gml:description>
@@ -181,5 +181,5 @@ Content-type: text/xml
         <sos:responseMode>inline</sos:responseMode>
       </sos:ObservationOffering>
     </sos:ObservationOfferingList>
-  </sos:Content>
+  </sos:Contents>
 </sos:Capabilities>
