@@ -1,7 +1,7 @@
 Content-type: text/xml
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<sos:Capabilities xmlns:gml="http://www.opengis.net/gml" xmlns:om="http://www.opengis.net/om" xmlns:ows="http://www.opengis.net/ows" xmlns:swe="http://www.opengis.net/swe" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sos="http://www.opengis.net/sos/1.0" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
+<sos:Capabilities xmlns:gml="http://www.opengis.net/gml" xmlns:om="http://www.opengis.net/om" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sos="http://www.opengis.net/sos/1.0" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
   <ows:ServiceIdentification>
     <ows:Title>Test SOS Title</ows:Title>
     <ows:Abstract>Test SOS Abstract</ows:Abstract>
@@ -50,10 +50,14 @@ Content-type: text/xml
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
-        <ows:Value>SOS</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>SOS</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="version">
-        <ows:Value>1.0.0</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
     </ows:Operation>
     <ows:Operation name="DescribeSensor">
@@ -63,16 +67,24 @@ Content-type: text/xml
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
-        <ows:Value>SOS</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>SOS</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="version">
-        <ows:Value>1.0.0</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="sensorid">
-        <ows:Value>urn:ogc:object:procedure</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>urn:ogc:object:procedure</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="outputFormat">
-        <ows:Value>text/xml; subtype=sensorML/1.0.0</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>text/xml; subtype=sensorML/1.0.0</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
     </ows:Operation>
     <ows:Operation name="GetObservation">
@@ -82,70 +94,116 @@ Content-type: text/xml
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
-        <ows:Value>SOS</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>SOS</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="version">
-        <ows:Value>1.0.0</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="offering">
-        <ows:Value>urn:ogc:object:offering</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>urn:ogc:object:offering</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="observedproperty">
-        <ows:Value>urn:ogc:object:observedproperty</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>urn:ogc:object:observedproperty</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="eventtime">
-        <ows:Value>sos:time</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>sos:time</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="procedure">
-        <ows:Value>urn:ogc:object:sensor</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>urn:ogc:object:sensor</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="featureofinterest">
-        <ows:Value>gml:location</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>gml:location</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="result">
-        <ows:Value>ogc:Filter</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>ogc:Filter</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="responseFormat">
-        <ows:Value>text/xml; subtype=om/1.0.0</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>text/xml; subtype=om/1.0.0</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="resultModel">
-        <ows:Value>Observation</ows:Value>
-        <ows:Value>Measurement</ows:Value>
+        <ows:AllowedValues>
+          <ows:Value>Observation</ows:Value>
+          <ows:Value>Measurement</ows:Value>
+        </ows:AllowedValues>
       </ows:Parameter>
     </ows:Operation>
     <ows:Constraint name="DefaultMaxFeatures">
-      <ows:Value>90210</ows:Value>
+      <ows:AllowedValues>
+        <ows:Value>90210</ows:Value>
+      </ows:AllowedValues>
     </ows:Constraint>
   </ows:OperationsMetadata>
-  <ogc:Filter_Capabilities>
+  <sos:Filter_Capabilities>
     <ogc:Spatial_Capabilities>
-      <ogc:Spatial_Operators>
-        <ogc:Equals/>
-        <ogc:Disjoint/>
-        <ogc:Touches/>
-        <ogc:Within/>
-        <ogc:Overlaps/>
-        <ogc:Crosses/>
-        <ogc:Intersect/>
-        <ogc:Contains/>
-        <ogc:DWithin/>
-        <ogc:BBOX/>
-      </ogc:Spatial_Operators>
+      <ogc:GeometryOperands>
+        <ogc:GeometryOperand>gml:Point</ogc:GeometryOperand>
+        <ogc:GeometryOperand>gml:LineString</ogc:GeometryOperand>
+        <ogc:GeometryOperand>gml:Polygon</ogc:GeometryOperand>
+        <ogc:GeometryOperand>gml:Envelope</ogc:GeometryOperand>
+      </ogc:GeometryOperands>
+      <ogc:SpatialOperators>
+        <ogc:SpatialOperator name="Equals"/>
+        <ogc:SpatialOperator name="Disjoint"/>
+        <ogc:SpatialOperator name="Touches"/>
+        <ogc:SpatialOperator name="Within"/>
+        <ogc:SpatialOperator name="Overlaps"/>
+        <ogc:SpatialOperator name="Crosses"/>
+        <ogc:SpatialOperator name="Intersects"/>
+        <ogc:SpatialOperator name="Contains"/>
+        <ogc:SpatialOperator name="DWithin"/>
+        <ogc:SpatialOperator name="BBOX"/>
+      </ogc:SpatialOperators>
     </ogc:Spatial_Capabilities>
+    <ogc:Temporal_Capabilities>
+      <ogc:TemporalOperands>
+        <ogc:TemporalOperand>gml:TimePeriod</ogc:TemporalOperand>
+        <ogc:TemporalOperand>gml:TimeInstant</ogc:TemporalOperand>
+      </ogc:TemporalOperands>
+      <ogc:TemporalOperators>
+        <ogc:TemporalOperator name="TM_Equals"/>
+      </ogc:TemporalOperators>
+    </ogc:Temporal_Capabilities>
     <ogc:Scalar_Capabilities>
-      <ogc:Logical_Operators/>
-      <ogc:Comparison_Operators>
-        <ogc:Simple_Comparisons/>
-        <ogc:Like/>
-        <ogc:Between/>
-      </ogc:Comparison_Operators>
+      <ogc:LogicalOperators/>
+      <ogc:ComparisonOperators>
+        <ogc:ComparisonOperator>LessThan</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>GreaterThan</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>LessThanEqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>GreaterThanEqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>EqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>NotEqualTo</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>Like</ogc:ComparisonOperator>
+        <ogc:ComparisonOperator>Between</ogc:ComparisonOperator>
+      </ogc:ComparisonOperators>
     </ogc:Scalar_Capabilities>
-  </ogc:Filter_Capabilities>
+    <ogc:Id_Capabilities>
+      <ogc:FID/>
+    </ogc:Id_Capabilities>
+  </sos:Filter_Capabilities>
   <sos:Contents>
     <sos:ObservationOfferingList>
       <sos:ObservationOffering gml:id="Water">
         <gml:description>This is for water</gml:description>
         <gml:name>Water</gml:name>
+        <gml:srsName>EPSG:4326</gml:srsName>
         <gml:boundedBy>
           <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
             <gml:lowerCorner>-141 42</gml:lowerCorner>
@@ -163,9 +221,9 @@ Content-type: text/xml
         <sos:procedure xlink:href="urn:ogc:def:procedure:2147"/>
         <sos:procedure xlink:href="urn:ogc:def:procedure:604"/>
         <sos:observedProperty gml:id="WaterQuality">
-          <sos:CompositePhenomenon>
+          <swe:CompositePhenomenon>
             <gml:name>WaterQuality</gml:name>
-          </sos:CompositePhenomenon>
+          </swe:CompositePhenomenon>
         </sos:observedProperty>
         <sos:featureOfInterest>
           <gml:boundedBy>
