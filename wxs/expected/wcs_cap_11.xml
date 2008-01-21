@@ -1,0 +1,140 @@
+Content-type: text/xml
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Capabilities xmlns="http://www.opengis.net/wcs/1.1" xmlns:ows="http://www.opengis.net/ows" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" version="1.1.1">
+  <ows:ServiceIdentification>
+    <ows:Title>First Test Service</ows:Title>
+    <ows:Abstract>Test Abstract</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>keyword</ows:Keyword>
+      <ows:Keyword>list</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">OGC WCS</ows:ServiceType>
+    <ows:ServiceTypeVersion>1.1.1</ows:ServiceTypeVersion>
+    <ows:Fees>NONE</ows:Fees>
+    <ows:AccessConstraints>NONE</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>OSGeo</ows:ProviderName>
+    <ows:ProviderSite xlink:type="simple" xlink:href="http://198.202.74.215/cgi-bin/wcs_demo"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>Frank Warmerdam</ows:IndividualName>
+      <ows:PositionName>Software Developer</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>(613) 754-2041</ows:Voice>
+          <ows:Facsimile>(613) 754-2041x343</ows:Facsimile>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>3594 Foymount Rd</ows:DeliveryPoint>
+          <ows:City>Eganville</ows:City>
+          <ows:AdministrativeArea>Ontario</ows:AdministrativeArea>
+          <ows:PostalCode>K0J 1T0</ows:PostalCode>
+          <ows:Country>Canada</ows:Country>
+          <ows:ElectronicMailAddress>warmerdam@pobox.com</ows:ElectronicMailAddress>
+        </ows:Address>
+        <ows:OnlineResource xlink:type="simple" xlink:href="http://198.202.74.215/cgi-bin/wcs_demo"/>
+        <ows:HoursOfService/>
+        <!--WARNING: Optional metadata "ows_hoursofservice" was missing for ows:HoursOfService-->
+        <ows:ContactInstructions/>
+        <!--WARNING: Optional metadata "ows_contactinstructions" was missing for ows:ContactInstructions-->
+      </ows:ContactInfo>
+      <ows:Role/>
+      <!--WARNING: Optional metadata "ows_role" was missing for ows:Role-->
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:Value>WCS</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="version">
+        <ows:Value>1.1.1</ows:Value>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeCoverage">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:Value>WCS</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="version">
+        <ows:Value>1.1.1</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="identifiers">
+        <ows:Value>grey</ows:Value>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetCoverage">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:Value>WCS</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="version">
+        <ows:Value>1.1.1</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="Identifier">
+        <ows:Value>grey</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="InterpolationType">
+        <ows:Value>NEAREST_NEIGHBOUR</ows:Value>
+        <ows:Value>BILINEAR</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="format">
+        <ows:Value>image/tiff</ows:Value>
+        <ows:Value>image/png</ows:Value>
+        <ows:Value>image/gif</ows:Value>
+        <ows:Value>image/png; mode=24bit</ows:Value>
+        <ows:Value>image/jpeg</ows:Value>
+        <ows:Value>image/vnd.wap.wbmp</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="store">
+        <ows:Value>false</ows:Value>
+      </ows:Parameter>
+      <ows:Parameter name="GridBaseCRS">
+        <ows:Value>urn:ogc:def:crs:epsg::4326</ows:Value>
+      </ows:Parameter>
+    </ows:Operation>
+  </ows:OperationsMetadata>
+  <Contents>
+    <CoverageSummary>
+      <ows:Title>Test description</ows:Title>
+      <ows:Abstract>Category: Image
+Product: IKONOS-2 PAN/MSI
+Acquisition: 1999-10-11 18:47</ows:Abstract>
+      <Identifier>grey</Identifier>
+      <ows:Keywords>
+        <ows:Keyword>test</ows:Keyword>
+        <ows:Keyword>mapserver</ows:Keyword>
+      </ows:Keywords>
+      <ows:BoundingBox crs="urn:ogc:def:crs:OGC::imageCRS" dimensions="2">
+        <ows:LowerCorner>0 0</ows:LowerCorner>
+        <ows:UpperCorner>39 29</ows:UpperCorner>
+      </ows:BoundingBox>
+      <ows:BoundingBox crs="urn:ogc:def:crs:EPSG::32611" dimensions="2">
+        <ows:LowerCorner>0 0</ows:LowerCorner>
+        <ows:UpperCorner>400 300</ows:UpperCorner>
+      </ows:BoundingBox>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-121.48874388968 0</ows:LowerCorner>
+        <ows:UpperCorner>-121.48516027717 0.0027058261133485</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <SupportedFormat>image/tiff</SupportedFormat>
+      <SupportedFormat>image/png</SupportedFormat>
+      <SupportedCRS>urn:ogc:def:crs:EPSG::32611</SupportedCRS>
+      <SupportedCRS>urn:ogc:def:crs:EPSG::4326</SupportedCRS>
+    </CoverageSummary>
+  </Contents>
+</Capabilities>

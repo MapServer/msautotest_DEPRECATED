@@ -16,6 +16,26 @@ Content-type: text/xml
   <keywords>
     <keyword>Test Keywords</keyword>
   </keywords>
+<responsibleParty>
+    <individualName>Frank Warmerdam</individualName>
+    <organisationName>OSGeo</organisationName>
+    <positionName>Software Developer</positionName>
+  <contactInfo>
+    <phone>
+    <voice>(613) 754-2041</voice>
+    <facsimile>(613) 754-2041x343</facsimile>
+    </phone>
+    <address>
+    <deliveryPoint>3594 Foymount Rd</deliveryPoint>
+    <city>Eganville</city>
+    <administrativeArea>Ontario</administrativeArea>
+    <postalCode>K0J 1T0</postalCode>
+    <country>Canada</country>
+    <electronicMailAddress>warmerdam@pobox.com</electronicMailAddress>
+    </address>
+    <onlineResource xlink:type="simple" xlink:href="http://198.202.74.215/cgi-bin/wcs_demo"/>
+  </contactInfo>
+</responsibleParty>
   <fees>NONE</fees>
   <accessConstraints>
     NONE
