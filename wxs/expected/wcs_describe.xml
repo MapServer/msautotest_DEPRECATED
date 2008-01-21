@@ -72,6 +72,7 @@ Content-type: text/xml
     <supportedFormats nativeFormat="GeoTIFF">
       <formats>GEOTIFF_16</formats>
       <formats>GDPNG</formats>
+      <formats>AAIGRID</formats>
     </supportedFormats>
     <supportedInterpolations default="nearest neighbour">
       <interpolationMethod>nearest neighbor</interpolationMethod>

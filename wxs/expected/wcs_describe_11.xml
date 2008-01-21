@@ -54,5 +54,6 @@ Acquisition: 1999-10-11 18:47</ows:Abstract>
     <SupportedCRS>urn:ogc:def:crs:EPSG::4326</SupportedCRS>
     <SupportedFormat>image/tiff</SupportedFormat>
     <SupportedFormat>image/png</SupportedFormat>
+    <SupportedFormat>image/x-aaigrid</SupportedFormat>
   </CoverageDescription>
 </CoverageDescriptions>

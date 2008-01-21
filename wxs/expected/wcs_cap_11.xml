@@ -95,6 +95,7 @@ Content-type: text/xml
       <ows:Parameter name="format">
         <ows:Value>image/tiff</ows:Value>
         <ows:Value>image/png</ows:Value>
+        <ows:Value>image/x-aaigrid</ows:Value>
         <ows:Value>image/gif</ows:Value>
         <ows:Value>image/png; mode=24bit</ows:Value>
         <ows:Value>image/jpeg</ows:Value>
@@ -133,6 +134,7 @@ Acquisition: 1999-10-11 18:47</ows:Abstract>
       </ows:WGS84BoundingBox>
       <SupportedFormat>image/tiff</SupportedFormat>
       <SupportedFormat>image/png</SupportedFormat>
+      <SupportedFormat>image/x-aaigrid</SupportedFormat>
       <SupportedCRS>urn:ogc:def:crs:EPSG::32611</SupportedCRS>
       <SupportedCRS>urn:ogc:def:crs:EPSG::4326</SupportedCRS>
     </CoverageSummary>
