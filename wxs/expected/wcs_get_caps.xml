@@ -92,7 +92,7 @@ Content-type: text/xml
   <metadataLink metadataType="other" xlink:type="simple" xlink:href="http://geogratis.cgdi.gc.ca/clf/en?action=fullMetadata&amp;entryId=4373"/>  <description>Toronto Landsat 5 TM</description>
   <name>toronto</name>
   <label>Landsat 5 TM - Toronto</label>
-    <lonLatEnvelope srsName="WGS84(DD)">
+    <lonLatEnvelope srsName="EPSG:4326">
       <gml:pos>-81.545267534394 42.713551218108</gml:pos>
       <gml:pos>-78.387425267181 44.767291525848</gml:pos>
     </lonLatEnvelope>

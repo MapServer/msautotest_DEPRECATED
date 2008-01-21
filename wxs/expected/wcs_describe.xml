@@ -13,7 +13,7 @@ Content-type: text/xml
   <metadataLink metadataType="other" xlink:type="simple" xlink:href="http://www.gdal.org/metadata_test_link.html"/>  <description>Test description</description>
   <name>grey</name>
   <label>Test label</label>
-    <lonLatEnvelope srsName="WGS84(DD)">
+    <lonLatEnvelope srsName="EPSG:4326">
       <gml:pos>-121.488743889689 0</gml:pos>
       <gml:pos>-121.485160277178 0.00270582611334856</gml:pos>
     </lonLatEnvelope>
@@ -23,7 +23,7 @@ Content-type: text/xml
   </keywords>
     <domainSet>
       <spatialDomain>
-        <gml:Envelope srsName="WGS84(DD)">
+        <gml:Envelope srsName="EPSG:4326">
           <gml:pos>-121.488743889689 0</gml:pos>
           <gml:pos>-121.485160277178 0.00270582611334856</gml:pos>
         </gml:Envelope>
