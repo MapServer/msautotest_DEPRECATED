@@ -34,8 +34,17 @@
 # GetCoverage to AAIGRID 1.0
 # RUN_PARMS: wcs_getcov_grd_10.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&RESX=30&RESY=30&FORMAT=AAIGRID&BBOX=0,0,400,300&COVERAGE=grey&CRS=EPSG:32611" > [RESULT]
 #
-# GetCoverage to AAIGRID 1.1
-# RUN_PARMS: wcs_getcov_grd_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,39,29,urn:ogc:def:crs:OGC:imageCRS&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,0&GridOffsets=3,3" > [RESULT]
+# GetCoverage to AAIGRID 1.1 (normal CRS)
+# RUN_PARMS: wcs_getcov_grd_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,400,300,urn:ogc:def:crs:EPSG::32611&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,295&GridOffsets=30,-30" > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (imageCRS)
+# RUN_PARMS: wcs_getcov_grd_11_imagecrs.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,39,29,urn:ogc:def:crs:OGC::imageCRS&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,0&GridOffsets=3,3" > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (EPSG 4326 with reversed axes)
+# RUN_PARMS: wcs_getcov_grd_11_4326.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (WGS84 (non-EPSG - normal axes)
+# RUN_PARMS: wcs_getcov_grd_11_wgs84.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=-121.48874388968,0,-121.48516027717,0.0027058261133485,urn:ogc:def:crs:OGC::CRS84&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=-121.48874388968,0.0027058261133485&GridOffsets=0.0003,-0.0003" > [RESULT]
 #
 
 NAME TEST
