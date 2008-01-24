@@ -83,9 +83,9 @@ Content-type: application/vnd.ogc.wms_xml
         <Style>
           <Name>default</Name>
           <Title>default</Title>
-          <LegendURL width="20" height="10">
+          <LegendURL width="70" height="23">
              <Format>image/png</Format>
-             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/path/to/wms_simple?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=road&amp;format=image/png"/>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/path/to/wms_simple?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=road&amp;format=image/png&amp;STYLE=default"/>
           </LegendURL>
         </Style>
     </Layer>
