@@ -187,9 +187,9 @@ Content-type: application/vnd.ogc.wms_xml
         <Style>
           <Name>default</Name>
           <Title>default</Title>
-          <LegendURL width="20" height="10">
+          <LegendURL width="77" height="23">
              <Format>image/png</Format>
-             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rivers&amp;format=image/png"/>
+             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=rivers&amp;format=image/png&amp;STYLE=default"/>
           </LegendURL>
         </Style>
       </Layer>
