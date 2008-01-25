@@ -1,7 +1,7 @@
 Content-type: text/xml
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<sos:Capabilities xmlns:gml="http://www.opengis.net/gml" xmlns:om="http://www.opengis.net/om" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sos="http://www.opengis.net/sos/1.0" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
+<sos:Capabilities xmlns:gml="http://www.opengis.net/gml" xmlns:om="http://www.opengis.net/om/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sos="http://www.opengis.net/sos/1.0" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
   <ows:ServiceIdentification>
     <ows:Title>Test SOS Title</ows:Title>
     <ows:Abstract>Test SOS Abstract</ows:Abstract>
@@ -220,19 +220,12 @@ Content-type: text/xml
         <sos:procedure xlink:href="urn:ogc:def:procedure:35"/>
         <sos:procedure xlink:href="urn:ogc:def:procedure:2147"/>
         <sos:procedure xlink:href="urn:ogc:def:procedure:604"/>
-        <sos:observedProperty gml:id="WaterQuality">
-          <swe:CompositePhenomenon>
+        <sos:observedProperty>
+          <swe:CompositePhenomenon gml:id="WaterQuality" dimension="0">
             <gml:name>WaterQuality</gml:name>
           </swe:CompositePhenomenon>
         </sos:observedProperty>
-        <sos:featureOfInterest>
-          <gml:boundedBy>
-            <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
-              <gml:lowerCorner>-141 42</gml:lowerCorner>
-              <gml:upperCorner>-52 84</gml:upperCorner>
-            </gml:Envelope>
-          </gml:boundedBy>
-        </sos:featureOfInterest>
+        <sos:featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
         <sos:responseFormat>text/xml; subtype=om/1.0.0</sos:responseFormat>
         <sos:resultModel>om:Observation</sos:resultModel>
         <sos:resultModel>om:Measurement</sos:resultModel>

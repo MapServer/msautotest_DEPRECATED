@@ -1,7 +1,7 @@
 Content-type: text/xml
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<om:ObservationCollection xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:om="http://www.opengis.net/om" gml:id="Water" xsi:schemaLocation="http://www.opengis.net/om http://schemas.opengis.net/om/1.0.0/om.xsd">
+<om:ObservationCollection xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:om="http://www.opengis.net/om/1.0" gml:id="Water" xsi:schemaLocation="http://www.opengis.net/om/1.0 http://schemas.opengis.net/om/1.0.0/om.xsd">
   <gml:description xmlns:gml="http://www.opengis.net/gml">This is for water</gml:description>
   <gml:name xmlns:gml="http://www.opengis.net/gml">Water</gml:name>
   <gml:boundedBy>
@@ -10,12 +10,6 @@ Content-type: text/xml
       <gml:upperCorner>-52 84</gml:upperCorner>
     </gml:Envelope>
   </gml:boundedBy>
-  <om:samplingTime>
-    <gml:TimePeriod>
-      <gml:beginPosition>1990</gml:beginPosition>
-      <gml:endPosition>2007</gml:endPosition>
-    </gml:TimePeriod>
-  </om:samplingTime>
   <om:member>
     <om:Observation>
       <sos:time>
@@ -25,10 +19,10 @@ Content-type: text/xml
         </gml:TimePeriod>
       </sos:time>
       <om:procedure xlink:href="urn:ogc:def:procedure:35"/>
-      <om:observedProperty gml:id="WaterQuality">
-        <swe:CompositePhenomenon>
+      <om:observedProperty>
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="1">
           <gml:name>WaterQuality</gml:name>
-          <swe:component name="Value" xlink:href="http://localhost/sos#value"/>
+          <swe:component xlink:href="http://localhost/sos#value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
       <om:resultDefinition>
@@ -63,10 +57,10 @@ Content-type: text/xml
         </gml:TimePeriod>
       </sos:time>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
-      <om:observedProperty gml:id="WaterQuality">
-        <swe:CompositePhenomenon>
+      <om:observedProperty>
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="1">
           <gml:name>WaterQuality</gml:name>
-          <swe:component name="Value" xlink:href="http://localhost/sos#value"/>
+          <swe:component xlink:href="http://localhost/sos#value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
       <om:resultDefinition>
@@ -101,10 +95,10 @@ Content-type: text/xml
         </gml:TimePeriod>
       </sos:time>
       <om:procedure xlink:href="urn:ogc:def:procedure:604"/>
-      <om:observedProperty gml:id="WaterQuality">
-        <swe:CompositePhenomenon>
+      <om:observedProperty>
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="1">
           <gml:name>WaterQuality</gml:name>
-          <swe:component name="Value" xlink:href="http://localhost/sos#value"/>
+          <swe:component xlink:href="http://localhost/sos#value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
       <om:resultDefinition>
