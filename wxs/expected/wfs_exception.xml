@@ -1,0 +1,8 @@
+Content-type: text/xml
+
+<ServiceExceptionReport
+xmlns="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/ogc http://ogc.dmsolutions.ca/wfs/1.0.0/OGC-exception.xsd">
+  <ServiceException>
+msWFSDispatch(): WFS server error. Incomplete WFS request: REQUEST parameter missing
+  </ServiceException>
+</ServiceExceptionReport>
