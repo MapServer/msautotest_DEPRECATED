@@ -49,6 +49,7 @@ WEB
  IMAGEURL "/ms_tmp/"
 
   METADATA
+    "ows_updatesequence"   "123"
     "wms_title"		   "Test simple wms"
     "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
     "wms_srs"		   "EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326"

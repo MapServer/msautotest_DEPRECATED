@@ -89,6 +89,7 @@ MAP
   IMAGEURL  "/ms_tmp"
   METADATA
    # OWS common metadata
+   "ows_updatesequence" "123"
    "ows_title"    "Test SOS Title"
    "ows_abstract"    "Test SOS Abstract"
    "ows_keywordlist" "ogc,sos,sensorml,om"

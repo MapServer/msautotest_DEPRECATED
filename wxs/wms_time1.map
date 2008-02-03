@@ -77,6 +77,7 @@ WEB
   IMAGEURL "/ms_tmp/"
 
     METADATA
+      "ows_updatesequence"         "123"
       "WMS_TITLE"            "Test WMS time support"
       "WMS_ONLINERESOURCE"   "http://localhost/path/to/mswms_time?"
       "WMS_SRS"              "EPSG:4326"

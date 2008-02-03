@@ -119,6 +119,8 @@ MAP
   METADATA
 
    "map" "/ms4w/apps/ms_ogc_workshop/service/config.map"
+
+   "ows_updateSequence" "123"
    
    # generic OWS specific info
    # sets base URL for OGC Schemas so the root element in the

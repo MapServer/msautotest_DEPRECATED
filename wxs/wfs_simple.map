@@ -49,6 +49,7 @@ WEB
  IMAGEURL "/ms_tmp/"
 
   METADATA
+    "ows_updatesequence"   "123"
     "wfs_title"		   "Test simple wfs"
     "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?"
     "wfs_srs"		   "EPSG:4326 EPSG:4269"

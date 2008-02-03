@@ -90,6 +90,7 @@ WEB
    "ows_schemas_location" "http://schemas.opengeospatial.net"
 
    # OWS stuff for server
+   "ows_updatesequence"   "123"
    "ows_title"            "First Test Service"
    "ows_fees"             "NONE"
    "ows_accessconstraints" "NONE"
