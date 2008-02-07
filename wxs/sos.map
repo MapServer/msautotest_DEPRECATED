@@ -11,6 +11,16 @@
 # RUN_PARMS: sos_se1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0" > [RESULT]
 # RUN_PARMS: sos_se2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=FOO" > [RESULT]
 #
+# Capabilities updatesequence (less than)
+# RUN_PARMS: sos_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=SOS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=f" > [RESULT]
+#
+# Capabilities updatesequence exception (equal)
+# RUN_PARMS: sos_exception_updatesequence1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=SOS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=foo" > [RESULT]
+#
+# Capabilities updatesequence exception (higher)
+# RUN_PARMS: sos_exception_updatesequence2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=SOS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=zoo" > [RESULT]
+#
+#
 #  Valid
 #
 # RUN_PARMS: sos_cap0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.3.0&request=GetCapabilities" > [RESULT]
@@ -89,7 +99,7 @@ MAP
   IMAGEURL  "/ms_tmp"
   METADATA
    # OWS common metadata
-   "ows_updatesequence" "123"
+   "ows_updatesequence" "foo"
    "ows_title"    "Test SOS Title"
    "ows_abstract"    "Test SOS Abstract"
    "ows_keywordlist" "ogc,sos,sensorml,om"

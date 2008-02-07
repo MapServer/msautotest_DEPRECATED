@@ -7,6 +7,15 @@
 # Capabilities
 # RUN_PARMS: wms_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
+# Capabilities updatesequence (less than)
+# RUN_PARMS: wms_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=15" > [RESULT]
+#
+# Capabilities updatesequence exception (equal)
+# RUN_PARMS: wms_exception_updatesequence1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=123" > [RESULT]
+#
+# Capabilities updatesequence exception (higher)
+# RUN_PARMS: wms_exception_updatesequence2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=876" > [RESULT]
+#
 # Layer description
 # RUN_PARMS: wms_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=DescribeLayer&LAYERS=road" > [RESULT]
 #
