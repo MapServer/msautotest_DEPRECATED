@@ -83,7 +83,6 @@ Content-type: text/xml
   <Exception>
     <Format>application/vnd.ogc.se_xml</Format>
   </Exception>
-  <VendorSpecificCapabilities />
 </Capability>
 <ContentMetadata>
   <CoverageOfferingBrief>
