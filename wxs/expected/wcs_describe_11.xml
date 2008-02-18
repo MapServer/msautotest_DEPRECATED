@@ -40,7 +40,7 @@ Acquisition: 1999-10-11 18:47</ows:Abstract>
         <ows:Title>Bands</ows:Title>
         <Identifier>Landsat 5 TM Bands</Identifier>
         <InterpolationMethods>
-          <DefaultMethod>nearest neighbour</DefaultMethod>
+          <DefaultMethod>nearest neighbor</DefaultMethod>
           <OtherMethod>bilinear</OtherMethod>
         </InterpolationMethods>
         <Axis identifier="bands">

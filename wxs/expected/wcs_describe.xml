@@ -74,7 +74,7 @@ Content-type: text/xml
       <formats>GDPNG</formats>
       <formats>AAIGRID</formats>
     </supportedFormats>
-    <supportedInterpolations default="nearest neighbour">
+    <supportedInterpolations default="nearest neighbor">
       <interpolationMethod>nearest neighbor</interpolationMethod>
       <interpolationMethod>bilinear</interpolationMethod>
     </supportedInterpolations>
