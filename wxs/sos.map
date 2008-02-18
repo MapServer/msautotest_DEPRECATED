@@ -20,8 +20,13 @@
 # Capabilities updatesequence exception (higher)
 # RUN_PARMS: sos_exception_updatesequence2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=SOS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=zoo" > [RESULT]
 #
+# Capabilities acceptversions exception (invalid format)
+# RUN_PARMS: sos_exception_acceptversions.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=SOS&VERSION=1.0.0&REQUEST=GetCapabilities&acceptversions=2002-10-30" > [RESULT]
 #
 #  Valid
+#
+# Capabilities acceptversions
+# RUN_PARMS: sos_cap1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=SOS&VERSION=1.0.0&REQUEST=GetCapabilities&acceptversions=0.0.31,0.1.4,1.0.0" > [RESULT]
 #
 # RUN_PARMS: sos_cap0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.3.0&request=GetCapabilities" > [RESULT]
 # RUN_PARMS: sos_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
