@@ -20,9 +20,12 @@ Content-type: text/xml
       </sos:time>
       <om:procedure xlink:href="urn:ogc:def:procedure:35"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="1">
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
           <gml:name>WaterQuality</gml:name>
-          <swe:component xlink:href="http://localhost/sos#value"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:STN_ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:DATETIME"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:Value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
       <om:resultDefinition>
@@ -58,9 +61,12 @@ Content-type: text/xml
       </sos:time>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="1">
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
           <gml:name>WaterQuality</gml:name>
-          <swe:component xlink:href="http://localhost/sos#value"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:STN_ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:DATETIME"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:Value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
       <om:resultDefinition>
@@ -96,9 +102,12 @@ Content-type: text/xml
       </sos:time>
       <om:procedure xlink:href="urn:ogc:def:procedure:604"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="1">
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
           <gml:name>WaterQuality</gml:name>
-          <swe:component xlink:href="http://localhost/sos#value"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:STN_ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:DATETIME"/>
+          <swe:component xlink:href="urn:ogc:def:property:EC:8:Value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
       <om:resultDefinition>
