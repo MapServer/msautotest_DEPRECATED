@@ -47,6 +47,7 @@ Content-type: text/xml
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
@@ -64,6 +65,7 @@ Content-type: text/xml
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
@@ -91,6 +93,7 @@ Content-type: text/xml
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
