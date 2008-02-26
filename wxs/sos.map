@@ -156,7 +156,7 @@ MAP
    "ows_srs" "EPSG:4326"  
    "sos_observedproperty_id" "WaterQuality"
    "sos_observedproperty_name" "WaterQuality"
-   "sos_observedproperty_authority" "EC"
+   "sos_observedproperty_authority" "ACME"
    "sos_observedproperty_version" "8"
    "sos_value_alias" "Value"
    "sos_value_definition" "mydef"
