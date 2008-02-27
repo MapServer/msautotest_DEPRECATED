@@ -7,6 +7,9 @@
 # Capabilities
 # RUN_PARMS: wms_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
+# version exception
+# RUN_PARMS: wms_version_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1" > [RESULT]
+#
 # Capabilities updatesequence (less than)
 # RUN_PARMS: wms_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=15" > [RESULT]
 #
