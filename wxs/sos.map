@@ -43,7 +43,7 @@
 #
 #  Valid
 #
-# RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=35&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
+# RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=urn:ogc:def:procedure:35&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
 #
 # GetObservation
 #
