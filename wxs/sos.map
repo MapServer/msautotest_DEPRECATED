@@ -164,7 +164,7 @@ MAP
    "ows_timeitem" "datetime"
    "sos_procedure"  "35 2147 604"
    "sos_procedure_item"  "stn_id"
-   "sos_describesensor_url" "http://localhost/sml/%procedure%.xml"
+   "sos_describesensor_url" "http://trac.osgeo.org/mapserver/browser/trunk/msautotest/wxs/data/sos-%procedure%.xml"
    "gml_featureid" "id"
    "gml_include_items" "all"
   END
