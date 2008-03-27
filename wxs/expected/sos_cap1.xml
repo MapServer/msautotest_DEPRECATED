@@ -172,6 +172,7 @@ Content-type: text/xml
         <ogc:SpatialOperator name="Intersects"/>
         <ogc:SpatialOperator name="Contains"/>
         <ogc:SpatialOperator name="DWithin"/>
+        <ogc:SpatialOperator name="Beyond"/>
         <ogc:SpatialOperator name="BBOX"/>
       </ogc:SpatialOperators>
     </ogc:Spatial_Capabilities>
