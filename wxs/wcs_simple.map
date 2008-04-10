@@ -66,10 +66,13 @@
 # RUN_PARMS: wcs_getcov_grd_11_imagecrs.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,39,29,urn:ogc:def:crs:OGC::imageCRS&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,0&GridOffsets=3,3" > [RESULT]
 #
 # GetCoverage to AAIGRID 1.1 (EPSG 4326 with reversed axes)
-# RUN_PARMS: wcs_getcov_grd_11_4326.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
+# RUN_PARMS: wcs_getcov_grd_11_4326.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
 #
 # GetCoverage to AAIGRID 1.1 (WGS84 (non-EPSG - normal axes)
-# RUN_PARMS: wcs_getcov_grd_11_wgs84.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=-121.48874388968,0,-121.48516027717,0.0027058261133485,urn:ogc:def:crs:OGC::CRS84&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=-121.48874388968,0.0027058261133485&GridOffsets=0.0003,-0.0003" > [RESULT]
+# RUN_PARMS: wcs_getcov_grd_11_wgs84.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&BOUNDINGBOX=-121.48874388968,0,-121.48516027717,0.0027058261133485,urn:ogc:def:crs:OGC::CRS84&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=-121.48874388968,0.0027058261133485&GridOffsets=0.0003,-0.0003" > [RESULT]
+#
+# GetCoverage to GDPNG 1.1 (Test non-GDAL output)
+# RUN_PARMS: wcs_getcov_gdpng8_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/png;%20mode=8bit&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
 #
 
 NAME TEST
@@ -92,6 +95,13 @@ OUTPUTFORMAT
   DRIVER "GD/PNG"
   MIMETYPE "image/png"
   IMAGEMODE RGB
+  EXTENSION "png"
+END
+OUTPUTFORMAT
+  NAME GDPNGGREY
+  DRIVER "GD/PNG"
+  MIMETYPE "image/png; mode=8bit"
+  IMAGEMODE PC256
   EXTENSION "png"
 END
 OUTPUTFORMAT
