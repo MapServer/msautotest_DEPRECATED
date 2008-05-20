@@ -26,7 +26,7 @@ MAP
   NAME "geojson"
   DRIVER "TEMPLATE"
   MIMETYPE "application/json; subtype=geojson"
-  FORMATOPTION "FILE=rfc36.tpl"
+  FORMATOPTION "FILE=rfc36.tmpl"
  END
 
  WEB
