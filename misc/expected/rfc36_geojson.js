@@ -403,8 +403,7 @@ Content-type: application/json; subtype=geojson
     "CAPITAL": 2,
     "POP_RANGE": 6
    }
-  },
- 
+  }
  ]
 }
 
