@@ -7,7 +7,7 @@
 # RUN_PARMS: wfs_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0" > [RESULT]
 #
 # Capabilities updatesequence (less than)
-# RUN_PARMS: wfs_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=12" > [RESULT]
+# RUN_PARMS: wfs_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=12" > [RESULT_DEVERSION]
 #
 # Capabilities updatesequence exception (equal)
 # RUN_PARMS: wfs_exception_updatesequence1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities&updatesequence=123" > [RESULT]
