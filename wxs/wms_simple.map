@@ -11,7 +11,7 @@
 # RUN_PARMS: wms_version_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1" > [RESULT]
 #
 # Capabilities updatesequence (less than)
-# RUN_PARMS: wms_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=15" > [RESULT]
+# RUN_PARMS: wms_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=15" > [RESULT_DEVERSION]
 #
 # Capabilities updatesequence exception (equal)
 # RUN_PARMS: wms_exception_updatesequence1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=123" > [RESULT]
