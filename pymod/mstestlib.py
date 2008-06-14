@@ -123,6 +123,8 @@ def deversion_file( filename ):
 
     start = string.find( data, '<!-- MapServer version' )
     if start == -1:
+        start = string.find( data, '<!--MapServer version' )
+    if start == -1:
         return
 
     end = start+10
