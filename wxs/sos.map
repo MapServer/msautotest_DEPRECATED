@@ -55,6 +55,9 @@
 # GetObservation (wrong observedProperty)
 # RUN_PARMS: sos_se9.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=AirQuality" > [RESULT]
 #
+# GetObservation (invalid srsName)
+# RUN_PARMS: sos_se10.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&srsName=EPSG:12345" > [RESULT]
+#
 #  Valid
 #
 # GetObservation (all observations)
@@ -103,7 +106,6 @@ MAP
   IMAGEPATH "./tmp"
   IMAGEURL  "/ms_tmp"
   METADATA
-   # OWS common metadata
    "ows_updatesequence" "foo"
    "ows_title"    "Test SOS Title"
    "ows_abstract"    "Test SOS Abstract"
@@ -127,7 +129,7 @@ MAP
    "ows_hoursofservice" "0800h - 1600h EST"
    "ows_contactinstructions" "during hours of service"
    "ows_role" "staff"
-   # OGC:WMS
+   "ows_srs" "EPSG:4326"
    "ows_maxfeatures" "90210"
    END
  END
@@ -153,7 +155,6 @@ MAP
    "sos_offering_extent" "-141,42,-52,84"
    "sos_offering_timeextent" "1990/2007"   
    "sos_offering_intendedapplication" "for SOS demos"   
-   "ows_srs" "EPSG:4326"  
    "sos_observedproperty_id" "WaterQuality"
    "sos_observedproperty_name" "WaterQuality"
    "sos_observedproperty_authority" "ACME"
