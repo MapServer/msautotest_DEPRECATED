@@ -58,6 +58,9 @@
 # GetObservation (invalid srsName)
 # RUN_PARMS: sos_se10.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&srsName=EPSG:12345" > [RESULT]
 #
+# GetObservation (invalid procedure)
+# RUN_PARMS: sos_se11.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&procedure=foo" > [RESULT]
+#
 #  Valid
 #
 # GetObservation (all observations)
