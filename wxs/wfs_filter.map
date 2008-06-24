@@ -63,6 +63,9 @@
 # RUN_PARMS: wfs_filter_dwithin.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><DWithin><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>-60.18,46.10</gml:coordinates></gml:Point><Distance units='dd'>0.05</Distance></DWithin></Filter>" > [RESULT]
 #
 
+# Verify DWITHIN with units Result:  Sydney
+# RUN_PARMS: wfs_filter_dwithin_units.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><DWithin><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>-60.18,46.10</gml:coordinates></gml:Point><Distance units='kilometers'>10</Distance></DWithin></Filter>" > [RESULT]
+#
 # Verify BEYOND Results:  all but Sydney excluded
 # RUN_PARMS: wfs_filter_beyond.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><Beyond><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>-60.18,46.10</gml:coordinates></gml:Point><Distance units='dd'>0.05</Distance></Beyond></Filter>" > [RESULT]
 #
