@@ -1,0 +1,50 @@
+#
+# Test:
+#  - raster symbol rendering. 
+#  - support for transparency in 24bit output with TRANSPARENCY ALPHA on.
+#
+# REQUIRES: OUTPUT=PNG
+
+MAP
+  NAME HELLO
+  STATUS ON
+  EXTENT 59 10 60 11
+  SIZE 400 300
+  IMAGECOLOR 200 255 255
+
+  IMAGETYPE png24
+  LAYER
+    NAME "credits"
+    STATUS DEFAULT
+    TRANSFORM FALSE
+    TYPE POINT
+    FEATURE
+      POINTS
+        200 250
+      END
+    END
+    CLASS
+      STYLE
+        SYMBOL 'data/gdalicon.png'
+      END
+    END
+  END
+
+  LAYER
+    NAME "transparent"
+    STATUS DEFAULT
+    TRANSFORM FALSE
+    TYPE POINT
+    TRANSPARENCY ALPHA
+    FEATURE
+      POINTS
+        100 150
+      END
+    END
+    CLASS
+      STYLE
+        SYMBOL 'data/gdalicon.png'
+      END
+    END
+  END
+END
