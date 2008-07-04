@@ -10,7 +10,7 @@ Content-type: application/vnd.ogc.gml
 		<land_shallow_topo_2048_feature>
 			<gml:boundedBy>
 				<gml:Box srsName="EPSG:4326">
-					<gml:coordinates>-1.000000,-1.000000 -1.000000,-1.000000</gml:coordinates>
+					<gml:coordinates>-78.046875,35.156250 -78.046875,35.156250</gml:coordinates>
 				</gml:Box>
 			</gml:boundedBy>
 			<x>-78.046875</x>
