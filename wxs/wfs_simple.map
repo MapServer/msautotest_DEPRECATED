@@ -3,6 +3,8 @@
 #
 # REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WFS
 #
+# 1.0.0
+#
 # Exception
 # RUN_PARMS: wfs_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0" > [RESULT]
 #
@@ -26,6 +28,32 @@
 #
 # Get Feature by id
 # RUN_PARMS: wfs_get_feature_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=province&featureid=province.Quebec" > [RESULT]
+#
+# 1.1.0
+#
+# Exception
+# RUN_PARMS: wfs11_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0" > [RESULT]
+#
+# Capabilities updatesequence (less than)
+# RUN_PARMS: wfs11_caps_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetCapabilities&updatesequence=12" > [RESULT_DEVERSION]
+#
+# Capabilities updatesequence exception (equal)
+# RUN_PARMS: wfs11_exception_updatesequence1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetCapabilities&updatesequence=123" > [RESULT]
+#
+# Capabilities updatesequence exception (higher)
+# RUN_PARMS: wfs11_exception_updatesequence2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetCapabilities&updatesequence=1234" > [RESULT]
+#
+# Capabilities
+# RUN_PARMS: wfs11_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
+#
+# Feature types description
+# RUN_PARMS: wfs11_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=DescribeFeatureType" > [RESULT]
+#
+# Generate simple layer info.
+# RUN_PARMS: wfs11_get_feature.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province" > [RESULT]
+#
+# Get Feature by id
+# RUN_PARMS: wfs11_get_feature_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province&featureid=province.Quebec" > [RESULT]
 #
 
 NAME WFS_TEST
@@ -62,7 +90,27 @@ WEB
     "wfs_title"		   "Test simple wfs"
     "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?"
     "wfs_srs"		   "EPSG:4326 EPSG:4269"
-    "ows_schemas_location" "http://ogc.dmsolutions.ca"
+    "ows_schemas_location" "http://schemas.opengeospatial.net"
+    "ows_abstract"    "Test WFS Abstract"
+    "ows_keywordlist" "ogc,wfs,gml,om"
+    "ows_service_onlineresource" "http://localhost"
+    "ows_fees" "none"
+    "ows_accessconstraints" "none"
+    "ows_addresstype" "postal"
+    "ows_address"     "123 SomeRoad Road"
+    "ows_city" "Toronto"
+    "ows_stateorprovince" "Ontario"
+    "ows_postcode" "xxx-xxx"
+    "ows_country" "Canada"
+    "ows_contactelectronicmailaddress" "tomkralidis@xxxxxxx.xxx"
+    "ows_contactvoicetelephone" "+xx-xxx-xxx-xxxx"
+    "ows_contactfacsimiletelephone" "+xx-xxx-xxx-xxxx"
+    "ows_contactperson" "Tom Kralidis"
+    "ows_contactorganization" "MapServer"
+    "ows_contactposition" "self"
+    "ows_hoursofservice" "0800h - 1600h EST"
+    "ows_contactinstructions" "during hours of service"
+    "ows_role" "staff"
   END
 END
 

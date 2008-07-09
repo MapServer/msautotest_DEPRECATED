@@ -7,12 +7,21 @@ Content-type: text/xml
    xmlns="http://www.opengis.net/wfs" 
    xmlns:ogc="http://www.opengis.net/ogc" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wfs http://ogc.dmsolutions.ca/wfs/1.0.0/WFS-capabilities.xsd">
+   xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengeospatial.net/wfs/1.0.0/WFS-capabilities.xsd">
 
 <Service>
   <Name>MapServer WFS</Name>
   <Title>Test simple wfs</Title>
-  <OnlineResource>http://localhost/path/to/wfs_simple?</OnlineResource>
+  <Abstract>Test WFS Abstract</Abstract>
+  <Keywords>
+    ogc
+    wfs
+    gml
+    om
+  </Keywords>
+  <OnlineResource>http://localhost</OnlineResource>
+  <Fees>none</Fees>
+  <AccessConstraints>none</AccessConstraints>
 </Service>
 
 <Capability>
