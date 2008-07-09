@@ -34,13 +34,10 @@ Content-type: text/xml
           <ows:ElectronicMailAddress>warmerdam@pobox.com</ows:ElectronicMailAddress>
         </ows:Address>
         <ows:OnlineResource xlink:type="simple" xlink:href="http://198.202.74.215/cgi-bin/wcs_demo"/>
-        <ows:HoursOfService/>
-<!--WARNING: Optional metadata "ows_hoursofservice" was missing for ows:HoursOfService-->
-        <ows:ContactInstructions/>
-<!--WARNING: Optional metadata "ows_contactinstructions" was missing for ows:ContactInstructions-->
+        <ows:HoursOfService>0800h - 1600h EST</ows:HoursOfService>
+        <ows:ContactInstructions>during hours of service</ows:ContactInstructions>
       </ows:ContactInfo>
-      <ows:Role/>
-<!--WARNING: Optional metadata "ows_role" was missing for ows:Role-->
+      <ows:Role>staff</ows:Role>
     </ows:ServiceContact>
   </ows:ServiceProvider>
   <ows:OperationsMetadata>

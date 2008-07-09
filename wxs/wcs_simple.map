@@ -142,11 +142,13 @@ WEB
    "ows_postcode" "K0J 1T0"
    "ows_country" "Canada"
    "ows_contactelectronicmailaddress" "warmerdam@pobox.com"
+   "ows_hoursofservice" "0800h - 1600h EST"
+   "ows_contactinstructions" "during hours of service"
+   "ows_role" "staff"
 
    # OGC:WCS
    "wcs_label"    "Test Label"
    "wcs_description" "Test description"
-   "wcs_keywordlist" "Test Keywords"
    "wcs_onlineresource"    "http://devgeo.cciw.ca/cgi-bin/mapserv/ecows"
    "wcs_metadatalink_href" "http://devgeo.cciw.ca/index.html"
   END

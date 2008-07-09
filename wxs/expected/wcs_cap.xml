@@ -14,7 +14,8 @@ Content-type: text/xml
   <name>MapServer WCS</name>
   <label>Test Label</label>
   <keywords>
-    <keyword>Test Keywords</keyword>
+    <keyword>keyword</keyword>
+    <keyword>list</keyword>
   </keywords>
 <responsibleParty>
     <individualName>Frank Warmerdam</individualName>
