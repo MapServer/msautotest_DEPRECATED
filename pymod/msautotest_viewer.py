@@ -261,8 +261,10 @@ def main():
  
                 logging.debug(function_name + 'geotiff')
 
-                expected_PNG_image_URL = tiff2png(parameters_list[3])
-                actual_pNG_image_URL = tiff2png(parameters_list[1])
+                #expected_PNG_image_URL = tiff2png(parameters_list[3])
+                #actual_pNG_image_URL = tiff2png(parameters_list[1])
+                expected_PNG_image_URL = parameters_list[4]
+                actual_pNG_image_URL = parameters_list[2]
                 print "<tr><td><table border=1 width=100%><tr><td>File:" + parameters_list[0] + "</td><td>GeoTiff converted to Png.</td></tr></tr></table></td></tr>"
 
             else:
@@ -360,7 +362,7 @@ def tiff2png(tiff_file):
 
     basename = os.path.basename(tiff_file)
     imagename_list = os.path.splitext(basename)
-    filename =  imagename[0] + '_msautotest_' + sub_path
+    filename =  imagename_list[0] + '_msautotest_' + sub_path
     logging.debug(function_name + "filename=" + filename)
     PNG_file = tmp_path + filename + '.png'
     PNG_URL = tmp_web + filename + '.png'
@@ -384,7 +386,7 @@ def tiff2png(tiff_file):
     logging.debug(function_name + "cmd=" + cmd)
     oShellProcess = subprocess.call(cmd, shell=True, stdout=out_fp, stderr=err_fp )
 
-    return(szPngURL)
+    return(PNG_URL)
 
 ## Remove temporary PNG images file
 def rmTmpPngImages():
