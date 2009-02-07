@@ -19,7 +19,7 @@ Content-type: text/xml
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:35"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+        <swe:CompositePhenomenon gml:id="WaterQuality_o_371" dimension="4">
           <gml:name>WaterQuality</gml:name>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
@@ -37,11 +37,11 @@ Content-type: text/xml
                 <gml:upperCorner>-75.000000 45.000000</gml:upperCorner>
               </gml:Envelope>
             </gml:boundedBy>
-            <msGeometry>
+            <ms:msGeometry>
               <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
                 <gml:pos>-75.000000 45.000000</gml:pos>
               </gml:Point>
-            </msGeometry>
+            </ms:msGeometry>
             <ms:Value>89.9</ms:Value>
           </ms:obs>
         </gml:featureMember>
@@ -57,7 +57,7 @@ Content-type: text/xml
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:35"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+        <swe:CompositePhenomenon gml:id="WaterQuality_o_377" dimension="4">
           <gml:name>WaterQuality</gml:name>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
@@ -75,11 +75,11 @@ Content-type: text/xml
                 <gml:upperCorner>-75.000000 45.000000</gml:upperCorner>
               </gml:Envelope>
             </gml:boundedBy>
-            <msGeometry>
+            <ms:msGeometry>
               <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
                 <gml:pos>-75.000000 45.000000</gml:pos>
               </gml:Point>
-            </msGeometry>
+            </ms:msGeometry>
             <ms:Value>93.9</ms:Value>
           </ms:obs>
         </gml:featureMember>
@@ -95,7 +95,7 @@ Content-type: text/xml
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:604"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+        <swe:CompositePhenomenon gml:id="WaterQuality_o_964" dimension="4">
           <gml:name>WaterQuality</gml:name>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
@@ -113,11 +113,11 @@ Content-type: text/xml
                 <gml:upperCorner>-122.000000 49.000000</gml:upperCorner>
               </gml:Envelope>
             </gml:boundedBy>
-            <msGeometry>
+            <ms:msGeometry>
               <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
                 <gml:pos>-122.000000 49.000000</gml:pos>
               </gml:Point>
-            </msGeometry>
+            </ms:msGeometry>
             <ms:Value>99.9</ms:Value>
           </ms:obs>
         </gml:featureMember>

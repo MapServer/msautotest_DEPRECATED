@@ -87,6 +87,23 @@
 # GetObservation (time and filter and featureOfInterest)
 #
 # RUN_PARMS: sos_getobs_time_filter_foi.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsGreaterThan><PropertyName>value</PropertyName><Literal>89.9</Literal></PropertyIsGreaterThan></Filter>&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>&featureOfInterest=<gml:Envelope><gml:lowerCorner srsName="EPSG:4326">-76 44</gml:lowerCorner><gml:upperCorner srsName="EPSG:4326">-64 47</gml:upperCorner></gml:Envelope>" > [RESULT]
+#
+# DescribeObservationType
+#
+# Exceptions
+#
+# DescribeObservationType (missing observedproperty)
+# RUN_PARMS: sos_descobs_ex1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeObservationType" > [RESULT]
+#
+# DescribeObservationType (invalid observedproperty)
+# RUN_PARMS: sos_descobs_ex2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeObservationType&observedproperty=foo" > [RESULT]
+#
+# Valid
+#
+# DescribeObservationType (invalid observedproperty)
+# RUN_PARMS: sos_descobs.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeObservationType&observedproperty=WaterQuality" > [RESULT]
+#
+
 
 MAP
  NAME sostest

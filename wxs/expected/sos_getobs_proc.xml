@@ -19,7 +19,7 @@ Content-type: text/xml
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+        <swe:CompositePhenomenon gml:id="WaterQuality_o_238" dimension="4">
           <gml:name>WaterQuality</gml:name>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
@@ -37,11 +37,11 @@ Content-type: text/xml
                 <gml:upperCorner>-79.000000 43.000000</gml:upperCorner>
               </gml:Envelope>
             </gml:boundedBy>
-            <msGeometry>
+            <ms:msGeometry>
               <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
                 <gml:pos>-79.000000 43.000000</gml:pos>
               </gml:Point>
-            </msGeometry>
+            </ms:msGeometry>
             <ms:Value>103.5</ms:Value>
           </ms:obs>
         </gml:featureMember>
@@ -57,7 +57,7 @@ Content-type: text/xml
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
       <om:observedProperty>
-        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+        <swe:CompositePhenomenon gml:id="WaterQuality_o_297" dimension="4">
           <gml:name>WaterQuality</gml:name>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
@@ -75,11 +75,11 @@ Content-type: text/xml
                 <gml:upperCorner>-79.000000 43.000000</gml:upperCorner>
               </gml:Envelope>
             </gml:boundedBy>
-            <msGeometry>
+            <ms:msGeometry>
               <gml:Point srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
                 <gml:pos>-79.000000 43.000000</gml:pos>
               </gml:Point>
-            </msGeometry>
+            </ms:msGeometry>
             <ms:Value>93.5</ms:Value>
           </ms:obs>
         </gml:featureMember>
