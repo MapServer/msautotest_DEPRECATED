@@ -1,7 +1,7 @@
 Content-type: text/xml
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<om:ObservationCollection xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:om="http://www.opengis.net/om/1.0" gml:id="Water" xsi:schemaLocation="http://www.opengis.net/om/1.0 http://schemas.opengis.net/om/1.0.0/om.xsd">
+<om:ObservationCollection xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sos="http://www.opengis.net/sos/1.0" xmlns:ms="http://mapserver.gis.umn.edu/mapserver" xmlns:om="http://www.opengis.net/om/1.0" gml:id="Water" xsi:schemaLocation="http://www.opengis.net/om/1.0 http://schemas.opengis.net/om/1.0.0/om.xsd http://mapserver.gis.umn.edu/mapserver http://localhost/cgi-bin/sostest?service=WFS&amp;version=1.1.0&amp;request=DescribeFeatureType&amp;typename=obs">
   <gml:description xmlns:gml="http://www.opengis.net/gml">This is for water</gml:description>
   <gml:name xmlns:gml="http://www.opengis.net/gml">Water</gml:name>
   <gml:boundedBy>
@@ -27,10 +27,10 @@ Content-type: text/xml
           <swe:component xlink:href="urn:ogc:def:property:ACME:8:Value"/>
         </swe:CompositePhenomenon>
       </om:observedProperty>
-      <om:featureOfInterest xlink:href="urn:ogc:foo"/>
+      <om:featureOfInterest xlink:href="http://localhost/cgi-bin/sostest?service=WFS&amp;version=1.1.0&amp;request=DescribeFeatureType&amp;typename=obs"/>
       <om:result>
-        <gml:featureMember xmlns:gml="http://www.opengis.net/gml">
-          <obs>
+        <gml:featureMember>
+          <ms:obs>
             <gml:boundedBy>
               <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
                 <gml:lowerCorner>-79.000000 43.000000</gml:lowerCorner>
@@ -42,8 +42,8 @@ Content-type: text/xml
                 <gml:pos>-79.000000 43.000000</gml:pos>
               </gml:Point>
             </msGeometry>
-            <Value>103.5</Value>
-          </obs>
+            <ms:Value>103.5</ms:Value>
+          </ms:obs>
         </gml:featureMember>
       </om:result>
     </om:Observation>
