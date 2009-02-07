@@ -11,16 +11,25 @@ Content-type: text/xml
     </gml:Envelope>
   </gml:boundedBy>
   <om:member>
-    <om:Observation>
+    <om:Observation gml:id="o_238">
       <om:samplingTime>
         <gml:TimeInstant>
           <gml:timePosition>2007-10-30T08:57:29Z</gml:timePosition>
         </gml:TimeInstant>
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
-      <observedProperty>WaterQuality</observedProperty>
+      <om:observedProperty>
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+          <gml:name>WaterQuality</gml:name>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:DATETIME"/>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:Value"/>
+        </swe:CompositePhenomenon>
+      </om:observedProperty>
+      <om:featureOfInterest xlink:href="urn:ogc:foo"/>
       <om:result>
-        <gml:featureMember xmlns:gml="http://www.opengis.net/gml" gml:id="238">
+        <gml:featureMember xmlns:gml="http://www.opengis.net/gml">
           <obs>
             <gml:boundedBy>
               <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">
@@ -40,16 +49,25 @@ Content-type: text/xml
     </om:Observation>
   </om:member>
   <om:member>
-    <om:Observation>
+    <om:Observation gml:id="o_297">
       <om:samplingTime>
         <gml:TimeInstant>
           <gml:timePosition>2003-10-30T07:37:29Z</gml:timePosition>
         </gml:TimeInstant>
       </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
-      <observedProperty>WaterQuality</observedProperty>
+      <om:observedProperty>
+        <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
+          <gml:name>WaterQuality</gml:name>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:STN_ID"/>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:DATETIME"/>
+          <swe:component xlink:href="urn:ogc:def:property:ACME:8:Value"/>
+        </swe:CompositePhenomenon>
+      </om:observedProperty>
+      <om:featureOfInterest xlink:href="urn:ogc:foo"/>
       <om:result>
-        <gml:featureMember xmlns:gml="http://www.opengis.net/gml" gml:id="297">
+        <gml:featureMember xmlns:gml="http://www.opengis.net/gml">
           <obs>
             <gml:boundedBy>
               <gml:Envelope srsName="urn:ogc:crs:epsg:4326" srsDimension="2">

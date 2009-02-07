@@ -12,12 +12,12 @@ Content-type: text/xml
   </gml:boundedBy>
   <om:member>
     <om:Observation>
-      <sos:time>
+      <om:samplingTime>
         <gml:TimePeriod>
           <gml:beginPosition>1990</gml:beginPosition>
           <gml:endPosition>2007</gml:endPosition>
         </gml:TimePeriod>
-      </sos:time>
+      </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:35"/>
       <om:observedProperty>
         <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
@@ -53,12 +53,12 @@ Content-type: text/xml
   </om:member>
   <om:member>
     <om:Observation>
-      <sos:time>
+      <om:samplingTime>
         <gml:TimePeriod>
           <gml:beginPosition>1990</gml:beginPosition>
           <gml:endPosition>2007</gml:endPosition>
         </gml:TimePeriod>
-      </sos:time>
+      </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:2147"/>
       <om:observedProperty>
         <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
@@ -94,12 +94,12 @@ Content-type: text/xml
   </om:member>
   <om:member>
     <om:Observation>
-      <sos:time>
+      <om:samplingTime>
         <gml:TimePeriod>
           <gml:beginPosition>1990</gml:beginPosition>
           <gml:endPosition>2007</gml:endPosition>
         </gml:TimePeriod>
-      </sos:time>
+      </om:samplingTime>
       <om:procedure xlink:href="urn:ogc:def:procedure:604"/>
       <om:observedProperty>
         <swe:CompositePhenomenon gml:id="WaterQuality" dimension="4">
