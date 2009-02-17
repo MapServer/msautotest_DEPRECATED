@@ -11,9 +11,32 @@ Content-type: application/vnd.ogc.wms_xml
 <Service>
   <Name>OGC:WMS</Name>
   <Title>Test simple wms</Title>
-  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/>
+        <KeywordList>
+          <Keyword>ogc</Keyword>
+          <Keyword>wms</Keyword>
+          <Keyword>mapserver</Keyword>
+        </KeywordList>
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>
+    <ContactPersonPrimary>
+      <ContactPerson>Tom Kralidis</ContactPerson>
+      <ContactOrganization>MapServer</ContactOrganization>
+    </ContactPersonPrimary>
+      <ContactPosition>self</ContactPosition>
+    <ContactAddress>
+        <AddressType>postal</AddressType>
+        <Address>123 SomeRoad Road</Address>
+        <City>Toronto</City>
+        <StateOrProvince>Ontario</StateOrProvince>
+        <PostCode>xxx-xxx</PostCode>
+        <Country>Canada</Country>
+    </ContactAddress>
+      <ContactVoiceTelephone>+xx-xxx-xxx-xxxx</ContactVoiceTelephone>
+      <ContactFacsimileTelephone>+xx-xxx-xxx-xxxx</ContactFacsimileTelephone>
+  <ContactElectronicMailAddress>tomkralidis@xxxxxxx.xxx</ContactElectronicMailAddress>
   </ContactInformation>
+  <Fees>None</Fees>
+  <AccessConstraints>None</AccessConstraints>
 </Service>
 
 <Capability>
@@ -101,10 +124,10 @@ Content-type: application/vnd.ogc.wms_xml
     <LatLonBoundingBox minx="-67.5725" miny="42" maxx="-58.9275" maxy="48.5" />
     <BoundingBox SRS="EPSG:4326"
                 minx="-67.5725" miny="42" maxx="-58.9275" maxy="48.5" />
-    <Layer queryable="0" opaque="0" cascaded="0">
+    <Layer queryable="1" opaque="0" cascaded="0">
         <Name>road</Name>
         <Title>road</Title>
-<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
+        <SRS>EPSG:43204</SRS>
         <LatLonBoundingBox minx="-66.6333" miny="42.3821" maxx="-59.2921" maxy="48.2955" />
         <Style>
           <Name>default</Name>
