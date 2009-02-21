@@ -59,7 +59,7 @@ def compare_result( filename ):
     # Check image checksums with GDAL if it is available.
     
     try:
-	import gdal
+	import osgeo.gdal
         gdal.PushErrorHandler()
 	exp_ds = gdal.Open( expected_file )
         gdal.PopErrorHandler()
