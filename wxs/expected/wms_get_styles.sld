@@ -11,7 +11,7 @@ Content-type: application/vnd.ogc.sld+xml
 <Stroke>
 <CssParameter name="stroke">#0000ff</CssParameter>
 <CssParameter name="stroke-opacity">1.00</CssParameter>
-<CssParameter name="stroke-width">1</CssParameter>
+<CssParameter name="stroke-width">1.00</CssParameter>
 </Stroke>
 </LineSymbolizer>
 </Rule>
