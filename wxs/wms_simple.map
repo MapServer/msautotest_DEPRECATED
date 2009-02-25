@@ -26,6 +26,9 @@
 # RUN_PARMS: wms_get_map_polygon.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-67.5725,42.3683,-58.9275,48.13&FORMAT=image/png&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road" > [RESULT_DEMIME]
 #
 #
+# GetStyles
+# RUN_PARMS: wms_getstyles.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetStyles&LAYERS=road" > [RESULT]
+#
 # 1.3.0 tests
 #
 # exception
@@ -45,7 +48,9 @@
 #
 # DescribeLayer
 # RUN_PARMS: wms_describelayer130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=DescribeLayer&layers=road&sld_version=1.1.0" > [RESULT]
-
+#
+# GetStyles
+# RUN_PARMS: wms_getstyles130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetStyles&layers=road" > [RESULT]
 
 NAME WMS_TEST
 STATUS ON
@@ -82,7 +87,7 @@ WEB
     "wms_title"		   "Test simple wms"
     "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
     "wms_srs"		   "EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326"
-    "ows_schemas_location" "http://ogc.dmsolutions.ca"
+    "ows_schemas_location" "http://schemas.opengis.net"
     "ows_keywordlist" "ogc,wms,mapserver"
     "ows_service_onlineresource" "http://www.mapserver.org/"
     "ows_fees" "None"
