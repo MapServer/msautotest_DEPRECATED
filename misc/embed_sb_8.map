@@ -1,0 +1,32 @@
+#
+# Test embedded scalebar ... without transparency to 8bit output file. 
+#
+# REQUIRES: OUTPUT=PNG
+#
+
+MAP
+
+EXTENT -180 -90 180 90
+SIZE 400 300
+IMAGECOLOR 0 0 0 
+									
+TRANSPARENT OFF
+
+IMAGETYPE png
+
+SCALEBAR
+  TRANSPARENT OFF
+  LABEL
+    COLOR 0 0 0
+    size small
+  END
+  SIZE 150 3
+  COLOR 0 0 0
+  BACKGROUNDCOLOR 255 255 255
+  OUTLINECOLOR 0 0 0
+  UNITS kilometers
+  INTERVALS 3
+  STATUS EMBED
+END
+
+END
