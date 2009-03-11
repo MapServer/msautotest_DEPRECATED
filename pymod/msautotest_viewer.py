@@ -1,5 +1,6 @@
-#!/home/nsavard/fgs-ms5.2.0/bin/python
+#!/home/nsavard/fgs/bin/python
 ##!c:/python25/python.exe
+
 import cgi, os, os.path, subprocess, tempfile
 import logging, difflib, ConfigParser, sys, string
 
@@ -38,31 +39,34 @@ def main():
     </head>
     <body>
       <h1>Auto Compare Maps</h1>
-      <a href="../pymod">Back to msautotest root directory</a>
+      <a href="./">Back to msautotest root directory</a>
       <form method=POST>
 
         <INPUT TYPE=HIDDEN NAME="Position" VALUE="">
         <INPUT TYPE=HIDDEN NAME="Direction" VALUE="">
         <INPUT TYPE=HIDDEN NAME="Directory" VALUE="">
+        <INPUT TYPE=HIDDEN NAME="URL" VALUE="">
 
     <script language="JavaScript" type="text/javascript">
 
-      function PrevPage(nResults, nPos, szDir)
+      function PrevPage(nResults, nPos, szDir, szURL)
       {
           //alert('prevpage');
           document.forms[0].Direction.value="PREV";
           document.forms[0].Position.value = parseInt(nPos) - parseInt(nResults);
           document.forms[0].Directory.value=szDir;
+          document.forms[0].URL.value=szURL;
           document.forms[0].submit();
 
      
       }
-      function NextPage(nResults, nPos, szDir)
+      function NextPage(nResults, nPos, szDir, szURL)
       {
           //alert('nextpage');
           document.forms[0].Direction.value="NEXT";
           document.forms[0].Position.value = parseInt(nPos) + parseInt(nResults);
           document.forms[0].Directory.value=szDir;
+          document.forms[0].URL.value=szURL;
           document.forms[0].submit();
       }
 
@@ -119,22 +123,38 @@ def main():
 
     GET_parameters = cgi.FieldStorage()
 
+
+    for key in GET_parameters.keys():
+        logging.debug('key='+ str(key) + ', value=' + str(GET_parameters[key]))
+
     if GET_parameters.has_key( 'Direction'):
-        direction = GET_parameters['Direction'].value
+        direction = GET_parameters.getfirst("Direction", "")
     else:
         direction = ""
 
+    logging.debug( "direction=" + direction)
+
     if GET_parameters.has_key( 'Position'):
-        position = GET_parameters['Position'].value
+        position = GET_parameters.getfirst("Position", "")
     else:
         position = 0
 
+    logging.debug( "position=" + str(position))
+
     if GET_parameters.has_key( 'Directory'):
-        directory = GET_parameters['Directory'].value
+        directory = GET_parameters.getfirst("Directory", "")
+        ##directory = GET_parameters['Directory'].value
     else:
         directory = ""
+    logging.debug( "directory=" + directory)
 
-    #Opening and reading directoy
+    if GET_parameters.has_key( 'URL'):
+        URL = GET_parameters.getfirst("URL", "")
+        #URL = GET_parameters['URL'].value
+    else:
+        URL = ""
+
+   #Opening and reading directoy
     count = 0
     lines_list = []
 
@@ -147,8 +167,8 @@ def main():
     actual_directory = directory + '/result/'
     expected_directory = directory + '/expected/'
 
-    actual_URL =  directory + "/result/"
-    expected_URL = directory + "/expected/"
+    actual_URL =  URL+ "/result/"
+    expected_URL = URL+ "/expected/"
 
     logging.debug( function_name + "directory="+directory)
     logging.debug(  function_name + "actual directory="+actual_directory)
@@ -179,24 +199,24 @@ def main():
 
     #Control "NEXT" and "PREVIOUS" buttons appearance
     if direction  == "NEXT":
-        prev_button = "<a href=\"javascript:PrevPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory) + "')\">PREV</a>"
+        prev_button = "<a href=\"javascript:PrevPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory) + "' , '" + str(URL)+ "')\">PREV</a>"
         if ( int(position) + results_per_page) < count:
-            next_button = "<a href=\"javascript:NextPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory) + "')\">NEXT</a>"
+            next_button = "<a href=\"javascript:NextPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory)  + "' , '" + str(URL)+ "')\">NEXT</a>"
        
         else:
             next_button = "<a>NEXT</a>"
     elif direction  == "PREV":
-        next_button = "<a href=\"javascript:NextPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory) + "')\">NEXT</a>"
+        next_button = "<a href=\"javascript:NextPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory)  + "' , '" + str(URL)+ "')\">NEXT</a>"
 
         if ( int(position) - results_per_page) >= 0:
-            prev_button = "<a href=\"javascript:PrevPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory) + "')\">PREV</a>"
+            prev_button = "<a href=\"javascript:PrevPage(" + str(results_per_page) + "," + str(position) + ", '" + str(directory)  + "' , '" + str(URL)+ "')\">PREV</a>"
         else:
             prev_button = "<a>PREV</a>"
 
     else:
         prev_button = "<a>PREV</a>"
         if ( int(position) + results_per_page) < count:
-            next_button = "<a href=\"javascript:NextPage(" + str(results_per_page) + "," + str(position) + "," + "'" + str(directory) +"')\">NEXT</a>"
+            next_button = "<a href=\"javascript:NextPage(" + str(results_per_page) + "," + str(position) + "," + "'" + str(directory)  + "' , '" + str(URL)+"')\">NEXT</a>"
         else:
             next_button = "<a>NEXT</a>"
 
@@ -261,23 +281,23 @@ def main():
  
                 logging.debug(function_name + 'geotiff')
 
-                #expected_PNG_image_URL = tiff2png(parameters_list[3])
-                #actual_pNG_image_URL = tiff2png(parameters_list[1])
-                expected_PNG_image_URL = parameters_list[4]
-                actual_pNG_image_URL = parameters_list[2]
+                expected_PNG_image_URL = tiff2png(parameters_list[3])
+                actual_PNG_image_URL = tiff2png(parameters_list[1])
+                #expected_PNG_image_URL = parameters_list[4]
+                #actual_PNG_image_URL = parameters_list[2]
                 print "<tr><td><table border=1 width=100%><tr><td>File:" + parameters_list[0] + "</td><td>GeoTiff converted to Png.</td></tr></tr></table></td></tr>"
 
             else:
                 expected_PNG_image_URL = parameters_list[4]
-                actual_pNG_image_URL = parameters_list[2]
+                actual_PNG_image_URL = parameters_list[2]
                 print "<tr><td><table border=1 width=100%><tr><td>File:" + parameters_list[0] + "</td><td></td></tr></tr></table></td></tr>"
 
 
             #Display switching buttons
-            print "<tr><td><table border=1 width=100%><tr><td>Expected</td><td>Actual</td><td><table><tr><td><INPUT TYPE=button NAME=\"Start\" onclick=\"startSwitching('imagefliper" + str(i) + "', '" + actual_pNG_image_URL +"', '" + expected_PNG_image_URL + "')\" >Start switching</td><td><INPUT TYPE=button NAME=\"Stop\" onclick=\"stopSwitching()\" >Stop switching</td><td>image:<input type=\"text\" id=\"imagefliper" + str(i) + "\" name=\"imagefliper" + str(i) + "\" value=\"" + actual_pNG_image_URL + "\" size=\"30\"></td></tr></table></td></tr>\n"
+            print "<tr><td><table border=1 width=100%><tr><td>Expected</td><td>Actual</td><td><table><tr><td><INPUT TYPE=button NAME=\"Start\" onclick=\"startSwitching('imagefliper" + str(i) + "', '" + actual_PNG_image_URL +"', '" + expected_PNG_image_URL + "')\" >Start switching</td><td><INPUT TYPE=button NAME=\"Stop\" onclick=\"stopSwitching()\" >Stop switching</td><td>image:<input type=\"text\" id=\"imagefliper" + str(i) + "\" name=\"imagefliper" + str(i) + "\" value=\"" + actual_PNG_image_URL + "\" size=\"30\"></td></tr></table></td></tr>\n"
 
             #Display images
-            print "<tr><td><img width=\"400\" height=\"300\" src=\"" + expected_PNG_image_URL + "\"></td><td><img width=\"400\" height=\"300\" src=\"" + actual_pNG_image_URL + "\"></td><td><img name=\"imagefliper" + str(i) + "\" width=\"400\" height=\"300\" src=\"" + actual_pNG_image_URL + "\"></td></tr></table><td><tr>\n"
+            print "<tr><td><img width=\"400\" height=\"300\" src=\"" + expected_PNG_image_URL + "\"></td><td><img width=\"400\" height=\"300\" src=\"" + actual_PNG_image_URL + "\"></td><td><img name=\"imagefliper" + str(i) + "\" width=\"400\" height=\"300\" src=\"" + actual_PNG_image_URL + "\"></td></tr></table><td><tr>\n"
 
         else:
             continue
