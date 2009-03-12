@@ -7,6 +7,8 @@
 # Capabilities
 # RUN_PARMS: wms_time_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
+# Capabilities 1.3.0
+# RUN_PARMS: wms_time_cap130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
 # Draw a layer by using no time value specified
 #.
