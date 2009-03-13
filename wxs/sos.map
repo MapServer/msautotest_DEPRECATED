@@ -33,7 +33,7 @@
 #
 # DescribeSensor
 #
-#  Exceptions
+# Exceptions
 #
 # RUN_PARMS: sos_se3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.1.0&request=DescribeSensor" > [RESULT]
 # RUN_PARMS: sos_se4.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor" > [RESULT]
@@ -41,7 +41,7 @@
 # RUN_PARMS: sos_se6.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=2147&outputFormat=XML" > [RESULT]
 # RUN_PARMS: sos_se7.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=20147&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
 #
-#  Valid
+# Valid
 #
 # RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=urn:ogc:def:procedure:35&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
 #
