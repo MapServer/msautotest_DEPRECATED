@@ -1,3 +1,4 @@
+MAP
 #
 # Test averaged resampling.  Results currently depend on the 2x oversampling
 # for mapresample.c.

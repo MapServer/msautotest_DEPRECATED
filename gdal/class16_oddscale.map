@@ -1,3 +1,4 @@
+MAP
 #
 # Test of classification methods on a floating point input with provided
 # scaling that causes merging of some original values throwing off results.
