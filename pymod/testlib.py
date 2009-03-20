@@ -88,7 +88,7 @@ def compare_result( filename ):
     if have_pdiff != 'false':
     
         try:
-            cmd = 'perceptualdiff %s %s > pd.out' % (result_file,expected_file)
+            cmd = 'perceptualdiff -verbose %s %s > pd.out' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
