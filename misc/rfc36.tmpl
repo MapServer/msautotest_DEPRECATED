@@ -1,0 +1,29 @@
+[resultset layer=popplace]
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "EPSG",
+  "properties": {
+   "code": 42304,
+   "coordinate_order": [1,0]
+  }
+ },
+ "features": [
+ [feature trimlast=","] {
+   "type": "Feature",
+   "id": "[UNIQUE_KEY]",
+   "geometry": {
+    "type": "Point",
+    "coordinates":
+     [[LONG], [LAT]]
+   },
+   "properties": {
+    "NAME": "[NAME]",
+    "CAPITAL": [CAPITAL],
+    "POP_RANGE": [POP_RANGE]
+   }
+  },
+ [/feature]
+ ]
+}
+[/resultset]
