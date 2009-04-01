@@ -1,6 +1,8 @@
 #
 # Test TRANSPARENCY flag with 8bit output result.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

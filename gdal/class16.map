@@ -1,6 +1,8 @@
 #
 # Simple test of classification methods on a floating point input. 
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

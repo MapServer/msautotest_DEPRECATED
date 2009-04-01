@@ -1,4 +1,3 @@
-
 #
 # Tests overlaying an RGB image with a transparent value on a greyscale image
 # into an 8bit output file.
@@ -7,6 +6,8 @@
 #
 # REQUIRES: SUPPORTS=PROJ
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

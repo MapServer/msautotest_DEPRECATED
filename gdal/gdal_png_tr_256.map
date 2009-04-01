@@ -2,6 +2,8 @@
 #
 # Tests transparent 8bit output via GDAL without resampling.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 500 500

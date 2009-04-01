@@ -1,6 +1,8 @@
 #
 # Test bilinear resampling on floating point "raw" data format.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

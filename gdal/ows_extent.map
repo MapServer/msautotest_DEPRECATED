@@ -1,8 +1,8 @@
 #
 # Tests support for getting image extents from OWS extents metadata.
 #
+MAP
 
-#
 NAME TEST
 STATUS ON
 SIZE 400 300

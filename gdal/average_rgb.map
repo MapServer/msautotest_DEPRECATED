@@ -2,6 +2,8 @@
 # Test averaged resampling.  Results currently depend on the 2x oversampling
 # for mapresample.c.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 12 9

@@ -3,6 +3,8 @@
 # Tests support for OFFSITE used with RGB value of a colortable entry
 # for a pseudocolored input raster (through GDAL). 
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

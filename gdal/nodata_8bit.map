@@ -3,6 +3,8 @@
 # Tests support for NODATA used with a single value from an 8bit image.  This
 # is testing NODATA directive in a non-16bitclassification case.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 200 150

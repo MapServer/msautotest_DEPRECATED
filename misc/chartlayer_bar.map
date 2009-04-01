@@ -3,6 +3,8 @@
 #
 # $Id: gmap75.map,v 1.23 2003/02/25 19:46:42 daniel Exp $
 #
+MAP
+
 NAME DEMO
 STATUS ON
 SIZE 400 300

@@ -1,4 +1,3 @@
-
 #
 # Tests overlaying an RGB image with a transparent value on a greyscale image
 # into an RGB output. 
@@ -8,6 +7,8 @@
 #
 # NOTE: without resampling. 
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

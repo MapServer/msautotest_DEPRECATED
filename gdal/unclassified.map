@@ -1,9 +1,10 @@
-
 #
 # Test use of 24bit images with a dummy class used to populate the legend.
 # The image should come through as 24bit since there is no expression in the
 # class.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

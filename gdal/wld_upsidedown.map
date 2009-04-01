@@ -1,6 +1,8 @@
 #
 # Tests support for upside-down images (like bug 1904).
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 200 150

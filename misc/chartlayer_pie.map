@@ -2,6 +2,8 @@
 # Test on chart creation
 #
 #
+MAP
+
 NAME DEMO
 STATUS ON
 SIZE 400 300

@@ -4,6 +4,7 @@
 # In this case the final output image is RGB but the temporary results include
 # alpha values. 
 #
+MAP
 
 NAME TEST
 STATUS ON
