@@ -2,6 +2,7 @@
 #
 # Test GIMP curve file support: single curve. 
 #
+MAP
 NAME TEST
 STATUS ON
 SIZE 400 300

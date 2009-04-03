@@ -11,6 +11,8 @@
 #        we get to allocating a color for the grid.  This is an expected
 #        "error" in the results.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

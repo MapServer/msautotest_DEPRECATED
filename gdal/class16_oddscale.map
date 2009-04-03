@@ -6,6 +6,8 @@
 # values like -4 will now fall into the green class because the fall into the
 # 0 to -5.25 bucket which is averaged to -2.675 for classification purposes. 
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

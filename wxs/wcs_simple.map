@@ -77,6 +77,7 @@
 # GetCoverage to GDPNG 1.1 (Test non-GDAL output)
 # RUN_PARMS: wcs_getcov_gdpng8_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/png;%20mode=8bit&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
 #
+MAP
 
 NAME TEST
 SIZE 400 300

@@ -6,6 +6,8 @@
 # emitted.  Eventualy if this is fixed, a new proper result should occur and
 # this tests results will need to be updated.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 200 150 

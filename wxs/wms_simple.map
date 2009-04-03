@@ -51,6 +51,7 @@
 #
 # GetStyles
 # RUN_PARMS: wms_getstyles130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetStyles&layers=road" > [RESULT]
+MAP
 
 NAME WMS_TEST
 STATUS ON

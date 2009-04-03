@@ -2,6 +2,8 @@
 # Test of classification methods on a floating point input with provided
 # NODATA, scaling and bucket values. 
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

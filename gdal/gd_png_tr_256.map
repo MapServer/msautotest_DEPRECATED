@@ -1,6 +1,8 @@
 #
 # Tests transparent 8bit output via GD without resampling.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 500 500

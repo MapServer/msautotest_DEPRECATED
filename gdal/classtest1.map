@@ -4,6 +4,8 @@
 #
 # NOTE: without resampling.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

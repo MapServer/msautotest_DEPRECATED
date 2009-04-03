@@ -3,6 +3,8 @@
 # Test support for OFFSITE on simple greyscale (1 band, no colormap) inputs.
 # http://mapserver.gis.umn.edu/bugs/show_bug.cgi?id=2024
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 200 150

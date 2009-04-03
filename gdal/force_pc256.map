@@ -5,6 +5,8 @@
 #
 # See http://mapserver.gis.umn.edu/bugs/show_bug.cgi?id=1690
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

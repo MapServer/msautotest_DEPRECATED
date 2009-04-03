@@ -1,7 +1,8 @@
-
 #
 # Test use of the BANDS option via the PROCESSING directive.
 #
+MAP
+
 NAME TEST
 STATUS ON
 SIZE 400 300

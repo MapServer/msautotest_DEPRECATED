@@ -6,6 +6,7 @@
 #   
 # REQUIRES: INPUT=OGR OUTPUT=PNG INPUT=SDE
 #
+MAP
 
 FONTSET "/home/hobu/mapserver/tests/fonts.txt"
 SYMBOL

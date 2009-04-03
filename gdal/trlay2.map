@@ -4,6 +4,7 @@
 # Final result is RGBA and transparency from both input images, and the
 # layer TRANSPARENCY flag all have an influence.
 #
+MAP
 
 NAME TEST
 STATUS ON
