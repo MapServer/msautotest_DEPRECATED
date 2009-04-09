@@ -1,10 +1,10 @@
-
 #
 # Tests overlaying a greyscale image with an alpha band on a greyscale image
 # into an RGBA output.
 #
 # NOTE: without resampling. 
 #
+MAP
 NAME TEST
 STATUS ON
 SIZE 400 300
