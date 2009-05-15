@@ -43,7 +43,7 @@ Content-type: text/xml
             </swe:DataRecord>
           </swe:components>
           <swe:encoding>
-            <swe:TextBlock tokenSeparator="," blockSeparator=",&#10;" decimalSeparator="."/>
+            <swe:TextBlock tokenSeparator="," blockSeparator="&#10;" decimalSeparator="."/>
           </swe:encoding>
         </swe:DataBlockDefinition>
       </om:resultDefinition>
@@ -84,7 +84,7 @@ Content-type: text/xml
             </swe:DataRecord>
           </swe:components>
           <swe:encoding>
-            <swe:TextBlock tokenSeparator="," blockSeparator=",&#10;" decimalSeparator="."/>
+            <swe:TextBlock tokenSeparator="," blockSeparator="&#10;" decimalSeparator="."/>
           </swe:encoding>
         </swe:DataBlockDefinition>
       </om:resultDefinition>
@@ -125,7 +125,7 @@ Content-type: text/xml
             </swe:DataRecord>
           </swe:components>
           <swe:encoding>
-            <swe:TextBlock tokenSeparator="," blockSeparator=",&#10;" decimalSeparator="."/>
+            <swe:TextBlock tokenSeparator="," blockSeparator="&#10;" decimalSeparator="."/>
           </swe:encoding>
         </swe:DataBlockDefinition>
       </om:resultDefinition>
