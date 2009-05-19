@@ -85,7 +85,7 @@ Content-type: text/xml
       </ows:Parameter>
       <ows:Parameter name="outputFormat">
         <ows:AllowedValues>
-          <ows:Value>text/xml; subtype=sensorML/1.0.0</ows:Value>
+          <ows:Value>text/xml; subtype="sensorML/1.0.0"</ows:Value>
         </ows:AllowedValues>
       </ows:Parameter>
     </ows:Operation>
@@ -138,7 +138,7 @@ Content-type: text/xml
       </ows:Parameter>
       <ows:Parameter name="responseFormat">
         <ows:AllowedValues>
-          <ows:Value>text/xml; subtype=om/1.0.0</ows:Value>
+          <ows:Value>text/xml; subtype="om/1.0.0"</ows:Value>
         </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="resultModel">
@@ -234,7 +234,7 @@ Content-type: text/xml
           </swe:CompositePhenomenon>
         </sos:observedProperty>
         <sos:featureOfInterest xlink:href="urn:ogc:def:feature:OGC-SWE:3:transient"/>
-        <sos:responseFormat>text/xml; subtype=om/1.0.0</sos:responseFormat>
+        <sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
         <sos:resultModel>om:Observation</sos:resultModel>
         <sos:resultModel>om:Measurement</sos:resultModel>
         <sos:responseMode>inline</sos:responseMode>

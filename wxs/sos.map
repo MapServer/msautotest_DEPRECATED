@@ -39,54 +39,54 @@
 # RUN_PARMS: sos_se4.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor" > [RESULT]
 # RUN_PARMS: sos_se5.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=2147" > [RESULT]
 # RUN_PARMS: sos_se6.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=2147&outputFormat=XML" > [RESULT]
-# RUN_PARMS: sos_se7.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=20147&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
+# RUN_PARMS: sos_se7.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=20147&outputFormat=text/xml; subtype=\"sensorML/1.0.0\"" > [RESULT]
 #
 # Valid
 #
-# RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=urn:ogc:def:procedure:35&outputFormat=text/xml; subtype=sensorML/1.0.0" > [RESULT]
+# RUN_PARMS: sos_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=DescribeSensor&procedure=urn:ogc:def:procedure:35&outputFormat=text/xml; subtype=\"sensorML/1.0.0\"" > [RESULT]
 #
 # GetObservation
 #
 # Exceptions
 #
 # GetObservation (Wrong DataBlock format)
-# RUN_PARMS: sos_se8.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&resultModel=om:Notice" > [RESULT]
+# RUN_PARMS: sos_se8.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&resultModel=om:Notice" > [RESULT]
 #
 # GetObservation (wrong observedProperty)
-# RUN_PARMS: sos_se9.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=AirQuality" > [RESULT]
+# RUN_PARMS: sos_se9.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=AirQuality" > [RESULT]
 #
 # GetObservation (invalid srsName)
-# RUN_PARMS: sos_se10.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&srsName=EPSG:12345" > [RESULT]
+# RUN_PARMS: sos_se10.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&srsName=EPSG:12345" > [RESULT]
 #
 # GetObservation (invalid procedure)
-# RUN_PARMS: sos_se11.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&procedure=foo" > [RESULT]
+# RUN_PARMS: sos_se11.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&procedure=foo" > [RESULT]
 #
 #  Valid
 #
 # GetObservation (all observations)
-# RUN_PARMS: sos_getobs_all.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality" > [RESULT]
+# RUN_PARMS: sos_getobs_all.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality" > [RESULT]
 #
 # GetObservation (DataBlock format)
-# RUN_PARMS: sos_getobs_datablock.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&resultModel=om:Observation" > [RESULT]
+# RUN_PARMS: sos_getobs_datablock.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&resultModel=om:Observation" > [RESULT]
 #
 # GetObservation (filter by procedure)
-# RUN_PARMS: sos_getobs_proc.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedProperty=WaterQuality&procedure=2147" > [RESULT]
+# RUN_PARMS: sos_getobs_proc.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&procedure=2147" > [RESULT]
 #
 # GetObservation (filter by PropertyIsEqualTo)
-# RUN_PARMS: sos_getobs_filter.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsEqualTo><PropertyName>value</PropertyName><Literal>103.5</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# RUN_PARMS: sos_getobs_filter.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsEqualTo><PropertyName>value</PropertyName><Literal>103.5</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
 # 
 # GetObservation (eventTime)
-# RUN_PARMS: sos_getobs_time.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>" > [RESULT]
+# RUN_PARMS: sos_getobs_time.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedproperty=WaterQuality&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>" > [RESULT]
 #
 # GetObservation (featureOfInterest)
-# RUN_PARMS: sos_getobs_foi.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&featureOfInterest=<gml:Envelope><gml:lowerCorner srsName="EPSG:4326">-76 44</gml:lowerCorner><gml:upperCorner srsName="EPSG:4326">-64 47</gml:upperCorner></gml:Envelope>" > [RESULT]
+# RUN_PARMS: sos_getobs_foi.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedproperty=WaterQuality&featureOfInterest=<gml:Envelope><gml:lowerCorner srsName="EPSG:4326">-76 44</gml:lowerCorner><gml:upperCorner srsName="EPSG:4326">-64 47</gml:upperCorner></gml:Envelope>" > [RESULT]
 #
 # GetObservation (time and filter)
-# RUN_PARMS: sos_getobs_time_filter.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsGreaterThan><PropertyName>value</PropertyName><Literal>89.9</Literal></PropertyIsGreaterThan></Filter>&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>" > [RESULT]
+# RUN_PARMS: sos_getobs_time_filter.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsGreaterThan><PropertyName>value</PropertyName><Literal>89.9</Literal></PropertyIsGreaterThan></Filter>&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>" > [RESULT]
 # 
 # GetObservation (time and filter and featureOfInterest)
 #
-# RUN_PARMS: sos_getobs_time_filter_foi.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=om/1.0.0&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsGreaterThan><PropertyName>value</PropertyName><Literal>89.9</Literal></PropertyIsGreaterThan></Filter>&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>&featureOfInterest=<gml:Envelope><gml:lowerCorner srsName="EPSG:4326">-76 44</gml:lowerCorner><gml:upperCorner srsName="EPSG:4326">-64 47</gml:upperCorner></gml:Envelope>" > [RESULT]
+# RUN_PARMS: sos_getobs_time_filter_foi.xml [MAPSERV] QUERY_STRING="map=sos.map&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedproperty=WaterQuality&result=<Filter><PropertyIsGreaterThan><PropertyName>value</PropertyName><Literal>89.9</Literal></PropertyIsGreaterThan></Filter>&eventTime=<gml:TimePeriod><gml:beginPosition>1990</gml:beginPosition><gml:endPosition>2003</gml:endPosition></gml:TimePeriod>&featureOfInterest=<gml:Envelope><gml:lowerCorner srsName="EPSG:4326">-76 44</gml:lowerCorner><gml:upperCorner srsName="EPSG:4326">-64 47</gml:upperCorner></gml:Envelope>" > [RESULT]
 #
 # DescribeObservationType
 #
