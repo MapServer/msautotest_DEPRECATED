@@ -1,0 +1,33 @@
+
+#
+# Test unclassified scaled raster with NODATA.  
+#
+# Currently (March/2004) this doesn't actually work.  A debug message is
+# emitted.  Eventualy if this is fixed, a new proper result should occur and
+# this tests results will need to be updated.
+#
+NAME TEST
+STATUS ON
+SIZE 200 150 
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png24_t
+
+OUTPUTFORMAT
+  NAME png24_t
+  DRIVER "GD/PNG"
+  IMAGEMODE PC256
+  TRANSPARENT OFF
+END
+
+LAYER
+  NAME rgb
+  TYPE raster
+  STATUS default
+  DATA data/float.tif
+  PROCESSING "SCALE=AUTO"
+  PROCESSING "NODATA=-4"
+END
+
+END # of map file

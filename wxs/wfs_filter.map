@@ -1,0 +1,227 @@
+#
+# Test WFS
+#
+# REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WFS
+#
+#
+#
+# Verify PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_property_is_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+#
+# Verify PropertyIsNotEqualTo
+# RUN_PARMS: wfs_filter_is_not_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsNotEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsNotEqualTo></Filter>" > [RESULT]
+#
+# Verify PropertyIsLessThan
+# RUN_PARMS: wfs_filter_isless_than.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsLessThan><PropertyName>POP_RANGE</PropertyName><Literal>3</Literal></PropertyIsLessThan></Filter>" > [RESULT]
+#
+# Verify PropertyIsGreaterThan
+# RUN_PARMS: wfs_filter_isgreater_than.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsGreaterThan><PropertyName>POP_RANGE</PropertyName><Literal>3</Literal></PropertyIsGreaterThan></Filter>" > [RESULT]
+#
+# Verify PropertyIsLessThanOrEqualTo
+# RUN_PARMS: wfs_filter_isless_than_or_equalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsLessThanOrEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>2</Literal></PropertyIsLessThanOrEqualTo></Filter>" > [RESULT]
+#
+# Verify PropertyIsGreaterThanOrEqualTo
+# RUN_PARMS: wfs_filter_greater_than_or_equalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsGreaterThanOrEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsGreaterThanOrEqualTo></Filter>" > [RESULT]
+#
+# Verify PropertyIsBetween
+# RUN_PARMS: wfs_filter_isbetween.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsBetween><PropertyName>POP_RANGE</PropertyName><LowerBoundary>4</LowerBoundary><UpperBoundary>6</UpperBoundary></PropertyIsBetween></Filter>" > [RESULT]
+#
+# Verify PropertyIsLike
+# RUN_PARMS: wfs_filter_islike.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsLike+wildCard='*'+singleChar='.'+escape='!'><PropertyName>NAME</PropertyName><Literal>Syd*</Literal></PropertyIsLike></Filter>" > [RESULT]
+#
+# Verify PropertyIsBetween OR PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_isbetween_or_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsBetween><PropertyName>POP_RANGE</PropertyName><LowerBoundary>4</LowerBoundary><UpperBoundary>6</UpperBoundary></PropertyIsBetween><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT]
+#
+# Verify PropertyIsBetween AND PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_isbetween_and_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><AND><PropertyIsBetween><PropertyName>POP_RANGE</PropertyName><LowerBoundary>1</LowerBoundary><UpperBoundary>3</UpperBoundary></PropertyIsBetween><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></AND></Filter>" > [RESULT]
+#
+# Verify PropertyIsBetween AND NOT PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_isbetween_and_not_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><AND><PropertyIsBetween><PropertyName>POP_RANGE</PropertyName><LowerBoundary>4</LowerBoundary><UpperBoundary>6</UpperBoundary></PropertyIsBetween><NOT><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Sydney</Literal></PropertyIsEqualTo></NOT></AND></Filter>" > [RESULT]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_isequalto_or_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>5</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo reverse
+# RUN_PARMS: wfs_filter_isequalto_or_isequalto_reverse.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>5</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT]
+#
+# Verify PropertyIsEqualTo AND PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_isequalto_and_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><And><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>5</Literal></PropertyIsEqualTo></And></Filter>" > [RESULT]
+#
+# Verify PropertyIsEqualTo AND PropertyIsEqualTo reverse order
+# RUN_PARMS: wfs_filter_isequalto_and_isequalto_reverse.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><And><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>5</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo></And></Filter>" > [RESULT]
+#
+# Verify Not PropertyIsEqualTo
+# RUN_PARMS: wfs_filter_not_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><Not><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo></Not></Filter>" > [RESULT]
+#
+# Verify BBOX
+# RUN_PARMS: wfs_filter_bbox.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22EPSG:42304%22><coordinates>2279398,39858+2279400,39859</coordinates></Box></BBOX></Filter>" > [RESULT]
+#
+# Verify INTERSECTS
+# RUN_PARMS: wfs_filter_intersects.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><Intersect><PropertyName>Geometry</PropertyName><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>2488789,289552 2588789,289552 2588789,389552 2488789,389552 2488789,289552</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></Intersect></Filter>" > [RESULT]
+#
+# Verify DWITHIN
+# RUN_PARMS: wfs_filter_dwithin.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><DWithin><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>2587598.000000,404010.531250</gml:coordinates></gml:Point><Distance units='m'>1000</Distance></DWithin></Filter>" > [RESULT]
+#
+
+
+NAME WFS_FILTER
+STATUS ON
+SIZE 400 300
+EXTENT   2018000 -73300 3410396 647400
+UNITS METERS
+IMAGECOLOR 255 255 255
+SHAPEPATH ./data
+SYMBOLSET etc/symbols.sym
+FONTSET etc/fonts.txt
+
+
+OUTPUTFORMAT
+  NAME GDPNG
+  DRIVER "GD/PNG"
+  MIMETYPE "image/png"
+  IMAGEMODE RGB
+  EXTENSION "png"
+END
+
+
+#
+# Start of web interface definition
+#
+WEB
+
+ IMAGEPATH "/tmp/ms_tmp/"
+ IMAGEURL "/ms_tmp/"
+
+  METADATA
+    "wfs_title"		   "Test simple wfs"
+    "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?"
+    "wfs_srs"		   "EPSG:4269 EPSG:4326"
+    "ows_schemas_location" "http://ogc.dmsolutions.ca"
+  END
+END
+
+PROJECTION
+  "init=./data/epsg2:42304"
+END
+
+
+#
+# Start of layer definitions
+#
+
+
+
+LAYER
+  NAME province
+  DATA province
+  METADATA
+    "wfs_title"         "province"
+    "wfs_description"   "province"
+    "wfs_result_fields" "NAME_E YEAR_EST AREA_KMSQ"
+    "gml_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  PROJECTION
+    "init=./data/epsg2:42304"
+  END
+
+  DUMP TRUE
+  CLASSITEM "Name_e"
+
+  CLASS
+    NAME "Province"
+    COLOR 200 255 0
+    OUTLINECOLOR 120 120 120
+  END
+END # Layer
+
+LAYER
+  NAME park
+  DATA park
+  METADATA
+    "wfs_title"             "park"
+    "wfs_version"           "1.0.0"
+    "wfs_description"	    "Parks"
+    "wfs_result_fields"     "NAME_E YEAR_EST AREA_KMSQ"
+    "gml_include_items" "all"
+   END
+  TYPE POLYGON
+  STATUS ON
+  PROJECTION
+    "init=./data/epsg2:42304"
+  END
+
+  DUMP TRUE
+  CLASS
+    NAME "Parks"
+    COLOR 200 255 0
+    OUTLINECOLOR 120 120 120
+  END
+END # Layer
+
+
+
+LAYER
+  NAME popplace
+  DATA popplace
+  METADATA
+    "wfs_title"         "popplace"
+    "wfs_description"   "Cities"
+    "wfs_result_fields" "NAME"
+    "gml_include_items" "all"
+   END
+  TYPE POINT
+  STATUS ON
+  PROJECTION
+    "init=./data/epsg2:42304"
+  END
+
+  DUMP TRUE
+  LabelItem "Name"
+  CLASSITEM "Capital" 
+
+  CLASS
+    EXPRESSION /./  
+    SYMBOL 2
+    SIZE 8
+    NAME "Cities"
+    LABEL
+      COLOR  0 0 0
+      FONT Vera
+      TYPE truetype
+      SIZE 8
+      POSITION AUTO			
+      PARTIALS FALSE
+      OUTLINECOLOR 255 255 255			
+    END 
+    COLOR 0 0 0
+  END
+END # Layer
+
+
+LAYER
+  NAME road
+  DATA road
+  METADATA
+    "wfs_title"       "road"
+    "wfs_description" "Roads"
+    "gml_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  PROJECTION
+    "init=./data/epsg2:42304"
+  END
+
+  DUMP TRUE
+
+  CLASSITEM "Name_e"
+  CLASS
+    NAME "Roads"
+    SYMBOL 0 
+    COLOR 220 0 0
+  END
+END # Layer
+
+END # Map File
