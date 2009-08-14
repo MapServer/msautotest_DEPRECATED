@@ -1,6 +1,8 @@
 #
 # Tests support for getting image extents from OWS extents metadata.
 #
+# REQUIRES: SUPPORTS=WMS_SERVER
+#
 MAP
 
 NAME TEST

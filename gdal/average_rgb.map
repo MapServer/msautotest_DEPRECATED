@@ -2,6 +2,8 @@
 # Test averaged resampling.  Results currently depend on the 2x oversampling
 # for mapresample.c.
 #
+# REQUIRES: SUPPORTS=PROJ
+#
 MAP
 
 NAME TEST

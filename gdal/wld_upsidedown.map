@@ -1,6 +1,8 @@
 #
 # Tests support for upside-down images (like bug 1904).
 #
+# REQUIRES: SUPPORTS=PROJ
+#
 MAP
 
 NAME TEST

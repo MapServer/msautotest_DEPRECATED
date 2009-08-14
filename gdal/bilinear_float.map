@@ -1,6 +1,7 @@
 #
 # Test bilinear resampling on floating point "raw" data format.
 #
+# REQUIRES: SUPPORTS=PROJ
 MAP
 
 NAME TEST
