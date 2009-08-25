@@ -122,8 +122,6 @@ END
 
 WEB
   METADATA
-   "ows_schemas_location" "http://schemas.opengeospatial.net"
-
    # OWS stuff for server
    "ows_updatesequence"   "2007-10-30T14:23:38Z"
    "ows_title"            "First Test Service"
