@@ -11,7 +11,7 @@ Content-type: text/xml
    elementFormDefault="qualified" version="0.1" >
 
   <import namespace="http://www.opengis.net/gml"
-          schemaLocation="http://schemas.opengeospatial.net/gml/3.1.1/base/gml.xsd" />
+          schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd" />
   <element name="msFeatureCollection" type="ms_ogc_workshop:msFeatureCollectionType" substitutionGroup="gml:_FeatureCollection"/>
   <complexType name="msFeatureCollectionType">
     <complexContent>

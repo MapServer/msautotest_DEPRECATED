@@ -14,6 +14,8 @@
 # GetLegendGraphic
 # RUN_PARMS: wms_nosld_legend.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetLegendGraphic&FORMAT=image/png&LAYER=road&sld_body=%3CStyledLayerDescriptor+version%3D%221.0.0%22%3E%0D%0A%3CNamedLayer%3E%0D%0A%3CName%3Eroad%3C%2FName%3E%0D%0A%3CUserStyle%3E%0D%0A%3CTitle%3Exxx%3C%2FTitle%3E%0D%0A%3CFeatureTypeStyle%3E%0D%0A%3CRule%3E%0D%0A%3CLineSymbolizer%3E%0D%0A%3CGeometry%3E%0D%0A%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E%0D%0A%3C%2FGeometry%3E%0D%0A%3CStroke%3E%0D%0A%3CCssParameter+name%3D%22stroke%22%3E%230000ff%3C%2FCssParameter%3E%0D%0A%3C%2FStroke%3E%0D%0A%3C%2FLineSymbolizer%3E%0D%0A%3C%2FRule%3E%0D%0A%3C%2FFeatureTypeStyle%3E%0D%0A%3C%2FUserStyle%3E%0D%0A%3C%2FNamedLayer%3E%0D%0A%3C%2FStyledLayerDescriptor%3E%0D%0A" > [RESULT_DEMIME]
 
+MAP
+
 NAME WMS_NOSLD
 STATUS ON
 SIZE 400 300

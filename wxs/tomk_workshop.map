@@ -122,12 +122,6 @@ MAP
 
    "ows_updateSequence" "123"
    
-   # generic OWS specific info
-   # sets base URL for OGC Schemas so the root element in the
-   # Capabilities document points to the correct schema location
-   # to produce valid XML
-   "ows_schemas_location" "http://schemas.opengeospatial.net"
-
    # unified OWS tags
 
    # sets:
