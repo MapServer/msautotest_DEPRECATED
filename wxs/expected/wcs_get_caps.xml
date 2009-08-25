@@ -8,7 +8,7 @@ Content-type: text/xml
    xmlns:xlink="http://www.w3.org/1999/xlink" 
    xmlns:gml="http://www.opengis.net/gml" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.opengis.net/wcs http://schemas.opengeospatial.net/wcs/1.0.0/wcsCapabilities.xsd">
+   xsi:schemaLocation="http://www.opengis.net/wcs http://schemas.opengis.net/wcs/1.0.0/wcsCapabilities.xsd">
 <Service>
   <metadataLink metadataType="other" xlink:type="simple" xlink:href="http://localhost/ms_ogc_workshop/index.html"/>  <description>Sample OWS for MapServer OGC Web Services Workshop.  Enjoy!</description>
   <name>MapServer WCS</name>
