@@ -31,7 +31,7 @@
 # RUN_PARMS: wcs11_caps_section1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=OperationsMetadata,Contents" > [RESULT]
 #
 # Capabilities 1.1 selected sections
-# RUN_PARMS: wcs11_caps_section2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=ServiceIdentificationServiceProvider" > [RESULT]
+# RUN_PARMS: wcs11_caps_section2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=ServiceIdentification,ServiceProvider" > [RESULT]
 #
 # Capabilities 1.1 selected sections
 # RUN_PARMS: wcs11_caps_section3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=All" > [RESULT]
