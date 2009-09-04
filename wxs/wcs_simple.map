@@ -27,6 +27,15 @@
 # Capabilities 1.1 updatesequence exception (higher)
 # RUN_PARMS: wcs11_exception_updatesequence2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&updatesequence=2008-01-13T14:23:38Z" > [RESULT]
 #
+# Capabilities 1.1 selected section
+# RUN_PARMS: wcs11_caps_section1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=OperationsMetadata,Contents" > [RESULT]
+#
+# Capabilities 1.1 selected sections
+# RUN_PARMS: wcs11_caps_section2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=ServiceIdentificationServiceProvider" > [RESULT]
+#
+# Capabilities 1.1 selected sections
+# RUN_PARMS: wcs11_caps_section3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities&sections=All" > [RESULT]
+#
 #
 # Coverage description
 # RUN_PARMS: wcs_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=DescribeCoverage&COVERAGE=grey" > [RESULT]
