@@ -105,6 +105,10 @@ WEB
     "ows_contactperson" "Tom Kralidis"
     "ows_contactorganization" "MapServer"
     "ows_contactposition" "self"
+
+    "ows_rootlayer_title" "My Layers"
+    "ows_rootlayer_abstract" "These are my layers"
+    "ows_rootlayer_keywordlist" "layers,list"
   END
 END
 

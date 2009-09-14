@@ -112,7 +112,12 @@ Content-type: text/xml
   <sld:UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0" InlineFeature="0" RemoteWCS="0"/>
   <Layer>
     <Name>WMS_TEST</Name>
-    <Title>Test simple wms</Title>
+    <Title>My Layers</Title>
+    <Abstract>These are my layers</Abstract>
+    <KeywordList>
+     <Keyword>layers</Keyword>
+     <Keyword>list</Keyword>
+    </KeywordList>
     <CRS>EPSG:42304</CRS>
     <CRS>EPSG:42101</CRS>
     <CRS>EPSG:4269</CRS>
