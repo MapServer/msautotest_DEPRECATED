@@ -1,0 +1,40 @@
+#
+# SCALEBAR transparent parameter test  
+#   
+# There used to be a bug that you couldn't set the TRANSPARENT flag to
+# on for a scalebar if the main imagetype didn't have transparency.  This
+# verifies that this problem is fixed.  
+#
+# Comment: The bug exists if you see the red scalebar.
+#
+# REQUIRES: INPUT=SHAPE OUTPUT=PNG
+# RUN_PARMS: rgba_scalebar.png [SCALEBAR] [MAPFILE] [RESULT]
+#
+MAP
+
+EXTENT -180 -90 180 90
+SIZE 400 300
+
+IMAGETYPE png24_t
+
+OUTPUTFORMAT
+  NAME png24_t
+  DRIVER "GDAL/PNG"
+  IMAGEMODE RGBA
+  TRANSPARENT ON
+END
+
+SCALEBAR
+
+  TRANSPARENT ON
+
+  IMAGECOLOR 255 0 0
+  LABEL
+    COLOR 0 0 0
+  END
+  COLOR 255 255 255
+  BACKGROUNDCOLOR 0 0 0  
+  OUTLINECOLOR 0 0 0
+END
+
+END
