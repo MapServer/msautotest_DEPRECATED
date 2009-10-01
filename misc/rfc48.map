@@ -1,0 +1,57 @@
+#
+# entity-encoded text rendering test.
+# this test may potentially segfault
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+
+
+
+MAP
+  IMAGETYPE aggpng24
+  SIZE 500 500
+  FONTSET "fonts.lst"
+  EXTENT -170.245673  -55.551347 179.019748 53.883753
+
+  SYMBOL
+    TYPE TRUETYPE
+    FONT "default"
+    NAME "arrowhead"
+    CHARACTER '>'
+  END
+
+  SYMBOL
+    TYPE TRUETYPE 
+    FONT "default"
+    CHARACTER '|'
+    NAME "segment"
+  END
+
+LAYER
+    data "data/testlines.shp" 
+    TYPE LINE 
+    STATUS ON
+    CLASS
+     
+      STYLE
+        COLOR 0 0 255
+      END
+      STYLE
+        GEOMTRANSFORM "vertices"
+        SYMBOL "segment" 
+        ANGLE AUTO
+        SIZE 10
+        COLOR 0 0 0
+      END
+      STYLE
+        GEOMTRANSFORM "end"
+        SYMBOL "arrowhead"
+        COLOR  0 0 255
+        ANGLE AUTO
+        SIZE 15
+      END
+    END
+    
+  END
+
+END
