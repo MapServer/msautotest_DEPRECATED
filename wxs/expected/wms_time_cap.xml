@@ -73,6 +73,7 @@ Content-type: application/vnd.ogc.wms_xml
   <Layer>
     <Name>WMS_TIME_EXTENTS_RESOLUTION_NO_DEFAULT</Name>
     <Title>Test WMS time support</Title>
+    <Abstract>WMS_TIME_EXTENTS_RESOLUTION_NO_DEFAULT</Abstract>
     <SRS>EPSG:4326</SRS>
     <LatLonBoundingBox minx="-131" miny="5" maxx="-68" maxy="68" />
     <BoundingBox SRS="EPSG:4326"

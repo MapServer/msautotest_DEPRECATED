@@ -62,6 +62,7 @@ Content-type: application/vnd.ogc.wms_xml
   <Layer>
     <Name>WMS_NOSLD</Name>
     <Title>Test simple wms</Title>
+    <Abstract>WMS_NOSLD</Abstract>
     <SRS>EPSG:42304</SRS>
     <SRS>EPSG:42101</SRS>
     <SRS>EPSG:4269</SRS>

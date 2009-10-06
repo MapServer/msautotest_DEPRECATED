@@ -117,6 +117,12 @@ Content-type: application/vnd.ogc.wms_xml
   <Layer>
     <Name>WMS_TEST</Name>
     <Title>Test simple wms</Title>
+    <Abstract>WMS_TEST</Abstract>
+    <KeywordList>
+     <Keyword>ogc</Keyword>
+     <Keyword>wms</Keyword>
+     <Keyword>mapserver</Keyword>
+    </KeywordList>
     <SRS>EPSG:42304</SRS>
     <SRS>EPSG:42101</SRS>
     <SRS>EPSG:4269</SRS>

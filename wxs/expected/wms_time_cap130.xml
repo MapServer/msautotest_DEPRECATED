@@ -91,6 +91,7 @@ Content-type: text/xml
   <Layer>
     <Name>WMS_TIME_EXTENTS_RESOLUTION_NO_DEFAULT</Name>
     <Title>Test WMS time support</Title>
+    <Abstract>WMS_TIME_EXTENTS_RESOLUTION_NO_DEFAULT</Abstract>
     <CRS>EPSG:4326</CRS>
     <EX_GeographicBoundingBox>
         <westBoundLongitude>-131</westBoundLongitude>

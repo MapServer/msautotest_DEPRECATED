@@ -119,6 +119,12 @@ Content-type: application/vnd.ogc.wms_xml
   <Layer>
     <Name>msautotest_wxs_</Name>
     <Title>Sample OWS for MapServer OGC Web Services Workshop</Title>
+    <Abstract>Sample OWS for MapServer OGC Web Services Workshop.  Enjoy!</Abstract>
+    <KeywordList>
+     <Keyword>mapserver</Keyword>
+     <Keyword>ogc</Keyword>
+     <Keyword>workshop</Keyword>
+    </KeywordList>
     <SRS>EPSG:4326</SRS>
     <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90" />
     <BoundingBox SRS="EPSG:4326"
