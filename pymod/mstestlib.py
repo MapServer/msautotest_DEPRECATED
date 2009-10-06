@@ -330,7 +330,6 @@ def run_tests( argv ):
                 print '     no expected file exists, accepting result as expected.'
                 init_count = init_count + 1
                 os.rename( 'result/' + out_file, 'expected/' + out_file )
-                
-    print 'Test done:\n    %d tested skipped\n    %d tests succeeded\n    %d tests failed\n    %d test results initialized' \
-          % (skip_count, succeed_count, fail_count, init_count )
 
+    print 'Test done (%.2f%% success):\n    %d tested skipped\n    %d tests succeeded\n    %d tests failed\n    %d test results initialized' \
+          % ((float(succeed_count)/float(succeed_count+fail_count)*100), skip_count, succeed_count, fail_count, init_count)
