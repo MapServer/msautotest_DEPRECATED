@@ -62,6 +62,14 @@
 # GetFeature maxfeatures=2
 #
 # RUN_PARMS: wfs11_get_feature_maxfeatures.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province&maxfeatures=2" > [RESULT]
+#
+# GetFeature srsname
+#
+# RUN_PARMS: wfs11_get_feature_srsname.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province&srsname=urn:EPSG:geographicCRS:4326" > [RESULT]
+#
+# GetFeature exception invalid srsname
+#
+# RUN_PARMS: wfs11_exception_invalid_srsname.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province&srsname=urn:EPSG:geographicCRS:1234567" > [RESULT]
 
 MAP
 
