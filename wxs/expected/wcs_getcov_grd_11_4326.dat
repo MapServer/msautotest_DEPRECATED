@@ -41,6 +41,20 @@ cellsize     0.000300000000
 Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
+Content-ID: coverage/out.grd.aux.xml
+Content-Disposition: INLINE
+
+<PAMDataset>
+  <Metadata>
+    <MDI key="TIFFTAG_XRESOLUTION">72.000000</MDI>
+    <MDI key="TIFFTAG_YRESOLUTION">72.000000</MDI>
+    <MDI key="TIFFTAG_RESOLUTIONUNIT">2</MDI>
+  </Metadata>
+</PAMDataset>
+--wcs
+Content-Type: application/octet-stream
+Content-Description: coverage data
+Content-Transfer-Encoding: binary
 Content-ID: coverage/out.prj
 Content-Disposition: INLINE
 
