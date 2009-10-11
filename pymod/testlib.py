@@ -80,12 +80,20 @@ def compare_result( filename ):
         pass
 
     ###################################################################
-    # Test with perceptualdiff.  If we discover we don't have it, then
-    # set have_pdiff to 'false' so we will know.
+    # Test with perceptualdiff if this is tiff or png.  If we discover
+    # we don't have it, then set have_pdiff to 'false' so we will know.
     
     global have_pdiff
 
-    if have_pdiff != 'false':
+    try:
+        result = open(result_file, "rb").read(1000)
+    except:
+        result = ''
+    
+    if have_pdiff != 'false' and \
+       ('\x49\x49\x2A\x00' in result \
+       or '\x49\x49\x00\x2A' in result \
+       or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result):
     
         try:
             cmd = 'perceptualdiff %s %s -verbose > pd.out' % (result_file,expected_file)
