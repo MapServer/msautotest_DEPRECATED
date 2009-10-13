@@ -4,7 +4,10 @@
 # REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS
 #
 #
-# Capabilities
+# Capabilities (return latest supported version by default
+#
+# RUN_PARMS: wms_cap_latestversion.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
+#
 # RUN_PARMS: wms_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
 # version exception
