@@ -34,6 +34,9 @@
 # Generate WMS GetFeatureInfo GML format on raster data
 # RUN_PARMS: wms_get_feature_info_raster.gml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=land_shallow_topo_2048&info_format=application/vnd.ogc.gml&x=141&y=91&radius=10" > [RESULT]
 #
+# Generate WMS GetFeatureInfo GML format on raster data, feature_count=2
+# RUN_PARMS: wms_get_feature_info_raster_feature_count.gml [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:4326&bbox=-180,-90,180,90&format=image/png&layers=land_shallow_topo_2048,rivers&styles=,&transparent=true&width=500&height=300&query_layers=land_shallow_topo_2048&info_format=application/vnd.ogc.gml&x=141&y=91&radius=10&feature_count=2" > [RESULT]
+#
 # Generate WMS GetLegendGraphic
 # RUN_PARMS: wms_get_legend_graphic.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&version=1.1.1&service=WMS&request=GetLegendGraphic&layer=rivers&format=image/png" > [RESULT_DEMIME]
 #
