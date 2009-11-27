@@ -1,0 +1,52 @@
+
+#
+# Tests labelling from TTF into an RGB result but ensuring that intemediate
+# transparency of the label background still works.
+#
+# NOTE: without resampling. 
+#
+# REQUIRES: SUPPORTS=FREETYPE OUTPUT=PNG
+#
+MAP
+  NAME test
+  IMAGETYPE png24_l
+
+  OUTPUTFORMAT
+    NAME png24_l
+    DRIVER "GD/PNG"
+    IMAGEMODE RGB
+  END
+
+  SIZE 400 400
+  EXTENT 0 6000000 1000000 8000000
+  UNITS meters
+  FONTSET fonts.lst
+
+  SYMBOL
+    NAME "circle"
+    TYPE ellipse
+    FILLED true
+    POINTS 1 1 END
+  END
+
+  LAYER
+    NAME fonttest
+    TYPE POINT
+    STATUS DEFAULT
+    FEATURE
+      POINTS 450000 6500000 END
+      TEXT "BIG_AND_small test"
+    END
+    CLASS
+       COLOR 0 255 0
+       LABEL
+        COLOR 0 0 0
+#        BACKGROUNDCOLOR 255 0 0 
+        FONT lucida
+        TYPE truetype
+        SIZE 20
+      END
+    END # CLASS
+  END
+
+END
