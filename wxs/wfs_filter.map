@@ -29,6 +29,10 @@
 # Verify PropertyIsLike
 # RUN_PARMS: wfs_filter_islike.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsLike+wildCard='*'+singleChar='.'+escape='!'><PropertyName>NAME</PropertyName><Literal>Syd*</Literal></PropertyIsLike></Filter>" > [RESULT]
 #
+#
+# Verify PropertyIsLike with logical operators
+# RUN_PARMS: wfs_filter_islike_logical.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><AND><PropertyIsLike+wildCard='*'+singleChar='.'+escape='!'><PropertyName>NAME</PropertyName><Literal>Syd*</Literal></PropertyIsLike><PropertyIsLike+wildCard='*'+singleChar='.'+escape='!'><PropertyName>POP_RANGE</PropertyName><Literal>3</Literal></PropertyIsLike></AND></Filter>" > [RESULT]
+#
 # Verify PropertyIsBetween OR PropertyIsEqualTo
 # RUN_PARMS: wfs_filter_isbetween_or_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsBetween><PropertyName>POP_RANGE</PropertyName><LowerBoundary>4</LowerBoundary><UpperBoundary>6</UpperBoundary></PropertyIsBetween><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT]
 #
