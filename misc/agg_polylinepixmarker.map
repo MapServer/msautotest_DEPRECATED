@@ -1,0 +1,34 @@
+#
+# pixmap markers on line AGG rendering test.
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+MAP
+
+STATUS ON
+EXTENT 478300 4762880 481650 4765610
+SIZE 400 300
+IMAGETYPE aggpng24
+
+SYMBOL
+  NAME "marker"
+  TYPE PIXMAP
+  IMAGE "data/linemarker.png"
+  GAP -10
+END
+
+LAYER
+  NAME shppoly
+  TYPE line
+  DATA "data/shppoly/poly.shp"
+  STATUS default
+  CLASSITEM "AREA"
+  CLASS
+    SYMBOL "marker"
+    NAME "test1"
+    COLOR 0 255 0
+    OUTLINECOLOR 255 0 0
+  END
+END
+
+END
