@@ -385,6 +385,105 @@ def rqtest_9():
     return 'success'
     
 ###############################################################################
+# Execute a shape query without any tolerance and a line query region.
+
+def rqtest_9_1():
+
+    line = mapscript.lineObj()
+    line.add( mapscript.pointObj( 35, 25 ) )
+    line.add( mapscript.pointObj( 45, 25 ) )
+    line.add( mapscript.pointObj( 45, 35 ) )
+    line.add( mapscript.pointObj( 35, 25 ) )
+
+    poly = mapscript.shapeObj( mapscript.MS_SHAPE_LINE )
+    poly.add( line )
+
+    pmstestlib.layer.queryByShape( pmstestlib.map, poly )
+
+    return 'success'
+
+###############################################################################
+# Scan results, checking count and the first shape information.
+
+def rqtest_9_2():
+    layer = pmstestlib.layer
+    
+    #########################################################################
+    # Check result count.
+    layer.open()
+    count = 0
+    for i in range(1000):
+        result = layer.getResult( i )
+        if result is None:
+            break
+    
+        count = count + 1
+
+    if count != 47:
+        pmstestlib.post_reason( 'got %d results instead of expected %d.' \
+                             % (count, 47) )
+        return 'fail'
+
+    #########################################################################
+    # Check first shape attributes.
+    
+    result = layer.getResult( 0 )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
+    
+    if pmstestlib.check_items( layer, s,
+                               [('value_0','115'),
+                                ('red','115'),
+                                ('green','115'),
+                                ('blue','115'),
+                                ('value_list','115'),
+                                ('x','39.5'),
+                                ('y','29.5')] ) == 0:
+        return 'fail'
+
+    #########################################################################
+    # Check first shape geometry.
+    if s.type != mapscript.MS_SHAPE_POINT:
+        pmstestlib.post_reason( 'raster query result is not a point.' )
+        return 'fail'
+
+    if s.numlines != 1:
+        pmstestlib.post_reason( 'raster query has other than 1 lines.' )
+        return 'fail'
+
+    try:
+        l = s.getLine( 0 )
+    except:
+        l = s.get( 0 )
+    if l.numpoints != 1:
+        pmstestlib.post_reason( 'raster query has other than 1 points.' )
+        return 'fail'
+
+    try:
+        p = l.getPoint(0)
+    except:
+        p = l.get(0)
+    if p.x != 39.5 or p.y != 29.5:
+        pmstestlib.post_reason( 'got wrong point location.' )
+        return 'fail'
+    
+    #########################################################################
+    # Check last shape attributes.
+
+    result = layer.getResult( 46 )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
+
+    if pmstestlib.check_items( layer, s,
+                               [('value_0','148'),
+                                ('x','44.5'),
+                                ('y','24.5')] ) == 0:
+        return 'fail'
+    
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+    
+###############################################################################
 # Close old map, and open a classified map and post a point query.
 
 def rqtest_10():
@@ -579,6 +678,8 @@ test_list = [
     rqtest_7,
     rqtest_8,
     rqtest_9,
+    rqtest_9_1,
+    rqtest_9_2,
     rqtest_10,
     rqtest_11,
     rqtest_12,

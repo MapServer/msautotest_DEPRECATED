@@ -1,6 +1,8 @@
 #
 # REQUIRES: SUPPORTS=PROJ
 #
+# This map is also used by ../mspython/rqtest.py
+#
 MAP
 
 NAME TEST
