@@ -164,6 +164,10 @@ Content-type: application/vnd.ogc.wms_xml
           <Format>image/tiff</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://earthobservatory.nasa.gov/Newsroom/BlueMarble/Images/land_shallow_topo_2048.tif"/>
         </DataURL>
+        <AuthorityURL name="nasa">
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://visibleearth.nasa.gov/view_set.php?categoryID=2355"/>
+        </AuthorityURL>
+        <Identifier authority="nasa">bmng</Identifier>
       </Layer>
     </Layer>
     <Layer>
