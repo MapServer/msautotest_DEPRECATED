@@ -16,6 +16,11 @@ Content-type: text/xml
       </gml:boundedBy>
     <gml:featureMember>
       <ms:popplace>
+        <ms:NAME>Lunenburg</ms:NAME>
+      </ms:popplace>
+    </gml:featureMember>
+    <gml:featureMember>
+      <ms:popplace>
         <ms:NAME>Liverpool</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
@@ -57,11 +62,6 @@ Content-type: text/xml
     <gml:featureMember>
       <ms:popplace>
         <ms:NAME>Amherst</ms:NAME>
-      </ms:popplace>
-    </gml:featureMember>
-    <gml:featureMember>
-      <ms:popplace>
-        <ms:NAME>Kentville</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
 </wfs:FeatureCollection>

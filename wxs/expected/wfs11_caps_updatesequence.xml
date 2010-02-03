@@ -142,6 +142,7 @@ Content-type: text/xml
       </ogc:ComparisonOperators>
     </ogc:Scalar_Capabilities>
     <ogc:Id_Capabilities>
+      <ogc:EID/>
       <ogc:FID/>
     </ogc:Id_Capabilities>
   </ogc:Filter_Capabilities>

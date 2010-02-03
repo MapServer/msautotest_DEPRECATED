@@ -96,7 +96,7 @@ Content-type: text/xml
     <FeatureType>
       <Name>province</Name>
       <Title>province</Title>
-      <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+      <DefaultSRS>EPSG:4326</DefaultSRS>
       <OutputFormats>
         <Format>text/xml; subtype=gml/3.1.1</Format>
       </OutputFormats>
@@ -142,6 +142,7 @@ Content-type: text/xml
       </ogc:ComparisonOperators>
     </ogc:Scalar_Capabilities>
     <ogc:Id_Capabilities>
+      <ogc:EID/>
       <ogc:FID/>
     </ogc:Id_Capabilities>
   </ogc:Filter_Capabilities>
