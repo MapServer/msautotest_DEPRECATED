@@ -144,7 +144,9 @@ Content-type: application/vnd.ogc.wms_xml
         <Title>grey</Title>
         <SRS>EPSG:32611</SRS>
         <SRS>EPSG:4326</SRS>
-        <!-- WARNING: Optional LatLonBoundingBox could not be established for this layer.  Consider setting the EXTENT in the LAYER object, or wms_extent metadata. Also check that your data exists in the DATA statement -->
+        <LatLonBoundingBox minx="-121.489" miny="0" maxx="-121.485" maxy="0.0027058" />
+        <BoundingBox SRS="EPSG:32611"
+                    minx="0" miny="0" maxx="400" maxy="300" />
     </Layer>
   </Layer>
 </Capability>
