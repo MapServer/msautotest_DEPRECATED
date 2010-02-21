@@ -32,6 +32,7 @@ Content-type: text/xml
   </ContactInformation>
   <Fees>None</Fees>
   <AccessConstraints>None</AccessConstraints>
+  <LayerLimit>1</LayerLimit>
   <MaxWidth>2048</MaxWidth>
   <MaxHeight>2048</MaxHeight>
 </Service>
