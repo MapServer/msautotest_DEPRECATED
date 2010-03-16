@@ -73,7 +73,6 @@ Content-type: application/vnd.ogc.wms_xml
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>province</Name>
         <Title>province</Title>
-<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
         <LatLonBoundingBox minx="-66.7243" miny="41.7705" maxx="-57.7217" maxy="48.4773" />
         <Style>
           <Name>default</Name>
@@ -87,7 +86,6 @@ Content-type: application/vnd.ogc.wms_xml
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>popplace</Name>
         <Title>popplace</Title>
-<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
         <LatLonBoundingBox minx="-66.3286" miny="42.5631" maxx="-59.6882" maxy="47.9413" />
         <Style>
           <Name>default</Name>
@@ -101,7 +99,6 @@ Content-type: application/vnd.ogc.wms_xml
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>road</Name>
         <Title>road</Title>
-<!-- WARNING: Mandatory mapfile parameter '(at least one of) MAP.PROJECTION, LAYER.PROJECTION or wms_srs metadata' was missing in this context. -->
         <LatLonBoundingBox minx="-66.6333" miny="42.3821" maxx="-59.2921" maxy="48.2955" />
         <Style>
           <Name>default</Name>
