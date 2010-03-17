@@ -257,10 +257,37 @@ def ogr_query_5():
     return 'success'
 
 ###############################################################################
-# Change the map extents and see if our query results have been altered.
-# With the current implementation they will be. 
+# Confirm that we can still fetch features not in the result set directly
+# by their feature id.
 
 def ogr_query_6():
+    layer = pmstestlib.layer
+    
+    layer.open()
+    
+    #########################################################################
+    # Check first shape attributes.
+    
+    result = layer.getResult( 0 )
+    
+    s = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
+    layer.resultsGetShape( s, 9, 0 )
+    
+    if pmstestlib.check_items( layer, s,
+                               [('EAS_ID','        170')] ) == 0:
+        return 'fail'
+
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+    
+###############################################################################
+# Change the map extents and see if our query results have been altered.
+# With the current implementation they will be, though this might be
+# considered to be a defect.
+
+def ogr_query_7():
     map = pmstestlib.map
 
     map.draw()
@@ -314,6 +341,7 @@ test_list = [
     ogr_query_4,
     ogr_query_5,
     ogr_query_6,
+    ogr_query_7,
     ogr_query_cleanup ]
 
 if __name__ == '__main__':
