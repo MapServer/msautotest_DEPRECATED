@@ -1,0 +1,44 @@
+#
+# AGG polyline rendering test (thick, fine and dashed)
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+MAP
+
+STATUS ON
+EXTENT 478300 4762880 481650 4765610
+SIZE 400 300
+
+IMAGETYPE aggpng24
+
+SYMBOL
+  NAME "dashes"
+  TYPE SIMPLE
+  STYLE 4 4 END
+END
+
+LAYER
+  NAME shppoly
+  TYPE line
+  DATA "data/shppoly/poly.shp"
+  STATUS default
+  CLASSITEM "AREA"
+  CLASS
+    NAME "test1"
+    STYLE
+        COLOR 20 20 20
+        WIDTH 5
+    END
+    STYLE
+        COLOR 50 50 255
+        WIDTH 3
+    END
+    STYLE
+        COLOR 255 255 0
+        WIDTH 1
+        SYMBOL "dashes"
+    END
+  END
+END
+
+END
