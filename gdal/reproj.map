@@ -1,6 +1,9 @@
 #
 # Test supports for image reprojection.
 #
+# This also incidentally tests the EXTENT keyword for a layer as a source
+# of georeferencing (#3402). 
+#
 # REQUIRES: SUPPORTS=PROJ
 #
 #
@@ -36,9 +39,7 @@ LAYER
     "proj=latlong"
     "datum=WGS84"
   END
-  METADATA
-    "wms_extent" "-117 34 -116.6 34.3"
-  END
+  EXTENT -117 34 -116.6 34.3
 END
 END # of map file
 
