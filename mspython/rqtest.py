@@ -560,17 +560,12 @@ def rqtest_12():
     pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_SINGLE,
                                    10.0 )
 
-    dumpResultSet( pmstestlib.layer )
-
     return 'success'
 
 ###############################################################################
 # Scan results.  This query is for a pixel at a grid intersection.  This
-# pixel should be classified as grid and returned, but currently it is
-# misclassified as transparent and discarded.  The reasons are described in:
-# http://mapserver.gis.umn.edu/bugs/show_bug.cgi?id=1021
+# pixel should be classified as grid and returned.
 #
-# Till this is fixed, we consider returning zero shapes an acceptable result.
 
 def rqtest_13():
     layer = pmstestlib.layer
@@ -586,11 +581,24 @@ def rqtest_13():
     
         count = count + 1
 
-    if count != 0:
+    if count != 1:
         pmstestlib.post_reason( 'got %d results instead of expected %d.' \
-                             % (count, 0) )
+                             % (count, 1) )
         return 'fail'
 
+    result = layer.getResult( 0 )
+    s = layer.getFeature( result.shapeindex, result.tileindex )
+    
+    if pmstestlib.check_items( layer, s,
+                               [('value_0','1'),
+                                ('red','255'),
+                                ('green','0'),
+                                ('blue','0'),
+                                ('class','Grid'),
+                                ('x','13.5'),
+                                ('y','36.5')] ) == 0:
+        return 'fail'
+    
     layer.close() 
     layer.close() # discard resultset.
 
