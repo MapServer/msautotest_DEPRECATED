@@ -23,7 +23,7 @@ LAYER
   TYPE raster
   STATUS default
   DATA data/float.tif
-  PROCESSING "SCALE=-10,28"
+  PROCESSING "SCALE=-10.001,28.001"
   CLASS
     STYLE
       COLORRANGE 0 0 0   255 0 0   
