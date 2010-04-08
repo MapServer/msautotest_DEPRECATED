@@ -27,35 +27,6 @@
 #  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #  DEALINGS IN THE SOFTWARE.
 ###############################################################################
-# 
-# $Log$
-# Revision 1.10  2006/02/13 17:19:32  frank
-# Added msCleanup call.
-#
-# Revision 1.9  2004/11/02 02:09:25  frank
-# adjust for renaming of values to value_list
-#
-# Revision 1.8  2004/11/02 01:32:45  frank
-# Added extra tests for projection cases.
-#
-# Revision 1.7  2004/11/01 21:33:42  frank
-# Added reference to raster query classification bug (1021) in rqtest_13.
-#
-# Revision 1.6  2004/10/22 15:42:46  frank
-# updated to latest API
-#
-# Revision 1.5  2004/07/27 21:51:42  frank
-# reverted to *not* use next generation names, no longer promoted
-#
-# Revision 1.4  2004/05/28 20:28:54  frank
-# Change rqtest_6 to operate against the map to ensure that works.
-#
-# Revision 1.3  2004/05/27 17:34:46  frank
-# Updated to work with new or old APIs and names.
-#
-# Revision 1.2  2004/05/13 03:03:28  frank
-# added header
-#
 
 import sys
 import math
@@ -669,6 +640,70 @@ def rqtest_15():
     return 'success'
     
 ###############################################################################
+# Make a similar test with the tileindex file in mapinfo format (#2796)
+
+def rqtest_16():
+
+    pmstestlib.map = mapscript.mapObj('../gdal/tileindex_mi.map')
+    pmstestlib.layer = pmstestlib.map.getLayer(0)
+
+    pmstestlib.map.setProjection("+proj=utm +zone=30 +datum=WGS84")
+
+    pnt = mapscript.pointObj()
+    pnt.x =  889690
+    pnt.y =   55369
+    
+    pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_MULTIPLE,
+                                   200000.0 )
+
+    return 'success'
+
+###############################################################################
+# Check result count, and that the results are within the expected distance.
+# This also implicitly verifies the results were reprojected back to UTM
+# coordinates from the lat long system of the layer.
+
+def rqtest_17():
+    
+    layer = pmstestlib.layer
+    
+    pnt = mapscript.pointObj()
+    pnt.x =  889690
+    pnt.y =   55369
+    
+    #########################################################################
+    # Check result count.
+    layer.open()
+    count = 0
+    for i in range(1000):
+        result = layer.getResult( i )
+        if result is None:
+            break
+
+        count = count + 1
+
+        s = layer.getFeature( result.shapeindex, result.tileindex )
+        x = float(pmstestlib.get_item_value( layer, s, 'x' ))
+        y = float(pmstestlib.get_item_value( layer, s, 'y' ))
+        dist_sq = (x-pnt.x) * (x-pnt.x) + (y-pnt.y) * (y-pnt.y)
+        dist = math.pow(dist_sq,0.5)
+        if dist > 200000.0:
+            pmstestlib.post_reason(
+                'Got point %f from target, but tolerance was 200000.0.' % dst )
+            return 'fail'
+                
+    
+    if count != 4:
+        pmstestlib.post_reason( 'got %d results instead of expected %d.' \
+                             % (count, 10) )
+        return 'fail'
+
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+    
+###############################################################################
 # Cleanup.
 
 def rqtest_cleanup():
@@ -694,6 +729,8 @@ test_list = [
     rqtest_13,
     rqtest_14,
     rqtest_15,
+    rqtest_16,
+    rqtest_17,
     rqtest_cleanup ]
 
 if __name__ == '__main__':
