@@ -213,6 +213,7 @@ def run_tests( argv ):
     fail_count = 0
     succeed_count = 0
     init_count = 0
+    noresult_count = 0
     keep_pass = 0
     valgrind = 0 
     shp2img = 'shp2img' 
@@ -295,6 +296,7 @@ def run_tests( argv ):
                 command = command.strip()
                 command = 'valgrind --tool=memcheck --leak-check=full %s 2>result/%s.txt'%(command, out_file+".vgrind.txt")
             os.system( command )
+
             if demime:
                 demime_file( 'result/'+out_file )
             if deversion:
@@ -325,6 +327,7 @@ def run_tests( argv ):
                 print '*    results dont match, TEST FAILED.'
             elif cmp == 'noresult':
                 fail_count = fail_count + 1
+                noresult_count += 1
                 print '*    no result file generated, TEST FAILED.'
             elif cmp == 'noexpected':
                 print '     no expected file exists, accepting result as expected.'
@@ -340,3 +343,6 @@ def run_tests( argv ):
     print '%d tests succeeded' % succeed_count
     print '%d tests failed' %fail_count
     print '%d test results initialized' % init_count
+
+    if noresult_count > 0:
+        print '%d of failed tests produced *no* result! Serious Failure!' % noresult_count
