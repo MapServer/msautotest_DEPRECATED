@@ -42,6 +42,7 @@ Acquisition: 1999-10-11 18:47</ows:Abstract>
         <Definition>
           <ows:AnyValue/>
         </Definition>
+        <NullValue>-99</NullValue>
         <InterpolationMethods>
           <InterpolationMethod>bilinear</InterpolationMethod>
           <Default>nearest neighbor</Default>

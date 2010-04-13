@@ -62,6 +62,9 @@ Content-type: text/xml
             </values>
           </AxisDescription>
         </axisDescription>
+        <nullValues>
+          <singleValue>-99</singleValue>
+        </nullValues>
       </RangeSet>
     </rangeSet>
     <supportedCRSs>
