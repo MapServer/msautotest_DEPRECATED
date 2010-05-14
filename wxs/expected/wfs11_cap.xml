@@ -96,7 +96,8 @@ Content-type: text/xml
     <FeatureType>
       <Name>province</Name>
       <Title>province</Title>
-      <DefaultSRS>EPSG:4326</DefaultSRS>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
+      <OtherSRS>urn:ogc:def:crs:EPSG::4269</OtherSRS>
       <OutputFormats>
         <Format>text/xml; subtype=gml/3.1.1</Format>
       </OutputFormats>
