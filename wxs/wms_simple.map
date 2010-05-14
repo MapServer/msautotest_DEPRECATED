@@ -1,7 +1,7 @@
 #
 # Test WMS
 #
-# REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS
+# REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS OUTPUT=KML
 #
 #
 # Capabilities (return latest supported version by default
