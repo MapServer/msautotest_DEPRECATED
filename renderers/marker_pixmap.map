@@ -9,7 +9,7 @@ MAP
 STATUS ON
 EXTENT 0 0 400 300
 SIZE 400 300
-FONTSET "fonts.lst"
+FONTSET "../misc/fonts.lst"
 IMAGETYPE aggpng24
 
 CONFIG MS_ERRORFILE "stderr"
@@ -18,7 +18,7 @@ DEBUG ON
 SYMBOL
     TYPE PIXMAP
     NAME "marker"
-    IMAGE "data/gdalicon.png"
+    IMAGE "../misc/data/gdalicon.png"
 END
 
 SYMBOL

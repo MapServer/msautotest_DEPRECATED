@@ -9,7 +9,7 @@ MAP
 STATUS ON
 EXTENT 0 0 400 300
 SIZE 400 300
-FONTSET "fonts.lst"
+FONTSET "../misc/fonts.lst"
 IMAGETYPE aggpng24
 
 SYMBOL
