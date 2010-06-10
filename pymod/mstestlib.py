@@ -92,11 +92,11 @@ def read_test_directives( mapfile_name ):
                 runparms_list.append( (items[0], items[1]) )
             elif len(items) == 1:
                 runparms_list.append( (items[0],
-                                       '[SHP2IMG] -m [MAPFILE] -o [RESULT]') )
+                                       '[SHP2IMG] [RENDERER] -m [MAPFILE] -o [RESULT]') )
                                      
     if len(runparms_list) == 0:
         runparms_list.append( (mapfile_name[:-4] + '.png',
-                               '[SHP2IMG] -m [MAPFILE] -o [RESULT]') )
+                               '[SHP2IMG] [RENDERER] -m [MAPFILE] -o [RESULT]') )
 
     return (runparms_list, require_list)
             
@@ -216,7 +216,8 @@ def run_tests( argv ):
     noresult_count = 0
     keep_pass = 0
     valgrind = 0 
-    shp2img = 'shp2img' 
+    shp2img = 'shp2img'
+    renderer = None
 
     ###########################################################################
     # Process arguments.
@@ -228,6 +229,8 @@ def run_tests( argv ):
             keep_pass = 1
         if argv[i] == '-valgrind':
             valgrind = 1
+        if argv[i] == '-renderer':
+            renderer = argv[i+1]
 
     ###########################################################################
     # Create results directory if it does not already exist.
@@ -258,6 +261,10 @@ def run_tests( argv ):
 
         print ' Processing: %s' % map
         (runparms_list, requires_list) = read_test_directives( map )
+        for i in range(len(runparms_list)):
+            if renderer is not None:
+                (resultbase,resultext) = os.path.splitext(runparms_list[i][0])
+                runparms_list[i] = ("%s.%s%s"%(resultbase,renderer,resultext),runparms_list[i][1])
 
         if not has_requires( version_info, requires_list ):
             print '    missing some or all of required components, skip.'
@@ -282,12 +289,18 @@ def run_tests( argv ):
                 deversion = 1
             else:
                 deversion = 0
-                
+
+
             command = string.replace( command, '[RESULT]', 'result/'+out_file )
             command = string.replace( command, '[RESULT_DEMIME]', 'result/'+out_file )
             command = string.replace( command, '[RESULT_DEVERSION]', 'result/'+out_file )
             command = string.replace( command, '[MAPFILE]', map )
             command = string.replace( command, '[SHP2IMG]', shp2img )
+            if renderer is not None:
+                command = string.replace( command, '[RENDERER]', '-i '+renderer )
+            else:
+                command = string.replace( command, '[RENDERER]', '' )
+                    
             command = string.replace( command, '[MAPSERV]', 'mapserv' )
             command = string.replace( command, '[LEGEND]', 'legend' )
             command = string.replace( command, '[SCALEBAR]', 'scalebar' )
