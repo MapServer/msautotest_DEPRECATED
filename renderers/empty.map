@@ -5,6 +5,7 @@ size 400 300
 extent 0 0 400 300
 shapepath "../misc/data"
 fontset "../misc/fonts.lst"
+symbolset "symbolset"
 
 
 layer

@@ -11,24 +11,10 @@ EXTENT 0 0 400 300
 SIZE 400 300
 FONTSET "../misc/fonts.lst"
 IMAGETYPE aggpng24
+symbolset "symbolset"
 
 CONFIG MS_ERRORFILE "stderr"
 DEBUG ON
-
-SYMBOL
-    TYPE ELLIPSE
-    NAME "marker"
-    POINTS 1 2 END
-    FILLED TRUE
-END
-
-SYMBOL
-    NAME "anchor"
-    TYPE ELLIPSE
-    POINTS 1 1 END
-#    FILLED true
-END
-
 
 LAYER
   NAME "symbol"
@@ -37,7 +23,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "marker"
+        SYMBOL "ellipse"
         COLOR 0 0 255
         SIZE 20
     END
@@ -56,7 +42,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "marker"
+        SYMBOL "ellipse"
         SIZE 35
         COLOR 0 0 255
         ANGLE 45
@@ -78,7 +64,7 @@ LAYER
             COLOR 255 0 0
             SIZE 8
             WIDTH 1
-            SYMBOL "anchor"
+            SYMBOL "circle"
         END
     END
     FEATURE POINTS 50 50 END END

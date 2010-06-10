@@ -11,23 +11,10 @@ EXTENT 0 0 400 300
 SIZE 400 300
 FONTSET "../misc/fonts.lst"
 IMAGETYPE aggpng24
+symbolset "symbolset"
 
 CONFIG MS_ERRORFILE "stderr"
 DEBUG ON
-
-SYMBOL
-    TYPE PIXMAP
-    NAME "marker"
-    IMAGE "../misc/data/gdalicon.png"
-END
-
-SYMBOL
-    NAME "anchor"
-    TYPE ELLIPSE
-    POINTS 1 1 END
-#    FILLED true
-END
-
 
 LAYER
   NAME "symbol"
@@ -36,7 +23,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "marker"
+        SYMBOL "gdalicon"
     END
     LABEL
         position lc
@@ -61,7 +48,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "marker"
+        SYMBOL "gdalicon"
         SIZE 55
         ANGLE 45
     END
@@ -93,7 +80,7 @@ LAYER
             COLOR 255 0 0
             SIZE 8
             WIDTH 1
-            SYMBOL "anchor"
+            SYMBOL "circle"
         END
     END
     FEATURE POINTS 50 50 END END

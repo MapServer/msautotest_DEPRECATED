@@ -11,20 +11,7 @@ EXTENT 0 0 400 300
 SIZE 400 300
 FONTSET "../misc/fonts.lst"
 IMAGETYPE aggpng24
-
-SYMBOL
-    TYPE TRUETYPE
-    NAME "marker"
-    FONT "default"
-    CHARACTER 'A'
-END
-
-SYMBOL
-    NAME "anchor"
-    TYPE ELLIPSE
-    POINTS 1 1 END
-#    FILLED true
-END
+symbolset "symbolset"
 
 LAYER
     NAME "anchors"
@@ -35,7 +22,7 @@ LAYER
             COLOR 255 0 0
             SIZE 8
             WIDTH 1
-            SYMBOL "anchor"
+            SYMBOL "circle"
         END
     END
     FEATURE POINTS 50 50 END END
@@ -49,7 +36,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "marker"
+        SYMBOL "ttf"
         COLOR 0 0 0
         SIZE 15
     END
@@ -68,7 +55,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "marker"
+        SYMBOL "ttf"
         COLOR 0 0 0
         SIZE 15
         ANGLE 45
