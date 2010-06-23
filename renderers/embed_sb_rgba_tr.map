@@ -10,7 +10,7 @@ SIZE 400 300
 IMAGECOLOR 0 0 0 
 fontset "../misc/fonts.lst"
 TRANSPARENT ON
-
+imagecolor 255 255 255
 IMAGETYPE png
 
 SCALEBAR

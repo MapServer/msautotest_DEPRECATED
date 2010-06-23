@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 ###############################################################################
-# $Id: run_test.py 1931 2003-03-05 15:30:09Z frank $
+# $Id$
 #
 # Project:  MapServer
 # Purpose:  Test harnass script for MapServer autotest.
@@ -44,7 +44,7 @@ import mstestlib
 # main()
 
 if __name__ == '__main__':
-    for renderer in ['aggpng24','cairopng','png']:
+    for renderer in ['png24','cairopng','png']:
         args = sys.argv[1:]
         args.extend(['-renderer',renderer])
         mstestlib.run_tests( args )

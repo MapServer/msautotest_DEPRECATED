@@ -10,7 +10,7 @@ STATUS ON
 EXTENT -125.549477 -69.508628 101.670954 15.840339
 SIZE 400 300
 FONTSET "../misc/fonts.lst"
-IMAGETYPE aggpng24
+IMAGETYPE png24
 symbolset "symbolset"
 shapepath "../misc/data"
 

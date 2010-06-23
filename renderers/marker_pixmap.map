@@ -10,7 +10,7 @@ STATUS ON
 EXTENT 0 0 400 300
 SIZE 400 300
 FONTSET "../misc/fonts.lst"
-IMAGETYPE aggpng24
+IMAGETYPE png24
 symbolset "symbolset"
 
 CONFIG MS_ERRORFILE "stderr"
