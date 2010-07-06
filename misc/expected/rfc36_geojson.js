@@ -1,7 +1,6 @@
 Content-type: application/json; subtype=geojson
 
 
-
 {
  "type": "FeatureCollection",
  "crs": {
