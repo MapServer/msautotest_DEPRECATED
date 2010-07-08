@@ -11,18 +11,19 @@ SIZE 400 300
 shapepath "../misc/data"
 IMAGETYPE png
 fontset "../misc/fonts.lst"
+imagecolor 255 200 0
+
 
 LEGEND 
   POSITION LR
   STATUS EMBED
-  TRANSPARENT ON
+  imagecolor 255 255 255
   label
     type truetype
     color 0 0 0
     font "default"
     size 9
   end
-  #postlabelcache true
 END
 
 LAYER
