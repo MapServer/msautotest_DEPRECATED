@@ -23,7 +23,7 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
-        SYMBOL "gdalicongif"
+        SYMBOL "gdalicongifinterlaced"
     END
   END
   FEATURE

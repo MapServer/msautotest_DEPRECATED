@@ -44,6 +44,11 @@ symbol
     type pixmap
     image "../misc/data/gdalicon.gif"
 end
+symbol
+    name "gdalicongifinterlaced"
+    type pixmap
+    image "../misc/data/gdalicon_interlaced.gif"
+end
 
 
 end
