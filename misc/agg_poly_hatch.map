@@ -1,0 +1,37 @@
+#
+# vector-textured AGG polygon rendering test.
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+MAP
+
+STATUS ON
+EXTENT 478300 4762880 481650 4765610
+SIZE 400 300
+IMAGETYPE aggpng24
+
+SYMBOL
+  TYPE HATCH
+  NAME 'hatch'
+END
+
+LAYER
+  NAME shppoly
+  TYPE polygon
+  DATA "data/shppoly/poly.shp"
+  STATUS default
+  CLASSITEM "AREA"
+  CLASS
+    STYLE
+      SYMBOL "hatch"
+      COLOR 0 255 0
+      BACKGROUNDCOLOR 100 100 100
+      OUTLINECOLOR 0 0 0
+      WIDTH 2
+      SIZE 8
+      ANGLE 38
+    END
+  END
+END
+
+END
