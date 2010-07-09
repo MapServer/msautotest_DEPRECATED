@@ -44,7 +44,7 @@ import mstestlib
 # main()
 
 if __name__ == '__main__':
-    for renderer in ['png24','cairopng','png']:
+    for renderer in ['png24','cairopng','png','svg','pdf']:
         args = sys.argv[1:]
         args.extend(['-renderer',renderer])
         mstestlib.run_tests( args )
