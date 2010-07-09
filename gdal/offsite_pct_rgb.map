@@ -1,0 +1,22 @@
+
+#
+# Tests support for OFFSITE used with RGB value of a colortable entry
+# for a pseudocolored input raster (through GDAL). 
+#
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 0 0 400 300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DATA data/pct22.tif
+  OFFSITE 184 184 184
+END
+
+END # of map file

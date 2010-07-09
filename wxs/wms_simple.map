@@ -1,0 +1,89 @@
+#
+# Test WMS
+#
+# REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS
+#
+#
+# Capabilities
+# RUN_PARMS: wms_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
+#
+# Layer description
+# RUN_PARMS: wms_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=DescribeLayer&LAYERS=road" > [RESULT]
+#
+# Draw a map with a single polygon layer.
+# RUN_PARMS: wms_get_map_polygon.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&LAYERS=road" > [RESULT_DEMIME]
+#
+#
+ 
+
+
+
+NAME WMS_TEST
+STATUS ON
+SIZE 400 300
+EXTENT   2018000 -73300 3410396 647400
+UNITS METERS
+IMAGECOLOR 255 255 255
+SHAPEPATH ./data
+SYMBOLSET etc/symbols.sym
+FONTSET etc/fonts.txt
+
+
+OUTPUTFORMAT
+  NAME GDPNG
+  DRIVER "GD/PNG"
+  MIMETYPE "image/png"
+  IMAGEMODE RGB
+  EXTENSION "png"
+END
+
+
+#
+# Start of web interface definition
+#
+WEB
+
+ IMAGEPATH "/tmp/ms_tmp/"
+ IMAGEURL "/ms_tmp/"
+
+  METADATA
+    "wms_title"		   "Test simple wms"
+    "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
+    "wms_srs"		   "EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326"
+    "ows_schemas_location" "http://ogc.dmsolutions.ca"
+  END
+END
+
+PROJECTION
+  "init=./data/epsg2:42304"
+END
+
+
+#
+# Start of layer definitions
+#
+
+LAYER
+  NAME road
+  DATA road
+  METADATA
+    "wms_title"       "road"
+    "wms_description" "Roads of I.P.E."
+  END
+  TYPE LINE
+  STATUS ON
+  PROJECTION
+    "init=./data/epsg2:42304"
+  END
+
+  DUMP TRUE
+
+  CLASSITEM "Name_e"
+  CLASS
+    NAME "Roads"
+    SYMBOL 0 
+    COLOR 220 0 0
+  END
+END # Layer
+
+END # Map File
