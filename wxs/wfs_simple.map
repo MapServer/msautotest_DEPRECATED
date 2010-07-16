@@ -61,9 +61,6 @@
 # Get Feature by id GML2
 # RUN_PARMS: wfs11_get_feature_id_gml2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province&featureid=province.Quebec&outputformat=text/xml; subtype=gml/2.1.2" > [RESULT]
 #
-# GetFeature resultType=hits
-#
-# RUN_PARMS: wfs11_get_feature_hits.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=province&resulttype=hits" > [RESULT]
 #
 # GetFeature maxfeatures=2
 #
