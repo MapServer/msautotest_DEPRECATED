@@ -140,6 +140,26 @@ def deversion_file( filename ):
     return
 
 ###############################################################################
+# white out timestamp
+
+def detimestamp_file( filename ):
+
+    data = open(filename,'rb').read()
+
+    start = string.find( data, 'timeStamp="' )
+    if start == -1:
+        return
+
+    start = start + 11
+    end = start
+    while data[end+1] != '"':
+        end = end + 1
+
+    new_data = data[:start] + data[end+1:]
+    open(filename,'wb').write(new_data)
+    return
+
+###############################################################################
 # Do windows exponential conversion on the file (e+0nn to e+nn).
 
 def fixexponent_file( filename ):
@@ -290,7 +310,6 @@ def run_tests( argv ):
             else:
                 deversion = 0
 
-
             command = string.replace( command, '[RESULT]', 'result/'+out_file )
             command = string.replace( command, '[RESULT_DEMIME]', 'result/'+out_file )
             command = string.replace( command, '[RESULT_DEVERSION]', 'result/'+out_file )
@@ -316,6 +335,7 @@ def run_tests( argv ):
                 deversion_file( 'result/'+out_file )
                 fixexponent_file( 'result/'+out_file )
                 truncate_one_decimal( 'result/'+out_file )
+                detimestamp_file( 'result/'+out_file )
                 
             crlf('result/'+out_file)
             cmp = compare_result( out_file )
