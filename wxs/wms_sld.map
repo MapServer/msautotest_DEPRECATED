@@ -64,7 +64,7 @@
 #
 #
 # Generate map image using and sld with a multi-polygon filter encoding
-# RUN_PARMS: wms_get_map_multi_polygon_filter.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road&sld_body=%3CStyledLayerDescriptor+version%3D%221.0.0%22%3E+%3CNamedLayer%3E+%3CName%3Eroad%3C%2FName%3E+%3CUserStyle%3E+%3CTitle%3Exxx%3C%2FTitle%3E+%3CFeatureTypeStyle%3E%3CRule%3E%3Csld%3AName%3Edefault%3C%2Fsld%3AName%3E%3Cogc%3AFilter+xmlns%3Aogc%3D%22http%3A%2F%2Fwww.opengis.net%2Fogc%22%3E%3Cogc%3AIntersects%3E%3Cogc%3APropertyName%3Egeometry%3C%2Fogc%3APropertyName%3E%3Cgml%3AMultiPolygon+srsName%3D%22EPSG%3A42304%22%3E%3Cgml%3ApolygonMember%3E%3Cgml%3APolygon%3E%3Cgml%3AouterBoundaryIs%3E%3Cgml%3ALinearRing%3E%3Cgml%3Acoordinates%3E2475215%2C289715+2630749%2C289715+2630749%2C402603+2475215%2C402603+2475215%2C289715%3C%2Fgml%3Acoordinates%3E%3C%2Fgml%3ALinearRing%3E%3C%2Fgml%3AouterBoundaryIs%3E%3C%2Fgml%3APolygon%3E%3C%2Fgml%3ApolygonMember%3E%3Cgml%3ApolygonMember%3E%3Cgml%3APolygon%3E%3Cgml%3AouterBoundaryIs%3E%3Cgml%3ALinearRing%3E%3Cgml%3Acoordinates%3E2241915%2C-29714+2411664%2C-29714++2411664%2C83173+2241915%2C83173+2241915%2C-29714%3C%2Fgml%3Acoordinates%3E%3C%2Fgml%3ALinearRing%3E%3C%2Fgml%3AouterBoundaryIs%3E%3C%2Fgml%3APolygon%3E%3C%2Fgml%3ApolygonMember%3E%3C%2Fgml%3AMultiPolygon%3E%3C%2Fogc%3AIntersects%3E%3C%2Fogc%3AFilter%3E%3CLineSymbolizer%3E+%3CGeometry%3E+%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E+%3C%2FGeometry%3E%3CStroke%3E%3CCssParameter+name%3D%22stroke%22%3E%230000ff%3C%2FCssParameter%3E%3C%2FStroke%3E%3C%2FLineSymbolizer%3E%3C%2FRule%3E%3C%2FFeatureTypeStyle%3E%3C%2FUserStyle%3E%3C%2FNamedLayer%3E%3C%2FStyledLayerDescriptor%3E" > [RESULT_DEMIME]
+# RUN_PARMS: wms_get_map_multi_polygon_filter.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road&sld_body=%3CStyledLayerDescriptor+version%3D%221.0.0%22%3E+%3CNamedLayer%3E+%3CName%3Eroad%3C%2FName%3E+%3CUserStyle%3E+%3CTitle%3Exxx%3C%2FTitle%3E+%3CFeatureTypeStyle%3E%3CRule%3E%3Csld%3AName%3Edefault%3C%2Fsld%3AName%3E%3Cogc%3AFilter+xmlns%3Aogc%3D%22http%3A%2F%2Fwww.opengis.net%2Fogc%22%3E%3Cogc%3AIntersects%3E%3Cogc%3APropertyName%3Egeometry%3C%2Fogc%3APropertyName%3E%3Cgml%3AMultiPolygon+srsName%3D%22EPSG%3A3978%22%3E%3Cgml%3ApolygonMember%3E%3Cgml%3APolygon%3E%3Cgml%3AouterBoundaryIs%3E%3Cgml%3ALinearRing%3E%3Cgml%3Acoordinates%3E2475215%2C289715+2630749%2C289715+2630749%2C402603+2475215%2C402603+2475215%2C289715%3C%2Fgml%3Acoordinates%3E%3C%2Fgml%3ALinearRing%3E%3C%2Fgml%3AouterBoundaryIs%3E%3C%2Fgml%3APolygon%3E%3C%2Fgml%3ApolygonMember%3E%3Cgml%3ApolygonMember%3E%3Cgml%3APolygon%3E%3Cgml%3AouterBoundaryIs%3E%3Cgml%3ALinearRing%3E%3Cgml%3Acoordinates%3E2241915%2C-29714+2411664%2C-29714++2411664%2C83173+2241915%2C83173+2241915%2C-29714%3C%2Fgml%3Acoordinates%3E%3C%2Fgml%3ALinearRing%3E%3C%2Fgml%3AouterBoundaryIs%3E%3C%2Fgml%3APolygon%3E%3C%2Fgml%3ApolygonMember%3E%3C%2Fgml%3AMultiPolygon%3E%3C%2Fogc%3AIntersects%3E%3C%2Fogc%3AFilter%3E%3CLineSymbolizer%3E+%3CGeometry%3E+%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E+%3C%2FGeometry%3E%3CStroke%3E%3CCssParameter+name%3D%22stroke%22%3E%230000ff%3C%2FCssParameter%3E%3C%2FStroke%3E%3C%2FLineSymbolizer%3E%3C%2FRule%3E%3C%2FFeatureTypeStyle%3E%3C%2FUserStyle%3E%3C%2FNamedLayer%3E%3C%2FStyledLayerDescriptor%3E" > [RESULT_DEMIME]
 
 MAP
 
@@ -100,14 +100,12 @@ WEB
   METADATA
     "wms_title"		   "Test simple wms"
     "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
-    "wms_srs"		   "EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326"
+    "wms_srs"		   "EPSG:3978 EPSG:42101 EPSG:4269 EPSG:4326"
     "ows_schemas_location" "http://ogc.dmsolutions.ca"
   END
 END
 
 PROJECTION
-#  "init=./data/epsg2:42304"
-#  "init=epsg:42304"
    "init=epsg:4326"
 END
 
@@ -129,8 +127,7 @@ LAYER
   TYPE POINT
   STATUS ON
   PROJECTION
-  "init=./data/epsg2:42304"
-#    "init=epsg:42304"
+    "init=epsg:3978"
   END
 
   DUMP TRUE
@@ -156,8 +153,7 @@ LAYER
   TYPE POINT
   STATUS ON
   PROJECTION
-  "init=./data/epsg2:42304"
-#    "init=epsg:42304"
+    "init=epsg:3978"
   END
 
   DUMP TRUE
@@ -193,8 +189,7 @@ LAYER
   TYPE LINE
   STATUS ON
   PROJECTION
-  "init=./data/epsg2:42304"
-#    "init=epsg:42304"
+    "init=epsg:3978"
   END
 
   DUMP TRUE
