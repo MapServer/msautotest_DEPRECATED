@@ -61,7 +61,7 @@
 # RUN_PARMS: wfs_filter_bbox.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22EPSG:4326%22><coordinates>-65.86,44.56+-65.76,44.68</coordinates></Box></BBOX></Filter>" > [RESULT]
 #
 # Verify INTERSECTS Results:  Canso, Port Hawkesbury
-# RUN_PARMS: wfs_filter_intersects.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><Intersect><PropertyName>Geometry</PropertyName><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-61.63,45.04 -60.78,45.04 -60.78,46.08 -61.63,46.08</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></Intersect></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_intersects.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><Intersects><PropertyName>Geometry</PropertyName><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-61.63,45.04 -60.78,45.04 -60.78,46.08 -61.63,46.08</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></Intersects></Filter>" > [RESULT]
 #
 # Verify DWITHIN Result:  Sydney
 # RUN_PARMS: wfs_filter_dwithin.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><DWithin><PropertyName>Geometry</PropertyName><gml:Point><gml:coordinates>-60.18,46.10</gml:coordinates></gml:Point><Distance units='dd'>0.05</Distance></DWithin></Filter>" > [RESULT]
@@ -99,7 +99,7 @@
 # RUN_PARMS: wfs_filter_disjoint.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=province&FILTER=<Filter><Disjoint><PropertyName>Geometry</PropertyName><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-66.23,42.50 -58.95,45.67 -58.97,48.52 -67.01,47.13</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></Disjoint></Filter>" > [RESULT]
 
 # Verify INTERSECTS Results:  Prince Edward Island
-# RUN_PARMS: wfs_filter_intersects_line.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=province&FILTER=<Filter><Intersect><PropertyName>Geometry</PropertyName><gml:LineString><gml:coordinates>-62.94,46.61 -62.74,45.83</gml:coordinates></gml:LineString></Intersect></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_intersects_line.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=province&FILTER=<Filter><Intersects><PropertyName>Geometry</PropertyName><gml:LineString><gml:coordinates>-62.94,46.61 -62.74,45.83</gml:coordinates></gml:LineString></Intersects></Filter>" > [RESULT]
 #
 # Filter using startIndex
 # RUN_PARMS: wfs_filter_startindex.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&propertyname=(NAME)&maxfeatures=10&startindex=0" > [RESULT]
