@@ -83,6 +83,7 @@ Content-type: text/xml
       </ows:DCP>
       <ows:Parameter name="resultType">
         <ows:Value>results</ows:Value>
+        <ows:Value>hits</ows:Value>
       </ows:Parameter>
       <ows:Parameter name="outputFormat">
         <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
