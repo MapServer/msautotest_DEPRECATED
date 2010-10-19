@@ -1,0 +1,332 @@
+Content-Type: multipart/mixed; boundary=xxOGRBoundaryxx
+
+--xxOGRBoundaryxx
+Content-Disposition: attachment; filename=result.gml
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+<?xml version="1.0" encoding="utf-8" ?>
+<ogr:FeatureCollection
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://ogr.maptools.org/ result.xsd"
+     xmlns:ogr="http://ogr.maptools.org/"
+     xmlns:gml="http://www.opengis.net/gml">
+  <gml:boundedBy>
+    <gml:Box>
+      <gml:coord><gml:X>2279399</gml:X><gml:Y>-55344.50390625</gml:Y></gml:coord>
+      <gml:coord><gml:X>2600377</gml:X><gml:Y>461586.8125</gml:Y></gml:coord>
+    </gml:Box>
+  </gml:boundedBy>
+                                                      
+  <gml:featureMember>
+    <ogr:popplace fid="F0">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2281604.25,340848.9375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>BACMK</ogr:UNIQUE_KEY>
+      <ogr:NAME>Tignish</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>1</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F1">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2503805.5,427872.65625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAGYX</ogr:UNIQUE_KEY>
+      <ogr:NAME>Cheticamp</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F2">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2499190.0,194088.234375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBIKA</ogr:UNIQUE_KEY>
+      <ogr:NAME>Sheet Harbour</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F3">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2434957.0,347013.59375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>BACII</ogr:UNIQUE_KEY>
+      <ogr:NAME>Souris</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F4">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2578914.25,292073.09375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAGBW</ogr:UNIQUE_KEY>
+      <ogr:NAME>Canso</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F5">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2536072.75,311524.96875,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBELL</ogr:UNIQUE_KEY>
+      <ogr:NAME>Port Hawkesbury</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F6">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2494520.0,285855.40625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAATB</ogr:UNIQUE_KEY>
+      <ogr:NAME>Antigonish</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F7">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2348711.75,204294.0625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBKDH</ogr:UNIQUE_KEY>
+      <ogr:NAME>Springhill</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F8">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2377598.0,135734.703125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBPAK</ogr:UNIQUE_KEY>
+      <ogr:NAME>Windsor</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F9">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2398677.25,70608.140625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAWAZ</ogr:UNIQUE_KEY>
+      <ogr:NAME>Lunenburg</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F10">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2388340.0,19784.322265625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAUWZ</ogr:UNIQUE_KEY>
+      <ogr:NAME>Liverpool</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F11">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2313364.75,98278.921875,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAZHC</ogr:UNIQUE_KEY>
+      <ogr:NAME>Middleton</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F12">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2279399,39858,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAJOA</ogr:UNIQUE_KEY>
+      <ogr:NAME>Digby</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F13">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2359906.5,-30454.435546875,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBIKP</ogr:UNIQUE_KEY>
+      <ogr:NAME>Shelburne</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F14">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2325561.75,294362.25,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>BADSZ</ogr:UNIQUE_KEY>
+      <ogr:NAME>Summerside</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F15">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2600377.0,419421.71875,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBQFA</ogr:UNIQUE_KEY>
+      <ogr:NAME>Glace Bay</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F16">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2449341.5,253906.09375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBBJR</ogr:UNIQUE_KEY>
+      <ogr:NAME>New Glasgow</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F17">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2418051.5,205002.203125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBMKT</ogr:UNIQUE_KEY>
+      <ogr:NAME>Truro</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F18">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2329295.75,218397.28125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAAOO</ogr:UNIQUE_KEY>
+      <ogr:NAME>Amherst</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F19">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2345781.25,130999.546875,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CASWE</ogr:UNIQUE_KEY>
+      <ogr:NAME>Kentville</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F20">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2382666.75,60910.9375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAFBR</ogr:UNIQUE_KEY>
+      <ogr:NAME>Bridgewater</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F21">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2294923.75,-55344.50390625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBPIB</ogr:UNIQUE_KEY>
+      <ogr:NAME>Yarmouth</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F22">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2574240.0,416102.34375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBLHE</ogr:UNIQUE_KEY>
+      <ogr:NAME>Sydney Mines</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F23">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2587598.0,404010.53125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CBLGX</ogr:UNIQUE_KEY>
+      <ogr:NAME>Sydney</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>4</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F24">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2437026.0,130358.3515625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAIYJ</ogr:UNIQUE_KEY>
+      <ogr:NAME>Dartmouth</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>5</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F25">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2402416.5,461586.8125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>EGIIG</ogr:UNIQUE_KEY>
+      <ogr:NAME>Fatima</ogr:NAME>
+      <ogr:CAPITAL>0</ogr:CAPITAL>
+      <ogr:POP_CLASS>2</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F26">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2378567.25,305099.78125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>BAARG</ogr:UNIQUE_KEY>
+      <ogr:NAME>Charlottetown</ogr:NAME>
+      <ogr:CAPITAL>2</ogr:CAPITAL>
+      <ogr:POP_CLASS>3</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:popplace fid="F27">
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2431943.75,118985.3828125,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:UNIQUE_KEY>CAPHL</ogr:UNIQUE_KEY>
+      <ogr:NAME>Halifax</ogr:NAME>
+      <ogr:CAPITAL>2</ogr:CAPITAL>
+      <ogr:POP_CLASS>6</ogr:POP_CLASS>
+    </ogr:popplace>
+  </gml:featureMember>
+</ogr:FeatureCollection>
+
+--xxOGRBoundaryxx
+Content-Disposition: attachment; filename=result.xsd
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://ogr.maptools.org/" xmlns:ogr="http://ogr.maptools.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" version="1.0">
+<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
+<xs:element name="FeatureCollection" type="ogr:FeatureCollectionType" substitutionGroup="gml:_FeatureCollection"/>
+<xs:complexType name="FeatureCollectionType">
+  <xs:complexContent>
+    <xs:extension base="gml:AbstractFeatureCollectionType">
+      <xs:attribute name="lockId" type="xs:string" use="optional"/>
+      <xs:attribute name="scope" type="xs:string" use="optional"/>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+<xs:element name="popplace" type="ogr:popplace_Type" substitutionGroup="gml:_Feature"/>
+<xs:complexType name="popplace_Type">
+  <xs:complexContent>
+    <xs:extension base="gml:AbstractFeatureType">
+      <xs:sequence>
+        <xs:element name="geometryProperty" type="gml:PointPropertyType" nillable="true" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="UNIQUE_KEY" nillable="true" minOccurs="0" maxOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="5"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="NAME" nillable="true" minOccurs="0" maxOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="CAPITAL" nillable="true" minOccurs="0" maxOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:totalDigits value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="POP_CLASS" nillable="true" minOccurs="0" maxOccurs="1">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:totalDigits value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+</xs:schema>
+
+--xxOGRBoundaryxx--

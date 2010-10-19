@@ -5,7 +5,7 @@ Content-Disposition: attachment; filename=result.mid
 Content-Type: application/binary
 Content-Transfer-Encoding: binary
 
-613,1511,0,0,14862.892,1521,1521,67,"",""
+613,1511,0,0,14862.892,1521,67,"",""
 
 --xxOGRBoundaryxx
 Content-Disposition: attachment; filename=result.mif
@@ -16,13 +16,12 @@ Version 300
 Charset "Neutral"
 Delimiter ","
 CoordSys Earth Projection 1, 104
-Columns 10
+Columns 9
   FNODE_ Integer
   TNODE_ Integer
   LPOLY_ Integer
   RPOLY_ Integer
   LENGTH Float
-  ROAD_ Integer
   ROAD_ID Integer
   F_CODE Integer
   NAME_E Char(26)

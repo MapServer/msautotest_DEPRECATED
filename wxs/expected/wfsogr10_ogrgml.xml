@@ -26,7 +26,6 @@ Content-Transfer-Encoding: binary
       <ogr:LPOLY_>0</ogr:LPOLY_>
       <ogr:RPOLY_>0</ogr:RPOLY_>
       <ogr:LENGTH>14862.892</ogr:LENGTH>
-      <ogr:ROAD_>1521</ogr:ROAD_>
       <ogr:ROAD_ID>1521</ogr:ROAD_ID>
       <ogr:F_CODE>67</ogr:F_CODE>
       <ogr:NAME_E></ogr:NAME_E>
@@ -91,13 +90,6 @@ Content-Transfer-Encoding: binary
             <xs:restriction base="xs:decimal">
               <xs:totalDigits value="15"/>
               <xs:fractionDigits value="3"/>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="ROAD_" nillable="true" minOccurs="0" maxOccurs="1">
-          <xs:simpleType>
-            <xs:restriction base="xs:integer">
-              <xs:totalDigits value="11"/>
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
