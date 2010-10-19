@@ -55,7 +55,7 @@ Content-type: text/xml
       </ows:Parameter>
       <ows:Parameter name="AcceptVersions">
         <ows:Value>1.0.0</ows:Value>
-        <ows:Value> 1.1.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
       </ows:Parameter>
       <ows:Parameter name="AcceptFormats">
         <ows:Value>text/xml</ows:Value>
@@ -102,9 +102,7 @@ Content-type: text/xml
     <FeatureType>
       <Name>road</Name>
       <Title>road</Title>
-      <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
-      <OtherSRS>urn:ogc:def:crs:EPSG::4269</OtherSRS>
-      <OtherSRS>urn:ogc:def:crs:EPSG::3978</OtherSRS>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::3978</DefaultSRS>
       <OutputFormats>
         <Format>text/xml; subtype=gml/3.1.1</Format>
         <Format>text/csv</Format>
@@ -121,9 +119,7 @@ Content-type: text/xml
     <FeatureType>
       <Name>popplace</Name>
       <Title>popplace</Title>
-      <DefaultSRS>urn:ogc:def:crs:EPSG::4326</DefaultSRS>
-      <OtherSRS>urn:ogc:def:crs:EPSG::4269</OtherSRS>
-      <OtherSRS>urn:ogc:def:crs:EPSG::3978</OtherSRS>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::3978</DefaultSRS>
       <OutputFormats>
         <Format>text/xml; subtype=gml/3.1.1</Format>
         <Format>text/csv</Format>
@@ -134,6 +130,22 @@ Content-type: text/xml
       <ows:WGS84BoundingBox dimensions="2">
         <ows:LowerCorner>-66.328616887533 42.5631251681</ows:LowerCorner>
         <ows:UpperCorner>-59.688212172925 47.941250727064</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType>
+      <Name>multi</Name>
+      <Title>multi</Title>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::27700</DefaultSRS>
+      <OutputFormats>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/csv</Format>
+        <Format>text/xml; subtype=gml/2.1.2; driver=ogr</Format>
+        <Format>application/shapefile</Format>
+        <Format>MIDMIF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-7.5565511747376 49.766185807900</ows:LowerCorner>
+        <ows:UpperCorner>-7.5550662965057 49.767147580574</ows:UpperCorner>
       </ows:WGS84BoundingBox>
     </FeatureType>
   </FeatureTypeList>

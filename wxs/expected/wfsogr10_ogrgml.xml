@@ -13,14 +13,14 @@ Content-Transfer-Encoding: binary
      xmlns:gml="http://www.opengis.net/gml">
   <gml:boundedBy>
     <gml:Box>
-      <gml:coord><gml:X>-60.35166078709053</gml:X><gml:Y>46.09780746945207</gml:Y></gml:coord>
-      <gml:coord><gml:X>-60.20118979296159</gml:X><gml:Y>46.15170216229085</gml:Y></gml:coord>
+      <gml:coord><gml:X>2576803.5</gml:X><gml:Y>399102.1875</gml:Y></gml:coord>
+      <gml:coord><gml:X>2589745.5</gml:X><gml:Y>402556.25</gml:Y></gml:coord>
     </gml:Box>
   </gml:boundedBy>
-                        
+                                                        
   <gml:featureMember>
     <ogr:road fid="F0">
-      <ogr:geometryProperty><gml:LineString><gml:coordinates>-60.201189792961586,46.102354406835836,0 -60.22203990695251,46.101246346098861,0 -60.242066599783321,46.097807469452071,0 -60.26248817949871,46.10046243986185,0 -60.302916095741153,46.10953640399341,0 -60.317500401724708,46.115654968046151,0 -60.338340466865311,46.124390858000147,0 -60.351258604383098,46.135729469595994,0 -60.35166078709053,46.151702162290846,0</gml:coordinates></gml:LineString></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:LineString><gml:coordinates>2589745.5,402556.25,0 2588416.5,401601.0625,0 2587278.5,400455.71875,0 2585757.5,399880.53125,0 2582523.25,399110.65625,0 2581190.5,399107.1875,0 2579286.75,399102.1875,0 2577761.5,399669.40625,0 2576803.5,401189.875,0</gml:coordinates></gml:LineString></ogr:geometryProperty>
       <ogr:FNODE_>613</ogr:FNODE_>
       <ogr:TNODE_>1511</ogr:TNODE_>
       <ogr:LPOLY_>0</ogr:LPOLY_>

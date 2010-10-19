@@ -13,19 +13,26 @@ Content-Transfer-Encoding: binary
      xmlns:gml="http://www.opengis.net/gml">
   <gml:boundedBy>
     <gml:Box>
-      <gml:coord><gml:X>2281604.25</gml:X><gml:Y>340848.9375</gml:Y></gml:coord>
-      <gml:coord><gml:X>2281604.25</gml:X><gml:Y>340848.9375</gml:Y></gml:coord>
+      <gml:coord><gml:X>0</gml:X><gml:Y>0</gml:Y></gml:coord>
+      <gml:coord><gml:X>100</gml:X><gml:Y>100</gml:Y></gml:coord>
     </gml:Box>
   </gml:boundedBy>
-                                                    
+                                                                                      
   <gml:featureMember>
-    <ogr:popplace fid="F0">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2281604.25,340848.9375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
-      <ogr:UNIQUE_KEY>BACMK</ogr:UNIQUE_KEY>
-      <ogr:NAME>Tignish</ogr:NAME>
-      <ogr:CAPITAL>0</ogr:CAPITAL>
-      <ogr:POP_CLASS>1</ogr:POP_CLASS>
-    </ogr:popplace>
+    <ogr:multi fid="F0">
+      <ogr:geometryProperty><gml:MultiPolygon><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>0,0,0 0,10,0 10,0,0 0,0,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>1,1,0 2,2,0 2,1,0 1,1,0</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></gml:polygonMember><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>100,50,0 50,100,0 100,100,0 100,50,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></gml:polygonMember></gml:MultiPolygon></ogr:geometryProperty>
+      <ogr:ID>4</ogr:ID>
+      <ogr:NAME>mp</ogr:NAME>
+      <ogr:WKT>MULTIPOLYGON(((0 0,0 10,10 0,0 0),(1 1,2 2,2 1,1 1)),((100 50,50 100,100 100)))</ogr:WKT>
+    </ogr:multi>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:multi fid="F1">
+      <ogr:geometryProperty><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>30,0,0 30,10,0 40,10,0 40,0,0 3,0,0 30,0,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>31,1,0 32,2,0 32,1,0 31,1,0</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></ogr:geometryProperty>
+      <ogr:ID>5</ogr:ID>
+      <ogr:NAME>poly</ogr:NAME>
+      <ogr:WKT>POLYGON((30 0,30 10,40 10,40 0,3 0),(31 1,32 2,32 1,31 1))</ogr:WKT>
+    </ogr:multi>
   </gml:featureMember>
 </ogr:FeatureCollection>
 
@@ -46,37 +53,27 @@ Content-Transfer-Encoding: binary
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>
-<xs:element name="popplace" type="ogr:popplace_Type" substitutionGroup="gml:_Feature"/>
-<xs:complexType name="popplace_Type">
+<xs:element name="multi" type="ogr:multi_Type" substitutionGroup="gml:_Feature"/>
+<xs:complexType name="multi_Type">
   <xs:complexContent>
     <xs:extension base="gml:AbstractFeatureType">
       <xs:sequence>
-        <xs:element name="geometryProperty" type="gml:PointPropertyType" nillable="true" minOccurs="0" maxOccurs="1"/>
-        <xs:element name="UNIQUE_KEY" nillable="true" minOccurs="0" maxOccurs="1">
+        <xs:element name="geometryProperty" type="gml:GeometryPropertyType" nillable="true" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="ID" nillable="true" minOccurs="0" maxOccurs="1">
           <xs:simpleType>
             <xs:restriction base="xs:string">
-              <xs:maxLength value="5"/>
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
         <xs:element name="NAME" nillable="true" minOccurs="0" maxOccurs="1">
           <xs:simpleType>
             <xs:restriction base="xs:string">
-              <xs:maxLength value="50"/>
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="CAPITAL" nillable="true" minOccurs="0" maxOccurs="1">
+        <xs:element name="WKT" nillable="true" minOccurs="0" maxOccurs="1">
           <xs:simpleType>
-            <xs:restriction base="xs:integer">
-              <xs:totalDigits value="3"/>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="POP_CLASS" nillable="true" minOccurs="0" maxOccurs="1">
-          <xs:simpleType>
-            <xs:restriction base="xs:integer">
-              <xs:totalDigits value="3"/>
+            <xs:restriction base="xs:string">
             </xs:restriction>
           </xs:simpleType>
         </xs:element>

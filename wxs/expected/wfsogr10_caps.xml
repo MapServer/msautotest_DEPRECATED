@@ -83,14 +83,20 @@ Content-type: text/xml
     <FeatureType>
         <Name>road</Name>
         <Title>road</Title>
-        <SRS>EPSG:4326</SRS>
-        <LatLongBoundingBox minx="-66.6333" miny="42.3821" maxx="-59.2921" maxy="48.2955" />
+        <SRS>EPSG:3978</SRS>
+        <LatLongBoundingBox minx="2.25898e+06" miny="-70747.9" maxx="2.61535e+06" maxy="495481" />
     </FeatureType>
     <FeatureType>
         <Name>popplace</Name>
         <Title>popplace</Title>
-        <SRS>EPSG:4326</SRS>
-        <LatLongBoundingBox minx="-66.3286" miny="42.5631" maxx="-59.6882" maxy="47.9413" />
+        <SRS>EPSG:3978</SRS>
+        <LatLongBoundingBox minx="2.2794e+06" miny="-55344.5" maxx="2.60038e+06" maxy="461587" />
+    </FeatureType>
+    <FeatureType>
+        <Name>multi</Name>
+        <Title>multi</Title>
+        <SRS>EPSG:27700</SRS>
+        <LatLongBoundingBox minx="0" miny="0" maxx="100" maxy="100" />
     </FeatureType>
 </FeatureTypeList>
 
