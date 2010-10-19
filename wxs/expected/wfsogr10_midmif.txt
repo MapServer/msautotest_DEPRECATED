@@ -1,0 +1,44 @@
+Content-Type: multipart/mixed; boundary=xxOGRBoundaryxx
+
+--xxOGRBoundaryxx
+Content-Disposition: attachment; filename=result.mid
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+613,1511,0,0,14862.892,1521,1521,67,"",""
+
+--xxOGRBoundaryxx
+Content-Disposition: attachment; filename=result.mif
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+Version 300
+Charset "Neutral"
+Delimiter ","
+CoordSys Earth Projection 1, 104
+Columns 10
+  FNODE_ Integer
+  TNODE_ Integer
+  LPOLY_ Integer
+  RPOLY_ Integer
+  LENGTH Float
+  ROAD_ Integer
+  ROAD_ID Integer
+  F_CODE Integer
+  NAME_E Char(26)
+  NAME_F Char(26)
+Data
+
+Pline 9
+-60.2011897929616 46.1023544068358
+-60.2220399069525 46.1012463460989
+-60.2420665997833 46.0978074694521
+-60.2624881794987 46.1004624398619
+-60.3029160957412 46.1095364039934
+-60.3175004017247 46.1156549680462
+-60.3383404668653 46.1243908580001
+-60.3512586043831 46.135729469596
+-60.3516607870905 46.1517021622908
+    Pen (1,2,0)
+
+--xxOGRBoundaryxx--
