@@ -26,9 +26,11 @@
 # OGR GML from OGR layer to test OGR "auto" support.  Also tests aliasing.
 # RUN_PARMS: wfsogr10_ograuto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&featureid=popplace.BACMK&OUTPUTFORMAT=OGRGML" > [RESULT]
 #
-#
 # Test handling of multi-polygons and regular polygons
 # RUN_PARMS: wfsogr10_multi.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=multi&OUTPUTFORMAT=OGRGML" > [RESULT]
+#
+# Test non-OGR "template" output. 
+# RUN_PARMS: wfsogr10_template.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=geojson" > [RESULT]
 #
 #
 # WFS 1.1
@@ -57,7 +59,7 @@ OUTPUTFORMAT
   NAME "geojson"
   DRIVER "TEMPLATE"
   MIMETYPE "application/json; subtype=geojson"
-  FORMATOPTION "FILE=geojson.tmpl"
+  FORMATOPTION "FILE=../misc/rfc36.tmpl"
 END
 
 OUTPUTFORMAT
@@ -183,7 +185,7 @@ LAYER
     "wfs_title"         "popplace"
     "wfs_description"   "populated places"
     "wfs_featureid"     "UNIQUE_KEY"
-    "wfs_getfeature_formatlist" "csv,ogrgml,shapezip,midmif"
+    "wfs_getfeature_formatlist" "csv,ogrgml,shapezip,midmif,geojson"
     "gml_include_items" "NAME,UNIQUE_KEY,CAPITAL,POP_RANGE"
     "gml_POP_RANGE_alias" "POP_CLASS"
     "gml_types"         "auto"
