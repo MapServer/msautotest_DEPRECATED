@@ -44,6 +44,12 @@
 # WFS 1.1 request in EPSG:4326
 # RUN_PARMS: wfsogr11_ogrgml_ll.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=text/xml; subtype=gml/2.1.2; driver=ogr&srsName=urn:ogc:def:crs:EPSG::4326" > [RESULT]
 #
+# 
+# WMS 1.1 - GetFeatureInfo
+#
+# RUN_PARMS: wfsogr_wms_getfeatureinfo.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&service=WMS&request=GetFeatureInfo&srs=EPSG:3978&bbox=2250000,-71000,2620000,496000&format=image/png&layers=road&width=500&height=300&query_layers=road&info_format=text/csv&x=141&y=91&radius=100" > [RESULT]
+#
+
 
 MAP
 
@@ -122,6 +128,9 @@ WEB
     "wfs_title"		   "Test simple wfs"
     "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?"
 #    "wfs_srs"		   "EPSG:4326 EPSG:4269 EPSG:3978 EPSG:27700"
+    "wms_title"		   "Test simple wms"
+    "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
+    "wms_srs"		   "EPSG:4269 EPSG:4326 EPSG:3978"
     "ows_abstract"    "Test WFS Abstract"
     "ows_keywordlist" "ogc,wfs,gml,om"
     "ows_service_onlineresource" "http://localhost"
@@ -142,6 +151,7 @@ WEB
     "ows_hoursofservice" "0800h - 1600h EST"
     "ows_contactinstructions" "during hours of service"
     "ows_role" "staff"
+    "wms_feature_info_mime_type" "text/csv"
   END
 END
 
@@ -158,20 +168,21 @@ LAYER
   NAME road
   DATA road
   METADATA
-    "wfs_title"         "road"
-    "wfs_description"   "road"
+    "ows_title"         "road"
+    "ows_description"   "road"
     "wfs_featureid"     "ROAD_ID" 
     "wfs_getfeature_formatlist" "csv,csvstream,ogrgml,ogrgmlstream,shapezip,midmif"
     "gml_include_items" "all"
     "gml_exclude_items" "ROAD_"
     "gml_types"         "auto"
- END
+  END
   TYPE LINE
   STATUS ON
   PROJECTION
     "init=epsg:3978"
   END
 
+  TEMPLATE "wfs_ogr.map"
   DUMP TRUE
 END # Layer
 
