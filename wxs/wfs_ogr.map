@@ -39,7 +39,7 @@
 # RUN_PARMS: wfsogr11_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
 # WFS 1.1 request in EPSG:3978
-# RUN_PARMS: wfsogr11_ogrgml.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=text/xml; subtype=gml/2.1.2; driver=ogr&srsName=urn:ogc:def:crs:EPSG::3978" > [RESULT]
+# RUN_PARMS: wfsogr11_ogrgml.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=text/xml; subtype=gml/2.1.2; driver=ogr&srsName=urn:ogc:def:crs:EPSG::3978&maxfeatures=3&startindex=2" > [RESULT]
 #
 # WFS 1.1 request in EPSG:4326
 # RUN_PARMS: wfsogr11_ogrgml_ll.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=text/xml; subtype=gml/2.1.2; driver=ogr&srsName=urn:ogc:def:crs:EPSG::4326" > [RESULT]

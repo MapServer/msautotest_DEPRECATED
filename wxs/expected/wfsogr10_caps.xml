@@ -61,6 +61,7 @@ Content-type: text/xml
         <OGRGML/>
         <SHAPEZIP/>
         <MIDMIF/>
+        <geojson/>
       </ResultFormat>
       <DCPType>
         <HTTP>
