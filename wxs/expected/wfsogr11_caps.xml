@@ -92,6 +92,7 @@ Content-type: text/xml
         <ows:Value>text/xml; subtype=gml/2.1.2; driver=ogr</ows:Value>
         <ows:Value>application/shapefile</ows:Value>
         <ows:Value>MIDMIF</ows:Value>
+        <ows:Value>MultiMIDMIF</ows:Value>
         <ows:Value>application/json; subtype=geojson</ows:Value>
       </ows:Parameter>
     </ows:Operation>
@@ -111,6 +112,7 @@ Content-type: text/xml
         <Format>text/xml; subtype=gml/2.1.2; driver=ogr</Format>
         <Format>application/shapefile</Format>
         <Format>MIDMIF</Format>
+        <Format>MultiMIDMIF</Format>
       </OutputFormats>
       <ows:WGS84BoundingBox dimensions="2">
         <ows:LowerCorner>-66.633317770969 42.382053788395</ows:LowerCorner>
@@ -127,6 +129,7 @@ Content-type: text/xml
         <Format>text/xml; subtype=gml/2.1.2; driver=ogr</Format>
         <Format>application/shapefile</Format>
         <Format>MIDMIF</Format>
+        <Format>MultiMIDMIF</Format>
         <Format>application/json; subtype=geojson</Format>
       </OutputFormats>
       <ows:WGS84BoundingBox dimensions="2">
