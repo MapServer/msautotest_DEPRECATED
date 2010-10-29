@@ -55,7 +55,7 @@ Content-type: text/xml
       </ows:Parameter>
       <ows:Parameter name="AcceptVersions">
         <ows:Value>1.0.0</ows:Value>
-        <ows:Value> 1.1.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
       </ows:Parameter>
       <ows:Parameter name="AcceptFormats">
         <ows:Value>text/xml</ows:Value>
