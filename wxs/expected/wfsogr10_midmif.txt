@@ -1,6 +1,13 @@
 Content-Type: multipart/mixed; boundary=xxOGRBoundaryxx
 
 --xxOGRBoundaryxx
+Content-Disposition: attachment; filename=result.mid
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+613,1511,0,0,14862.892,1521,67,"",""
+
+--xxOGRBoundaryxx
 Content-Disposition: attachment; filename=result.mif
 Content-Type: application/binary
 Content-Transfer-Encoding: binary
@@ -32,12 +39,5 @@ Pline 9
 2577761.5 399669.40625
 2576803.5 401189.875
     Pen (1,2,0)
-
---xxOGRBoundaryxx
-Content-Disposition: attachment; filename=result.mid
-Content-Type: application/binary
-Content-Transfer-Encoding: binary
-
-613,1511,0,0,14862.892,1521,67,"",""
 
 --xxOGRBoundaryxx--

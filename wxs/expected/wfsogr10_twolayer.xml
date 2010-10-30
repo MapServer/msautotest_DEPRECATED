@@ -1,6 +1,41 @@
 Content-Type: multipart/mixed; boundary=xxOGRBoundaryxx
 
 --xxOGRBoundaryxx
+Content-Disposition: attachment; filename=popplace.mid
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+"CAJOA","Digby",0,2
+
+--xxOGRBoundaryxx
+Content-Disposition: attachment; filename=popplace.mif
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+Version 300
+Charset "Neutral"
+Delimiter ","
+CoordSys NonEarth Units "m"
+Columns 4
+  UNIQUE_KEY Char(5)
+  NAME Char(50)
+  CAPITAL Integer
+  POP_CLASS Integer
+Data
+
+Point 2279399 39858
+    Symbol (35,0,12)
+
+--xxOGRBoundaryxx
+Content-Disposition: attachment; filename=road.mid
+Content-Type: application/binary
+Content-Transfer-Encoding: binary
+
+1030,1024,3,3,6371.089,670,68,"",""
+1034,1030,3,3,1729.789,673,68,"",""
+1030,1064,3,3,41747.066,693,68,"",""
+
+--xxOGRBoundaryxx
 Content-Disposition: attachment; filename=road.mif
 Content-Type: application/binary
 Content-Transfer-Encoding: binary
@@ -56,40 +91,5 @@ Pline 21
 2261995.75 5086.12451171875
 2261430.5 1845.39770507812
     Pen (1,2,0)
-
---xxOGRBoundaryxx
-Content-Disposition: attachment; filename=road.mid
-Content-Type: application/binary
-Content-Transfer-Encoding: binary
-
-1030,1024,3,3,6371.089,670,68,"",""
-1034,1030,3,3,1729.789,673,68,"",""
-1030,1064,3,3,41747.066,693,68,"",""
-
---xxOGRBoundaryxx
-Content-Disposition: attachment; filename=popplace.mif
-Content-Type: application/binary
-Content-Transfer-Encoding: binary
-
-Version 300
-Charset "Neutral"
-Delimiter ","
-CoordSys NonEarth Units "m"
-Columns 4
-  UNIQUE_KEY Char(5)
-  NAME Char(50)
-  CAPITAL Integer
-  POP_CLASS Integer
-Data
-
-Point 2279399 39858
-    Symbol (35,0,12)
-
---xxOGRBoundaryxx
-Content-Disposition: attachment; filename=popplace.mid
-Content-Type: application/binary
-Content-Transfer-Encoding: binary
-
-"CAJOA","Digby",0,2
 
 --xxOGRBoundaryxx--
