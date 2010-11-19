@@ -33,7 +33,7 @@
 # use shared mstestlib
 #
 
-import sys
+import sys,os,string
 
 sys.path.append( '../pymod' )
 
@@ -44,7 +44,14 @@ import mstestlib
 # main()
 
 if __name__ == '__main__':
-    for renderer in ['png24','cairopng','png','svg','pdf']:
+    renderers = ['png24','png']
+
+    version_info = os.popen( 'shp2img -v' ).read()
+    if '-r' in sys.argv:
+        idx = sys.argv.index('-r')
+        renderers.extend(sys.argv[idx+1].split(','))
+    
+    for renderer in renderers:
         args = sys.argv[1:]
         args.extend(['-renderer',renderer])
         mstestlib.run_tests( args )

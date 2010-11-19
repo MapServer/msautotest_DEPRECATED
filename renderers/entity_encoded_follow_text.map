@@ -32,6 +32,7 @@ LAYER
         mindistance 25
         BUFFER 17
         COLOR 0 0 0
+        MAXOVERLAPANGLE 100
         #ENCODING utf8
       END
   END
