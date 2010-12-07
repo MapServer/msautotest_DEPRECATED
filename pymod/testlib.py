@@ -96,7 +96,7 @@ def compare_result( filename ):
        or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result):
     
         try:
-            cmd = 'perceptualdiff %s %s -verbose > pd.out' % (result_file,expected_file)
+            cmd = 'perceptualdiff %s %s -verbose > pd.out 2>1 ' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
