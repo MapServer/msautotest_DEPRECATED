@@ -319,6 +319,18 @@ def run_tests( argv ):
                 command = string.replace( command, '[RENDERER]', '-i '+renderer )
             else:
                 command = string.replace( command, '[RENDERER]', '' )
+
+            # support for POST request method
+            begin = command.find('[POST]')
+            end = command.find('[/POST]')
+            if begin != -1 and end != -1 and begin < end:
+                post = command[begin+len('[POST]'):end]
+                tmp = command
+                post = string.replace(post, '"', '\'')
+                command = 'echo "' + post + '" | ' + tmp[:begin] + tmp[end+len('[/POST]'):]
+                os.environ['CONTENT_LENGTH'] = str(len(post))
+                os.environ['REQUEST_METHOD'] = "POST"
+                os.environ['MS_MAPFILE'] = map
                     
             command = string.replace( command, '[MAPSERV]', 'mapserv' )
             command = string.replace( command, '[LEGEND]', 'legend' )

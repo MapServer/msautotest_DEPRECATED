@@ -6,6 +6,8 @@
 # Exception
 #
 # RUN_PARMS: wcs_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage" > [RESULT]
+# RUN_PARMS: wcs_exception-2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=a" > [RESULT]
+# RUN_PARMS: wcs_exception-3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=3.0.0&REQUEST=GetCoverage" > [RESULT]
 #
 # Capabilities
 # RUN_PARMS: wcs_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
@@ -86,6 +88,92 @@
 # GetCoverage to GDPNG 1.1 (Test non-GDAL output)
 # RUN_PARMS: wcs_getcov_gdpng8_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/png;%20mode=8bit&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
 #
+#
+# WCS 2.0.0
+#
+# GetCapabilities 2.0
+# RUN_PARMS: wcs_20_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+#
+# DescribeCoverage 2.0
+# RUN_PARMS: wcs_20_desc.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=DescribeCoverage&COVERAGEID=grey" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff full
+# RUN_PARMS: wcs_20_getcov_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim x min
+# RUN_PARMS: wcs_20_getcov_trim_x_min.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(20,*)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim x max
+# RUN_PARMS: wcs_20_getcov_trim_x_max.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(*,20)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim x both
+# RUN_PARMS: wcs_20_getcov_trim_x_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(10,20)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim y min
+# RUN_PARMS: wcs_20_getcov_trim_y_min.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=y(20,*)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim y max
+# RUN_PARMS: wcs_20_getcov_trim_y_max.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=y(*,20)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim y both
+# RUN_PARMS: wcs_20_getcov_trim_y_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=y(10,20)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 image/tiff trim x y both
+# RUN_PARMS: wcs_20_getcov_trim_x_y_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(10,20)&SUBSET=y(10,20)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 gml+image/tiff full
+# RUN_PARMS: wcs_20_getcov_full.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&MEDIATYPE=multipart/mixed" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 imageCRS
+# RUN_PARMS: wcs_20_getcov_imageCRS.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x,imageCRS(0,10)&SUBSET=y,imageCRS(0,10)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 EPSG 32611
+# RUN_PARMS: wcs_20_getcov_origCRS.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x,http://www.opengis.net/def/crs/EPSG/0/32611(0,50)&SUBSET=y,http://www.opengis.net/def/crs/EPSG/0/32611(0,50)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 reproject to EPSG 4326
+# RUN_PARMS: wcs_20_getcov_reproj.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=long,http://www.opengis.net/def/crs/EPSG/0/4326(-121.488,-121.487)&SUBSET=lat,http://www.opengis.net/def/crs/EPSG/0/4326(0,0.001)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 scaling
+# RUN_PARMS: wcs_20_getcov_scaling_size_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(10)&SIZE=y(20)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_resolution_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(20)&RESOLUTION=y(20)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_size_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(10,30)&SUBSET=y(10,30)&SIZE=x(40)&SIZE=y(40)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_resolution_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(10,30)&SUBSET=y(10,30)&RESOLUTION=x(5)&RESOLUTION=y(5)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_imageCRS_scaling_size_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x,imageCRS(10, 20)&SUBSET=y,imageCRS(10, 20)&SIZE=x(20)&SIZE=y(30)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_imageCRS_scaling_resolution_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x,imageCRS(0,10)&SUBSET=y,imageCRS(0,10)&RESOLUTION=x(20)&RESOLUTION=y(5)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_origCRS_scaling_size_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x,http://www.opengis.net/def/crs/EPSG/0/32611(0,50)&SUBSET=y,http://www.opengis.net/def/crs/EPSG/0/32611(0,50)&SIZE=x(30)&SIZE=y(35)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_origCRS_scaling_resolution_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x,http://www.opengis.net/def/crs/EPSG/0/32611(0,50)&SUBSET=y,http://www.opengis.net/def/crs/EPSG/0/32611(0,50)&RESOLUTION=x(5)&RESOLUTION=y(2)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_reproj_scaling_size_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=long,http://www.opengis.net/def/crs/EPSG/0/4326(-121.488,-121.487)&SUBSET=lat,http://www.opengis.net/def/crs/EPSG/0/4326(0,0.001)&SIZE=long(30)&SIZE=lat(40)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_reproj_scaling_resolution_trim_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=long,http://www.opengis.net/def/crs/EPSG/0/4326(-121.488,-121.487)&SUBSET=lat,http://www.opengis.net/def/crs/EPSG/0/4326(0,0.001)&RESOLUTION=long(0.00002)&RESOLUTION=lat(0.00005)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_size_resolution.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(10)&RESOLUTION=y(5)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_resolution_size.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(5)&SIZE=y(10)" > [RESULT_DEMIME]
+#
+# GetCoverage 2.0 Interpolation
+# RUN_PARMS: wcs_20_getcov_interpolation_nearest.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(20)&SIZE=y(20)&INTERPOLATION=NEAREST" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_interpolation_average.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(20)&SIZE=y(20)&INTERPOLATION=AVERAGE" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_interpolation_bilinear.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(20)&SIZE=y(20)&INTERPOLATION=BILINEAR" > [RESULT_DEMIME]
+#
+# WCS 2.0 Exceptions
+#
+# InvalidParameterValue
+# RUN_PARMS: wcs_20_exception_invalidparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=InvalidRequest" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidparam_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=invalid" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidparam_format.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/invalid&COVERAGEID=grey" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidparam_interpolation.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/png&INTERPOLATION=NOVALIDINTERPOLATION" > [RESULT_DEMIME]
+#
+# MissingParameterValue
+# RUN_PARMS: wcs_20_exception_missingparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_missingparam_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/png" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_missingparam_format.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey" > [RESULT_DEMIME]
+#
+# TooManyParameterValues
+# RUN_PARMS: wcs_20_exception_toomanyparams_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=a,b,c" > [RESULT_DEMIME]
+#
+# ExtentError
+# RUN_PARMS: wcs_20_exception_extent_nooverlap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&SUBSET=x(1000,2000)&SUBSET=y(1000,2000)" > [RESULT_DEMIME]
+#
+# ScalingError 
+# RUN_PARMS: wcs_20_exception_scaling.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(5)&SIZE=x(10)" > [RESULT_DEMIME]
+#
 MAP
 
 NAME TEST
@@ -105,7 +193,7 @@ OUTPUTFORMAT
 END
 OUTPUTFORMAT
   NAME GDPNG
-  DRIVER "GD/PNG"
+  DRIVER "AGG/PNG"
   MIMETYPE "image/png"
   IMAGEMODE RGB
   EXTENSION "png"
