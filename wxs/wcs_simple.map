@@ -93,6 +93,16 @@
 #
 # GetCapabilities 2.0
 # RUN_PARMS: wcs_20_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_accept_versions.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&ACCEPTVERSIONS=2.0.0,1.1.2,1.0.0" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&UPDATESEQUENCE=2007-10-30T14:23:37Z" > [RESULT_DEMIME]
+#
+# GetCapabilities 2.0 Sections
+# RUN_PARMS: wcs_20_cap_sections_all.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=All" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_sections_all_specific.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceIdentification,ServiceProvider,OperationsMetadata,Contents" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_sections_service_identification.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceIdentification" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_sections_service_provider.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceProvider" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_sections_operations_metadata.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=OperationsMetadata" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_sections_contents.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=Contents" > [RESULT_DEMIME]
 #
 # DescribeCoverage 2.0
 # RUN_PARMS: wcs_20_desc.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=DescribeCoverage&COVERAGEID=grey" > [RESULT_DEMIME]
@@ -153,6 +163,10 @@
 # RUN_PARMS: wcs_20_getcov_interpolation_bilinear.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(20)&SIZE=y(20)&INTERPOLATION=BILINEAR" > [RESULT_DEMIME]
 #
 # WCS 2.0 Exceptions
+#
+# Capabilities 2.0.0 updatesequence exception equal/higher
+# RUN_PARMS: wcs_20_exception_updatesequence_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&UPDATESEQUENCE=2007-10-30T14:23:38Z" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_updatesequence_higher.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&UPDATESEQUENCE=2008-01-13T14:23:38Z" > [RESULT_DEMIME]
 #
 # InvalidParameterValue
 # RUN_PARMS: wcs_20_exception_invalidparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=InvalidRequest" > [RESULT_DEMIME]
