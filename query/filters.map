@@ -1,0 +1,54 @@
+#
+# Test Filter Expressions
+#
+# REQUIRES: INPUT=SHAPEFILE OUTPUT=PNG SUPPORTS=GEOS
+#
+# RUN_PARMS: filters_test001.gif [SHP2IMG] -m [MAPFILE] -l filters_test001 -o [RESULT]
+# RUN_PARMS: filters_test002.gif [SHP2IMG] -m [MAPFILE] -l filters_test002 -o [RESULT]
+# RUN_PARMS: filters_test003.gif [SHP2IMG] -m [MAPFILE] -l filters_test003 -o [RESULT]
+# RUN_PARMS: filters_test004.gif [SHP2IMG] -m [MAPFILE] -l filters_test004 -o [RESULT]
+#
+MAP
+  NAME 'filters'
+  EXTENT 125000 4785000 789000 5489000
+  UNITS METERS
+  
+  SIZE 300 300
+  IMAGETYPE GIF
+
+  LAYER
+    NAME 'filters_test001'
+    FILTER 'Aitkin'
+    FILTERITEM 'CTY_NAME'
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  LAYER
+    NAME 'filters_test002'
+    FILTER 'aitkin'i
+    FILTERITEM 'CTY_NAME'
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  LAYER
+    NAME 'filters_test003'
+    FILTER /^S/
+    FILTERITEM 'CTY_NAME'
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  LAYER
+    NAME 'filters_test004'
+    FILTER /^s/i
+    FILTERITEM 'CTY_NAME'
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  LAYER
+    NAME 'bdry_counpy2'
+    TYPE LINE
+    DATA 'data/bdry_counpy2.shp'
+    STATUS DEFAULT
+    CLASS COLOR 231 231 231 END
+  END
+END
