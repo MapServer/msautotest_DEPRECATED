@@ -9,6 +9,8 @@
 # RUN_PARMS: filters_test004.gif [SHP2IMG] -m [MAPFILE] -l filters_test004 -o [RESULT]
 # RUN_PARMS: filters_test005.gif [SHP2IMG] -m [MAPFILE] -l filters_test005 -o [RESULT]
 # RUN_PARMS: filters_test006.gif [SHP2IMG] -m [MAPFILE] -l filters_test006 -o [RESULT]
+# RUN_PARMS: filters_test007.gif [SHP2IMG] -m [MAPFILE] -l filters_test007 -o [RESULT]
+# RUN_PARMS: filters_test008.gif [SHP2IMG] -m [MAPFILE] -l filters_test008 -o [RESULT]
 #
 MAP
   NAME 'filters'
@@ -61,6 +63,20 @@ MAP
   LAYER
     NAME 'filters_test006'
     FILTER ('[CTY_NAME]' =* 'wadena')
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  # Logical expression, regex
+  LAYER
+    NAME 'filters_test007'
+    FILTER ('[CTY_NAME]' ~ '^A')
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  # Logical expression, regex (case insensitive)
+  LAYER
+    NAME 'filters_test008'
+    FILTER ('[CTY_NAME]' ~* '^a')
     INCLUDE 'include/bdry_counpy2_shapefile.map'
   END
 
