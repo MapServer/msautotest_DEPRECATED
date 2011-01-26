@@ -10,7 +10,7 @@ STATUS ON
 EXTENT 0 0 400 300
 SIZE 400 300
 FONTSET "fonts.lst"
-IMAGETYPE png24
+IMAGETYPE png
 
 LAYER
   NAME line_follow
@@ -32,6 +32,7 @@ LAYER
         mindistance 25
         BUFFER 17
         COLOR 0 0 0
+        MAXOVERLAPANGLE 180
         #ENCODING utf8
       END
   END
