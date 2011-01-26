@@ -33,6 +33,7 @@ LAYER
         BUFFER 17
         COLOR 0 0 0
         #ENCODING utf8
+        MAXOVERLAPANGLE 180
       END
   END
   FEATURE
