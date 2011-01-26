@@ -23,10 +23,15 @@ LAYER
   STATUS default
   CLASSITEM "AREA"
   CLASS
-    SYMBOL "marker"
     NAME "test1"
+   STYLE
+    SYMBOL "marker"
     COLOR 0 255 0
+   END
+   STYLE
     OUTLINECOLOR 255 0 0
+    WIDTH 1
+   END
   END
 END
 
