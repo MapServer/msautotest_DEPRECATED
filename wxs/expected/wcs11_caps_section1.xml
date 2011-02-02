@@ -78,7 +78,6 @@ Content-type: text/xml
           <ows:Value>image/gif</ows:Value>
           <ows:Value>image/png; mode=24bit</ows:Value>
           <ows:Value>image/jpeg</ows:Value>
-          <ows:Value>image/vnd.wap.wbmp</ows:Value>
         </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="store">
