@@ -12,14 +12,14 @@ Content-ID: wcs.xml
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.opengis.net/ows/1.1 ../owsCoverages.xsd">
   <Coverage>
-    <Reference xlink:href="cid:coverage/out.grd"/>
+    <Reference xlink:href="cid:coverage/result.grd"/>
   </Coverage>
 </Coverages>
 --wcs
 Content-Type: image/x-aaigrid
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
-Content-ID: coverage/out.grd
+Content-ID: coverage/result.grd
 Content-Disposition: INLINE
 
 ncols        12
@@ -42,7 +42,7 @@ NODATA_value    -99
 Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
-Content-ID: coverage/out.grd.aux.xml
+Content-ID: coverage/result.grd.aux.xml
 Content-Disposition: INLINE
 
 <PAMDataset>
@@ -56,7 +56,7 @@ Content-Disposition: INLINE
 Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
-Content-ID: coverage/out.prj
+Content-ID: coverage/result.prj
 Content-Disposition: INLINE
 
 GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]--wcs--

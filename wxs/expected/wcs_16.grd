@@ -1,3 +1,6 @@
+Content-Disposition: attachment; filename=result.grd
+Content-type: image/x-aaigrid
+
 ncols        120
 nrows        90
 xllcorner    0.000000000000
