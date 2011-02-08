@@ -1,7 +1,7 @@
 #
 # Test CGI Query Modes (+templated output)
 #
-# REQUIRES: INPUT=SHAPEFILE OUTPUT=PNG SUPPORTS=GEOS
+# REQUIRES: INPUT=SHAPEFILE
 #
 # Test 1: simple mode=nquery, one layer, rect-based
 # RUN_PARMS: query_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapext=420000+5120000+582000+5200000&qlayer=bdry_counpy2'  > [RESULT_DEMIME]
@@ -62,13 +62,9 @@ MAP
 
   LAYER
     NAME 'indx_q100kpy4'
-    DATA 'data/indx_q100kpy4'
-    STATUS OFF
-    TYPE QUERY
     METADATA
       qstring_validation_pattern '.'
     END
-    TEMPLATE 'void'
+    INCLUDE 'include/indx_q100kpy4_shapefile.map'
   END
 END
-  
