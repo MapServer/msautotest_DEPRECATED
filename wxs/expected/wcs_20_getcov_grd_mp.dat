@@ -56,7 +56,7 @@ Content-Type: image/x-aaigrid
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
 Content-ID: coverage/result.grd
-Content-Disposition: INLINE
+Content-Disposition: attachment; filename=result.grd
 
 ncols        40
 nrows        30
@@ -98,7 +98,7 @@ Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
 Content-ID: coverage/result.grd.aux.xml
-Content-Disposition: INLINE
+Content-Disposition: attachment; filename=result.grd.aux.xml
 
 <PAMDataset>
   <Metadata>
@@ -112,7 +112,7 @@ Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
 Content-ID: coverage/result.prj
-Content-Disposition: INLINE
+Content-Disposition: attachment; filename=result.prj
 
 PROJCS["WGS_1984_UTM_Zone_11N",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-117],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["Meter",1]]--wcs--
 
