@@ -47,8 +47,9 @@ def dumpResultSet( layer ):
             break
         
         print '(%d,%d)' % (result.shapeindex, result.tileindex)
-        
-        s = layer.getFeature( result.shapeindex, result.tileindex )
+
+        s = layer.getShape( result )
+
         for i in range(layer.numitems):
             print '%s: %s' % (layer.getItem(i), s.getValue(i))
             
@@ -108,7 +109,7 @@ def rqtest_3():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -150,7 +151,7 @@ def rqtest_3():
     # Check last shape attributes.
 
     result = layer.getResult( 54 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','132'),
@@ -203,7 +204,7 @@ def rqtest_5():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','123'),
@@ -215,7 +216,7 @@ def rqtest_5():
     # Check last shape attributes.
 
     result = layer.getResult( 8 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','107'),
@@ -268,7 +269,7 @@ def rqtest_7():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -322,7 +323,7 @@ def rqtest_9():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','148'),
@@ -338,7 +339,7 @@ def rqtest_9():
     # Check last shape attributes.
 
     result = layer.getResult( 99 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','132'),
@@ -399,7 +400,7 @@ def rqtest_9_2():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','115'),
@@ -441,7 +442,7 @@ def rqtest_9_2():
     # Check last shape attributes.
 
     result = layer.getResult( 46 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
 
     if pmstestlib.check_items( layer, s,
                                [('value_0','148'),
@@ -502,7 +503,7 @@ def rqtest_11():
     # Check first shape attributes.
     
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','0'),
@@ -558,7 +559,7 @@ def rqtest_13():
         return 'fail'
 
     result = layer.getResult( 0 )
-    s = layer.getFeature( result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('value_0','1'),
@@ -618,7 +619,7 @@ def rqtest_15():
 
         count = count + 1
 
-        s = layer.getFeature( result.shapeindex, result.tileindex )
+        s = layer.getShape( result )
         x = float(pmstestlib.get_item_value( layer, s, 'x' ))
         y = float(pmstestlib.get_item_value( layer, s, 'y' ))
         dist_sq = (x-pnt.x) * (x-pnt.x) + (y-pnt.y) * (y-pnt.y)
@@ -682,7 +683,7 @@ def rqtest_17():
 
         count = count + 1
 
-        s = layer.getFeature( result.shapeindex, result.tileindex )
+        s = layer.getShape( result )
         x = float(pmstestlib.get_item_value( layer, s, 'x' ))
         y = float(pmstestlib.get_item_value( layer, s, 'y' ))
         dist_sq = (x-pnt.x) * (x-pnt.x) + (y-pnt.y) * (y-pnt.y)
