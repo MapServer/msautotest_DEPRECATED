@@ -31,9 +31,10 @@ Content-type: text/xml
   </gml:domainSet>
   <gml:rangeSet>
     <gml:File>
-      <gml:rangeParameters/>
-      <gml:fileReference>file</gml:fileReference>
+      <gml:rangeParameters xlink:href="coverage/result.grd" xlink:role="image/x-aaigrid" xlink:arcrole="fileReference"/>
+      <gml:fileReference>coverage/result.grd</gml:fileReference>
       <gml:fileStructure/>
+      <gml:mimeType>image/x-aaigrid</gml:mimeType>
     </gml:File>
   </gml:rangeSet>
   <gmlcov:rangeType>
