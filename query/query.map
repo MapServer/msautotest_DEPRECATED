@@ -9,7 +9,7 @@
 # Test 2: simple mode=nquery, multiple layers, rect-based
 # RUN_PARMS: query_test002.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapext=420000+5120000+582000+5200000&layers=all'  > [RESULT_DEMIME]
 # 
-# Test 3: simple mode=nquery, one layer, point-based
+# Test 3: simple mode=query, one layer, point-based
 # RUN_PARMS: query_test003.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=query&qlayer=bdry_counpy2&mapxy=467000+5259000' > [RESULT_DEMIME]
 #
 # Test 4: simple mode=nquery, multiple layers, point-based
