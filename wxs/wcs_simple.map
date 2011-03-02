@@ -118,6 +118,9 @@
 # GetCoverage 2.0 image/tiff full
 # RUN_PARMS: wcs_20_getcov_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff" > [RESULT_DEMIME]
 #
+# GetCoverage 2.0 image/png full
+# RUN_PARMS: wcs_20_getcov_full.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/png" > [RESULT_DEMIME]
+#
 # GetCoverage 2.0 grid, full (testing FILENAME= option)
 # RUN_PARMS: wcs_20_getcov_grd.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/x-aaigrid" > [RESULT]
 #
@@ -270,6 +273,7 @@ WEB
    "ows_hoursofservice" "0800h - 1600h EST"
    "ows_contactinstructions" "during hours of service"
    "ows_role" "staff"
+   "ows_enable_request" "*"
 
    # OGC:WCS
    "wcs_label"    "Test Label"
