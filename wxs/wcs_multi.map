@@ -53,6 +53,7 @@ WEB
    "ows_hoursofservice" "0800h - 1600h EST"
    "ows_contactinstructions" "during hours of service"
    "ows_role" "staff"
+   "ows_enable_request" "*"
 
    # OGC:WCS
    "wcs_label"    "Test Label"
