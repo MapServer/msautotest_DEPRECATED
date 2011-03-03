@@ -80,15 +80,6 @@ SHAPEPATH ./data
 SYMBOLSET etc/symbols.sym
 FONTSET etc/fonts.txt
 
-OUTPUTFORMAT
-  NAME GDPNG
-  DRIVER "GD/PNG"
-  MIMETYPE "image/png"
-  IMAGEMODE RGB
-  EXTENSION "png"
-END
-
-
 #
 # Start of web interface definition
 #
@@ -102,6 +93,7 @@ WEB
     "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
     "wms_srs"		   "EPSG:3978 EPSG:42101 EPSG:4269 EPSG:4326"
     "ows_schemas_location" "http://ogc.dmsolutions.ca"
+    "ows_enable_request" "*" 
   END
 END
 
