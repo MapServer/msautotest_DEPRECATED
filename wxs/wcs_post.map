@@ -3,7 +3,62 @@
 #
 # REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WCS
 #
-# Some post tests
+#
+# General tests
+#
+# Exception
+# RUN_PARMS: wcs_post_exception1.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="99"/>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wcs_post_exception2.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="99.0"/>[/POST] > [RESULT_DEVERSION]
+#
+# WCS 1.1 POST tests
+#
+# Capabilities 1.1 updatesequence (less than)
+# RUN_PARMS: wcs11_post_caps_updatesequence.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"><wcs:UpdateSequence>1999-10-21T12:22:33Z</wcs:UpdateSequence></wcs:GetCapabilities>[/POST] > [RESULT]
+# Capabilities 1.1 updatesequence exception (equal)
+# RUN_PARMS: wcs11_post_exception_updatesequence1.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"><wcs:UpdateSequence>2007-10-30T14:23:38Z</wcs:UpdateSequence></wcs:GetCapabilities>[/POST] > [RESULT]
+# Capabilities 1.1 updatesequence exception (higher)
+# RUN_PARMS: wcs11_post_exception_updatesequence2.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"><wcs:UpdateSequence>2008-01-13T14:23:38Z</wcs:UpdateSequence></wcs:GetCapabilities>[/POST] > [RESULT]
+#
+# Capabilities 1.1 selected section
+# RUN_PARMS: wcs11_post_caps_section1.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"><wcs:Sections><wcs:Section>OperationsMetadata</wcs:Section><wcs:Section>Contents</wcs:Section></wcs:Sections></wcs:GetCapabilities>[/POST] > [RESULT]
+# Capabilities 1.1 selected sections
+# RUN_PARMS: wcs11_post_caps_section2.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"><wcs:Sections><wcs:Section>ServiceIdentification</wcs:Section><wcs:Section>ServiceProvider</wcs:Section></wcs:Sections></wcs:GetCapabilities>[/POST] > [RESULT]
+# Capabilities 1.1 selected sections
+# RUN_PARMS: wcs11_post_caps_section3.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"><wcs:Sections><wcs:Section>All</wcs:Section></wcs:Sections></wcs:GetCapabilities>[/POST] > [RESULT]
+#
+# Capabilities 1.1
+# RUN_PARMS: wcs11_post_cap.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.1"/>[/POST] > [RESULT_DEVERSION]
+#
+# Coverage description 1.1
+# RUN_PARMS: wcs11_post_describe.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:DescribeCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier></wcs:DescribeCoverage>[/POST] > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (normal CRS)
+# RUN_PARMS: wcs11_post_getcov_grd.dat [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::32611"><wcs:LowerCorner>0 0</wcs:LowerCorner><wcs:UpperCorner>400 300</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="AAIGRID"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0 295</wcs:GridOrigin><wcs:GridOffsets>30 -30</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (imageCRS)
+# RUN_PARMS: wcs11_post_getcov_grd_imagecrs.dat [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:OGC::imageCRS"><wcs:LowerCorner>0 0</wcs:LowerCorner><wcs:UpperCorner>39 29</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="AAIGRID"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0 0</wcs:GridOrigin><wcs:GridOffsets>3 3</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (EPSG 4326 with reversed axes)
+# RUN_PARMS: wcs11_post_getcov_grd_4326.dat [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::4326"><wcs:LowerCorner>0 -121.48874388968</wcs:LowerCorner><wcs:UpperCorner>0.0027058261133485 -121.48516027717</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="image/x-aaigrid"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0.0027058261133485 -121.48874388968</wcs:GridOrigin><wcs:GridOffsets>-0.0003 0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT]
+#
+# GetCoverage to AAIGRID 1.1 (WGS84 (non-EPSG - normal axes)
+# RUN_PARMS: wcs11_post_getcov_grd_wgs84.dat [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:OGC::CRS84"><wcs:LowerCorner>-121.48874388968 0</wcs:LowerCorner><wcs:UpperCorner>-121.48516027717 0.0027058261133485</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="image/x-aaigrid"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>-121.48874388968 0.0027058261133485</wcs:GridOrigin><wcs:GridOffsets>0.0003 -0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT]
+#
+# GetCoverage to GDPNG 1.1 (Test non-GDAL output)
+# RUN_PARMS: wcs11_post_getcov_gdpng8.dat [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::4326"><wcs:LowerCorner>0 -121.48874388968</wcs:LowerCorner><wcs:UpperCorner>0.0027058261133485 -121.48516027717</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="image/png; mode=8bit"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0.0027058261133485 -121.48874388968</wcs:GridOrigin><wcs:GridOffsets>-0.0003 0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT]
+#
+# InvalidParameterValue
+# RUN_PARMS: wcs11_post_exception_invalidparam_request.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:InvalidRequest xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="1.1.0"/>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wcs11_post_exception_invalidparam_coverage.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>invalid</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::4326"><wcs:LowerCorner>0 -121.48874388968</wcs:LowerCorner><wcs:UpperCorner>0.0027058261133485 -121.48516027717</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="image/tiff"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0.0027058261133485 -121.48874388968</wcs:GridOrigin><wcs:GridOffsets>-0.0003 0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+# RUN_PARMS: wcs11_post_exception_invalidparam_format.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::4326"><wcs:LowerCorner>0 -121.48874388968</wcs:LowerCorner><wcs:UpperCorner>0.0027058261133485 -121.48516027717</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="image/invalid"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0.0027058261133485 -121.48874388968</wcs:GridOrigin><wcs:GridOffsets>-0.0003 0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+#
+# MissingParameterValue
+# RUN_PARMS: wcs11_post_exception_missingparam_coverage.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::4326"><wcs:LowerCorner>0 -121.48874388968</wcs:LowerCorner><wcs:UpperCorner>0.0027058261133485 -121.48516027717</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output format="image/tiff"><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0.0027058261133485 -121.48874388968</wcs:GridOrigin><wcs:GridOffsets>-0.0003 0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+# RUN_PARMS: wcs11_post_exception_missingparam_format.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/1.1" service="WCS" version="1.1.0"><wcs:Identifier>grey</wcs:Identifier><wcs:DomainSubset><wcs:BoundingBox crs="urn:ogc:def:crs:EPSG::4326"><wcs:LowerCorner>0 -121.48874388968</wcs:LowerCorner><wcs:UpperCorner>0.0027058261133485 -121.48516027717</wcs:UpperCorner></wcs:BoundingBox></wcs:DomainSubset><wcs:Output><wcs:GridCRS><wcs:GridCS>urn:ogc:def:crs:OGC::imageCRS</wcs:GridCS><wcs:GridType>urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs</wcs:GridType><wcs:GridOrigin>0.0027058261133485 -121.48874388968</wcs:GridOrigin><wcs:GridOffsets>-0.0003 0.0003</wcs:GridOffsets></wcs:GridCRS></wcs:Output></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+#
+#
+# WCS 2.0.0 POST tests
+#
 # RUN_PARMS: wcs_20_post_cap.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCapabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"/>[/POST] > [RESULT_DEMIME]
 #
 # RUN_PARMS: wcs_20_post_desc.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:DescribeCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" version="2.0.0" service="WCS"><wcs:coverageid>grey</wcs:coverageid></wcs:DescribeCoverage>[/POST] > [RESULT_DEMIME]
