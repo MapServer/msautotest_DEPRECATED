@@ -49,7 +49,7 @@ def dumpResultSet( layer ):
         
         print '(%d,%d)' % (result.shapeindex, result.tileindex)
         
-        s = layer.getFeature( result.shapeindex, result.tileindex )
+        s = layer.getShape( result )
         for i in range(layer.numitems):
             print '%s: %s' % (layer.getItem(i), s.getValue(i))
             
@@ -97,7 +97,8 @@ def ogr_query_3():
         result = layer.getResult( i )
         if result is None:
             break
-    
+
+        s = layer.getShape( result )
         count = count + 1
 
     if count != 2:
@@ -110,8 +111,7 @@ def ogr_query_3():
     
     result = layer.getResult( 0 )
     
-    s = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
-    layer.resultsGetShape( s, result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('EAS_ID','        158')] ) == 0:
@@ -133,7 +133,7 @@ def ogr_query_3():
     except:
         l = s.get( 0 )
     if l.numpoints != 61:
-        pmstestlib.post_reason( 'raster query has %d points, instead of expected number.' % l.numpoints )
+        pmstestlib.post_reason( 'query has %d points, instead of expected number.' % l.numpoints )
         return 'fail'
 
     try:
@@ -151,7 +151,7 @@ def ogr_query_3():
 
     result = layer.getResult( 1 )
     
-    layer.resultsGetShape( s, result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
 
     if pmstestlib.check_items( layer, s,
                                [('EAS_ID','        165')] ) == 0:
@@ -204,8 +204,7 @@ def ogr_query_5():
     
     result = layer.getResult( 0 )
     
-    s = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
-    layer.resultsGetShape( s, result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('EAS_ID','        158')] ) == 0:
@@ -227,7 +226,7 @@ def ogr_query_5():
     except:
         l = s.get( 0 )
     if l.numpoints != 61:
-        pmstestlib.post_reason( 'raster query has %d points, instead of expected number.' % l.numpoints )
+        pmstestlib.post_reason( 'query has %d points, instead of expected number.' % l.numpoints )
         return 'fail'
 
     try:
@@ -245,7 +244,7 @@ def ogr_query_5():
 
     result = layer.getResult( 1 )
     
-    layer.resultsGetShape( s, result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
 
     if pmstestlib.check_items( layer, s,
                                [('EAS_ID','        165')] ) == 0:
@@ -259,8 +258,14 @@ def ogr_query_5():
 ###############################################################################
 # Confirm that we can still fetch features not in the result set directly
 # by their feature id.
+#
+# NOTE: the ability to fetch features without going through the query API
+# seems to be gone in 6.0!  
 
 def ogr_query_6():
+
+    return 'skip'
+
     layer = pmstestlib.layer
     
     layer.open()
@@ -314,8 +319,7 @@ def ogr_query_7():
     
     result = layer.getResult( 0 )
     
-    s = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
-    layer.resultsGetShape( s, result.shapeindex, result.tileindex )
+    s = layer.getShape( result )
     
     if pmstestlib.check_items( layer, s,
                                [('EAS_ID','        168')] ) == 0:
