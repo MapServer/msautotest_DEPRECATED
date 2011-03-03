@@ -301,6 +301,8 @@ MAP
    # sets:
    # /WCS_Capabilities/Service/metadataLink/@xlink:href
    "wcs_metadatalink_href" "http://localhost/ms_ogc_workshop/index.html"
+
+    "ows_enable_request" "*" 
    END
  END
 

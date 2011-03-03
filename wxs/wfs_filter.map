@@ -142,6 +142,7 @@ WEB
     "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?"
     "wfs_srs"		   "EPSG:4326 EPSG:4269"
     "ows_schemas_location" "http://ogc.dmsolutions.ca"
+    "ows_enable_request" "*" 
   END
 END
 

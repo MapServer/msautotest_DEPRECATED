@@ -50,6 +50,7 @@ WEB
     "wms_srs"		   "EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326"
     "ows_schemas_location" "http://ogc.dmsolutions.ca"
     "wms_sld_enabled"      "false"
+    "ows_enable_request" "*" 
   END
 END
 

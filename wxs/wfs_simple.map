@@ -94,16 +94,6 @@ SHAPEPATH ./data
 SYMBOLSET etc/symbols.sym
 FONTSET etc/fonts.txt
 
-
-OUTPUTFORMAT
-  NAME GDPNG
-  DRIVER "GD/PNG"
-  MIMETYPE "image/png"
-  IMAGEMODE RGB
-  EXTENSION "png"
-END
-
-
 #
 # Start of web interface definition
 #
@@ -137,6 +127,7 @@ WEB
     "ows_hoursofservice" "0800h - 1600h EST"
     "ows_contactinstructions" "during hours of service"
     "ows_role" "staff"
+    "ows_enable_request" "*" 
   END
 END
 

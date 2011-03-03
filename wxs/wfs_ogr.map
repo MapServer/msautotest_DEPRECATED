@@ -163,6 +163,7 @@ WEB
     "ows_contactinstructions" "during hours of service"
     "ows_role" "staff"
     "wms_feature_info_mime_type" "text/csv"
+    "ows_enable_request" "*" 
   END
 END
 
