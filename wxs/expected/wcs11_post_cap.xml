@@ -45,6 +45,7 @@ Content-type: text/xml
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
@@ -62,6 +63,7 @@ Content-type: text/xml
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
@@ -84,6 +86,7 @@ Content-type: text/xml
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
