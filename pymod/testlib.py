@@ -59,20 +59,23 @@ def compare_result( filename ):
     # Check image checksums with GDAL if it is available.
     
     try:
-	import osgeo.gdal
-        gdal.PushErrorHandler()
-	exp_ds = gdal.Open( expected_file )
+        try:
+            from osgeo import gdal
+        except:
+            import gdal
+        gdal.PushErrorHandler('CPLQuietErrorHandler')
+        exp_ds = gdal.Open( expected_file )
         gdal.PopErrorHandler()
         if exp_ds == None:
             return 'nomatch'
         
-	res_ds = gdal.Open( result_file )
+        res_ds = gdal.Open( result_file )
 
         match = 1
-	for band_num in range(1,exp_ds.RasterCount+1):
-	    if res_ds.GetRasterBand(band_num).Checksum() != \
-                exp_ds.GetRasterBand(band_num).Checksum():
-		match = 0
+        for band_num in range(1,exp_ds.RasterCount+1):
+            if res_ds.GetRasterBand(band_num).Checksum() != \
+               exp_ds.GetRasterBand(band_num).Checksum():
+                match = 0
 
         if match == 1:
             return 'files_differ_image_match'
