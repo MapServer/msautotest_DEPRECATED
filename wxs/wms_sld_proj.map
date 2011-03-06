@@ -7,7 +7,7 @@
 #
 #
 # Generate map image with a new line symbology for the road layer.
-# RUN_PARMS: wms_get_map_sld_proj.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&ERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road&sld_body=%3CStyledLayerDescriptor+version%3D%221.0.0%22%3E%3CNamedLayer%3E%3CName%3Eroad%3C%2FName%3E%3CUserStyle%3E%3CTitle%3Exxx%3C%2FTitle%3E%3CFeatureTypeStyle%3E%3CRule%3E%3Cogc%3AFilter+xmlns%3Aogc%3D%22http%3A%2F%2Fwww.opengis.net%2Fogc%22%3E%3Cogc%3ABBOX%3E%3Cogc%3APropertyName%3Egeometry%3C%2Fogc%3APropertyName%3E%3Cgml%3ABox+xmlns%3Agml%3D%22http%3A%2F%2Fwww.opengis.net%2Fgml%22+srsName%3D%22EPSG%3A42304%22%3E%3Cgml%3Acoordinates+decimal%3D%22.%22+cs%3D%22%2C%22+ts%3D%22+%22%3E2232483.6411927%2C-311301.67674655+2564568.0551077%2C703794.34706916%3C%2Fgml%3Acoordinates%3E%3C%2Fgml%3ABox%3E%3C%2Fogc%3ABBOX%3E%3C%2Fogc%3AFilter%3E%3CLineSymbolizer%3E%3CGeometry%3E%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E%3C%2FGeometry%3E%3CStroke%3E%3CCssParameter+name%3D%22stroke%22%3E%23000000%3C%2FCssParameter%3E%3C%2FStroke%3E%3C%2FLineSymbolizer%3E%3C%2FRule%3E%3C%2FFeatureTypeStyle%3E%3C%2FUserStyle%3E%3C%2FNamedLayer%3E%3C%2FStyledLayerDescriptor%3E" > [RESULT_DEMIME]
+# RUN_PARMS: wms_get_map_sld_proj.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&ERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road&sld_body=%3CStyledLayerDescriptor+version%3D%221.0.0%22%3E%3CNamedLayer%3E%3CName%3Eroad%3C%2FName%3E%3CUserStyle%3E%3CTitle%3Exxx%3C%2FTitle%3E%3CFeatureTypeStyle%3E%3CRule%3E%3Cogc%3AFilter+xmlns%3Aogc%3D%22http%3A%2F%2Fwww.opengis.net%2Fogc%22%3E%3Cogc%3ABBOX%3E%3Cogc%3APropertyName%3Egeometry%3C%2Fogc%3APropertyName%3E%3Cgml%3ABox+xmlns%3Agml%3D%22http%3A%2F%2Fwww.opengis.net%2Fgml%22+srsName%3D%22EPSG%3A42304%22%3E%3Cgml%3Acoordinates+decimal%3D%22.%22+cs%3D%22%2C%22+ts%3D%22+%22%3E2232483.6411927%2C-311301.67674655+2564568.0551077%2C703794.34706916%3C%2Fgml%3Acoordinates%3E%3C%2Fgml%3ABox%3E%3C%2Fogc%3ABBOX%3E%3C%2Fogc%3AFilter%3E%3CLineSymbolizer%3E%3CGeometry%3E%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E%3C%2FGeometry%3E%3CStroke%3E%3CCssParameter+name%3D%22stroke%22%3E%23000000%3C%2FCssParameter%3E%3C%2FStroke%3E%3C%2FLineSymbolizer%3E%3C%2FRule%3E%3C%2FFeatureTypeStyle%3E%3C%2FUserStyle%3E%3C%2FNamedLayer%3E%3C%2FStyledLayerDescriptor%3E" > [RESULT_DEMIME]
 
 MAP
 
@@ -20,15 +20,6 @@ IMAGECOLOR 255 255 255
 SHAPEPATH ./data
 SYMBOLSET etc/symbols.sym
 FONTSET etc/fonts.txt
-
-OUTPUTFORMAT
-  NAME GDPNG
-  DRIVER "GD/PNG"
-  MIMETYPE "image/png"
-  IMAGEMODE RGB
-  EXTENSION "png"
-END
-
 
 
 #
@@ -44,6 +35,7 @@ WEB
     "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
     "wms_srs"		   "EPSG:3978 EPSG:42101 EPSG:4269 EPSG:4326"
     "ows_schemas_location" "http://ogc.dmsolutions.ca"
+    "ows_enable_request" "*"
   END
 END
 
