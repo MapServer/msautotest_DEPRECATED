@@ -119,6 +119,7 @@ WEB
     "ows_rootlayer_abstract" "These are my layers"
     "ows_rootlayer_keywordlist" "layers,list"
     "ows_layerlimit" "1"
+    "ows_enable_request" "*" 
   END
 END
 
