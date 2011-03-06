@@ -34,6 +34,34 @@ import string
 have_pdiff = None
 
 ###############################################################################
+# strip_headers()
+
+def strip_headers( filename ):
+    try:
+        header = open(filename, "rb").read(1000)
+    except:
+        return None
+
+    tmp_filename = None
+    start_pos = header.find('\x49\x49\x2A\x00')
+    if start_pos < 0:
+        start_pos = header.find('\x49\x49\x00\x2A')
+    if start_pos < 0:
+        start_pos = header.find('\x89\x50\x4e\x47\x0d\x0a\x1a\x0a')
+    if start_pos > 0:
+        f = open(filename, "rb")
+        f.seek(start_pos, 0)
+        data = f.read()
+        f.close()
+        tmp_filename = filename + '.tmp'
+        f = open(tmp_filename, "wb")
+        f.write(data)
+        f.close()
+        return tmp_filename
+
+    return None
+
+###############################################################################
 # compare_result()
 
 def compare_result( filename ):
@@ -99,11 +127,24 @@ def compare_result( filename ):
        or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result):
     
         try:
+            # Skip to real image if there's some HTTP headers before
+            tmp_result_file = strip_headers(result_file)
+            if tmp_result_file is not None:
+                result_file = tmp_result_file
+            tmp_expected_file = strip_headers(expected_file)
+            if tmp_expected_file is not None:
+                expected_file = tmp_expected_file
+
             cmd = 'perceptualdiff %s %s -verbose > pd.out 2>1 ' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
-            
+
+            if tmp_result_file is not None:
+                os.remove(tmp_result_file)
+            if tmp_expected_file is not None:
+                os.remove(tmp_expected_file)
+
             if string.find(pdout,'PASS:') != -1 \
                and string.find(pdout,'binary identical') != -1:
                 return 'files_differ_image_match'
