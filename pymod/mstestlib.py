@@ -64,7 +64,7 @@ def get_mapfile_list( argv ):
 def has_requires( version_info, requires_list ):
 
     for item in requires_list:
-        if string.find( version_info, item ) == -1:
+        if version_info.find( item ) == -1:
             return 0
         
     return 1
@@ -79,15 +79,15 @@ def read_test_directives( mapfile_name ):
     
     lines = open(mapfile_name).readlines()
     for line in lines:
-        req_off = string.find( line, 'REQUIRES:' )
+        req_off = line.find( 'REQUIRES:' )
         if req_off != -1:
-            items = string.split( line[req_off+9:] )
+            items = line[req_off+9:].split(  )
             for item in items:
                 require_list.append( item )
                 
-        run_off = string.find( line, 'RUN_PARMS:' )
+        run_off = line.find( 'RUN_PARMS:' )
         if run_off != -1:
-            items = string.split( line[run_off+10:], None, 1 )
+            items = line[run_off+10:].split( None, 1 )
             if len(items) == 2:
                 runparms_list.append( (items[0], items[1]) )
             elif len(items) == 1:
@@ -108,9 +108,16 @@ def demime_file( filename ):
 
     data = open(filename,'rb').read()
 
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
     for i in range(len(data)-1):
         if data[i] == '\n' and data[i+1] == '\n':
-            open(filename,'wb').write(data[i+2:])
+            if version_info >= (3,0,0):
+                open(filename,'wb').write(bytes(data[i+2:], 'iso-8859-1'))
+            else:
+                open(filename,'wb').write(data[i+2:])
             return
     return
 
@@ -121,9 +128,13 @@ def deversion_file( filename ):
 
     data = open(filename,'rb').read()
 
-    start = string.find( data, '<!-- MapServer version' )
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
+    start = data.find( '<!-- MapServer version' )
     if start == -1:
-        start = string.find( data, '<!--MapServer version' )
+        start = data.find( '<!--MapServer version' )
     if start == -1:
         return
 
@@ -136,7 +147,10 @@ def deversion_file( filename ):
         return
 
     new_data = data[:start-1] + data[end+4:]
-    open(filename,'wb').write(new_data)
+    if version_info >= (3,0,0):
+        open(filename,'wb').write(bytes(new_data, 'iso-8859-1'))
+    else:
+        open(filename,'wb').write(new_data)
     return
 
 ###############################################################################
@@ -146,7 +160,11 @@ def detimestamp_file( filename ):
 
     data = open(filename,'rb').read()
 
-    start = string.find( data, 'timeStamp="' )
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
+    start = data.find( 'timeStamp="' )
     if start == -1:
         return
 
@@ -156,7 +174,10 @@ def detimestamp_file( filename ):
         end = end + 1
 
     new_data = data[:start] + data[end+1:]
-    open(filename,'wb').write(new_data)
+    if version_info >= (3,0,0):
+        open(filename,'wb').write(bytes(new_data, 'iso-8859-1'))
+    else:
+        open(filename,'wb').write(new_data)
     return
 
 ###############################################################################
@@ -165,17 +186,25 @@ def detimestamp_file( filename ):
 def fixexponent_file( filename ):
 
     data = open(filename,'rb').read()
+
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
     orig_data = data
 
-    start = string.find( data, 'e+0' )
+    start = data.find( 'e+0' )
     while start != -1:
         if data[start+3] in string.digits and data[start+4] in string.digits \
             and data[start+5] == '"':
             data = data[:start+2] + data[start+3:]
-        start = string.find( data, 'e+0', start+3 )
+        start = data.find( 'e+0', start+3 )
 
     if data != orig_data:
-        open(filename,'wb').write(data)
+        if version_info >= (3,0,0):
+            open(filename,'wb').write(bytes(data, 'iso-8859-1'))
+        else:
+            open(filename,'wb').write(data)
 
     return
 
@@ -186,6 +215,10 @@ def truncate_one_decimal( filename ):
     import re
     
     data = open(filename,'rb').read()
+
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
 
     numbers_found = re.compile('[0-9]+\.[0-9]{6,24}', re.M)
 
@@ -201,7 +234,10 @@ def truncate_one_decimal( filename ):
 
 
     if new_data != '' and new_data != data:
-        open(filename,'wb').write(new_data)
+        if version_info >= (3,0,0):
+            open(filename,'wb').write(bytes(new_data, 'iso-8859-1'))
+        else:
+            open(filename,'wb').write(new_data)
 
     return
 ###############################################################################
@@ -215,6 +251,10 @@ def crlf( filename ):
         return
     data = open(filename, "rb").read()
 
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
     #This is a binary file
     if '\0' in data:
         return
@@ -222,8 +262,11 @@ def crlf( filename ):
     newdata = data.replace("\r\n", "\n")
     if newdata != data:
         f = open(filename, "wb")
-        f.write(newdata)
-        f.close() 
+        if version_info >= (3,0,0):
+            f.write(bytes(newdata, 'iso-8859-1'))
+        else:
+            f.write(newdata)
+        f.close()
 ###############################################################################
 # run_tests()
 
@@ -260,15 +303,15 @@ def run_tests( argv ):
     ###########################################################################
     # Get version info.
     version_info = os.popen( shp2img + ' -v' ).read()
-    print 'version = %s' % version_info
+    print('version = %s' % version_info)
     
     ###########################################################################
     # Check directory wide requirements.
     try:
         (runparms_list, requires_list) = read_test_directives( 'all_require.txt' )
         if not has_requires( version_info, requires_list ):
-            print 'Some or all of the following requirements for this directory of tests\nare not available:'
-            print requires_list
+            print('Some or all of the following requirements for this directory of tests\nare not available:')
+            print(requires_list)
             return
     except:
         pass
@@ -279,7 +322,7 @@ def run_tests( argv ):
 
     for map in map_files:
 
-        print ' Processing: %s' % map
+        print(' Processing: %s' % map)
         (runparms_list, requires_list) = read_test_directives( map )
         for i in range(len(runparms_list)):
             if renderer is not None:
@@ -287,7 +330,7 @@ def run_tests( argv ):
                 runparms_list[i] = ("%s.%s%s"%(resultbase,renderer,resultext),runparms_list[i][1])
 
         if not has_requires( version_info, requires_list ):
-            print '    missing some or all of required components, skip.'
+            print('    missing some or all of required components, skip.')
             skip_count += len(runparms_list)
             continue
         
@@ -298,27 +341,27 @@ def run_tests( argv ):
             command = run_item[1]
 
             if len(runparms_list) > 1:
-                print '   test %s' % out_file
+                print('   test %s' % out_file)
 
-            if string.find(command,'[RESULT_DEMIME]') != -1:
+            if command.find('[RESULT_DEMIME]') != -1:
                 demime = 1
             else:
                 demime = 0
                 
-            if string.find(command,'[RESULT_DEVERSION]') != -1:
+            if command.find('[RESULT_DEVERSION]') != -1:
                 deversion = 1
             else:
                 deversion = 0
 
-            command = string.replace( command, '[RESULT]', 'result/'+out_file )
-            command = string.replace( command, '[RESULT_DEMIME]', 'result/'+out_file )
-            command = string.replace( command, '[RESULT_DEVERSION]', 'result/'+out_file )
-            command = string.replace( command, '[MAPFILE]', map )
-            command = string.replace( command, '[SHP2IMG]', shp2img )
+            command = command.replace('[RESULT]', 'result/'+out_file )
+            command = command.replace('[RESULT_DEMIME]', 'result/'+out_file )
+            command = command.replace('[RESULT_DEVERSION]', 'result/'+out_file )
+            command = command.replace('[MAPFILE]', map )
+            command = command.replace('[SHP2IMG]', shp2img )
             if renderer is not None:
-                command = string.replace( command, '[RENDERER]', '-i '+renderer )
+                command = command.replace('[RENDERER]', '-i '+renderer )
             else:
-                command = string.replace( command, '[RENDERER]', '' )
+                command = command.replace('[RENDERER]', '' )
 
             # support for POST request method
             begin = command.find('[POST]')
@@ -326,15 +369,15 @@ def run_tests( argv ):
             if begin != -1 and end != -1 and begin < end:
                 post = command[begin+len('[POST]'):end]
                 tmp = command
-                post = string.replace(post, '"', '\'')
+                post = post.replace( '"', '\'')
                 command = 'echo "' + post + '" | ' + tmp[:begin] + tmp[end+len('[/POST]'):]
                 os.environ['CONTENT_LENGTH'] = str(len(post))
                 os.environ['REQUEST_METHOD'] = "POST"
                 os.environ['MS_MAPFILE'] = map
                     
-            command = string.replace( command, '[MAPSERV]', 'mapserv' )
-            command = string.replace( command, '[LEGEND]', 'legend' )
-            command = string.replace( command, '[SCALEBAR]', 'scalebar' )
+            command = command.replace('[MAPSERV]', 'mapserv' )
+            command = command.replace('[LEGEND]', 'legend' )
+            command = command.replace('[SCALEBAR]', 'scalebar' )
             
             if valgrind:
                 command = command.strip()
@@ -356,38 +399,38 @@ def run_tests( argv ):
                 succeed_count = succeed_count + 1
                 if keep_pass == 0:
                     os.remove( 'result/' + out_file )
-                print '     results match.'
+                print('     results match.')
             elif cmp ==  'files_differ_image_match':
                 succeed_count = succeed_count + 1
                 if keep_pass == 0:
                     os.remove( 'result/' + out_file )
-                print '     result images match, though files differ.'
+                print('     result images match, though files differ.')
             elif cmp ==  'files_differ_image_nearly_match':
                 succeed_count = succeed_count + 1
                 if keep_pass == 0:
                     os.remove( 'result/' + out_file )
-                print '     result images perceptually match, though files differ.'
+                print('     result images perceptually match, though files differ.')
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
-                print '*    results dont match, TEST FAILED.'
+                print('*    results dont match, TEST FAILED.')
             elif cmp == 'noresult':
                 fail_count = fail_count + 1
                 noresult_count += 1
-                print '*    no result file generated, TEST FAILED.'
+                print('*    no result file generated, TEST FAILED.')
             elif cmp == 'noexpected':
-                print '     no expected file exists, accepting result as expected.'
+                print('     no expected file exists, accepting result as expected.')
                 init_count = init_count + 1
                 os.rename( 'result/' + out_file, 'expected/' + out_file )
 
     try:
-        print 'Test done (%.2f%% success):' % (float(succeed_count)/float(succeed_count+fail_count)*100)
+        print('Test done (%.2f%% success):' % (float(succeed_count)/float(succeed_count+fail_count)*100))
     except:
         pass
 
-    print '%d tested skipped' % skip_count
-    print '%d tests succeeded' % succeed_count
-    print '%d tests failed' %fail_count
-    print '%d test results initialized' % init_count
+    print('%d tested skipped' % skip_count)
+    print('%d tests succeeded' % succeed_count)
+    print('%d tests failed' %fail_count)
+    print('%d test results initialized' % init_count)
 
     if noresult_count > 0:
-        print '%d of failed tests produced *no* result! Serious Failure!' % noresult_count
+        print('%d of failed tests produced *no* result! Serious Failure!' % noresult_count)

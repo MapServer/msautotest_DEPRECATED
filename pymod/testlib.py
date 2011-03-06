@@ -42,6 +42,10 @@ def strip_headers( filename ):
     except:
         return None
 
+    from sys import version_info
+    if version_info >= (3,0,0):
+        header = str(header, 'iso-8859-1')
+
     tmp_filename = None
     start_pos = header.find('\x49\x49\x2A\x00')
     if start_pos < 0:
@@ -120,45 +124,52 @@ def compare_result( filename ):
         result = open(result_file, "rb").read(1000)
     except:
         result = ''
-    
-    if have_pdiff != 'false' and \
-       ('\x49\x49\x2A\x00' in result \
-       or '\x49\x49\x00\x2A' in result \
-       or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result):
-    
-        try:
-            # Skip to real image if there's some HTTP headers before
-            tmp_result_file = strip_headers(result_file)
-            if tmp_result_file is not None:
-                result_file = tmp_result_file
-            tmp_expected_file = strip_headers(expected_file)
-            if tmp_expected_file is not None:
-                expected_file = tmp_expected_file
 
+    from sys import version_info
+    if version_info >= (3,0,0):
+        result = str(result, 'iso-8859-1')
+
+    run_perceptualdiff = have_pdiff != 'false' and \
+            ('\x49\x49\x2A\x00' in result \
+            or '\x49\x49\x00\x2A' in result \
+            or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result)
+
+    if run_perceptualdiff:
+
+        # Skip to real image if there's some HTTP headers before
+        tmp_result_file = strip_headers(result_file)
+        if tmp_result_file is not None:
+            result_file = tmp_result_file
+        tmp_expected_file = strip_headers(expected_file)
+        if tmp_expected_file is not None:
+            expected_file = tmp_expected_file
+
+        try:
             cmd = 'perceptualdiff %s %s -verbose > pd.out 2>1 ' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
-
-            if tmp_result_file is not None:
-                os.remove(tmp_result_file)
-            if tmp_expected_file is not None:
-                os.remove(tmp_expected_file)
-
-            if string.find(pdout,'PASS:') != -1 \
-               and string.find(pdout,'binary identical') != -1:
-                return 'files_differ_image_match'
-        
-            if string.find(pdout,'PASS:') != -1 \
-               and string.find(pdout,'indistinguishable') != -1:
-                return 'files_differ_image_nearly_match'
-
-            if string.find(pdout,'PASS:') == -1 \
-               and string.find(pdout,'FAIL:') == -1:
-                have_pdiff = 'false'
-
         except:
+            pdout = ''
             pass
+
+        if tmp_result_file is not None:
+            os.remove(tmp_result_file)
+        if tmp_expected_file is not None:
+            os.remove(tmp_expected_file)
+
+        if pdout.find('PASS:') != -1 \
+            and pdout.find('binary identical') != -1:
+            return 'files_differ_image_match'
+
+        if pdout.find('PASS:') != -1 \
+            and pdout.find('indistinguishable') != -1:
+            return 'files_differ_image_nearly_match'
+
+        if pdout.find('PASS:') == -1 \
+            and pdout.find('FAIL:') == -1:
+            have_pdiff = 'false'
+
         
     return 'nomatch'
     
