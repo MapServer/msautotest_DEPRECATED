@@ -11,6 +11,7 @@
 # RUN_PARMS: filters_test006.gif [SHP2IMG] -m [MAPFILE] -l filters_test006 -o [RESULT]
 # RUN_PARMS: filters_test007.gif [SHP2IMG] -m [MAPFILE] -l filters_test007 -o [RESULT]
 # RUN_PARMS: filters_test008.gif [SHP2IMG] -m [MAPFILE] -l filters_test008 -o [RESULT]
+# RUN_PARMS: filters_test009.gif [SHP2IMG] -m [MAPFILE] -l filters_test009 -o [RESULT]
 #
 MAP
   NAME 'filters'
@@ -77,6 +78,13 @@ MAP
   LAYER
     NAME 'filters_test008'
     FILTER ('[CTY_NAME]' ~* '^a')
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  # Logical expression, in operator
+  LAYER
+    NAME 'filters_test009'
+    FILTER ('[CTY_ABBR]' in 'ANOK,RAMS,CARL')
     INCLUDE 'include/bdry_counpy2_shapefile.map'
   END
 
