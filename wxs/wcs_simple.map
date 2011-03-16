@@ -59,6 +59,9 @@
 # Generate error if bbox does not overlap coverage extent
 # RUN_PARMS: wcs_getcov_exception_bbox.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&WIDTH=120&HEIGHT=90&FORMAT=GDPNG&BBOX=500,500,1000,1000&COVERAGE=grey&CRS=EPSG:32611" > [RESULT]
 #
+# Generate error if requested coverage exceeds maxsize
+# RUN_PARMS: wcs_getcov_exception_maxsize.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&WIDTH=5001&HEIGHT=5001&FORMAT=GDPNG&BBOX=500,500,1000,1000&COVERAGE=grey&CRS=EPSG:32611" > [RESULT]
+#
 # Use bilinear resampling. 
 # RUN_PARMS: wcs_bilinear.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&WIDTH=120&HEIGHT=90&FORMAT=GDPNG&BBOX=0.1,0.1,399.9,299.9&COVERAGE=grey&CRS=EPSG:32611&INTERPOLATION=BILINEAR" > [RESULT_DEMIME]
 #
@@ -205,11 +208,15 @@
 # ScalingError 
 # RUN_PARMS: wcs_20_exception_scaling.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(5)&SIZE=x(10)" > [RESULT_DEMIME]
 #
+# Generate error if requested coverage exceeds maxsize
+# RUN_PARMS: wcs_20_exception_exceed_maxsize.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&size=x(5001)&size=y(5001)&FORMAT=image/tiff&COVERAGEID=grey" > [RESULT_DEMIME]
+#
 MAP
 
 NAME TEST
 SIZE 400 300
 EXTENT 0 0 400 300
+MAXSIZE 5000
 
 IMAGETYPE PNG
 TRANSPARENT OFF
