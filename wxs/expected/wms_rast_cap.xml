@@ -52,14 +52,10 @@ Content-type: application/vnd.ogc.wms_xml
     </GetCapabilities>
     <GetMap>
       <Format>image/png</Format>
-      <Format>image/gif</Format>
-      <Format>image/png; mode=24bit</Format>
+      <Format>image/png</Format>
       <Format>image/jpeg</Format>
-      <Format>image/tiff</Format>
-      <Format>application/x-pdf</Format>
-      <Format>image/svg+xml</Format>
-      <Format>application/vnd.google-earth.kml+xml</Format>
-      <Format>application/vnd.google-earth.kmz</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=8bit</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
@@ -88,9 +84,9 @@ Content-type: application/vnd.ogc.wms_xml
     </DescribeLayer>
     <GetLegendGraphic>
       <Format>image/png</Format>
-      <Format>image/gif</Format>
-      <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=8bit</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
@@ -124,7 +120,7 @@ Content-type: application/vnd.ogc.wms_xml
      <Keyword>wms</Keyword>
      <Keyword>mapserver</Keyword>
     </KeywordList>
-    <SRS>EPSG:42304</SRS>
+    <SRS>EPSG:32611</SRS>
     <SRS>EPSG:42101</SRS>
     <SRS>EPSG:4269</SRS>
     <SRS>EPSG:4326</SRS>
@@ -134,7 +130,7 @@ Content-type: application/vnd.ogc.wms_xml
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>road</Name>
         <Title>road</Title>
-        <SRS>EPSG:43204</SRS>
+        <SRS>EPSG:32611</SRS>
         <LatLonBoundingBox minx="-117.546" miny="44.6656" maxx="-117.387" maxy="44.7671" />
         <BoundingBox SRS="EPSG:32611"
                     minx="456800" miny="4.94595e+06" maxx="469300" maxy="4.95715e+06" />

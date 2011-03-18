@@ -45,7 +45,7 @@ WEB
     "ows_updatesequence"   "123"
     "wms_title"		   "Test simple wms"
     "wms_onlineresource"   "http://localhost/path/to/wms_simple?"
-    "wms_srs"		   "EPSG:42304 EPSG:42101 EPSG:4269 EPSG:4326"
+    "wms_srs"		   "EPSG:32611 EPSG:42101 EPSG:4269 EPSG:4326"
     "ows_schemas_location" "http://schemas.opengis.net"
     "ows_keywordlist" "ogc,wms,mapserver"
     "ows_service_onlineresource" "http://www.mapserver.org/"
@@ -63,12 +63,13 @@ WEB
     "ows_contactperson" "Tom Kralidis"
     "ows_contactorganization" "MapServer"
     "ows_contactposition" "self"
+    "ows_enable_request" "*"
+    "wms_getmap_formatlist" "image/png,image/png; mode=24bit,image/jpeg,image/gif,image/png; mode=8bit"
   END
 END
 
 PROJECTION
   "init=epsg:4326"
-  #"init=./data/epsg2:42304"
 END
 
 
@@ -82,7 +83,7 @@ LAYER
   METADATA
     "wms_title"       "road"
     "wms_description" "Roads of I.P.E."
-    "wms_srs" "EPSG:43204"
+    "wms_srs" "EPSG:32611"
     "gml_include_items" "all"
   END
   TYPE RASTER
