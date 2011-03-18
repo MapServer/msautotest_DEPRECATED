@@ -10,7 +10,6 @@ Content-type: text/xml
 <se:LineSymbolizer>
 <se:Stroke>
 <se:SvgParameter name="stroke">#dc0000</se:SvgParameter>
-<se:SvgParameter name="stroke-opacity">1.00</se:SvgParameter>
 <se:SvgParameter name="stroke-width">1.00</se:SvgParameter>
 </se:Stroke>
 </se:LineSymbolizer>
