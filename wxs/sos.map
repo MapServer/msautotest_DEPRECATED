@@ -151,6 +151,7 @@ MAP
    "ows_role" "staff"
    "ows_srs" "EPSG:4326"
    "ows_maxfeatures" "90210"
+   "ows_enable_request" "*" 
    END
  END
  LAYER
