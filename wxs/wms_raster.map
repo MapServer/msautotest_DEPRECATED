@@ -64,7 +64,7 @@ WEB
     "ows_contactorganization" "MapServer"
     "ows_contactposition" "self"
     "ows_enable_request" "*"
-    "wms_getmap_formatlist" "image/png,image/png; mode=24bit,image/jpeg,image/gif,image/png; mode=8bit"
+    "wms_getmap_formatlist" "image/png,image/jpeg,image/gif,image/png; mode=8bit"
   END
 END
 
