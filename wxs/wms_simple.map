@@ -1,7 +1,7 @@
 #
 # Test WMS
 #
-# REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS OUTPUT=KML
+# REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS
 #
 #
 # Capabilities (return latest supported version by default
@@ -120,6 +120,7 @@ WEB
     "ows_rootlayer_keywordlist" "layers,list"
     "ows_layerlimit" "1"
     "ows_enable_request" "*" 
+    "wms_getmap_formatlist" "image/png,image/png; mode=24bit,image/jpeg,image/gif,image/png; mode=8bit,image/tiff"
   END
 END
 

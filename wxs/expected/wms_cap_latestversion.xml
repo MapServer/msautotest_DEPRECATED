@@ -50,14 +50,11 @@ Content-type: text/xml
     </GetCapabilities>
     <GetMap>
       <Format>image/png</Format>
-      <Format>image/gif</Format>
       <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=8bit</Format>
       <Format>image/tiff</Format>
-      <Format>application/x-pdf</Format>
-      <Format>image/svg+xml</Format>
-      <Format>application/vnd.google-earth.kml+xml</Format>
-      <Format>application/vnd.google-earth.kmz</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
@@ -86,9 +83,10 @@ Content-type: text/xml
     </sld:DescribeLayer>
     <sld:GetLegendGraphic>
       <Format>image/png</Format>
-      <Format>image/gif</Format>
       <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=8bit</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
@@ -142,6 +140,8 @@ Content-type: text/xml
         <southBoundLatitude>42.3821</southBoundLatitude>
         <northBoundLatitude>48.2955</northBoundLatitude>
     </EX_GeographicBoundingBox>
+        <BoundingBox CRS="EPSG:43204"
+                    minx="2.25898e+06" miny="-70747.9" maxx="2.61535e+06" maxy="495481" />
         <Style>
           <Name>default</Name>
           <Title>default</Title>
