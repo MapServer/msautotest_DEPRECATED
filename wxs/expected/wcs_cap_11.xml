@@ -113,12 +113,11 @@ Content-type: text/xml
       <ows:Parameter name="format">
         <ows:AllowedValues>
           <ows:Value>image/tiff</ows:Value>
-          <ows:Value>image/png</ows:Value>
           <ows:Value>image/png; mode=8bit</ows:Value>
           <ows:Value>image/x-aaigrid</ows:Value>
-          <ows:Value>image/gif</ows:Value>
-          <ows:Value>image/png; mode=24bit</ows:Value>
+          <ows:Value>image/png</ows:Value>
           <ows:Value>image/jpeg</ows:Value>
+          <ows:Value>image/gif</ows:Value>
         </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="store">

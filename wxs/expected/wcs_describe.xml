@@ -74,7 +74,7 @@ Content-type: text/xml
     </supportedCRSs>
     <supportedFormats nativeFormat="GeoTIFF">
       <formats>GEOTIFF_16</formats>
-      <formats>GDPNG</formats>
+      <formats>PNG</formats>
       <formats>AAIGRID</formats>
     </supportedFormats>
     <supportedInterpolations default="nearest neighbor">
