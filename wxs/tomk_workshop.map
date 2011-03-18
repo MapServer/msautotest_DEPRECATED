@@ -303,6 +303,7 @@ MAP
    "wcs_metadatalink_href" "http://localhost/ms_ogc_workshop/index.html"
 
     "ows_enable_request" "*" 
+    "wms_getmap_formatlist" "image/png,image/png; mode=24bit,image/jpeg,image/gif,image/png; mode=8bit,image/tiff"
    END
  END
 
