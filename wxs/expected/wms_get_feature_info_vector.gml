@@ -7,6 +7,7 @@ Content-type: application/vnd.ogc.gml
 	 xmlns:xlink="http://www.w3.org/1999/xlink"
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<rivers_layer>
+	<gml:name>Rivers</gml:name>
 		<rivers_feature>
 			<gml:boundedBy>
 				<gml:Box srsName="EPSG:4326">

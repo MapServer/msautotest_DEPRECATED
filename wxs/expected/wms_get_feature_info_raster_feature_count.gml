@@ -7,6 +7,7 @@ Content-type: application/vnd.ogc.gml
 	 xmlns:xlink="http://www.w3.org/1999/xlink"
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<land_shallow_topo_2048_layer>
+	<gml:name>Land Surface, Shallow Water, and Shaded Topography</gml:name>
 		<land_shallow_topo_2048_feature>
 			<gml:boundedBy>
 				<gml:Box srsName="EPSG:4326">
