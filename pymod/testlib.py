@@ -87,6 +87,9 @@ def compare_result( filename ):
     if filecmp.cmp(expected_file,result_file,0):
         return 'match'
 
+    if expected_file[-4:] == '.xml':
+        return 'nomatch'
+    
     ###################################################################
     # Check image checksums with GDAL if it is available.
     
@@ -95,6 +98,7 @@ def compare_result( filename ):
             from osgeo import gdal
         except:
             import gdal
+
         gdal.PushErrorHandler('CPLQuietErrorHandler')
         exp_ds = gdal.Open( expected_file )
         gdal.PopErrorHandler()
