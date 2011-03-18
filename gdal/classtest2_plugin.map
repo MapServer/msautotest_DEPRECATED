@@ -30,7 +30,10 @@ LAYER
   CLASS 
     NAME "Hole"
     EXPRESSION ([pixel] == 111) 
-    COLOR 255 0 0
+    STYLE
+      COLOR 255 0 0
+      OPACITY 75
+    END
   END
 END
 
