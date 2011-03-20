@@ -1,14 +1,14 @@
 # Test Runtime Substitutions
 #
 # REQUIRES: INPUT=SHAPEFILE OUTPUT=GIF
-#
-# RUN_PARMS: runtime_sub_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer1&name1=bdry_counpy2' > [RESULT_DEMIME]
+# 
+# RUN_PARMS: runtime_sub_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer1&name1=bdry_counpy2' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
 # RUN_PARMS: runtime_sub_test002.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bdry_counpy2' > [RESULT_DEMIME]
-# RUN_PARMS: runtime_sub_test003.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bad+value' > [RESULT_DEMIME]
+# RUN_PARMS: runtime_sub_test003.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bad+value' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
 # RUN_PARMS: runtime_sub_test004.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer3&name3=bdry_counpy2' > [RESULT_DEMIME]
-# RUN_PARMS: runtime_sub_test005.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer3&name3=bad+value' > [RESULT_DEMIME]
+# RUN_PARMS: runtime_sub_test005.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer3&name3=bad+value' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
 # RUN_PARMS: runtime_sub_test006.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer4&name4=bdry_counpy2' > [RESULT_DEMIME]
-# RUN_PARMS: runtime_sub_test007.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer4&name4=bad+value' > [RESULT_DEMIME]
+# RUN_PARMS: runtime_sub_test007.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer4&name4=bad+value' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
 # RUN_PARMS: runtime_sub_test008.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer5' > [RESULT_DEMIME]
 #
 MAP
@@ -16,6 +16,7 @@ MAP
   EXTENT 125000 4785000 789000 5489000
   UNITS METERS
   SIZE 500 500
+  SHAPEPATH "."
 
   IMAGETYPE GIF
 
