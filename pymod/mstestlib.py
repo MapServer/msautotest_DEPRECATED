@@ -281,6 +281,7 @@ def run_tests( argv ):
     valgrind = 0 
     shp2img = 'shp2img'
     renderer = None
+    verbose = 0
 
     ###########################################################################
     # Process arguments.
@@ -288,12 +289,22 @@ def run_tests( argv ):
     for i in range(len(argv)):
         if argv[i] == '-shp2img':
             shp2img = argv[i+1]
-        if argv[i] == '-keep':
+        elif argv[i] == '-keep':
             keep_pass = 1
-        if argv[i] == '-valgrind':
+        elif argv[i] == '-valgrind':
             valgrind = 1
-        if argv[i] == '-renderer':
+        elif argv[i] == '-renderer':
             renderer = argv[i+1]
+        elif argv[i] == '-v':
+            verbose = 1
+        elif argv[i][-4:] == '.map':
+            pass
+        else:
+            print( 'Unrecognised argument: %s' % argv[i] )
+            print( 'Usage: run_test.py [-v] [-keep] [-valgrind]\n' + 
+                   '                   [-shp2img <file>] [-renderer <name>]\n' +
+                   '                   [mapfilename]*' )
+            sys.exit( 1 )
 
     ###########################################################################
     # Create results directory if it does not already exist.
@@ -382,6 +393,11 @@ def run_tests( argv ):
             if valgrind:
                 command = command.strip()
                 command = 'valgrind --tool=memcheck --leak-check=full %s 2>result/%s.txt'%(command, out_file+".vgrind.txt")
+
+            if verbose:
+                print('')
+                print( command )
+                
             os.system( command )
 
             if demime:
