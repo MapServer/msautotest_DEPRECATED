@@ -181,6 +181,53 @@ def detimestamp_file( filename ):
     return
 
 ###############################################################################
+# Collect all the [STRIP:] directives from a command string and remove them
+# from the command string.
+
+def collect_strip_requests( command ):
+
+    strip_items = []
+
+    while command.find('[STRIP:') != -1:
+
+        dir_start = command.find('[STRIP:')
+        pat_start = dir_start + 7
+        pat_end = pat_start+1
+
+        while command[pat_end] != ']':
+            pat_end = pat_end+1
+
+        strip_items.append( command[pat_start:pat_end] )
+
+        command = command[:dir_start] + command[pat_end+1:]
+
+    return (command, strip_items)
+        
+###############################################################################
+# Strip lines matching substrings.
+
+def apply_strip_items_file( filename, strip_items ):
+
+    if len(strip_items) == 0:
+        return
+    
+    data_lines = open(filename,'rb').readlines()
+    out_data = ''
+    for i in range(len(data_lines)):
+        discard = 0
+        for item in strip_items:
+            if data_lines[i].find( item ) != -1:
+                discard = 1
+        if discard == 0:
+            out_data += data_lines[i]
+        else:
+            out_data += '[stripped line matching "%s"]\n' % item 
+
+    open(filename,'wb').write(out_data)
+
+    return
+
+###############################################################################
 # Do windows exponential conversion on the file (e+0nn to e+nn).
 
 def fixexponent_file( filename ):
@@ -389,6 +436,8 @@ def run_tests( argv ):
             command = command.replace('[MAPSERV]', 'mapserv' )
             command = command.replace('[LEGEND]', 'legend' )
             command = command.replace('[SCALEBAR]', 'scalebar' )
+
+            (command, strip_items) = collect_strip_requests( command )
             
             if valgrind:
                 command = command.strip()
@@ -407,6 +456,8 @@ def run_tests( argv ):
                 fixexponent_file( 'result/'+out_file )
                 truncate_one_decimal( 'result/'+out_file )
                 detimestamp_file( 'result/'+out_file )
+
+            apply_strip_items_file( 'result/'+out_file, strip_items )
                 
             crlf('result/'+out_file)
             cmp = compare_result( out_file )
