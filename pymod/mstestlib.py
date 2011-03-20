@@ -211,19 +211,28 @@ def apply_strip_items_file( filename, strip_items ):
     if len(strip_items) == 0:
         return
     
+    from sys import version_info
+
     data_lines = open(filename,'rb').readlines()
     out_data = ''
     for i in range(len(data_lines)):
+        data_line = data_lines[i]
+        if version_info >= (3,0,0):
+            data_line = str(data_line, 'iso-8859-1')
+
         discard = 0
         for item in strip_items:
-            if data_lines[i].find( item ) != -1:
+            if data_line.find( item ) != -1:
                 discard = 1
         if discard == 0:
-            out_data += data_lines[i]
+            out_data += data_line
         else:
             out_data += '[stripped line matching "%s"]\n' % item 
 
-    open(filename,'wb').write(out_data)
+    if version_info >= (3,0,0):
+        open(filename,'wb').write(bytes(out_data, 'iso-8859-1'))
+    else:
+        open(filename,'wb').write(out_data)
 
     return
 
