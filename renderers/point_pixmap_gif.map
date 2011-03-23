@@ -1,0 +1,71 @@
+#
+# entity-encoded text rendering test.
+# this test may potentially segfault
+#   
+# REQUIRES: OUTPUT=PNG
+#
+MAP
+
+STATUS ON
+EXTENT 0 0 400 300
+SIZE 400 300
+FONTSET "../misc/fonts.lst"
+IMAGETYPE png24
+symbolset "symbolset"
+imagecolor 255 200 0
+CONFIG MS_ERRORFILE "stderr"
+DEBUG ON
+
+LAYER
+  NAME "symbol"
+  TYPE point
+  STATUS default
+  CLASS
+    NAME "test1"
+    STYLE
+        SYMBOL "gdalicongifinterlaced"
+    END
+  END
+  FEATURE
+    POINTS
+        50 50
+    END
+  END
+END
+
+LAYER
+  NAME "symbol rotated"
+  TYPE point
+  STATUS default
+  CLASS
+    NAME "test1"
+    STYLE
+        SYMBOL "gdalicongif"
+        SIZE 55
+        ANGLE 45
+    END
+  END
+  FEATURE
+    POINTS
+        200 200
+    END
+  END
+END
+
+LAYER
+    NAME "anchors"
+    TYPE POINT
+    STATUS default
+    CLASS
+        STYLE
+            COLOR 255 0 0
+            SIZE 8
+            WIDTH 1
+            SYMBOL "circle"
+        END
+    END
+    FEATURE POINTS 50 50 END END
+    FEATURE POINTS 200 200 END END
+END
+
+END

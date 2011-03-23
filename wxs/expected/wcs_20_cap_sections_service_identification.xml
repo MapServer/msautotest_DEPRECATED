@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd " version="2.0.0" updateSequence="2007-10-30T14:23:38Z">
+  <ows:ServiceIdentification>
+    <ows:Title>First Test Service</ows:Title>
+    <ows:Abstract>Test Abstract</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>keyword</ows:Keyword>
+      <ows:Keyword>list</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">OGC WCS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Profile>http://www.opengis.net/spec/WCS/2.0/conf/core</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_get-kvp/1.0</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_post-xml/1.0</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/EPSG</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/IMAGECRS</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_coverage-encoding_geotiff/1.0/</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/GML_and_GeoTIFF</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/SCALING</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/INTERPOLATION</ows:Profile>
+    <ows:Fees>NONE</ows:Fees>
+    <ows:AccessConstraints>NONE</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <wcs:ServiceMetadata version="1.0.0"/>
+</wcs:Capabilities>
