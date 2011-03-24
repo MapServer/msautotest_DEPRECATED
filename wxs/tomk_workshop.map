@@ -79,6 +79,7 @@ MAP
  # always returns a map
  STATUS ON
 
+ UNITS DD
  # set top level projection
  PROJECTION
   "init=epsg:4326"
