@@ -137,10 +137,10 @@ TRANSPARENT OFF
 SHAPEPATH "data"
 
 OUTPUTFORMAT
-  NAME GEOTIFF_16
+  NAME GEOTIFF_BYTE
   DRIVER "GDAL/GTiff"
   MIMETYPE "image/tiff"
-  IMAGEMODE INT16
+  IMAGEMODE BYTE
   EXTENSION "tif"
 END
 OUTPUTFORMAT
@@ -220,7 +220,7 @@ LAYER
    "ows_srs"	"EPSG:32611 EPSG:4326"
    "wcs_resolution" "10 10"
    "wcs_bandcount" "1"
-   "wcs_formats" "GEOTIFF_16 GDPNG AAIGRID"
+   "wcs_formats" "GEOTIFF_BYTE GDPNG AAIGRID"
    "wcs_nativeformat" "GeoTIFF"
    "wcs_description" "Test description"
    "wcs_metadatalink_href" "http://www.gdal.org/metadata_test_link.html"
@@ -233,6 +233,7 @@ Acquisition: 1999-10-11 18:47"
    "wcs_rangeset_label" "Bands"
    "wcs_rangeset_description" "Bands for Landsat 5 TM"
    "wcs_rangeset_nullvalue" "-99"
+   "wcs_imagemode" "BYTE"
   END
 END
 

@@ -73,7 +73,7 @@ Content-type: text/xml
       <nativeCRSs>EPSG:32611</nativeCRSs>
     </supportedCRSs>
     <supportedFormats nativeFormat="GeoTIFF">
-      <formats>GEOTIFF_16</formats>
+      <formats>GEOTIFF_BYTE</formats>
       <formats>PNG</formats>
       <formats>AAIGRID</formats>
     </supportedFormats>

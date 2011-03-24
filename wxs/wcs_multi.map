@@ -97,8 +97,8 @@ Acquisition: 1999-10-11 18:47"
    "wcs_rangeset_label" "Bands"
    "wcs_rangeset_description" "Bands for Landsat 5 TM"
    "wcs_rangeset_nullvalue" "-99"
+   "wcs_imagemode" "BYTE"
   END
 END
-
 
 END

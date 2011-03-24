@@ -33,7 +33,7 @@
             <swe:uom code="W.m-2.Sr-1"/>
             <swe:constraint>
               <swe:AllowedValues>
-                <swe:interval>-340282346638528859811704183484516925440.00000 340282346638528859811704183484516925440.00000</swe:interval>
+                <swe:interval>0 255</swe:interval>
               </swe:AllowedValues>
             </swe:constraint>
           </swe:Quantity>
