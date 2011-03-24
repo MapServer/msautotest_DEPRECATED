@@ -53,7 +53,7 @@ Content-type: application/vnd.ogc.wms_xml
     </GetCapabilities>
     <GetMap>
       <Format>image/png</Format>
-      <Format>image/png</Format>
+      <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
       <Format>image/gif</Format>
       <Format>image/png; mode=8bit</Format>
