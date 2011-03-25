@@ -6,10 +6,12 @@
 # KVP:
 # RUN_PARMS: wcs_20_getcov_bands_index.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=multi&FORMAT=image/tiff&RANGESUBSET=1,5,9" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_getcov_bands_name.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=multi&FORMAT=image/tiff&RANGESUBSET=Band2,Band3,Band1" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_bands_name.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=multi&FORMAT=image/tiff&mediatype=multipart/mixed&RANGESUBSET=Band2,Band3,Band1" > [RESULT_DEMIME]
 #
 # POST:
 # RUN_PARMS: wcs_20_post_bands_index.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:rangeSubset><wcs:band>1</wcs:band><wcs:band>5</wcs:band><wcs:band>9</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_bands_name.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:rangeSubset><wcs:band>Band2</wcs:band><wcs:band>Band3</wcs:band><wcs:band>Band1</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_post_bands_name.dat [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:Mediatype>multipart/mixed</wcs:Mediatype><wcs:rangeSubset><wcs:band>Band2</wcs:band><wcs:band>Band3</wcs:band><wcs:band>Band1</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 #
 MAP
 
