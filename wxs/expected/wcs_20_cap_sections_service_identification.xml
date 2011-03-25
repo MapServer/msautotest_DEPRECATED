@@ -18,6 +18,7 @@
     <ows:Profile>http://www.placeholder.com/GML_and_GeoTIFF</ows:Profile>
     <ows:Profile>http://www.placeholder.com/SCALING</ows:Profile>
     <ows:Profile>http://www.placeholder.com/INTERPOLATION</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/RANGESUBSET</ows:Profile>
     <ows:Fees>NONE</ows:Fees>
     <ows:AccessConstraints>NONE</ows:AccessConstraints>
   </ows:ServiceIdentification>

@@ -28,12 +28,15 @@
     </gml:domainSet>
     <gmlcov:rangeType>
       <swe:DataRecord>
-        <swe:field name="band">
+        <swe:field name="bands">
           <swe:Quantity>
+            <swe:description>Test description</swe:description>
+            <swe:nilValues/>
             <swe:uom code="W.m-2.Sr-1"/>
             <swe:constraint>
               <swe:AllowedValues>
                 <swe:interval>0 255</swe:interval>
+                <swe:significantFigures>3</swe:significantFigures>
               </swe:AllowedValues>
             </swe:constraint>
           </swe:Quantity>
