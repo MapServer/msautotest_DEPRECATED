@@ -12,6 +12,7 @@
 # RUN_PARMS: filters_test007.gif [SHP2IMG] -m [MAPFILE] -l filters_test007 -o [RESULT]
 # RUN_PARMS: filters_test008.gif [SHP2IMG] -m [MAPFILE] -l filters_test008 -o [RESULT]
 # RUN_PARMS: filters_test009.gif [SHP2IMG] -m [MAPFILE] -l filters_test009 -o [RESULT]
+# RUN_PARMS: filters_test010.gif [SHP2IMG] -m [MAPFILE] -l filters_test010 -o [RESULT]
 #
 MAP
   NAME 'filters'
@@ -85,6 +86,13 @@ MAP
   LAYER
     NAME 'filters_test009'
     FILTER ('[CTY_ABBR]' in 'ANOK,RAMS,CARL')
+    INCLUDE 'include/bdry_counpy2_shapefile.map'
+  END
+
+  # Logical expression, time operands
+  LAYER
+    NAME 'filters_test010'
+    FILTER (`[LASTMOD]` > `2010-12-01`)
     INCLUDE 'include/bdry_counpy2_shapefile.map'
   END
 
