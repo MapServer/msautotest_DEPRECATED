@@ -89,6 +89,29 @@ Content-type: text/xml
         </ows:AllowedValues>
       </ows:Parameter>
     </ows:Operation>
+    <ows:Operation name="DescribeObservationType">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/cgi-bin/sostest?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="service">
+        <ows:AllowedValues>
+          <ows:Value>SOS</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="version">
+        <ows:AllowedValues>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="observedproperty">
+        <ows:AllowedValues>
+          <ows:Value>urn:ogc:object:observedproperty</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
     <ows:Operation name="GetObservation">
       <ows:DCP>
         <ows:HTTP>
