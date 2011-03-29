@@ -60,7 +60,10 @@ LAYER
         color 0 0 0
         outlinecolor 255 255 255
         outlinewidth 3
-        backgroundcolor 255 0 0
+         style
+            color  255 0 0
+            geomtransform labelpoly
+         end
     end
   END
   FEATURE

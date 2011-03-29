@@ -32,7 +32,7 @@ LAYER
     STYLE
         SYMBOL "vector arrow"
         SIZE 8
-        GAP 3
+        GAP 0
         COLOR 0 0 0
     END
   END
@@ -43,8 +43,9 @@ LAYER
     END
     STYLE
         SYMBOL "vector arrow"
-        SIZE 5
-        ANGLE 45
+        SIZE 16
+        ANGLE 0
+        GAP 0
         COLOR 0 0 0
     END
   END

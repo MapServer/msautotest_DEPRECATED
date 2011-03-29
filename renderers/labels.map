@@ -22,7 +22,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cc
         end
@@ -46,7 +49,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ur
         end
@@ -70,7 +76,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position uc
         end
@@ -94,7 +103,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ul
         end
@@ -118,7 +130,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cr
         end
@@ -142,7 +157,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cl
         end
@@ -166,7 +184,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ll
         end
@@ -190,7 +211,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position lr
         end
@@ -214,7 +238,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position lc
         end
@@ -241,7 +268,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cc
             angle 45
@@ -266,7 +296,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ur
             angle 75
@@ -291,7 +324,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position uc
             angle 90
@@ -316,7 +352,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ul
             angle 130
@@ -341,7 +380,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cr
             angle 150
@@ -366,7 +408,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cl
             angle 180
@@ -391,7 +436,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ll
             angle 220
@@ -416,7 +464,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position lr
             angle 270
@@ -441,7 +492,10 @@ layer
             type truetype
             font "default"
             size 9
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position lc
             angle 300

@@ -19,7 +19,10 @@ layer
         end
         label
             size tiny
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cc
         end
@@ -41,7 +44,10 @@ layer
         end
         label
             size small
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ur
         end
@@ -63,7 +69,10 @@ layer
         end
         label
             size medium
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position uc
         end
@@ -85,7 +94,10 @@ layer
         end
         label
             size large
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position ul
         end
@@ -107,7 +119,10 @@ layer
         end
         label
             size giant
-            backgroundcolor 0 255 0
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
             color 0 0 0
             position cr
         end
