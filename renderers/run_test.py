@@ -44,7 +44,7 @@ import mstestlib
 # main()
 
 if __name__ == '__main__':
-    renderers = ['png24','png']
+    renderers = ['pdf','svg','png','gif','cairopng']
 
     version_info = os.popen( 'shp2img -v' ).read()
     if '-r' in sys.argv:

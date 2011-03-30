@@ -16,9 +16,9 @@ layer
     class
         style
             color 0 0 255
-            width 1
+            width 3
             linecap butt
-            pattern 4 2 2 2 end
+            pattern 12 6 6 6 end
         end
     end
 end
