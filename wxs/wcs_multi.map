@@ -104,7 +104,7 @@ LAYER
    "wcs_rangeset_name" "Landsat 5 TM Bands"
    "wcs_rangeset_label" "Bands"
    "wcs_rangeset_description" "Bands for Landsat 5 TM"
-   "wcs_rangeset_nullvalue" "-99"
+   "wcs_rangeset_nullvalue" "0"
   END
 END
 
@@ -142,6 +142,9 @@ LAYER
     "wcs_band_description"    "Default description"
     "wcs_interval"            "0 255"
     "wcs_significant_figures"     "3"
+    
+    "wcs_nilvalues" "0"
+    "wcs_nilvalues_reasons" "urn:ogc:def:nil:OGC:1.0:inapplicable"
     
     #specific band values
     "Band1_band_interpretation" "This is some interpretation"
