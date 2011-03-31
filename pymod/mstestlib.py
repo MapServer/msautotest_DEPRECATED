@@ -338,19 +338,24 @@ def run_tests( argv ):
     shp2img = 'shp2img'
     renderer = None
     verbose = 0
-
+    skiparg = False
     ###########################################################################
     # Process arguments.
     
     for i in range(len(argv)):
+        if skiparg:
+            skiparg = False
+            continue
         if argv[i] == '-shp2img':
             shp2img = argv[i+1]
+            skiparg = True
         elif argv[i] == '-keep':
             keep_pass = 1
         elif argv[i] == '-valgrind':
             valgrind = 1
         elif argv[i] == '-renderer':
             renderer = argv[i+1]
+            skiparg = True
         elif argv[i] == '-v':
             verbose = 1
         elif argv[i][-4:] == '.map':
