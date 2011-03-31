@@ -1,0 +1,33 @@
+#
+# Test embedded scalebar ... with transparency to RGBA output file. 
+#
+# REQUIRES: OUTPUT=PNG
+#
+MAP
+
+EXTENT -180 -90 180 90
+SIZE 400 300
+IMAGECOLOR 255 200 0
+fontset "../misc/fonts.lst"
+TRANSPARENT OFF
+
+IMAGETYPE png
+
+SCALEBAR
+  TRANSPARENT ON
+  LABEL
+    COLOR 0 0 0
+    size 9
+    type truetype
+    font "default"
+  END
+  SIZE 150 3
+  COLOR 0 0 0
+  BACKGROUNDCOLOR 255 255 255
+  OUTLINECOLOR 0 0 0
+  UNITS kilometers
+  INTERVALS 3
+  STATUS EMBED
+END
+
+END
