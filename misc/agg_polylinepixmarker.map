@@ -14,7 +14,6 @@ SYMBOL
   NAME "marker"
   TYPE PIXMAP
   IMAGE "data/linemarker.png"
-  GAP -10
 END
 
 LAYER
@@ -24,10 +23,13 @@ LAYER
   STATUS default
   CLASSITEM "AREA"
   CLASS
-    SYMBOL "marker"
     NAME "test1"
-    COLOR 0 255 0
-    OUTLINECOLOR 255 0 0
+    STYLE
+      SYMBOL "marker"
+      GAP -10
+      COLOR 0 255 0
+      OUTLINECOLOR 255 0 0
+    END
   END
 END
 

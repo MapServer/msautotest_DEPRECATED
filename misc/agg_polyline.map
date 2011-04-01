@@ -11,12 +11,6 @@ SIZE 400 300
 
 IMAGETYPE png24
 
-SYMBOL
-  NAME "dashes"
-  TYPE SIMPLE
-  STYLE 4 4 END
-END
-
 LAYER
   NAME shppoly
   TYPE line
@@ -36,7 +30,7 @@ LAYER
     STYLE
         COLOR 255 255 0
         WIDTH 1
-        SYMBOL "dashes"
+        PATTERN 4 4 END
     END
   END
 END
