@@ -1,7 +1,7 @@
 #
 # Test OGC Web Service enabling/disabling
 #
-# REQUIRES: SUPPORTS=WMS SUPPORTS=WCS
+# REQUIRES: SUPPORTS=WMS SUPPORTS=WCS SUPPORTS=WFS SUPPORTS=SOS
 #
 # The following tests exists primarily to test the ability of disabling
 # OGC Web Services at all (see RFC 67).
@@ -16,7 +16,7 @@
 
 MAP
 
-NAME WMS_TEST
+NAME OWS_TEST
 SHAPEPATH ./data
 
 WEB
