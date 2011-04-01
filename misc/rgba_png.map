@@ -1,7 +1,7 @@
 #
 # Simple AGG polygon rendering test.
 #   
-# REQUIRES: OUTPUT=PNG SUPPORTS=RGBA_PNG
+# REQUIRES: OUTPUT=PNG
 #
 MAP
 
