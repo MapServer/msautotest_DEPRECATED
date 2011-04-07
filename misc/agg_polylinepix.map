@@ -1,0 +1,33 @@
+#
+# pixmap-brushed polyline AGG rendering test 
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+MAP
+
+STATUS ON
+EXTENT 478300 4762880 481650 4765610
+SIZE 400 300
+IMAGETYPE png24
+
+SYMBOL
+  NAME "linebrush"
+  TYPE PIXMAP
+  IMAGE "data/linemarker.png"
+END
+
+LAYER
+  NAME shppoly
+  TYPE line
+  DATA "data/shppoly/poly.shp"
+  STATUS default
+  CLASSITEM "AREA"
+  CLASS
+    SYMBOL "linebrush"
+    NAME "test1"
+    COLOR 0 255 0
+    OUTLINECOLOR 255 0 0
+  END
+END
+
+END

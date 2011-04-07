@@ -1,0 +1,60 @@
+#
+# entity-encoded text rendering test.
+# this test may potentially segfault
+#   
+# REQUIRES: OUTPUT=PNG
+#
+MAP
+
+STATUS ON
+EXTENT -125.549477 -69.508628 101.670954 15.840339
+SIZE 400 300
+FONTSET "../misc/fonts.lst"
+IMAGETYPE png24
+symbolset "symbolset"
+shapepath "../misc/data"
+
+CONFIG MS_ERRORFILE "stderr"
+
+
+DEBUG ON
+
+SYMBOL
+    name "hatch"
+    type hatch
+end
+
+LAYER
+  NAME "world"
+  TYPE polygon
+  STATUS on
+  DATA "world_testpoly"
+  CLASS
+    NAME "test1"
+    STYLE
+        COLOR 180 0 0
+    END
+  END
+END
+
+LAYER
+  NAME "world2"
+  TYPE polygon
+  STATUS on
+  DATA "world_testpoly"
+  OPACITY 50
+  CLASS
+    NAME "test1"
+    STYLE
+        COLOR 0 0 0
+        symbol "hatch"
+        SIZE 20
+        WIDTH 14
+        ANGLE 45
+    END
+  END
+END
+
+END
+
+END
