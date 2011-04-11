@@ -149,7 +149,7 @@ def compare_result( filename ):
             expected_file = tmp_expected_file
 
         try:
-            cmd = 'perceptualdiff %s %s -verbose > pd.out 2>1 ' % (result_file,expected_file)
+            cmd = 'perceptualdiff %s %s -verbose > pd.out 2>&1 ' % (result_file,expected_file)
             os.system( cmd )
             pdout = open('pd.out').read()
             os.remove( 'pd.out' )
