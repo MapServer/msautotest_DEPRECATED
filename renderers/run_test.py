@@ -49,7 +49,9 @@ if __name__ == '__main__':
     version_info = os.popen( 'shp2img -v' ).read()
     if '-r' in sys.argv:
         idx = sys.argv.index('-r')
-        renderers.extend(sys.argv[idx+1].split(','))
+        renderers = sys.argv[idx+1].split(',')
+        sys.argv.pop(idx)
+        sys.argv.pop(idx)
     
     for renderer in renderers:
         args = sys.argv[1:]
