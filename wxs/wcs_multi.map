@@ -23,6 +23,10 @@
 # RUN_PARMS: wcs_20_post_bands_name_new.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi_new</wcs:CoverageID><wcs:rangeSubset><wcs:band>Band9</wcs:band><wcs:band>Band5</wcs:band><wcs:band>Band1</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_bands_name_new.dat [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi_new</wcs:CoverageID><wcs:Mediatype>multipart/mixed</wcs:Mediatype><wcs:rangeSubset><wcs:band>Band9</wcs:band><wcs:band>Band5</wcs:band><wcs:band>Band1</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 #
+# Trim to 1px (#3857):
+# RUN_PARMS: wcs_20_multi_getcov_trim_y_to_1px.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:DimensionTrim><wcs:Dimension>y</wcs:Dimension><wcs:TrimLow>10</wcs:TrimLow><wcs:TrimHigh>10.1</wcs:TrimHigh></wcs:DimensionTrim></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_multi_getcov_trim_x_to_1px.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:DimensionTrim><wcs:Dimension>x</wcs:Dimension><wcs:TrimLow>10</wcs:TrimLow><wcs:TrimHigh>10.1</wcs:TrimHigh></wcs:DimensionTrim></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+#
 MAP
 
 NAME TEST

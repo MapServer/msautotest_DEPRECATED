@@ -150,6 +150,8 @@
 #
 # GetCoverage 2.0 image/tiff trim x y both
 # RUN_PARMS: wcs_20_getcov_trim_x_y_both.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(10,20)&SUBSET=y(10,20)" > [RESULT_DEMIME]
+# GetCoverage 2.0 image/tiff trim x y both to 1x1px image (#3857)
+# RUN_PARMS: wcs_20_getcov_trim_x_y_both_1px.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=x(10,10.1)&SUBSET=y(10,10.1)" > [RESULT_DEMIME]
 #
 # GetCoverage 2.0 gml+image/tiff full
 # RUN_PARMS: wcs_20_getcov_full.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&MEDIATYPE=multipart/mixed" > [RESULT_DEMIME]
