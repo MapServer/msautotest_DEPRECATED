@@ -31,6 +31,7 @@ layer
             color 0 0 0
             outlinecolor 255 255 255
             outlinewidth 3
+            MAXOVERLAPANGLE  30
         end
     end
 end
