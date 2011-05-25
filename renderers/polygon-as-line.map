@@ -32,6 +32,12 @@ LAYER
   CLASS
     NAME "test1"
     STYLE
+      SYMBOL "vector arrow"
+      SIZE 8
+      GAP 0
+      COLOR 0 0 0
+    END
+    STYLE
         OUTLINECOLOR 180 0 0
         WIDTH 1
     END
