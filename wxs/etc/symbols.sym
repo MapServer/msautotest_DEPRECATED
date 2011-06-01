@@ -1,3 +1,5 @@
+SYMBOLSET
+
 Symbol
 Name 'tent'
 Type VECTOR
@@ -152,4 +154,6 @@ SYMBOL
   FILLED true
   ANTIALIAS true
   CHARACTER "&#125;"
+END
+
 END
