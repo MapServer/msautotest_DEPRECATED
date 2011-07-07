@@ -54,10 +54,15 @@ MAP
       END
       STYLE
 	COLOR [color]
+
       	SYMBOL [symbol]
       	SIZE [size]
       END
       LABEL
+        STYLE
+          GEOMTRANSFORM "labelpoly"
+          COLOR [color]
+        END
         TYPE TRUETYPE
         FONT 'default'
         COLOR [lcolor]
