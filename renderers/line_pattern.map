@@ -1,0 +1,26 @@
+map
+
+imagetype png
+size 400 300
+extent -166.245673 -55.551347 174.019748 53.883753
+shapepath "../misc/data"
+fontset "../misc/fonts.lst"
+symbolset "symbolset"
+
+
+layer
+    type line
+    data "testlines"
+    status default
+    name "lines"
+    class
+        style
+            color 0 0 255
+            width 3
+            linecap butt
+            pattern 12 6 6 6 end
+        end
+    end
+end
+
+end

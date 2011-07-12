@@ -1,0 +1,36 @@
+#
+# Simple test of WMS client support.
+#
+# REQUIRES: SUPPORTS=WMS_CLIENT
+#
+MAP
+
+NAME TEST
+STATUS ON
+SIZE 360 145
+EXTENT -180 -60 180 85
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png
+
+WEB
+  IMAGEPATH "./tmp/"
+END
+
+LAYER
+  NAME "pop"
+  TYPE RASTER
+  STATUS DEFAULT
+  DEBUG 1
+  CONNECTION "http://sedac.ciesin.columbia.edu/mapserver/map/GPWv3?"
+  CONNECTIONTYPE WMS
+  METADATA
+    "wms_srs"             "EPSG:4326"
+    "wms_name"            "GPWv3_1990_Pop_Density_tif"
+    "wms_server_version"  "1.1.1"
+    "wms_format"          "image/gif"
+  END
+END
+
+END # of map file
+
