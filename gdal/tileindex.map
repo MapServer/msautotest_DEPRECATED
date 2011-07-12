@@ -1,0 +1,36 @@
+#
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 0 0 80 60
+IMAGECOLOR 255 255 0
+
+PROJECTION
+  "+proj=latlong +datum=WGS84" 
+END
+
+IMAGETYPE png8_t
+
+OUTPUTFORMAT
+  NAME png8_t
+  DRIVER "GD/PNG"
+  EXTENSION "png"
+  MIMETYPE "image/png"
+  IMAGEMODE PC256
+  TRANSPARENT OFF
+END
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DUMP TRUE
+  TEMPLATE "fake.html"
+  TILEINDEX "data/tile_index.shp"
+  TILEITEM "location"
+  PROJECTION
+    "+proj=latlong +datum=WGS84" 
+  END
+END
+
+END # of map file

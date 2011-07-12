@@ -1,0 +1,25 @@
+#
+# Tests support for getting image extents from OWS extents metadata.
+#
+
+#
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 1000 1000 1400 1300
+IMAGECOLOR 255 255 0
+
+IMAGETYPE png
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DATA data/grey_raw.tif
+  METADATA
+    "ows_extent" "1000 1000 1400 1300"
+  END
+END
+
+END # of map file
+
