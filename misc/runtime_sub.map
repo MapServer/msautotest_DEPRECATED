@@ -84,8 +84,10 @@ MAP
     STATUS OFF
     DATA '../query/data/%name5%'
     TYPE POLYGON
-    METADATA
+    VALIDATION
       'default_name5' 'indx_q100kpy4'
+    END
+    METADATA
       'name5_validation_pattern' 'bdry_counpy2|indx_q100kpy4'
     END
     CLASS
