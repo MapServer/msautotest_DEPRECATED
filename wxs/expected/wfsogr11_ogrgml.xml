@@ -17,10 +17,10 @@ Content-Transfer-Encoding: binary
       <gml:coord><gml:X>2503805.5</gml:X><gml:Y>427872.65625</gml:Y></gml:coord>
     </gml:Box>
   </gml:boundedBy>
-                                                     
+                                                                                                                           
   <gml:featureMember>
     <ogr:popplace fid="F0">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2503805.5,427872.65625,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2503805.5,427872.65625</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>CAGYX</ogr:UNIQUE_KEY>
       <ogr:NAME>Cheticamp</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
@@ -29,7 +29,7 @@ Content-Transfer-Encoding: binary
   </gml:featureMember>
   <gml:featureMember>
     <ogr:popplace fid="F1">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2499190.0,194088.234375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2499190.0,194088.234375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>CBIKA</ogr:UNIQUE_KEY>
       <ogr:NAME>Sheet Harbour</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
@@ -38,7 +38,7 @@ Content-Transfer-Encoding: binary
   </gml:featureMember>
   <gml:featureMember>
     <ogr:popplace fid="F2">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2434957.0,347013.59375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2434957.0,347013.59375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>BACII</ogr:UNIQUE_KEY>
       <ogr:NAME>Souris</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>

@@ -17,10 +17,10 @@ Content-Transfer-Encoding: binary
       <gml:coord><gml:X>2589745.5</gml:X><gml:Y>402556.25</gml:Y></gml:coord>
     </gml:Box>
   </gml:boundedBy>
-                                                        
+                                                                                                                              
   <gml:featureMember>
     <ogr:road fid="F0">
-      <ogr:geometryProperty><gml:LineString><gml:coordinates>2589745.5,402556.25,0 2588416.5,401601.0625,0 2587278.5,400455.71875,0 2585757.5,399880.53125,0 2582523.25,399110.65625,0 2581190.5,399107.1875,0 2579286.75,399102.1875,0 2577761.5,399669.40625,0 2576803.5,401189.875,0</gml:coordinates></gml:LineString></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:LineString><gml:coordinates>2589745.5,402556.25 2588416.5,401601.0625 2587278.5,400455.71875 2585757.5,399880.53125 2582523.25,399110.65625 2581190.5,399107.1875 2579286.75,399102.1875 2577761.5,399669.40625 2576803.5,401189.875</gml:coordinates></gml:LineString></ogr:geometryProperty>
       <ogr:FNODE_>613</ogr:FNODE_>
       <ogr:TNODE_>1511</ogr:TNODE_>
       <ogr:LPOLY_>0</ogr:LPOLY_>

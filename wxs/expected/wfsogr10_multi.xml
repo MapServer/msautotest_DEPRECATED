@@ -17,10 +17,10 @@ Content-Transfer-Encoding: binary
       <gml:coord><gml:X>100</gml:X><gml:Y>100</gml:Y></gml:coord>
     </gml:Box>
   </gml:boundedBy>
-                                                                                      
+                                                                                                                                                            
   <gml:featureMember>
     <ogr:multi fid="F0">
-      <ogr:geometryProperty><gml:MultiPolygon><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>0,0,0 0,10,0 10,0,0 0,0,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>1,1,0 2,2,0 2,1,0 1,1,0</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></gml:polygonMember><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>100,50,0 50,100,0 100,100,0 100,50,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></gml:polygonMember></gml:MultiPolygon></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:MultiPolygon><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>0,0 0,10 10,0 0,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>1,1 2,2 2,1 1,1</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></gml:polygonMember><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>100,50 50,100 100,100 100,50</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></gml:polygonMember></gml:MultiPolygon></ogr:geometryProperty>
       <ogr:ID>4</ogr:ID>
       <ogr:NAME>mp</ogr:NAME>
       <ogr:WKT>MULTIPOLYGON(((0 0,0 10,10 0,0 0),(1 1,2 2,2 1,1 1)),((100 50,50 100,100 100)))</ogr:WKT>
@@ -28,7 +28,7 @@ Content-Transfer-Encoding: binary
   </gml:featureMember>
   <gml:featureMember>
     <ogr:multi fid="F1">
-      <ogr:geometryProperty><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>30,0,0 30,10,0 40,10,0 40,0,0 3,0,0 30,0,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>31,1,0 32,2,0 32,1,0 31,1,0</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>30,0 30,10 40,10 40,0 3,0 30,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>31,1 32,2 32,1 31,1</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></ogr:geometryProperty>
       <ogr:ID>5</ogr:ID>
       <ogr:NAME>poly</ogr:NAME>
       <ogr:WKT>POLYGON((30 0,30 10,40 10,40 0,3 0),(31 1,32 2,32 1,31 1))</ogr:WKT>

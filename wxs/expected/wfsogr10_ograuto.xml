@@ -17,10 +17,10 @@ Content-Transfer-Encoding: binary
       <gml:coord><gml:X>2281604.25</gml:X><gml:Y>340848.9375</gml:Y></gml:coord>
     </gml:Box>
   </gml:boundedBy>
-                                                    
+                                                                                                                          
   <gml:featureMember>
     <ogr:popplace fid="F0">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2281604.25,340848.9375,0</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point><gml:coordinates>2281604.25,340848.9375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>BACMK</ogr:UNIQUE_KEY>
       <ogr:NAME>Tignish</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
