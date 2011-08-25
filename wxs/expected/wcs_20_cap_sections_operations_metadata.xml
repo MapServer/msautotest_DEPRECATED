@@ -44,5 +44,5 @@
       </ows:DCP>
     </ows:Operation>
   </ows:OperationsMetadata>
-  <wcs:ServiceMetadata version="1.0.0"/>
+  <wcs:ServiceMetadata/>
 </wcs:Capabilities>
