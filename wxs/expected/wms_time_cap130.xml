@@ -30,7 +30,6 @@ Content-type: text/xml
       <Format>image/gif</Format>
       <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
-      <Format>image/vnd.wap.wbmp</Format>
       <Format>image/tiff</Format>
       <Format>image/svg+xml</Format>
       <DCPType>
@@ -61,10 +60,9 @@ Content-type: text/xml
     </sld:DescribeLayer>
     <sld:GetLegendGraphic>
       <Format>image/png</Format>
-      <Format>image/gif</Format>
-      <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
-      <Format>image/vnd.wap.wbmp</Format>
+      <Format>image/gif</Format>
+      <Format>image/png; mode=8bit</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/mswms_time?"/></Get>
