@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<Capabilities xmlns="http://www.opengis.net/wcs/1.1" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogc="http://www.opengis.net/ogc" version="1.1.2" updateSequence="2007-10-30T14:23:38Z" xsi:schemaLocation="http://www.opengis.net/wcs/1.1 http://schemas.opengis.net/wcs/1.1/wcsGetCapabilities.xsd http://www.opengis.net/ows/1.1 http://schemas.opengis.net/ows/1.1.0/owsAll.xsd">
+<wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd " version="2.0.0" updateSequence="2007-10-30T14:23:38Z">
   <ows:ServiceIdentification>
     <ows:Title>First Test Service</ows:Title>
     <ows:Abstract>Test Abstract</ows:Abstract>
@@ -8,7 +8,16 @@
       <ows:Keyword>list</ows:Keyword>
     </ows:Keywords>
     <ows:ServiceType codeSpace="OGC">OGC WCS</ows:ServiceType>
-    <ows:ServiceTypeVersion>1.1.2</ows:ServiceTypeVersion>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Profile>http://www.opengis.net/spec/WCS/2.0/conf/core</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_get-kvp/1.0/conf/get-kvp</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_post-xml/1.0/conf/post-xml</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_service-model_crs-predefined/1.0/conf/crs-predefined</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/IMAGECRS</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_encoding_geotiff/1.0/conf/geotiff</ows:Profile>
+    <ows:Profile>http://www.placeholder.com/GML_and_GeoTIFF</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_service-model_scaling+interpolation/1.0/conf/scaling+interpolation</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_service-model_band-subsetting/1.0/conf/band-subsetting</ows:Profile>
     <ows:Fees>NONE</ows:Fees>
     <ows:AccessConstraints>NONE</ows:AccessConstraints>
   </ows:ServiceIdentification>
@@ -43,113 +52,50 @@
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?">
+            <ows:Constraint name="PostEncoding">
+              <ows:AllowedValues>
+                <ows:Value>XML</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Post>
         </ows:HTTP>
       </ows:DCP>
-      <ows:Parameter name="service">
-        <ows:AllowedValues>
-          <ows:Value>WCS</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="version">
-        <ows:AllowedValues>
-          <ows:Value>1.1.2</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
     </ows:Operation>
     <ows:Operation name="DescribeCoverage">
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?">
+            <ows:Constraint name="PostEncoding">
+              <ows:AllowedValues>
+                <ows:Value>XML</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Post>
         </ows:HTTP>
       </ows:DCP>
-      <ows:Parameter name="service">
-        <ows:AllowedValues>
-          <ows:Value>WCS</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="version">
-        <ows:AllowedValues>
-          <ows:Value>1.1.2</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="identifiers">
-        <ows:AllowedValues>
-          <ows:Value>grey</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
     </ows:Operation>
     <ows:Operation name="GetCoverage">
       <ows:DCP>
         <ows:HTTP>
           <ows:Get xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://devgeo.cciw.ca/cgi-bin/mapserv/ecows?">
+            <ows:Constraint name="PostEncoding">
+              <ows:AllowedValues>
+                <ows:Value>XML</ows:Value>
+              </ows:AllowedValues>
+            </ows:Constraint>
+          </ows:Post>
         </ows:HTTP>
       </ows:DCP>
-      <ows:Parameter name="service">
-        <ows:AllowedValues>
-          <ows:Value>WCS</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="version">
-        <ows:AllowedValues>
-          <ows:Value>1.1.2</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="Identifier">
-        <ows:AllowedValues>
-          <ows:Value>grey</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="InterpolationType">
-        <ows:AllowedValues>
-          <ows:Value>NEAREST_NEIGHBOUR</ows:Value>
-          <ows:Value>BILINEAR</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="format">
-        <ows:AllowedValues>
-          <ows:Value>image/tiff</ows:Value>
-          <ows:Value>image/png; mode=8bit</ows:Value>
-          <ows:Value>image/x-aaigrid</ows:Value>
-          <ows:Value>image/png</ows:Value>
-          <ows:Value>image/jpeg</ows:Value>
-          <ows:Value>image/gif</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="store">
-        <ows:AllowedValues>
-          <ows:Value>false</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
-      <ows:Parameter name="GridBaseCRS">
-        <ows:AllowedValues>
-          <ows:Value>urn:ogc:def:crs:epsg::4326</ows:Value>
-        </ows:AllowedValues>
-      </ows:Parameter>
     </ows:Operation>
   </ows:OperationsMetadata>
-  <Contents>
-    <CoverageSummary>
-      <ows:Title>Test description</ows:Title>
-      <ows:Abstract>Category: Image
-Product: IKONOS-2 PAN/MSI
-Acquisition: 1999-10-11 18:47</ows:Abstract>
-      <ows:Keywords>
-        <ows:Keyword>test</ows:Keyword>
-        <ows:Keyword>mapserver</ows:Keyword>
-      </ows:Keywords>
-      <ows:WGS84BoundingBox dimensions="2">
-        <ows:LowerCorner>-121.488743889689 0</ows:LowerCorner>
-        <ows:UpperCorner>-121.485160277178 0.00270582611334856</ows:UpperCorner>
-      </ows:WGS84BoundingBox>
-      <SupportedCRS>urn:ogc:def:crs:EPSG::32611</SupportedCRS>
-      <SupportedCRS>urn:ogc:def:crs:EPSG::4326</SupportedCRS>
-      <SupportedFormat>image/tiff</SupportedFormat>
-      <SupportedFormat>image/png</SupportedFormat>
-      <SupportedFormat>image/x-aaigrid</SupportedFormat>
-      <Identifier>grey</Identifier>
-    </CoverageSummary>
-  </Contents>
-</Capabilities>
+  <wcs:ServiceMetadata/>
+  <wcs:Contents>
+    <wcs:CoverageSummary>
+      <wcs:CoverageId>grey</wcs:CoverageId>
+      <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>
+    </wcs:CoverageSummary>
+  </wcs:Contents>
+</wcs:Capabilities>
