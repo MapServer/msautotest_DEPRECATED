@@ -7,12 +7,12 @@ Content-ID: wcs.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Coverages
      xmlns="http://www.opengis.net/wcs/1.1"
-     xmlns:ows="http://www.opengis.net/ows"
+     xmlns:ows="http://www.opengis.net/ows/1.1"
      xmlns:xlink="http://www.w3.org/1999/xlink"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.opengis.net/ows/1.1 ../owsCoverages.xsd">
   <Coverage>
-    <Reference xlink:href="cid:coverage/out.grd"/>
+    <ows:Reference xlink:href="cid:coverage/out.grd"/>
   </Coverage>
 </Coverages>
 --wcs
