@@ -3,6 +3,7 @@ map
 imagetype png
 size 400 300
 extent -166.245673 -55.551347 174.019748 53.883753
+extent -0.7 -0.1 -0.2 0.4
 shapepath "../misc/data"
 fontset "../misc/fonts.lst"
 symbolset "symbolset"
@@ -10,11 +11,11 @@ symbolset "symbolset"
 
 layer
     type line
-    data "testlines"
+    data "spiral"
     status default
     name "lines"
+    labelitem "label"
     class
-        text "label text very long"
         style
             color 0 0 255
             width 5
@@ -26,12 +27,12 @@ layer
         label
             type truetype
             font "default"
-            size 8
+            size 7
             angle follow
             color 0 0 0
             outlinecolor 255 255 255
             outlinewidth 3
-            MAXOVERLAPANGLE  30
+            MAXOVERLAPANGLE  150
         end
     end
 end
