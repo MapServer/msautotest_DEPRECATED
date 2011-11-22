@@ -104,6 +104,18 @@
 # h- one valid range and one invalid range
 # RUN_PARMS: wms_dimension_extent_multi_range_8.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0.000178,-0.002134,0.003420,0.000314&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=300&STYLES=&LAYERS=lakes_elev_multi_range&STYLES=&elevation=490/500,300/600" > [RESULT_DEVERSION]
 #
+# 6- capabilities
+#
+# RUN_PARMS: wms_dimension_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+#
+# Capabilities 1.3.0
+# RUN_PARMS: wms_dimension_cap130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+#
+# 7 Misc
+# a- empty value: use default
+# RUN_PARMS: wms_dimension_misc_1.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0.000178,-0.002134,0.003420,0.000314&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=300&STYLES=&LAYERS=lakes_elev&elevation=" > [RESULT_DEMIME]
+#
+#
 
 MAP
 NAME wms_dimesion
@@ -124,6 +136,7 @@ WEB
 
 
    METADATA
+     "WMS_ONLINERESOURCE"   "http://localhost/path/to/mswms?"
      "ows_enable_request" "*" 
      "wms_srs"		   "EPSG:4326"
   END
@@ -148,9 +161,12 @@ LAYER
     "wms_dimensionlist" "elevation, text_dimension"
     "wms_elevation_item" "ELEV"
     "wms_elevation_extent" "500, 490, 480"
+    "wms_elevation_units" "meters"
+     "wms_elevation_default" "500"
     
     "wms_text_dimension_item" "text_dimen"
     "wms_text_dimension_extent" "first, second, third"
+    "wms_text_dimension_units" "my_units"
 
   END
   TYPE POLYGON
@@ -180,6 +196,7 @@ LAYER
     "wms_dimensionlist" "elevation"
     "wms_elevation_item" "ELEV"
     "wms_elevation_extent" "490/800"
+    "wms_elevation_units" "meters"
   END
   TYPE POLYGON
   STATUS ON
@@ -206,6 +223,7 @@ LAYER
     "wms_dimensionlist" "elevation"
     "wms_elevation_item" "ELEV"
     "wms_elevation_extent" "480/500,800/900"
+     "wms_elevation_units" "meters"
   END
   TYPE POLYGON
   STATUS ON
