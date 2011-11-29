@@ -399,7 +399,10 @@ def run_tests( argv ):
         for i in range(len(runparms_list)):
             if renderer is not None:
                 (resultbase,resultext) = os.path.splitext(runparms_list[i][0])
-                runparms_list[i] = ("%s.%s%s"%(resultbase,renderer,resultext),runparms_list[i][1])
+                if renderer in ( 'pdf', 'svg', 'gif'):
+                   runparms_list[i] = ("%s.%s"%(resultbase,renderer),runparms_list[i][1])
+                else:
+                   runparms_list[i] = ("%s.%s%s"%(resultbase,renderer,resultext),runparms_list[i][1])
 
         if not has_requires( version_info, requires_list ):
             print('    missing some or all of required components, skip.')

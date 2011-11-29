@@ -54,6 +54,7 @@ if __name__ == '__main__':
         sys.argv.pop(idx)
     
     for renderer in renderers:
+        print( '\n\ntesting renderer %s:\n\n' %(renderer) )
         args = sys.argv[1:]
         args.extend(['-renderer',renderer])
         mstestlib.run_tests( args )
