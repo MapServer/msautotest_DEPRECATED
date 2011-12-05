@@ -39,6 +39,14 @@ symbol
     type pixmap
     image "../misc/data/gdalicon.png"
 end
+
+symbol 
+  name "svgicon"
+  type svg
+  image "../misc/data/alpinehut.svg"
+end
+
+
 symbol
     name "gdalicongif"
     type pixmap
