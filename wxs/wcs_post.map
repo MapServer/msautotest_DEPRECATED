@@ -1,3 +1,4 @@
+
 #
 # Test WCS.
 #
@@ -7,8 +8,8 @@
 # General tests
 #
 # Exception
-# RUN_PARMS: wcs_post_exception1.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="99"/>[/POST] > [RESULT_DEVERSION]
-# RUN_PARMS: wcs_post_exception2.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="99.0"/>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wcs_post_exception1.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="99"/>[/POST] > [RESULT_DEVERSION] [RESULT_DEMIME]
+# RUN_PARMS: wcs_post_exception2.xml [MAPSERV] -nv [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="99.0"/>[/POST] > [RESULT_DEVERSION] [RESULT_DEMIME]
 #
 # WCS 1.1 POST tests
 #

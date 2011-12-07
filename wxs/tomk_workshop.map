@@ -62,7 +62,7 @@
 
 
 # Generate WCS Capabilities
-# RUN_PARMS: wcs_get_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WCS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION]
+# RUN_PARMS: wcs_get_caps.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=WCS&version=1.0.0&request=GetCapabilities" > [RESULT_DEVERSION] [RESULT_DEMIME]
  
 MAP
 
