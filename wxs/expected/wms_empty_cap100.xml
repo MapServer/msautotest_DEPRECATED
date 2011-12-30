@@ -18,8 +18,8 @@
       <Format><GIF /><PNG /><JPEG /><SVG /></Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="http://localhost/path/to/wms_simple?" />
-          <Post onlineResource="http://localhost/path/to/wms_simple?" />
+          <Get onlineResource="http://localhost/path/to/wms_empty?" />
+          <Post onlineResource="http://localhost/path/to/wms_empty?" />
         </HTTP>
       </DCPType>
     </Map>
@@ -27,8 +27,8 @@
       <Format><WMS_XML /></Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="http://localhost/path/to/wms_simple?" />
-          <Post onlineResource="http://localhost/path/to/wms_simple?" />
+          <Get onlineResource="http://localhost/path/to/wms_empty?" />
+          <Post onlineResource="http://localhost/path/to/wms_empty?" />
         </HTTP>
       </DCPType>
     </Capabilities>
@@ -36,8 +36,8 @@
       <Format><MIME /><GML.1 /></Format>
       <DCPType>
         <HTTP>
-          <Get onlineResource="http://localhost/path/to/wms_simple?" />
-          <Post onlineResource="http://localhost/path/to/wms_simple?" />
+          <Get onlineResource="http://localhost/path/to/wms_empty?" />
+          <Post onlineResource="http://localhost/path/to/wms_empty?" />
         </HTTP>
       </DCPType>
     </FeatureInfo>

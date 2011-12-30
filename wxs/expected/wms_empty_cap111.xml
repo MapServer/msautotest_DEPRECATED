@@ -20,8 +20,8 @@
       <Format>application/vnd.ogc.wms_xml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Post>
         </HTTP>
       </DCPType>
     </GetCapabilities>
@@ -37,8 +37,8 @@
       <Format>application/vnd.google-earth.kmz</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Post>
         </HTTP>
       </DCPType>
     </GetMap>
@@ -47,8 +47,8 @@
       <Format>application/vnd.ogc.gml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Post>
         </HTTP>
       </DCPType>
     </GetFeatureInfo>
@@ -56,8 +56,8 @@
       <Format>text/xml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Post>
         </HTTP>
       </DCPType>
     </DescribeLayer>
@@ -68,8 +68,8 @@
       <Format>image/png; mode=8bit</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Post>
         </HTTP>
       </DCPType>
     </GetLegendGraphic>
@@ -77,8 +77,8 @@
       <Format>text/xml</Format>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Get>
-          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_simple?"/></Post>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/wms_empty?"/></Post>
         </HTTP>
       </DCPType>
     </GetStyles>

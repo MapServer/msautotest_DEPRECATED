@@ -65,8 +65,8 @@
     <ows:Operation name="GetCapabilities">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?">
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?">
             <ows:Constraint name="PostEncoding">
               <ows:AllowedValues>
                 <ows:Value>XML</ows:Value>
@@ -79,8 +79,8 @@
     <ows:Operation name="DescribeCoverage">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?">
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?">
             <ows:Constraint name="PostEncoding">
               <ows:AllowedValues>
                 <ows:Value>XML</ows:Value>
@@ -93,8 +93,8 @@
     <ows:Operation name="GetCoverage">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?">
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?">
             <ows:Constraint name="PostEncoding">
               <ows:AllowedValues>
                 <ows:Value>XML</ows:Value>

@@ -20,36 +20,36 @@
     <GetCapabilities>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?" /></Get>
+          <Get><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?" /></Get>
         </HTTP>
       </DCPType>
       <DCPType>
         <HTTP>
-          <Post><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?" /></Post>
+          <Post><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?" /></Post>
         </HTTP>
       </DCPType>
     </GetCapabilities>
     <DescribeCoverage>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?" /></Get>
+          <Get><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?" /></Get>
         </HTTP>
       </DCPType>
       <DCPType>
         <HTTP>
-          <Post><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?" /></Post>
+          <Post><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?" /></Post>
         </HTTP>
       </DCPType>
     </DescribeCoverage>
     <GetCoverage>
       <DCPType>
         <HTTP>
-          <Get><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?" /></Get>
+          <Get><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?" /></Get>
         </HTTP>
       </DCPType>
       <DCPType>
         <HTTP>
-          <Post><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_simple?" /></Post>
+          <Post><OnlineResource xlink:type="simple" xlink:href="http://localhost/path/to/wcs_empty?" /></Post>
         </HTTP>
       </DCPType>
     </GetCoverage>
