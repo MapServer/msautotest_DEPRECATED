@@ -1,0 +1,31 @@
+#
+# Tests support for getting image extents from OWS extents metadata.
+#
+# REQUIRES: SUPPORTS=WMS_SERVER
+#
+MAP
+
+NAME TEST
+STATUS ON
+SIZE 400 300
+EXTENT 1000.5 1000.5 1399.5 1299.5
+IMAGECOLOR 255 255 0
+
+OUTPUTFORMAT
+  NAME png8_t
+  DRIVER "GDAL/PNG"
+  IMAGEMODE PC256
+END
+
+LAYER
+  NAME grey
+  TYPE raster
+  STATUS default
+  DATA data/grey_raw.tif
+  METADATA
+    "ows_extent" "1000 1000 1400 1300"
+  END
+END
+
+END # of map file
+

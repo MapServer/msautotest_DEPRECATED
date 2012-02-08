@@ -1,0 +1,42 @@
+#
+# vector-textured AGG polygon rendering test.
+#   
+# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+#
+MAP
+
+STATUS ON
+EXTENT 478300 4762880 481650 4765610
+SIZE 400 300
+IMAGETYPE png24
+
+SYMBOL
+  TYPE VECTOR
+  NAME 'tent'
+  FILLED FALSE
+  POINTS
+    0 1
+    0.5 0
+    1 1
+  END
+END
+
+LAYER
+  NAME shppoly
+  TYPE polygon
+  DATA "data/shppoly/poly.shp"
+  STATUS default
+  CLASSITEM "AREA"
+  CLASS
+    STYLE
+      SYMBOL "tent"
+      COLOR 0 255 0
+      GAP 1
+      WIDTH 2
+      SIZE 8
+      ANGLE 38
+    END
+  END
+END
+
+END
