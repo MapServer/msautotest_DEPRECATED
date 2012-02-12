@@ -466,6 +466,11 @@ def run_tests( argv ):
                 
             os.system( command )
 
+            if begin != -1 and end != -1 and begin < end:
+                del os.environ['CONTENT_LENGTH']
+                del os.environ['REQUEST_METHOD']
+                del os.environ['MS_MAPFILE']
+
             if demime:
                 demime_file( 'result/'+out_file )
             if deversion:
