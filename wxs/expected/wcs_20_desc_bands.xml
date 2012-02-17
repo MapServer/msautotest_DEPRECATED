@@ -3,8 +3,8 @@
   <wcs:CoverageDescription gml:id="multi">
     <gml:boundedBy>
       <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="lat long" uomLabels="deg deg" srsDimension="2">
-        <gml:lowerCorner>14.4702712 47.8188382</gml:lowerCorner>
-        <gml:upperCorner>18.0111282 49.8911432</gml:upperCorner>
+        <gml:lowerCorner>47.8188382 14.4702712</gml:lowerCorner>
+        <gml:upperCorner>49.8911432 18.0111282</gml:upperCorner>
       </gml:Envelope>
     </gml:boundedBy>
     <wcs:CoverageId>multi</wcs:CoverageId>
@@ -19,11 +19,11 @@
         <gml:axisLabels>lat long</gml:axisLabels>
         <gml:origin>
           <gml:Point gml:id="grid_origin_multi" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
-            <gml:pos>14.470271 47.818838</gml:pos>
+            <gml:pos>49.891143 14.470271</gml:pos>
           </gml:Point>
         </gml:origin>
+        <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0 -0.033972</gml:offsetVector>
         <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0.033722 0</gml:offsetVector>
-        <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0 0.033972</gml:offsetVector>
       </gml:RectifiedGrid>
     </gml:domainSet>
     <gmlcov:rangeType>
@@ -197,8 +197,8 @@
   <wcs:CoverageDescription gml:id="multi_new">
     <gml:boundedBy>
       <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326" axisLabels="lat long" uomLabels="deg deg" srsDimension="2">
-        <gml:lowerCorner>14.4702712 47.8188382</gml:lowerCorner>
-        <gml:upperCorner>18.0111282 49.8911432</gml:upperCorner>
+        <gml:lowerCorner>47.8188382 14.4702712</gml:lowerCorner>
+        <gml:upperCorner>49.8911432 18.0111282</gml:upperCorner>
       </gml:Envelope>
     </gml:boundedBy>
     <wcs:CoverageId>multi_new</wcs:CoverageId>
@@ -213,11 +213,11 @@
         <gml:axisLabels>lat long</gml:axisLabels>
         <gml:origin>
           <gml:Point gml:id="grid_origin_multi_new" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
-            <gml:pos>14.470271 47.818838</gml:pos>
+            <gml:pos>49.891143 14.470271</gml:pos>
           </gml:Point>
         </gml:origin>
+        <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0 -0.033972</gml:offsetVector>
         <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0.033722 0</gml:offsetVector>
-        <gml:offsetVector srsName="http://www.opengis.net/def/crs/EPSG/0/4326">0 0.033972</gml:offsetVector>
       </gml:RectifiedGrid>
     </gml:domainSet>
     <gmlcov:rangeType>
