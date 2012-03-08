@@ -11,11 +11,11 @@ Content-type: application/vnd.ogc.wms_xml
 <Service>
   <Name>OGC:WMS</Name>
   <Title>Test simple wms</Title>
-        <KeywordList>
-          <Keyword>ogc</Keyword>
-          <Keyword>wms</Keyword>
-          <Keyword>mapserver</Keyword>
-        </KeywordList>
+  <KeywordList>
+      <Keyword>ogc</Keyword>
+      <Keyword>wms</Keyword>
+      <Keyword>mapserver</Keyword>
+  </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>
     <ContactPersonPrimary>
@@ -117,8 +117,8 @@ Content-type: application/vnd.ogc.wms_xml
     <Title>My Layers</Title>
     <Abstract>These are my layers</Abstract>
     <KeywordList>
-     <Keyword>layers</Keyword>
-     <Keyword>list</Keyword>
+        <Keyword>layers</Keyword>
+        <Keyword>list</Keyword>
     </KeywordList>
     <SRS>EPSG:42304</SRS>
     <SRS>EPSG:42101</SRS>

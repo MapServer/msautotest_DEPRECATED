@@ -11,11 +11,11 @@ Content-type: application/vnd.ogc.wms_xml
 <Service>
   <Name>OGC:WMS</Name>
   <Title>Test simple wms</Title>
-        <KeywordList>
-          <Keyword>ogc</Keyword>
-          <Keyword>wms</Keyword>
-          <Keyword>mapserver</Keyword>
-        </KeywordList>
+  <KeywordList>
+      <Keyword>ogc</Keyword>
+      <Keyword>wms</Keyword>
+      <Keyword>mapserver</Keyword>
+  </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>
     <ContactPersonPrimary>
@@ -115,9 +115,9 @@ Content-type: application/vnd.ogc.wms_xml
     <Title>Test simple wms</Title>
     <Abstract>WMS_TEST</Abstract>
     <KeywordList>
-     <Keyword>ogc</Keyword>
-     <Keyword>wms</Keyword>
-     <Keyword>mapserver</Keyword>
+        <Keyword>ogc</Keyword>
+        <Keyword>wms</Keyword>
+        <Keyword>mapserver</Keyword>
     </KeywordList>
     <SRS>EPSG:32611</SRS>
     <SRS>EPSG:42101</SRS>

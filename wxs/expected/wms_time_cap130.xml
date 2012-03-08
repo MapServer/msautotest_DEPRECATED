@@ -106,12 +106,12 @@ Content-type: text/xml
         <Name>pattern4</Name>
         <Title>pattern4</Title>
         <CRS>EPSG:4326</CRS>
-    <EX_GeographicBoundingBox>
-        <westBoundLongitude>-131.02</westBoundLongitude>
-        <eastBoundLongitude>-119.85</eastBoundLongitude>
-        <southBoundLatitude>33.65</southBoundLatitude>
-        <northBoundLatitude>48.39</northBoundLatitude>
-    </EX_GeographicBoundingBox>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-131.02</westBoundLongitude>
+            <eastBoundLongitude>-119.85</eastBoundLongitude>
+            <southBoundLatitude>33.65</southBoundLatitude>
+            <northBoundLatitude>48.39</northBoundLatitude>
+        </EX_GeographicBoundingBox>
         <BoundingBox CRS="EPSG:4326"
                     minx="33.65" miny="-131.02" maxx="48.39" maxy="-119.85" />
         <Dimension name="time" units="ISO8601" nearestValue="0">2004-01-01/2004-02-01</Dimension>

@@ -6,11 +6,11 @@ Content-type: text/xml
 <Service>
   <Name>WMS</Name>
   <Title>Test simple wms</Title>
-        <KeywordList>
-          <Keyword>ogc</Keyword>
-          <Keyword>wms</Keyword>
-          <Keyword>mapserver</Keyword>
-        </KeywordList>
+  <KeywordList>
+      <Keyword>ogc</Keyword>
+      <Keyword>wms</Keyword>
+      <Keyword>mapserver</Keyword>
+  </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>
     <ContactPersonPrimary>
@@ -114,8 +114,8 @@ Content-type: text/xml
     <Title>My Layers</Title>
     <Abstract>These are my layers</Abstract>
     <KeywordList>
-     <Keyword>layers</Keyword>
-     <Keyword>list</Keyword>
+        <Keyword>layers</Keyword>
+        <Keyword>list</Keyword>
     </KeywordList>
     <CRS>EPSG:42304</CRS>
     <CRS>EPSG:42101</CRS>
@@ -133,12 +133,12 @@ Content-type: text/xml
         <Name>road</Name>
         <Title>road</Title>
         <CRS>EPSG:43204</CRS>
-    <EX_GeographicBoundingBox>
-        <westBoundLongitude>-66.6333</westBoundLongitude>
-        <eastBoundLongitude>-59.2921</eastBoundLongitude>
-        <southBoundLatitude>42.3821</southBoundLatitude>
-        <northBoundLatitude>48.2955</northBoundLatitude>
-    </EX_GeographicBoundingBox>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-66.6333</westBoundLongitude>
+            <eastBoundLongitude>-59.2921</eastBoundLongitude>
+            <southBoundLatitude>42.3821</southBoundLatitude>
+            <northBoundLatitude>48.2955</northBoundLatitude>
+        </EX_GeographicBoundingBox>
         <BoundingBox CRS="EPSG:43204"
                     minx="2.25898e+06" miny="-70747.9" maxx="2.61535e+06" maxy="495481" />
         <Style>
