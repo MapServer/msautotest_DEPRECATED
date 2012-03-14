@@ -14,7 +14,6 @@ IMAGETYPE png24
 symbolset "symbolset"
 imagecolor 255 200 0
 CONFIG MS_ERRORFILE "stderr"
-DEBUG ON
 
 LAYER
   NAME "symbol"

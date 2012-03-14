@@ -15,7 +15,6 @@ symbolset "symbolset"
 shapepath "../misc/data"
 
 CONFIG MS_ERRORFILE "stderr"
-DEBUG ON
 
 LAYER
   NAME "world"

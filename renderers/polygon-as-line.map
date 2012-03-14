@@ -17,7 +17,6 @@ imagecolor 255 255 0
 CONFIG MS_ERRORFILE "stderr"
 
 
-DEBUG ON
 
 SYMBOL
     name "hatch"

@@ -23,7 +23,6 @@ symbol
 end
 
 LAYER
- DEBUG 5
  NAME Test
  TYPE annotation
  STATUS DEFAULT
@@ -65,7 +64,6 @@ END
 
 
 LAYER
-   DEBUG 5
    NAME Test
    TYPE point
    STATUS DEFAULT

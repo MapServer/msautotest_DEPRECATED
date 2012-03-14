@@ -17,7 +17,6 @@ shapepath "data"
 CONFIG MS_ERRORFILE "stderr"
 
 
-DEBUG ON
 
 LAYER
   NAME "mask"

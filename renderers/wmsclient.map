@@ -21,7 +21,6 @@ LAYER
   NAME "pop"
   TYPE RASTER
   STATUS DEFAULT
-  DEBUG 1
   CONNECTION "http://sedac.ciesin.columbia.edu/mapserver/map/GPWv3?"
   CONNECTIONTYPE WMS
   METADATA
