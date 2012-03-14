@@ -193,7 +193,7 @@ layer
         end
     end
     feature
-        points 150 50 end
+        points 150 200 end
         text "label ll"
     end
 end
@@ -442,11 +442,11 @@ layer
             end
             color 0 0 0
             position ll
-            angle 220
+            angle 30
         end
     end
     feature
-        points 350 50 end
+        points 330 40 end
         text "label ll"
     end
 end
