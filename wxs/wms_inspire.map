@@ -5,15 +5,22 @@
 #
 # REQUIRES: INPUT=GDAL OUTPUT=PNG SUPPORTS=WMS
 #
-# Tests for INSPIRE View Service using WMS 1.3.0
+# Tests for INSPIRE View Service using WMS 1.1.1 & 1.3.0
 # scenario 1 - reference to external inspire service metadata
 #
-# Capabilities Default
+# Capabilities 1.3.0 Default
 # RUN_PARMS: wms_inspire_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION] [RESULT_DEMIME]
-# Capabilities German
+# Capabilities 1.3.0 German
 # RUN_PARMS: wms_inspire_cap_ger.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANGUAGE=ger" > [RESULT_DEVERSION] [RESULT_DEMIME]
-# Capabilities English
+# Capabilities 1.3.0 English
 # RUN_PARMS: wms_inspire_cap_eng.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&LANGUAGE=eng" > [RESULT_DEVERSION] [RESULT_DEMIME]
+#
+# Capabilities 1.1.1 Default
+# RUN_PARMS: wms_inspire_cap_111.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities" > [RESULT_DEVERSION] [RESULT_DEMIME]
+# Capabilities 1.1.1 German
+# RUN_PARMS: wms_inspire_cap_111_ger.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&LANGUAGE=ger" > [RESULT_DEVERSION] [RESULT_DEMIME]
+# Capabilities 1.1.1 English
+# RUN_PARMS: wms_inspire_cap_111_eng.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities&LANGUAGE=eng" > [RESULT_DEVERSION] [RESULT_DEMIME]
 #
 #
 # GetMap all
@@ -207,6 +214,8 @@ MAP
 
             "wms_enable_request" "*"
             "wms_sld_enabled" "false"
+            
+            "wms_encoding" "UTF-8"
         END
     END
 

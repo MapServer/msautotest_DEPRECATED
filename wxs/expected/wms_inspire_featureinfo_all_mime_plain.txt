@@ -1,4 +1,4 @@
-Content-type: text/plain
+Content-type: text/plain; charset=UTF-8
 
 GetFeatureInfo results:
 
