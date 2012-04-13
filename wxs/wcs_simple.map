@@ -165,6 +165,9 @@
 # GetCoverage 2.0 reproject to EPSG 4326
 # RUN_PARMS: wcs_20_getcov_reproj.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=long,http://www.opengis.net/def/crs/EPSG/0/4326(-121.488,-121.487)&SUBSET=lat,http://www.opengis.net/def/crs/EPSG/0/4326(0,0.001)" > [RESULT_DEMIME]
 #
+# GetCoverage 2.0 reproject to EPSG 4326 gml+image/tiff
+# RUN_PARMS: wcs_20_getcov_reproj.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&MEDIATYPE=multipart/mixed&OUTPUTCRS=EPSG:4326" > [RESULT_DEMIME]
+#
 # GetCoverage 2.0 scaling
 # RUN_PARMS: wcs_20_getcov_scaling_size_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(10)&SIZE=y(20)" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_getcov_scaling_resolution_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(20)&RESOLUTION=y(20)" > [RESULT_DEMIME]
