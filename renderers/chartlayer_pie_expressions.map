@@ -90,7 +90,7 @@ LAYER
   END
   FEATURE
     POINTS 300 50 END
-    ITEMS "type2,type4"
+    ITEMS "typea2,typea4,typea1"
   END
   FEATURE
     POINTS 300 100 END
