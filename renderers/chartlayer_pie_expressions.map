@@ -1,0 +1,114 @@
+#
+# Test on chart creation
+#
+#
+MAP
+
+NAME DEMO
+STATUS ON
+SIZE 400 300
+EXTENT 0 0 400 300
+UNITS METERS
+SHAPEPATH "../misc/data"
+IMAGECOLOR 255 255 255
+IMAGETYPE png
+
+
+LAYER
+  NAME charts
+  PROCESSING "ITEMS=types"
+  TYPE CHART
+  STATUS DEFAULT
+  PROCESSING "CHART_TYPE=pie"
+  PROCESSING "CHART_SIZE=30"
+  CLASSITEM "types"
+
+  CLASS
+    NAME "type1"
+    EXPRESSION /(^|,)type1($|,)/ 
+    STYLE
+      SIZE 1
+      COLOR 127 201 127
+    END
+  END
+  CLASS
+    NAME "type2"
+    EXPRESSION /(^|,)type2($|,)/ 
+    STYLE
+      SIZE 1
+      COLOR 190 174 212
+    END
+  END
+  CLASS
+    NAME "type3"
+    EXPRESSION /(^|,)type3($|,)/ 
+    STYLE
+      SIZE 1
+      COLOR 253 192 134
+    END
+  END
+  CLASS
+    NAME "type4"
+    EXPRESSION /(^|,)type4($|,)/ 
+    STYLE
+      SIZE 1
+      COLOR 255 255 153
+    END
+  END
+
+  FEATURE
+    POINTS 100 50 END
+    ITEMS "type1"
+  END
+  FEATURE
+    POINTS 100 100 END
+    ITEMS "type1,type3"
+  END
+  FEATURE
+    POINTS 100 150 END
+    ITEMS "type1,type2,type3"
+  END
+  FEATURE
+    POINTS 100 200 END
+    ITEMS "type1,type2,type3,type4"
+  END
+  FEATURE
+    POINTS 200 50 END
+    ITEMS "type2,type4"
+  END
+  FEATURE
+    POINTS 200 100 END
+    ITEMS "type2,type3,type4"
+  END
+  FEATURE
+    POINTS 200 150 END
+    ITEMS "type2,foobar"
+  END
+  FEATURE
+    POINTS 200 200 END
+    ITEMS "type2,type3,type1"
+  END
+  FEATURE
+    POINTS 300 50 END
+    ITEMS "type2,type4"
+  END
+  FEATURE
+    POINTS 300 100 END
+    ITEMS "type2,type1"
+  END
+  FEATURE
+    POINTS 300 150 END
+    ITEMS "type2,type3,type4"
+  END
+  FEATURE
+    POINTS 300 200 END
+    ITEMS "type4,type1"
+  END
+
+
+ END
+
+
+
+
+END # Map File
