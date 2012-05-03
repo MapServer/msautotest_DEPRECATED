@@ -26,5 +26,5 @@
       <ows:Role>staff</ows:Role>
     </ows:ServiceContact>
   </ows:ServiceProvider>
-  <wcs:ServiceMetadata version="1.0.0"/>
+  <wcs:ServiceMetadata/>
 </wcs:Capabilities>
