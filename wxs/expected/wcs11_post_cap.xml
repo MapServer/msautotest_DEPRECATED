@@ -140,6 +140,7 @@ Acquisition: 1999-10-11 18:47</ows:Abstract>
         <ows:Keyword>test</ows:Keyword>
         <ows:Keyword>mapserver</ows:Keyword>
       </ows:Keywords>
+      <ows:Metadata xlink:type="simple" xlink:href="http://www.gdal.org/metadata_test_link.html"/>
       <ows:WGS84BoundingBox dimensions="2">
         <ows:LowerCorner>-121.48874388968 0</ows:LowerCorner>
         <ows:UpperCorner>-121.48516027717 0.0027058261133485</ows:UpperCorner>
