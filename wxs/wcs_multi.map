@@ -16,6 +16,8 @@
 #
 # RUN_PARMS: wcs_20_getcov_bands_name_new_reproject.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=multi_new&FORMAT=image/tiff&mediatype=multipart/mixed&RANGESUBSET=Band9,Band5,Band1&OUTPUTCRS=EPSG:3857" > [RESULT_DEMIME]
 #
+# RUN_PARMS: wcs_20_getcov_native_format.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=multi_new" > [RESULT_DEMIME]
+#
 # POST:
 # RUN_PARMS: wcs_20_post_bands_index.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:rangeSubset><wcs:band>1</wcs:band><wcs:band>5</wcs:band><wcs:band>9</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_bands_name.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>multi</wcs:CoverageID><wcs:rangeSubset><wcs:band>Band9</wcs:band><wcs:band>Band5</wcs:band><wcs:band>Band1</wcs:band></wcs:rangeSubset></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
@@ -100,7 +102,7 @@ LAYER
 
    "wcs_label" "Test label"
    "wcs_formats" "GEOTIFF_8"
-   "wcs_nativeformat" "GeoTIFF"
+   "wcs_native_format" "image/tiff"
    "wcs_description" "Test description"
    "wcs_metadatalink_href" "http://www.gdal.org/metadata_test_link.html"
    "wcs_keywordlist" "test,mapserver"
@@ -133,7 +135,7 @@ LAYER
 
    "wcs_label" "New test label"
    "wcs_formats" "GEOTIFF_8"
-   "wcs_nativeformat" "GeoTIFF"
+   "wcs_native_format" "image/tiff"
    "wcs_description" "New test description"
    "wcs_metadatalink_href" "http://www.gdal.org/metadata_test_link.html"
    "wcs_keywordlist" "test,mapserver"

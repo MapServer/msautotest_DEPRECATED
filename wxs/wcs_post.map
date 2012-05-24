@@ -115,7 +115,7 @@
 #
 # MissingParameterValue
 # RUN_PARMS: wcs_20_post_exception_missingparam_coverage.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
-# RUN_PARMS: wcs_20_post_exception_missingparam_format.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:CoverageID>grey</wcs:CoverageID></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_post_exception_missingparam_format_no_native.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:CoverageID>grey</wcs:CoverageID></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 #
 # TooManyParameterValues
 # RUN_PARMS: wcs_20_post_exception_toomanyparams_coverage.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.0"><wcs:Format>image/tiff</wcs:Format><wcs:CoverageID>grey</wcs:CoverageID><wcs:CoverageID>grey2</wcs:CoverageID></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
