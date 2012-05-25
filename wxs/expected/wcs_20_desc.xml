@@ -59,6 +59,7 @@
         <wcs:SupportedFormat>image/png</wcs:SupportedFormat>
         <wcs:SupportedFormat>image/x-aaigrid</wcs:SupportedFormat>
       </wcs:SupportedFormats>
+      <wcs:nativeFormat>image/tiff</wcs:nativeFormat>
     </wcs:ServiceParameters>
   </wcs:CoverageDescription>
 </wcs:CoverageDescriptions>
