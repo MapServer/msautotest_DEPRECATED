@@ -309,6 +309,7 @@ LAYER
    "wcs_bandcount" "1"
    "wcs_formats" "GEOTIFF_BYTE PNG AAIGRID"
    "wcs_nativeformat" "GeoTIFF"
+   "wcs_native_format" "image/tiff"
    "wcs_description" "Test description"
    "wcs_metadatalink_href" "http://www.gdal.org/metadata_test_link.html"
    "wcs_keywordlist" "test,mapserver"
