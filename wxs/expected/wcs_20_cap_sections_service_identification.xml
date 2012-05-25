@@ -21,5 +21,4 @@
     <ows:Fees>NONE</ows:Fees>
     <ows:AccessConstraints>NONE</ows:AccessConstraints>
   </ows:ServiceIdentification>
-  <wcs:ServiceMetadata/>
 </wcs:Capabilities>

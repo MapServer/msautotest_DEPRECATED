@@ -109,7 +109,7 @@
 #
 # GetCapabilities 2.0 Sections
 # RUN_PARMS: wcs_20_cap_sections_all.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=All" > [RESULT_DEMIME]
-# RUN_PARMS: wcs_20_cap_sections_all_specific.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceIdentification,ServiceProvider,OperationsMetadata,Contents" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_sections_all_specific.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceIdentification,ServiceProvider,OperationsMetadata,ServiceMetadata,Contents" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_cap_sections_service_identification.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceIdentification" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_cap_sections_service_provider.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=ServiceProvider" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_cap_sections_operations_metadata.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities&SECTIONS=OperationsMetadata" > [RESULT_DEMIME]
