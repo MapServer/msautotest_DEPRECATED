@@ -19,6 +19,18 @@ class LineObjTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * get() is an alias of point()
+     */
+    public function testSetGet()
+    {
+        $point = new pointObj();
+        $point->setXY(5,5);
+        $this->assertEquals(0, $this->line->set(1, $point));
+        $this->assertInstanceOf('pointObj', $replacedPoint = $this->line->get(1));
+        $this->assertEquals(5, $replacedPoint->x);
+    }
+
+    /**
      * @expectedException           MapScriptException
      * @expectedExceptionMessage    Property 'numpoints' is read-only
      */
