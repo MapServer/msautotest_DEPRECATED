@@ -15,6 +15,11 @@ MAP
        PROJECTION
           "init=epsg:26915"
        END
+       WEB
+        METADATA
+            author "me!"
+        END
+       END
 
        LAYER
                DEBUG 5

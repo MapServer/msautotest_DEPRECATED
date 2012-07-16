@@ -6,8 +6,8 @@ class LayerObjTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $map = new mapObj('maps/filters.map');
-        $this->layer = $map->getLayer(4);
+        $map = new mapObj('maps/filter.map');
+        $this->layer = $map->getLayer(0);
     }
 
     public function testqueryByFilter()
