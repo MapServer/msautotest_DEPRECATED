@@ -77,7 +77,6 @@ SHAPEPATH data
 SYMBOLSET etc/symbols.sym
 FONTSET etc/fonts.txt
 DEBUG 5
-CONFIG "MS_ERRORFILE" "log/ms_wms.txt";
 
 OUTPUTFORMAT
   NAME GDPNG

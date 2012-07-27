@@ -42,7 +42,6 @@ class MapObjTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(0, $this->map->setConfigOption('DEBUG', '5'));
         $this->assertEquals('5',$this->map->getConfigOption('DEBUG'));
-        $this->assertEquals('log/ms_error.txt', $this->map->getConfigOption('MS_ERRORFILE'));
     }
 
     public function testSaveQueryAsGML()

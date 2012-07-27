@@ -11,7 +11,6 @@ MAP
        SIZE 400 300
        IMAGECOLOR 200 255 255
        DEBUG 5
-       CONFIG "MS_ERRORFILE" "log/ms_error.txt"
        PROJECTION
           "init=epsg:26915"
        END

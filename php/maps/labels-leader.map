@@ -7,7 +7,6 @@ shapepath "data/"
 fontset "fonts.lst"
 symbolset "symbolset"
 DEBUG 5
-CONFIG "MS_ERRORFILE" "log/ms_error.txt"
 
 layer
     type point

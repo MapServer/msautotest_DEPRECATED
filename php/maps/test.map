@@ -9,7 +9,6 @@ MAP
     IMAGECOLOR 255 255 255
    #FONTSET "fonts.lst"
     DEBUG 5
-    CONFIG "MS_ERRORFILE" "log/ms_error.txt"
 
     #
     # Start of web interface definition

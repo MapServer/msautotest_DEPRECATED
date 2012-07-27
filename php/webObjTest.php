@@ -19,7 +19,7 @@ class WebObjTest extends PHPUnit_Framework_TestCase
      * @expectedException           MapScriptException
      * @expectedExceptionMessage    Property 'validation' is an object
      */
-    public function test__setVaidation()
+    public function test__setValidation()
     {
         $this->web->validation = 'this is an object, I swear';
     }
