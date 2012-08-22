@@ -26,5 +26,4 @@
       <ows:Role>staff</ows:Role>
     </ows:ServiceContact>
   </ows:ServiceProvider>
-  <wcs:ServiceMetadata/>
 </wcs:Capabilities>
