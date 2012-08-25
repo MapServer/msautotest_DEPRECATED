@@ -1,0 +1,33 @@
+map
+
+imagetype png
+size 400 300
+extent -166.245673 -55.551347 174.019748 53.883753
+shapepath "../misc/data"
+fontset "../misc/fonts.lst"
+symbolset "symbolset"
+
+SYMBOL
+  NAME "7"
+  TYPE PIXMAP
+  image "../misc/data/gdalicon.png"
+END
+
+layer
+    type line
+    data "testlines"
+    status default
+    name "lines"
+    class
+        style
+          width 1
+          color 0 0 0
+        end
+        style
+            symbol "7"
+            gap 50
+        end
+    end
+end
+
+end
