@@ -113,11 +113,11 @@ def demime_file( filename ):
         data = str(data, 'iso-8859-1')
 
     for i in range(len(data)-1):
-        if data[i] == '\n' and data[i+1] == '\n':
+        if data[i] == '\r' and data[i+1] == '\n' and data[i+2] == '\r' and data[i+3] == '\n':
             if version_info >= (3,0,0):
-                open(filename,'wb').write(bytes(data[i+2:], 'iso-8859-1'))
+                open(filename,'wb').write(bytes(data[i+4:], 'iso-8859-1'))
             else:
-                open(filename,'wb').write(data[i+2:])
+                open(filename,'wb').write(data[i+4:])
             return
     return
 
