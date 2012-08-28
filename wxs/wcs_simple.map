@@ -203,7 +203,6 @@
 # MissingParameterValue
 # RUN_PARMS: wcs_20_exception_missingparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_missingparam_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/png" > [RESULT_DEMIME]
-# RUN_PARMS: wcs_20_exception_missingparam_format_no_native.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&COVERAGEID=grey" > [RESULT_DEMIME]
 #
 # TooManyParameterValues
 # RUN_PARMS: wcs_20_exception_toomanyparams_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=a,b,c" > [RESULT_DEMIME]
