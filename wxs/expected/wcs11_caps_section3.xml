@@ -115,7 +115,6 @@
           <ows:Value>image/x-aaigrid</ows:Value>
           <ows:Value>image/png</ows:Value>
           <ows:Value>image/jpeg</ows:Value>
-          <ows:Value>image/gif</ows:Value>
         </ows:AllowedValues>
       </ows:Parameter>
       <ows:Parameter name="store">
