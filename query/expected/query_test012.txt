@@ -1,4 +1,2 @@
-Content-type: text/html
-
 St. Louis:STLO 
 
