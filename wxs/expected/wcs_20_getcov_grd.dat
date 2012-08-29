@@ -1,4 +1,4 @@
-Content-Type: multipart/mixed; boundary=wcs
+Content-Type: multipart/related; boundary=wcs
 
 --wcs
 Content-Type: image/x-aaigrid
