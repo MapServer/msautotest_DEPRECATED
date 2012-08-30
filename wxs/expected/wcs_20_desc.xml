@@ -49,11 +49,6 @@
     </gmlcov:rangeType>
     <wcs:ServiceParameters>
       <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>
-      <wcs:SupportedCRSs>
-        <wcs:SupportedCRS>http://www.opengis.net/def/crs/EPSG/0/32611</wcs:SupportedCRS>
-        <wcs:SupportedCRS>http://www.opengis.net/def/crs/EPSG/0/4326</wcs:SupportedCRS>
-        <wcs:NativeCRS>http://www.opengis.net/def/crs/EPSG/0/32611</wcs:NativeCRS>
-      </wcs:SupportedCRSs>
       <wcs:nativeFormat>image/tiff</wcs:nativeFormat>
     </wcs:ServiceParameters>
   </wcs:CoverageDescription>
