@@ -53,8 +53,6 @@
       <Format>application/x-pdf</Format>
       <Format>image/svg+xml</Format>
       <Format>image/tiff</Format>
-      <Format>application/vnd.google-earth.kml+xml</Format>
-      <Format>application/vnd.google-earth.kmz</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/dienste/inspirevs_test?language=ger&amp;"/></Get>
@@ -113,7 +111,6 @@
     <SRS>EPSG:3045</SRS>
     <SRS>EPSG:3046</SRS>
     <SRS>EPSG:3047</SRS>
-    <SRS>CRS:84</SRS>
     <LatLonBoundingBox minx="12.6101" miny="53.4177" maxx="12.7593" maxy="53.4404" />
     <BoundingBox SRS="EPSG:25833"
                 minx="341250" miny="5.9214e+06" maxx="351100" maxy="5.9236e+06" />
@@ -145,8 +142,6 @@
                 minx="-56946.5" miny="5.95075e+06" maxx="-46911.6" maxy="5.95378e+06" />
     <BoundingBox SRS="EPSG:3047"
                 minx="-453292" miny="6.01406e+06" maxx="-443103" maxy="6.01793e+06" />
-    <BoundingBox SRS="CRS:84"
-                minx="12.6101" miny="53.4177" maxx="12.7593" maxy="53.4404" />
     <AuthorityURL name="GeoPortal.MV">
       <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
     </AuthorityURL>
@@ -202,8 +197,6 @@
                     minx="-56964" miny="5.9505e+06" maxx="-46904.9" maxy="5.95405e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-453304" miny="6.01381e+06" maxx="-443100" maxy="6.01819e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6108" miny="53.4183" maxx="12.7584" maxy="53.44" />
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.CommonTransportElements.TransportArea</Name>
         <Title>Generischer Verkehrsbereich</Title>
@@ -243,8 +236,6 @@
                     minx="-56895.1" miny="5.95081e+06" maxx="-46971.9" maxy="5.95374e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-453236" miny="6.01412e+06" maxx="-443166" maxy="6.01789e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6108" miny="53.4183" maxx="12.7584" maxy="53.44" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -309,8 +300,6 @@
                     minx="-56889.2" miny="5.95083e+06" maxx="-46974.7" maxy="5.95373e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-453228" miny="6.01414e+06" maxx="-443170" maxy="6.01788e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6109" miny="53.4184" maxx="12.7583" maxy="53.44" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -375,8 +364,6 @@
                     minx="-56889.2" miny="5.95083e+06" maxx="-46985.9" maxy="5.95351e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-453228" miny="6.01414e+06" maxx="-443201" maxy="6.01765e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.611" miny="53.4184" maxx="12.7585" maxy="53.4379" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -441,8 +428,6 @@
                     minx="-673741" miny="54.1645" maxx="-673741" maxy="54.1865" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-1.36081e+06" miny="55.5537" maxx="-1.36081e+06" maxy="55.5762" />
-        <BoundingBox SRS="CRS:84"
-                    minx="10.5114" miny="0.000481" maxx="10.5114" maxy="0.00048199" />
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.RoadTransportNetwork.RoadLink</Name>
         <Title>Straßensegment</Title>
@@ -482,8 +467,6 @@
                     minx="-55520.7" miny="5.95083e+06" maxx="-47014.5" maxy="5.95315e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-451865" miny="6.01414e+06" maxx="-443250" maxy="6.01717e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6317" miny="53.4188" maxx="12.7583" maxy="53.4357" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -548,8 +531,6 @@
                     minx="-55531.1" miny="5.95082e+06" maxx="-47012.7" maxy="5.95316e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-451876" miny="6.01413e+06" maxx="-443248" maxy="6.01718e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6315" miny="53.4188" maxx="12.7584" maxy="53.4358" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -614,8 +595,6 @@
                     minx="-52915.4" miny="5.95244e+06" maxx="-52469.9" maxy="5.9527e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-449170" miny="6.01621e+06" maxx="-448706" maxy="6.01651e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6695" miny="53.4299" maxx="12.676" maxy="53.432" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -680,8 +659,6 @@
                     minx="-55541.4" miny="5.95081e+06" maxx="-47010.8" maxy="5.95317e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-451887" miny="6.01412e+06" maxx="-443245" maxy="6.0172e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6314" miny="53.4187" maxx="12.7584" maxy="53.4359" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -746,8 +723,6 @@
                     minx="-673741" miny="54.1645" maxx="-673741" maxy="54.1865" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-1.36081e+06" miny="55.5537" maxx="-1.36081e+06" maxy="55.5762" />
-        <BoundingBox SRS="CRS:84"
-                    minx="10.5114" miny="0.000481" maxx="10.5114" maxy="0.00048199" />
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.RailTransportNetwork.RailwayLink</Name>
         <Title>Eisenbahnverbindung</Title>
@@ -787,8 +762,6 @@
                     minx="-56798.9" miny="5.95212e+06" maxx="-49578.9" maxy="5.95373e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-453046" miny="6.01565e+06" maxx="-445765" maxy="6.01788e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6109" miny="53.428" maxx="12.7187" maxy="53.4392" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -853,8 +826,6 @@
                     minx="-52040" miny="5.95237e+06" maxx="-51290.2" maxy="5.95281e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-448295" miny="6.01604e+06" maxx="-447515" maxy="6.01654e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6826" miny="53.4304" maxx="12.6935" maxy="53.434" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -919,8 +890,6 @@
                     minx="-51961.8" miny="5.95244e+06" maxx="-51370.6" maxy="5.95269e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-448211" miny="6.01612e+06" maxx="-447604" maxy="6.01642e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6837" miny="53.431" maxx="12.6924" maxy="53.433" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
@@ -985,8 +954,6 @@
                     minx="-56804" miny="5.95211e+06" maxx="-49578" maxy="5.95374e+06" />
         <BoundingBox SRS="EPSG:3047"
                     minx="-453052" miny="6.01564e+06" maxx="-445763" maxy="6.01789e+06" />
-        <BoundingBox SRS="CRS:84"
-                    minx="12.6108" miny="53.4279" maxx="12.7187" maxy="53.4393" />
         <AuthorityURL name="GeoPortal.MV">
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
         </AuthorityURL>
