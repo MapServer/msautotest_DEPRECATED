@@ -1,7 +1,7 @@
-Content-Type: multipart/mixed; boundary=wcs
+Content-Type: multipart/related; boundary=wcs
 
 --wcs
-Content-type: text/xml
+Content-type: application/gml+xml
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <gmlcov:RectifiedGridCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd " gml:id="grey">
@@ -31,8 +31,8 @@ Content-type: text/xml
   </gml:domainSet>
   <gml:rangeSet>
     <gml:File>
-      <gml:rangeParameters xlink:href="coverage/result.grd" xlink:role="image/x-aaigrid" xlink:arcrole="fileReference"/>
-      <gml:fileReference>coverage/result.grd</gml:fileReference>
+      <gml:rangeParameters xlink:href="cid:coverage/result.grd" xlink:role="image/x-aaigrid" xlink:arcrole="fileReference"/>
+      <gml:fileReference>cid:coverage/result.grd</gml:fileReference>
       <gml:fileStructure/>
       <gml:mimeType>image/x-aaigrid</gml:mimeType>
     </gml:File>
@@ -64,7 +64,7 @@ Content-Type: image/x-aaigrid
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
 Content-ID: coverage/result.grd
-Content-Disposition: attachment; filename=result.grd
+Content-Disposition: INLINE; filename=result.grd
 
 ncols        40
 nrows        30
@@ -106,7 +106,7 @@ Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
 Content-ID: coverage/result.grd.aux.xml
-Content-Disposition: attachment; filename=result.grd.aux.xml
+Content-Disposition: INLINE; filename=result.grd.aux.xml
 
 <PAMDataset>
   <Metadata>
@@ -120,7 +120,7 @@ Content-Type: application/octet-stream
 Content-Description: coverage data
 Content-Transfer-Encoding: binary
 Content-ID: coverage/result.prj
-Content-Disposition: attachment; filename=result.prj
+Content-Disposition: INLINE; filename=result.prj
 
 PROJCS["WGS_1984_UTM_Zone_11N",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-117],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["Meter",1]]
 --wcs--
