@@ -4,10 +4,10 @@
 # REQUIRES: INPUT=POSTGIS
 #
 # Test 1: simple mode=nquery, one layer, rect-based
-# RUN_PARMS: query_postgis_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapext=420000+5120000+582000+5200000&qlayer=bdry_counpy2'  > [RESULT_DEMIME]
+# RUN_PARMS: query_postgis_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapext=420000+5120000+582000+5200000&qlayer=bdry_counpy2' > [RESULT_DEMIME]
 #
 # Test 2: simple mode=nquery, multiple layers, rect-based
-# RUN_PARMS: query_postgis_test002.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapext=420000+5120000+582000+5200000&layers=all'  > [RESULT_DEMIME]
+# RUN_PARMS: query_postgis_test002.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapext=420000+5120000+582000+5200000&layers=all' > [RESULT_DEMIME]
 # 
 # Test 3: simple mode=nquery, one layer, point-based
 # RUN_PARMS: query_postgis_test003.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=query&qlayer=bdry_counpy2&mapxy=467000+5259000' > [RESULT_DEMIME]
@@ -35,6 +35,9 @@
 #
 # Test 11: simple mode=nquery w/shape as WKT, multiple layers
 # RUN_PARMS: query_postgis_test011.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=nquery&mapshape=POLYGON((468000+5185000,510700+5250000,520500+5111000,468000+5185000))&layers=all' > [RESULT_DEMIME]
+#
+# Test 12: simple mode=indexquery, one layer, index query
+# RUN_PARMS: query_postgis_test012.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=indexquery&mapext=420000+5120000+582000+5200000&qlayer=bdry_counpy2&shapeindex=5' > [RESULT_DEMIME]
 #
 MAP
   NAME 'query_postgis'
