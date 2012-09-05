@@ -146,8 +146,8 @@
       <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
     </AuthorityURL>
     <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-    <MetadataURL type="ISO19115:2003">
-      <Format>application/vnd.ogc.csw.capabilities.response_xml</Format>
+    <MetadataURL type="TC211">
+      <Format>text/xml</Format>
       <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=4d5f1402-5b2b-43ec-949f-92d125179318"/>
     </MetadataURL>
     <Style>
@@ -246,11 +246,8 @@
                     minx="5.95081e+06" miny="-56895.1" maxx="5.95374e+06" maxy="-46971.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01412e+06" miny="-453236" maxx="6.01789e+06" maxy="-443166" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -315,11 +312,8 @@
                     minx="5.95083e+06" miny="-56889.2" maxx="5.95373e+06" maxy="-46974.7" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01414e+06" miny="-453228" maxx="6.01788e+06" maxy="-443170" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -384,11 +378,8 @@
                     minx="5.95083e+06" miny="-56889.2" maxx="5.95351e+06" maxy="-46985.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01414e+06" miny="-453228" maxx="6.01765e+06" maxy="-443201" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -498,11 +489,8 @@
                     minx="5.95083e+06" miny="-55520.7" maxx="5.95315e+06" maxy="-47014.5" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01414e+06" miny="-451865" maxx="6.01717e+06" maxy="-443250" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -567,11 +555,8 @@
                     minx="5.95082e+06" miny="-55531.1" maxx="5.95316e+06" maxy="-47012.7" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01413e+06" miny="-451876" maxx="6.01718e+06" maxy="-443248" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -636,11 +621,8 @@
                     minx="5.95244e+06" miny="-52915.4" maxx="5.9527e+06" maxy="-52469.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01621e+06" miny="-449170" maxx="6.01651e+06" maxy="-448706" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -705,11 +687,8 @@
                     minx="5.95081e+06" miny="-55541.4" maxx="5.95317e+06" maxy="-47010.8" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01412e+06" miny="-451887" maxx="6.0172e+06" maxy="-443245" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -819,11 +798,8 @@
                     minx="5.95212e+06" miny="-56798.9" maxx="5.95373e+06" maxy="-49578.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01565e+06" miny="-453046" maxx="6.01788e+06" maxy="-445765" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -888,11 +864,8 @@
                     minx="5.95237e+06" miny="-52040" maxx="5.95281e+06" maxy="-51290.2" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01604e+06" miny="-448295" maxx="6.01654e+06" maxy="-447515" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -957,11 +930,8 @@
                     minx="5.95244e+06" miny="-51961.8" maxx="5.95269e+06" maxy="-51370.6" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01612e+06" miny="-448211" maxx="6.01642e+06" maxy="-447604" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
@@ -1026,11 +996,8 @@
                     minx="5.95211e+06" miny="-56804" maxx="5.95374e+06" maxy="-49578" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01564e+06" miny="-453052" maxx="6.01789e+06" maxy="-445763" />
-        <AuthorityURL name="GeoPortal.MV">
-          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/geomis/"/>
-        </AuthorityURL>
         <Identifier authority="GeoPortal.MV">http://www.geodaten-mv.de/geomis/#3efef5cf-8643-4e72-92db-6ca4554c12c7</Identifier>
-        <MetadataURL type="ISO19115:2003">
+        <MetadataURL type="TC211">
           <Format>text/xml</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
         </MetadataURL>
