@@ -153,7 +153,7 @@
     <Style>
        <Name>inspire_common:DEFAULT</Name>
        <Title>INSPIRE Default Style</Title>
-       <LegendURL width="35" height="5">
+       <LegendURL width="287" height="181">
           <Format>image/png</Format>
           <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/dienste/inspirevs_test?language=eng&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=TN&amp;format=image/png&amp;STYLE=inspire_common:DEFAULT"/>
        </LegendURL>
@@ -412,42 +412,43 @@
         <KeywordList>
             <Keyword>no-keyword here</Keyword>
         </KeywordList>
+        <CRS>EPSG:4326</CRS>
         <EX_GeographicBoundingBox>
-            <westBoundLongitude>10.5114</westBoundLongitude>
-            <eastBoundLongitude>10.5114</eastBoundLongitude>
-            <southBoundLatitude>0.000481</southBoundLatitude>
-            <northBoundLatitude>0.00048199</northBoundLatitude>
+            <westBoundLongitude>12.6108</westBoundLongitude>
+            <eastBoundLongitude>12.7584</eastBoundLongitude>
+            <southBoundLatitude>53.4183</southBoundLatitude>
+            <northBoundLatitude>53.44</northBoundLatitude>
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="EPSG:25833"
-                    minx="12.6108" miny="53.4183" maxx="12.7584" maxy="53.44" />
+                    minx="341227" miny="5.92115e+06" maxx="351110" maxy="5.92388e+06" />
         <BoundingBox CRS="EPSG:4326"
-                    minx="0.000481" miny="10.5114" maxx="0.00048199" maxy="10.5114" />
+                    minx="53.4183" miny="12.6108" maxx="53.44" maxy="12.7584" />
         <BoundingBox CRS="EPSG:4269"
-                    minx="0.000481" miny="10.5114" maxx="0.00048199" maxy="10.5114" />
+                    minx="53.4183" miny="12.6108" maxx="53.44" maxy="12.7584" />
         <BoundingBox CRS="EPSG:3035"
-                    minx="-2.36068e+06" miny="4.38426e+06" maxx="-2.36068e+06" maxy="4.38426e+06" />
+                    minx="3.37095e+06" miny="4.49447e+06" maxx="3.37372e+06" maxy="4.50436e+06" />
         <BoundingBox CRS="EPSG:4258"
-                    minx="0.000481" miny="10.5114" maxx="0.00048199" maxy="10.5114" />
+                    minx="53.4183" miny="12.6108" maxx="53.44" maxy="12.7584" />
         <BoundingBox CRS="EPSG:3038"
-                    minx="67.2507" miny="5.01081e+06" maxx="67.278" maxy="5.01081e+06" />
+                    minx="6.67979e+06" miny="3.0544e+06" maxx="6.68784e+06" maxy="3.06467e+06" />
         <BoundingBox CRS="EPSG:3039"
-                    minx="62.5407" miny="4.19918e+06" maxx="62.5661" maxy="4.19918e+06" />
+                    minx="6.46107e+06" miny="2.68855e+06" maxx="6.46824e+06" maxy="2.69891e+06" />
         <BoundingBox CRS="EPSG:3040"
-                    minx="59.0514" miny="3.43821e+06" maxx="59.0754" maxy="3.43821e+06" />
+                    minx="6.28137e+06" miny="2.31092e+06" maxx="6.28765e+06" maxy="2.3213e+06" />
         <BoundingBox CRS="EPSG:3041"
-                    minx="56.5216" miny="2.71465e+06" maxx="56.5446" maxy="2.71465e+06" />
+                    minx="6.13918e+06" miny="1.92491e+06" maxx="6.14459e+06" maxy="1.93524e+06" />
         <BoundingBox CRS="EPSG:3042"
-                    minx="54.7798" miny="2.01771e+06" maxx="54.8021" maxy="2.01771e+06" />
+                    minx="6.03309e+06" miny="1.5331e+06" maxx="6.03766e+06" maxy="1.54333e+06" />
         <BoundingBox CRS="EPSG:3043"
-                    minx="53.7174" miny="1.33825e+06" maxx="53.7392" maxy="1.33825e+06" />
+                    minx="5.96194e+06" miny="1.13753e+06" maxx="5.96568e+06" maxy="1.14762e+06" />
         <BoundingBox CRS="EPSG:3044"
-                    minx="53.272" miny="668197" maxx="53.2937" maxy="668197" />
+                    minx="5.92488e+06" miny="739805" maxx="5.9278e+06" maxy="749731" />
         <BoundingBox CRS="EPSG:3045"
-                    minx="53.4183" miny="12.6109" maxx="53.44" maxy="12.7585" />
+                    minx="5.92115e+06" miny="341227" maxx="5.92388e+06" maxy="351110" />
         <BoundingBox CRS="EPSG:3046"
-                    minx="54.1645" miny="-673741" maxx="54.1865" maxy="-673741" />
+                    minx="5.9505e+06" miny="-56964" maxx="5.95405e+06" maxy="-46904.9" />
         <BoundingBox CRS="EPSG:3047"
-                    minx="55.5537" miny="-1.36081e+06" maxx="55.5762" maxy="-1.36081e+06" />
+                    minx="6.01381e+06" miny="-453304" maxx="6.01819e+06" maxy="-443100" />
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.RoadTransportNetwork.RoadLink</Name>
         <Title>Road link</Title>
@@ -727,42 +728,43 @@
         <KeywordList>
             <Keyword>no-keyword here</Keyword>
         </KeywordList>
+        <CRS>EPSG:4326</CRS>
         <EX_GeographicBoundingBox>
-            <westBoundLongitude>10.5114</westBoundLongitude>
-            <eastBoundLongitude>10.5114</eastBoundLongitude>
-            <southBoundLatitude>0.000481</southBoundLatitude>
-            <northBoundLatitude>0.00048199</northBoundLatitude>
+            <westBoundLongitude>12.6108</westBoundLongitude>
+            <eastBoundLongitude>12.7584</eastBoundLongitude>
+            <southBoundLatitude>53.4183</southBoundLatitude>
+            <northBoundLatitude>53.44</northBoundLatitude>
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="EPSG:25833"
-                    minx="12.6108" miny="53.4183" maxx="12.7584" maxy="53.44" />
+                    minx="341227" miny="5.92115e+06" maxx="351110" maxy="5.92388e+06" />
         <BoundingBox CRS="EPSG:4326"
-                    minx="0.000481" miny="10.5114" maxx="0.00048199" maxy="10.5114" />
+                    minx="53.4183" miny="12.6108" maxx="53.44" maxy="12.7584" />
         <BoundingBox CRS="EPSG:4269"
-                    minx="0.000481" miny="10.5114" maxx="0.00048199" maxy="10.5114" />
+                    minx="53.4183" miny="12.6108" maxx="53.44" maxy="12.7584" />
         <BoundingBox CRS="EPSG:3035"
-                    minx="-2.36068e+06" miny="4.38426e+06" maxx="-2.36068e+06" maxy="4.38426e+06" />
+                    minx="3.37095e+06" miny="4.49447e+06" maxx="3.37372e+06" maxy="4.50436e+06" />
         <BoundingBox CRS="EPSG:4258"
-                    minx="0.000481" miny="10.5114" maxx="0.00048199" maxy="10.5114" />
+                    minx="53.4183" miny="12.6108" maxx="53.44" maxy="12.7584" />
         <BoundingBox CRS="EPSG:3038"
-                    minx="67.2507" miny="5.01081e+06" maxx="67.278" maxy="5.01081e+06" />
+                    minx="6.67979e+06" miny="3.0544e+06" maxx="6.68784e+06" maxy="3.06467e+06" />
         <BoundingBox CRS="EPSG:3039"
-                    minx="62.5407" miny="4.19918e+06" maxx="62.5661" maxy="4.19918e+06" />
+                    minx="6.46107e+06" miny="2.68855e+06" maxx="6.46824e+06" maxy="2.69891e+06" />
         <BoundingBox CRS="EPSG:3040"
-                    minx="59.0514" miny="3.43821e+06" maxx="59.0754" maxy="3.43821e+06" />
+                    minx="6.28137e+06" miny="2.31092e+06" maxx="6.28765e+06" maxy="2.3213e+06" />
         <BoundingBox CRS="EPSG:3041"
-                    minx="56.5216" miny="2.71465e+06" maxx="56.5446" maxy="2.71465e+06" />
+                    minx="6.13918e+06" miny="1.92491e+06" maxx="6.14459e+06" maxy="1.93524e+06" />
         <BoundingBox CRS="EPSG:3042"
-                    minx="54.7798" miny="2.01771e+06" maxx="54.8021" maxy="2.01771e+06" />
+                    minx="6.03309e+06" miny="1.5331e+06" maxx="6.03766e+06" maxy="1.54333e+06" />
         <BoundingBox CRS="EPSG:3043"
-                    minx="53.7174" miny="1.33825e+06" maxx="53.7392" maxy="1.33825e+06" />
+                    minx="5.96194e+06" miny="1.13753e+06" maxx="5.96568e+06" maxy="1.14762e+06" />
         <BoundingBox CRS="EPSG:3044"
-                    minx="53.272" miny="668197" maxx="53.2937" maxy="668197" />
+                    minx="5.92488e+06" miny="739805" maxx="5.9278e+06" maxy="749731" />
         <BoundingBox CRS="EPSG:3045"
-                    minx="53.4183" miny="12.6109" maxx="53.44" maxy="12.7585" />
+                    minx="5.92115e+06" miny="341227" maxx="5.92388e+06" maxy="351110" />
         <BoundingBox CRS="EPSG:3046"
-                    minx="54.1645" miny="-673741" maxx="54.1865" maxy="-673741" />
+                    minx="5.9505e+06" miny="-56964" maxx="5.95405e+06" maxy="-46904.9" />
         <BoundingBox CRS="EPSG:3047"
-                    minx="55.5537" miny="-1.36081e+06" maxx="55.5762" maxy="-1.36081e+06" />
+                    minx="6.01381e+06" miny="-453304" maxx="6.01819e+06" maxy="-443100" />
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.RailTransportNetwork.RailwayLink</Name>
         <Title>Railway link</Title>

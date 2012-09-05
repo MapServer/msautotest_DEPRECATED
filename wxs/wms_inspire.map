@@ -203,8 +203,8 @@ MAP
             "wms_style_name" "inspire_common:DEFAULT"                           #style name
             "wms_style_title.eng" "INSPIRE Default Style"
             "wms_style_title.ger" "INSPIRE Standard Stil"
-            #"wms_style_legendurl_width" "85"                                   #override style legendurl (mandatory: width, height, format, href)
-            #"wms_style_legendurl_height" "40"
+            #"wms_style_legendurl_width" "287"                                   #override style legendurl (mandatory: width, height, format, href)
+            #"wms_style_legendurl_height" "181"
             #"wms_style_legendurl_format" "image/png"
             #"wms_style_legendurl_href" "http://path/to/onlineresource...roadarea"
 
@@ -440,6 +440,9 @@ MAP
             "wms_extent" "12.6108 53.4183 12.7584 53.44"
         END
         TYPE POINT
+        PROJECTION
+            "init=epsg:4326"
+        END
     END
 
     LAYER
@@ -663,6 +666,9 @@ MAP
             "wms_extent" "12.6108 53.4183 12.7584 53.44"
         END
         TYPE POINT
+        PROJECTION
+            "init=epsg:4326"
+        END
     END
 
     LAYER
