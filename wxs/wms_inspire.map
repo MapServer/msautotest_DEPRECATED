@@ -267,7 +267,12 @@ MAP
         PROJECTION
             "init=epsg:4326"
         END
-        CLASSGROUP "inspire_common:DEFAULT"
+        CLASS
+            GROUP "TestStyle"
+            NAME "TestStyle"
+            STYLE
+            END
+        END
     END
 
     LAYER
@@ -317,6 +322,12 @@ MAP
                 COLOR 128 128 128
                 WIDTH 1
                 OUTLINECOLOR 0 0 0
+            END
+        END
+        CLASS
+            GROUP "TestStyle"
+            NAME "TestStyle"
+            STYLE
             END
         END
     END
