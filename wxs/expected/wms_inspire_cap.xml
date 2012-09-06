@@ -202,6 +202,10 @@
                     minx="5.9505e+06" miny="-56964" maxx="5.95405e+06" maxy="-46904.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01381e+06" miny="-453304" maxx="6.01819e+06" maxy="-443100" />
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
+        </MetadataURL>
         <Style>
           <Name>TestStyle</Name>
           <Title>TestStyle</Title>
@@ -429,6 +433,10 @@
                     minx="5.9505e+06" miny="-56964" maxx="5.95405e+06" maxy="-46904.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01381e+06" miny="-453304" maxx="6.01819e+06" maxy="-443100" />
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
+        </MetadataURL>
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.RoadTransportNetwork.RoadLink</Name>
         <Title>Straßensegment</Title>
@@ -706,6 +714,10 @@
                     minx="5.9505e+06" miny="-56964" maxx="5.95405e+06" maxy="-46904.9" />
         <BoundingBox CRS="EPSG:3047"
                     minx="6.01381e+06" miny="-453304" maxx="6.01819e+06" maxy="-443100" />
+        <MetadataURL type="TC211">
+          <Format>text/xml</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;ElementSetName=full&amp;Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"/>
+        </MetadataURL>
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>TN.RailTransportNetwork.RailwayLink</Name>
         <Title>Eisenbahnverbindung</Title>
