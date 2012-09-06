@@ -262,6 +262,9 @@ MAP
             "gml_include_items" "all"
             "ows_include_items" "all"
             "wms_extent" "12.6108 53.4183 12.7584 53.44"
+            "wms_metadataurl_href" "http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http://www.isotc211.org/2005/gmd&ElementSetName=full&Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"
+            "wms_metadataurl_format" "text/xml"
+            "wms_metadataurl_type" "TC211"
         END
         TYPE POINT
         PROJECTION
@@ -443,6 +446,9 @@ MAP
             "gml_include_items" "all"
             "ows_include_items" "all"
             "wms_extent" "12.6108 53.4183 12.7584 53.44"
+            "wms_metadataurl_href" "http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http://www.isotc211.org/2005/gmd&ElementSetName=full&Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"
+            "wms_metadataurl_format" "text/xml"
+            "wms_metadataurl_type" "TC211"
         END
         TYPE POINT
         PROJECTION
@@ -661,6 +667,9 @@ MAP
             "gml_include_items" "all"
             "ows_include_items" "all"
             "wms_extent" "12.6108 53.4183 12.7584 53.44"
+            "wms_metadataurl_href" "http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http://www.isotc211.org/2005/gmd&ElementSetName=full&Id=3efef5cf-8643-4e72-92db-6ca4554c12c7"
+            "wms_metadataurl_format" "text/xml"
+            "wms_metadataurl_type" "TC211"
         END
         TYPE POINT
         PROJECTION
