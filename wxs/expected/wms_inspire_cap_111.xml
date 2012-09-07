@@ -11,7 +11,8 @@
   <Title>INSPIRE Testdienst</Title>
   <Abstract>Der INSPIRE Testdienst dient der Qualitätsprüfung bei der Softwareentwicklung. Er enthält keine realen Informationen.</Abstract>
   <KeywordList>
-      <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+      <Keyword>infoMapAccessService</Keyword>
+      <Keyword>WMS</Keyword>
   </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>
