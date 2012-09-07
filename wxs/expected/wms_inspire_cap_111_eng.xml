@@ -11,7 +11,8 @@
   <Title>INSPIRE test service</Title>
   <Abstract>INSPIRE test service used during software develeopment.</Abstract>
   <KeywordList>
-      <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+      <Keyword>infoMapAccessService</Keyword>
+      <Keyword>WMS</Keyword>
   </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>

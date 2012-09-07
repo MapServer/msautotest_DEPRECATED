@@ -166,8 +166,9 @@ MAP
             "wms_languages" "ger,eng"                                           #first default, values according ISO 639-2/B
             "wms_inspire_metadataurl_href" "http://www.geodaten-mv.de/soapServices/CSWStartup?service=CSW&version=2.0.2&request=GetRecordById&outputSchema=http://www.isotc211.org/2005/gmd&ElementSetName=full&Id=4d5f1402-5b2b-43ec-949f-92d125179318"
             "wms_inspire_metadataurl_format" "application/vnd.ogc.csw.capabilities.response_xml"
-            "wms_keywordlist_ISO_items" "infoMapAccessService"                  #value according "classification of spatial data services"
+            "wms_keywordlist_ISO_items" "infoMapAccessService,WMS"                  #value according "classification of spatial data services"
             "wms_keywordlist_vocabulary" "ISO"
+            "wms_keywordlist" "infoMapAccessService,WMS"
 
             "wms_title.eng" "INSPIRE test service"
             "wms_title.ger" "INSPIRE Testdienst"
