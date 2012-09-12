@@ -75,7 +75,6 @@ LAYER
    LABELCACHE OFF
    CLASS # Mountain
       NAME 'Mountain'
-      EXPRESSION ([CONCISCODE]=280)
       STYLE # ------ Green Cross ------ 
         SYMBOL 'CROSS1'
         SIZE 14
