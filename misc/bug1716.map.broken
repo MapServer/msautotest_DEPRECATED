@@ -1,6 +1,10 @@
 # Test that symbol rounding issues with vector symbols (bug 1716) is
 # (still) fixed.
 #
+# This issue is currently unresolved as the rounding that occurs when we want
+# to account for this test case breaks symbol centering in many other usages,
+# namely symbols following lines. 
+#
 # REQUIRES: INPUT=SHAPE OUTPUT=PNG
 #
 MAP
