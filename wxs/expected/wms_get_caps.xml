@@ -12,11 +12,11 @@ Content-type: application/vnd.ogc.wms_xml
   <Name>OGC:WMS</Name>
   <Title>Sample OWS for MapServer OGC Web Services Workshop</Title>
   <Abstract>Sample OWS for MapServer OGC Web Services Workshop.  Enjoy!</Abstract>
-        <KeywordList>
-          <Keyword>mapserver</Keyword>
-          <Keyword>ogc</Keyword>
-          <Keyword>workshop</Keyword>
-        </KeywordList>
+  <KeywordList>
+      <Keyword>mapserver</Keyword>
+      <Keyword>ogc</Keyword>
+      <Keyword>workshop</Keyword>
+  </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/ms_ogc_workshop/index.html"/>
   <ContactInformation>
     <ContactPersonPrimary>
@@ -119,9 +119,9 @@ Content-type: application/vnd.ogc.wms_xml
     <Title>Sample OWS for MapServer OGC Web Services Workshop</Title>
     <Abstract>Sample OWS for MapServer OGC Web Services Workshop.  Enjoy!</Abstract>
     <KeywordList>
-     <Keyword>mapserver</Keyword>
-     <Keyword>ogc</Keyword>
-     <Keyword>workshop</Keyword>
+        <Keyword>mapserver</Keyword>
+        <Keyword>ogc</Keyword>
+        <Keyword>workshop</Keyword>
     </KeywordList>
     <SRS>EPSG:4326</SRS>
     <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90" />
@@ -139,23 +139,23 @@ Content-type: application/vnd.ogc.wms_xml
       <Name>Imagery</Name>
       <Title>Imagery</Title>
       <Abstract>Imagery layers</Abstract>
-        <Style>
-          <Name>default</Name>
-          <Title>default</Title>
-          <LegendURL width="35" height="5">
-             <Format>image/png; mode=24bit</Format>
-             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Imagery&amp;format=image/png; mode=24bit&amp;STYLE=default"/>
-          </LegendURL>
-        </Style>
+    <Style>
+       <Name>default</Name>
+       <Title>default</Title>
+       <LegendURL width="35" height="5">
+          <Format>image/png</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Imagery&amp;format=image/png&amp;STYLE=default"/>
+       </LegendURL>
+    </Style>
       <Layer queryable="1" opaque="1" cascaded="0">
         <Name>land_shallow_topo_2048</Name>
         <Title>Land Surface, Shallow Water, and Shaded Topography</Title>
         <Abstract>Much of the information contained in this image came from a single remote-sensing device-NASA&#39;s Moderate Resolution Imaging Spectroradiometer, or MODIS. Flying over 700 km above the Earth onboard the Terra satellite, MODIS provides an integrated tool for observing a variety of terrestrial, oceanic, and atmospheric features of the Earth. The land and coastal ocean portions of these images are based on surface observations collected from June through September 2001 and combined, or composited, every eight days to compensate for clouds that might block the sensor&#39;s view of the surface on any single day. Two different types of ocean data were used in these images: shallow water true color data, and global ocean color (or chlorophyll) data. Topographic shading is based on the GTOPO 30 elevation dataset compiled by the U.S. Geological Survey&#39;s EROS Data Center. MODIS observations of polar sea ice were combined with observations of Antarctica made by the National Oceanic and Atmospheric Administration&#39;s AVHRR sensor - the Advanced Very High Resolution Radiometer. The cloud image is a composite of two days of imagery collected in visible light wavelengths and a third day of thermal infra-red imagery over the poles. Global city lights, derived from 9 months of observations from the Defense Meteorological Satellite Program, are superimposed on a darkened land surface map</Abstract>
         <KeywordList>
-          <Keyword>NASA</Keyword>
-          <Keyword>MODIS</Keyword>
-          <Keyword>AVHRR</Keyword>
-          <Keyword>EROS</Keyword>
+            <Keyword>NASA</Keyword>
+            <Keyword>MODIS</Keyword>
+            <Keyword>AVHRR</Keyword>
+            <Keyword>EROS</Keyword>
         </KeywordList>
         <SRS>EPSG:4326</SRS>
         <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90" />
@@ -180,21 +180,21 @@ Content-type: application/vnd.ogc.wms_xml
       <Name>Vectors</Name>
       <Title>Vectors</Title>
       <Abstract>Vector layers</Abstract>
-        <Style>
-          <Name>default</Name>
-          <Title>default</Title>
-          <LegendURL width="71" height="21">
-             <Format>image/png; mode=24bit</Format>
-             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Vectors&amp;format=image/png; mode=24bit&amp;STYLE=default"/>
-          </LegendURL>
-        </Style>
+    <Style>
+       <Name>default</Name>
+       <Title>default</Title>
+       <LegendURL width="71" height="21">
+          <Format>image/png</Format>
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/cgi-bin/mapserv.exe?map=/ms4w/apps/ms_ogc_workshop/service/config.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=Vectors&amp;format=image/png&amp;STYLE=default"/>
+       </LegendURL>
+    </Style>
       <Layer queryable="1" opaque="0" cascaded="0">
         <Name>rivers</Name>
         <Title>Rivers</Title>
         <Abstract>These are rivers</Abstract>
         <KeywordList>
-          <Keyword>Rivers</Keyword>
-          <Keyword>world</Keyword>
+            <Keyword>Rivers</Keyword>
+            <Keyword>world</Keyword>
         </KeywordList>
         <SRS>EPSG:4326</SRS>
         <LatLonBoundingBox minx="-164.625" miny="-36.9044" maxx="161.066" maxy="72.2342" />
@@ -223,9 +223,9 @@ Content-type: application/vnd.ogc.wms_xml
         <Title>Toronto Landsat 5 TM</Title>
         <Abstract>Toronto Landsat 5 TM</Abstract>
         <KeywordList>
-          <Keyword>Toronto</Keyword>
-          <Keyword>Landsat</Keyword>
-          <Keyword>TM</Keyword>
+            <Keyword>Toronto</Keyword>
+            <Keyword>Landsat</Keyword>
+            <Keyword>TM</Keyword>
         </KeywordList>
         <SRS>EPSG:26917</SRS>
         <SRS>EPSG:4326</SRS>
