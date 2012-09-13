@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd " version="2.0.0">
+<wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd " version="2.0.1">
   <ows:ServiceIdentification>
     <ows:Title>Test simple wcs</ows:Title>
     <ows:Abstract/>
     <!--WARNING: Optional metadata "ows_abstract" was missing for ows:Abstract-->
     <!--WARNING: Optional metadata "ows_keywordlist" was missing for ows:KeywordList-->
     <ows:ServiceType codeSpace="OGC">OGC WCS</ows:ServiceType>
-    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:ServiceTypeVersion>2.0.1</ows:ServiceTypeVersion>
     <ows:Profile>http://www.opengis.net/spec/WCS/2.0/conf/core</ows:Profile>
     <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_get-kvp/1.0/conf/get-kvp</ows:Profile>
     <ows:Profile>http://www.opengis.net/spec/WCS_protocol-binding_post-xml/1.0/conf/post-xml</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV/1.0/conf/gml-coverage</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV/1.0/conf/multipart</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV/1.0/conf/special-format</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/GMLCOV_geotiff-coverages/1.0/conf/geotiff-coverage</ows:Profile>
+    <ows:Profile>http://www.opengis.net/spec/WCS_geotiff-coverages/1.0/conf/geotiff-coverage</ows:Profile>
     <ows:Profile>http://www.opengis.net/spec/WCS_service-model_crs-predefined/1.0/conf/crs-predefined</ows:Profile>
-    <ows:Profile>http://www.placeholder.com/IMAGECRS</ows:Profile>
-    <ows:Profile>http://www.opengis.net/spec/WCS_encoding_geotiff/1.0/conf/geotiff</ows:Profile>
-    <ows:Profile>http://www.placeholder.com/GML_and_GeoTIFF</ows:Profile>
     <ows:Profile>http://www.opengis.net/spec/WCS_service-model_scaling+interpolation/1.0/conf/scaling+interpolation</ows:Profile>
     <ows:Profile>http://www.opengis.net/spec/WCS_service-model_band-subsetting/1.0/conf/band-subsetting</ows:Profile>
     <ows:Fees/>
@@ -105,7 +107,13 @@
       </ows:DCP>
     </ows:Operation>
   </ows:OperationsMetadata>
-  <wcs:ServiceMetadata/>
+  <wcs:ServiceMetadata>
+    <wcs:formatSupported>image/png</wcs:formatSupported>
+    <wcs:formatSupported>image/jpeg</wcs:formatSupported>
+    <wcs:formatSupported>image/gif</wcs:formatSupported>
+    <wcs:formatSupported>image/png; mode=8bit</wcs:formatSupported>
+    <wcs:formatSupported>image/tiff</wcs:formatSupported>
+  </wcs:ServiceMetadata>
   <wcs:Contents>
     <!--WARNING: No WCS layers are enabled. Check wcs/ows_enable_request settings.-->
   </wcs:Contents>
