@@ -1,1 +1,6 @@
 *.pyc
+gdal/result
+misc/result
+renderers/result
+wxs/result
+wxs/tmp

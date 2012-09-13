@@ -1,8 +1,14 @@
+# RUN_PARMS: label_noclip.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: label_noclip.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: label_noclip.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: label_noclip.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: label_noclip.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 map
 
 imagetype png
-size 400 300
-extent 0 0 400 300
+size 200 100
+extent 0 0 400 200
 fontset "../misc/fonts.lst"
 symbolset "symbolset"
 

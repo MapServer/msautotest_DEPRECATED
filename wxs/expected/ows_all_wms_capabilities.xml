@@ -8,12 +8,12 @@ Content-type: text/xml
 <!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
   <Title>WMS_WFS_TEST</Title>
   <Abstract>Test WFS Abstract</Abstract>
-        <KeywordList>
-          <Keyword>ogc</Keyword>
-          <Keyword>wfs</Keyword>
-          <Keyword>gml</Keyword>
-          <Keyword>om</Keyword>
-        </KeywordList>
+  <KeywordList>
+      <Keyword>ogc</Keyword>
+      <Keyword>wfs</Keyword>
+      <Keyword>gml</Keyword>
+      <Keyword>om</Keyword>
+  </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost"/>
   <ContactInformation>
     <ContactPersonPrimary>
@@ -55,6 +55,8 @@ Content-type: text/xml
       <Format>image/jpeg</Format>
       <Format>image/gif</Format>
       <Format>image/png; mode=8bit</Format>
+      <Format>application/x-pdf</Format>
+      <Format>image/svg+xml</Format>
       <Format>image/tiff</Format>
       <Format>application/vnd.google-earth.kml+xml</Format>
       <Format>application/vnd.google-earth.kmz</Format>
@@ -118,10 +120,10 @@ Content-type: text/xml
     <Title>WMS_WFS_TEST</Title>
     <Abstract>Test WFS Abstract</Abstract>
     <KeywordList>
-     <Keyword>ogc</Keyword>
-     <Keyword>wfs</Keyword>
-     <Keyword>gml</Keyword>
-     <Keyword>om</Keyword>
+        <Keyword>ogc</Keyword>
+        <Keyword>wfs</Keyword>
+        <Keyword>gml</Keyword>
+        <Keyword>om</Keyword>
     </KeywordList>
     <CRS>EPSG:4326</CRS>
     <EX_GeographicBoundingBox>
@@ -136,12 +138,12 @@ Content-type: text/xml
         <Name>road</Name>
         <Title>road</Title>
         <CRS>EPSG:43204</CRS>
-    <EX_GeographicBoundingBox>
-        <westBoundLongitude>-66.6333</westBoundLongitude>
-        <eastBoundLongitude>-59.2921</eastBoundLongitude>
-        <southBoundLatitude>42.3821</southBoundLatitude>
-        <northBoundLatitude>48.2955</northBoundLatitude>
-    </EX_GeographicBoundingBox>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-66.6333</westBoundLongitude>
+            <eastBoundLongitude>-59.2921</eastBoundLongitude>
+            <southBoundLatitude>42.3821</southBoundLatitude>
+            <northBoundLatitude>48.2955</northBoundLatitude>
+        </EX_GeographicBoundingBox>
         <BoundingBox CRS="EPSG:43204"
                     minx="2.25898e+06" miny="-70747.9" maxx="2.61535e+06" maxy="495481" />
         <Style>
@@ -157,12 +159,12 @@ Content-type: text/xml
         <Name>province</Name>
 <!-- WARNING: Mandatory metadata '..._title' was missing in this context. -->
         <Title>province</Title>
-    <EX_GeographicBoundingBox>
-        <westBoundLongitude>-66.7243</westBoundLongitude>
-        <eastBoundLongitude>-57.7217</eastBoundLongitude>
-        <southBoundLatitude>41.7705</southBoundLatitude>
-        <northBoundLatitude>48.4773</northBoundLatitude>
-    </EX_GeographicBoundingBox>
+        <EX_GeographicBoundingBox>
+            <westBoundLongitude>-66.7243</westBoundLongitude>
+            <eastBoundLongitude>-57.7217</eastBoundLongitude>
+            <southBoundLatitude>41.7705</southBoundLatitude>
+            <northBoundLatitude>48.4773</northBoundLatitude>
+        </EX_GeographicBoundingBox>
         <BoundingBox CRS=""
                     minx="2.25336e+06" miny="-76361.8" maxx="2.74765e+06" maxy="515489" />
         <Style>

@@ -1,3 +1,7 @@
+# RUN_PARMS: force_pc256.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: force_pc256.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: force_pc256.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 
 #
 # Tests the quantization option allowing conversion of 
@@ -9,7 +13,7 @@ MAP
 
 NAME TEST
 STATUS ON
-SIZE 400 300
+SIZE 200 150
 EXTENT 0.5 0.5 399.5 299.5
 IMAGECOLOR 255 255 0
 SHAPEPATH "../gdal"

@@ -106,10 +106,10 @@
 #
 # 6- capabilities
 #
-# RUN_PARMS: wms_dimension_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+# RUN_PARMS: wms_dimension_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
 # Capabilities 1.3.0
-# RUN_PARMS: wms_dimension_cap130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+# RUN_PARMS: wms_dimension_cap130.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities" > [RESULT_DEVERSION]
 #
 # 7 Misc
 # a- empty value: use default

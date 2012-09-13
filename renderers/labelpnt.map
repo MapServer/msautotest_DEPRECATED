@@ -1,6 +1,12 @@
+# RUN_PARMS: labelpnt.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: labelpnt.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: labelpnt.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: labelpnt.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: labelpnt.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 MAp
 extent -200 -200 200 200
-size 600 600
+size 200 200
 imagetype png
 fontset "data/fonts.lst"
 
@@ -27,7 +33,7 @@ LAYER
  TYPE annotation
  STATUS DEFAULT
  FEATURE
-  POINTS 30 -33 END
+  POINTS -120 -33 END
   TEXT "Some label text"
  END
 
@@ -75,7 +81,6 @@ LAYER
    LABELCACHE OFF
    CLASS # Mountain
       NAME 'Mountain'
-      EXPRESSION ([CONCISCODE]=280)
       STYLE # ------ Green Cross ------ 
         SYMBOL 'CROSS1'
         SIZE 14

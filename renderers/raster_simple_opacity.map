@@ -1,3 +1,9 @@
+# RUN_PARMS: raster_simple_opacity.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: raster_simple_opacity.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: raster_simple_opacity.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: raster_simple_opacity.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: raster_simple_opacity.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 #
 # Test use of 24bit images with a dummy class used to populate the legend.
 # The image should come through as 24bit since there is no expression in the
@@ -7,7 +13,7 @@ MAP
 
 NAME TEST
 STATUS ON
-SIZE 400 300
+SIZE 200 150
 EXTENT 0.5 0.5 399.5 299.5
 IMAGECOLOR 255 255 0
 

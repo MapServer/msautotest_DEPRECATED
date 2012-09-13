@@ -26,11 +26,11 @@ LAYER
   TYPE RASTER
   STATUS DEFAULT
   DEBUG 1
-  CONNECTION "http://sedac.ciesin.columbia.edu/mapserver/map/GPWv3?"
+  CONNECTION "http://vmap0.tiles.osgeo.org/wms/vmap0?"
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
-    "wms_name"            "GPWv3_1990_Pop_Density_tif"
+    "wms_name"            "basic"
     "wms_server_version"  "1.1.1"
     "wms_format"          "image/gif"
   END

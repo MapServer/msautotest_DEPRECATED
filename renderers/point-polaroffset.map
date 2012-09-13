@@ -1,5 +1,11 @@
+# RUN_PARMS: point-polaroffset.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: point-polaroffset.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: point-polaroffset.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: point-polaroffset.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: point-polaroffset.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 MAP
-  SIZE 300 200
+  SIZE 150 100
   IMAGETYPE png   # gif|png|jpeg|wbmp]
   EXTENT 0 0 300 200
   UNITS meters
