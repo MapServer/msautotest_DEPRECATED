@@ -33,7 +33,7 @@ LAYER
   STATUS default
   DATA data/grey_rot.tif
   PROCESSING "EXTENT_PRIORITY=WORLD"
-  PROCESSING "WORLDFILE=data/override.wld"
+  PROCESSING "WORLDFILE=data/grey.wld"
   PROJECTION
     "proj=utm"
     "zone=12"
