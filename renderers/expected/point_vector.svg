@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400pt" height="300pt" viewBox="0 0 400 300" version="1.1">
-<g id="surface0">
-<rect x="0" y="0" width="400" height="300" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 54 249 C 54 254.332031 46 254.332031 46 249 C 46 243.667969 54 243.667969 54 249 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 204 100 C 204 105.332031 196 105.332031 196 100 C 196 94.667969 204 94.667969 204 100 "/>
-<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 46.25 249 L 53.75 249 M 51.25 246.5 L 53.75 249 L 51.25 251.5 "/>
-<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 197.347656 102.652344 L 202.652344 97.347656 M 199.117188 97.347656 L 202.652344 97.347656 L 202.652344 100.882812 "/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200pt" height="150pt" viewBox="0 0 200 150" version="1.1">
+<g id="surface2">
+<rect x="0" y="0" width="200" height="150" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 29 124 C 29 129.332031 21 129.332031 21 124 C 21 118.667969 29 118.667969 29 124 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 103 50 C 103 55.332031 95 55.332031 95 50 C 95 44.667969 103 44.667969 103 50 "/>
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 21.25 124 L 28.75 124 M 26.25 121.5 L 28.75 124 L 26.25 126.5 "/>
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 96.347656 52.652344 L 101.652344 47.347656 M 98.117188 47.347656 L 101.652344 47.347656 L 101.652344 50.882812 "/>
 </g>
 </svg>

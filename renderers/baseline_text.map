@@ -1,48 +1,32 @@
+# RUN_PARMS: baseline_text.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: baseline_text.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: baseline_text.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: baseline_text.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: baseline_text.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 MAP
-  EXTENT -13635099.5235881 4519599.48089225 -13629192.6958111 4524397.72866942
+  EXTENT 0 0 100 50
   IMAGECOLOR 255 255 255
   IMAGETYPE png
   FONTSET "../misc/fonts.lst"
-  SIZE 500 500
+  SIZE 100 50
   STATUS ON
-  UNITS METERS
   NAME "text_test"
 
-  OUTPUTFORMAT
-    NAME "AGG"
-    MIMETYPE "image/png; mode=24bit"
-    DRIVER "AGG/PNG"
-    EXTENSION "png"
-    IMAGEMODE "RGB"
-    TRANSPARENT FALSE
-  END
-
   LAYER
-    EXTENT -13633543.0245125 4521840.27083848 -13630749.1948867 4522156.93872318
-    LABELCACHE OFF
     NAME "text_test"
     STATUS default
-    TEMPLATE "dummy.html"
     TYPE ANNOTATION
-    UNITS METERS
     FEATURE 
-      POINTS -13632840.560000000521541 4521903.099000000394881 END
+      POINTS 10 25 END
       TEXT "bq"
     END
     CLASS
       LABEL
-        ANGLE 0.000000
-        ANTIALIAS TRUE
         FONT "default"
         SIZE 20
         TYPE TRUETYPE
-        BUFFER 0
         COLOR 0 0 0
-        FORCE FALSE
-        MINDISTANCE -1
-        MINFEATURESIZE -1
-        OFFSET 0 0
-        PARTIALS TRUE
         POSITION UR
       END
     END
@@ -51,31 +35,20 @@ MAP
   END
 
   LAYER
-    EXTENT -13633543.0245125 4521840.27083848 -13630749.1948867 4522156.93872318
-    LABELCACHE OFF
     NAME "text_test2"
     STATUS default
     TEMPLATE "dummy.html"
     TYPE ANNOTATION
-    UNITS METERS
     FEATURE 
-      POINTS -13633517.220000000670552 4521903.099000000394881 END
+      POINTS 50 25 END
       TEXT "aaa"
     END
     CLASS
       LABEL
-        ANGLE 0.000000
-        ANTIALIAS TRUE
         FONT "default"
         SIZE 20
         TYPE TRUETYPE
-        BUFFER 0
         COLOR 0 0 0
-        FORCE FALSE
-        MINDISTANCE -1
-        MINFEATURESIZE -1
-        OFFSET 0 0
-        PARTIALS TRUE
         POSITION UR
       END
     END

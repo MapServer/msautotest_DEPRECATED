@@ -1,3 +1,7 @@
+# RUN_PARMS: mask.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: mask.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: mask.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 #
 # entity-encoded text rendering test.
 # this test may potentially segfault

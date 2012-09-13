@@ -1,3 +1,9 @@
+# RUN_PARMS: point_ellipse.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: point_ellipse.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: point_ellipse.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: point_ellipse.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: point_ellipse.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 #
 # entity-encoded text rendering test.
 # this test may potentially segfault
@@ -8,7 +14,7 @@ MAP
 
 STATUS ON
 EXTENT 0 0 400 300
-SIZE 400 300
+SIZE 200 150
 FONTSET "../misc/fonts.lst"
 IMAGETYPE png24
 symbolset "symbolset"
