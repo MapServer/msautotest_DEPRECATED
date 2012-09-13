@@ -1,8 +1,11 @@
 #
-# entity-encoded text rendering test.
-# this test may potentially segfault
+# tests vertex geomtransform with auto angle
 #   
-# REQUIRES: OUTPUT=PNG SUPPORTS=AGG
+# RUN_PARMS: geomtransform-vertex.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
 #
 
 
@@ -10,8 +13,9 @@
 MAP
   IMAGETYPE png24
   SIZE 500 500
-  FONTSET "fonts.lst"
+  FONTSET "../misc/fonts.lst"
   EXTENT -170.245673  -55.551347 179.019748 53.883753
+  SHAPEPATH "../misc"
 
   SYMBOL
     TYPE TRUETYPE

@@ -19,7 +19,7 @@ Content-Transfer-Encoding: binary
   </gml:boundedBy>
                                                                                                                                                             
   <gml:featureMember>
-    <ogr:multi fid="F0">
+    <ogr:multi fid="multi.0">
       <ogr:geometryProperty><gml:MultiPolygon><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>0,0 0,10 10,0 0,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>1,1 2,2 2,1 1,1</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></gml:polygonMember><gml:polygonMember><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>100,50 50,100 100,100 100,50</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon></gml:polygonMember></gml:MultiPolygon></ogr:geometryProperty>
       <ogr:ID>4</ogr:ID>
       <ogr:NAME>mp</ogr:NAME>
@@ -27,7 +27,7 @@ Content-Transfer-Encoding: binary
     </ogr:multi>
   </gml:featureMember>
   <gml:featureMember>
-    <ogr:multi fid="F1">
+    <ogr:multi fid="multi.1">
       <ogr:geometryProperty><gml:Polygon><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>30,0 30,10 40,10 40,0 3,0 30,0</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs><gml:innerBoundaryIs><gml:LinearRing><gml:coordinates>31,1 32,2 32,1 31,1</gml:coordinates></gml:LinearRing></gml:innerBoundaryIs></gml:Polygon></ogr:geometryProperty>
       <ogr:ID>5</ogr:ID>
       <ogr:NAME>poly</ogr:NAME>
