@@ -1,0 +1,104 @@
+# RUN_PARMS: labels-leader.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: labels-leader.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: labels-leader.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: labels-leader.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: labels-leader.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
+map
+
+imagetype png
+size 200 150
+extent -200 -200 600 500
+shapepath "../misc/data"
+fontset "../misc/fonts.lst"
+symbolset "symbolset"
+
+
+layer
+    type point
+    status default
+    name "p1"
+    class
+        leader
+          maxdistance 30
+          style
+            width 1
+            color 0 0 0
+         end
+        end
+        label
+            type truetype
+            font "default"
+            size 9
+            style
+               color 0 255 0
+               geomtransform labelpoly
+            end
+            style
+              symbol "circle"
+              size 5
+              color 255 0 0
+            end
+            color 0 0 0
+            position auto
+        end
+    end
+    feature
+        points 220 160 end
+        text "label 1"
+    end
+    feature
+        points 250 130 end
+        text "label 2"
+    end
+    feature
+        points 230 140 end
+        text "label 3"
+    end
+    feature
+        points 150 150 end
+        text "label 4"
+    end
+    feature
+        points 250 100 end
+        text "label 5"
+    end
+    feature
+        points 280 110 end
+        text "label 6"
+    end
+    feature
+        points 200 190 end
+        text "label 7"
+    end
+    feature
+        points 200 100 end
+        text "label 8"
+    end
+    feature
+        points 200 150 end
+        text "label 9"
+    end
+    feature
+        points 200 155 end
+        text "label 10"
+    end
+    feature
+        points 200 160 end
+        text "label 11"
+    end
+    feature
+        points 200 170 end
+        text "label 12"
+    end
+    feature
+        points 200 180 end
+        text "label 13"
+    end
+    feature
+        points 200 190 end
+        text "label 14"
+    end
+end
+
+end

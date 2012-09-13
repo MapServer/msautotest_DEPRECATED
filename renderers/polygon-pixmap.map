@@ -1,3 +1,9 @@
+# RUN_PARMS: polygon-pixmap.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: polygon-pixmap.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: polygon-pixmap.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: polygon-pixmap.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: polygon-pixmap.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 #
 # entity-encoded text rendering test.
 # this test may potentially segfault
@@ -8,7 +14,7 @@ MAP
 
 STATUS ON
 EXTENT -125.549477 -69.508628 101.670954 15.840339
-SIZE 400 300
+SIZE 200 150
 FONTSET "../misc/fonts.lst"
 IMAGETYPE png24
 symbolset "symbolset"
