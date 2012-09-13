@@ -11,7 +11,6 @@
   <Title>INSPIRE Testdienst</Title>
   <Abstract>Der INSPIRE Testdienst dient der Qualitätsprüfung bei der Softwareentwicklung. Er enthält keine realen Informationen.</Abstract>
   <KeywordList>
-      <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
   </KeywordList>
   <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.mapserver.org/"/>
   <ContactInformation>
@@ -49,10 +48,13 @@
     <GetMap>
       <Format>image/png</Format>
       <Format>image/jpeg</Format>
+      <Format>image/gif</Format>
       <Format>image/png; mode=8bit</Format>
       <Format>application/x-pdf</Format>
       <Format>image/svg+xml</Format>
       <Format>image/tiff</Format>
+      <Format>application/vnd.google-earth.kml+xml</Format>
+      <Format>application/vnd.google-earth.kmz</Format>
       <DCPType>
         <HTTP>
           <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.geodaten-mv.de/dienste/inspirevs_test?language=ger&amp;"/></Get>
