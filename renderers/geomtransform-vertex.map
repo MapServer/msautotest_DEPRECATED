@@ -1,0 +1,61 @@
+#
+# tests vertex geomtransform with auto angle
+#   
+# RUN_PARMS: geomtransform-vertex.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
+
+
+
+MAP
+  IMAGETYPE png24
+  SIZE 500 500
+  FONTSET "../misc/fonts.lst"
+  EXTENT -170.245673  -55.551347 179.019748 53.883753
+  SHAPEPATH "../misc"
+
+  SYMBOL
+    TYPE TRUETYPE
+    FONT "default"
+    NAME "arrowhead"
+    CHARACTER '>'
+  END
+
+  SYMBOL
+    TYPE TRUETYPE 
+    FONT "default"
+    CHARACTER '|'
+    NAME "segment"
+  END
+
+LAYER
+    data "data/testlines.shp" 
+    TYPE LINE 
+    STATUS ON
+    CLASS
+     
+      STYLE
+        COLOR 0 0 255
+      END
+      STYLE
+        GEOMTRANSFORM "vertices"
+        SYMBOL "segment" 
+        ANGLE AUTO
+        SIZE 10
+        COLOR 0 0 0
+      END
+      STYLE
+        GEOMTRANSFORM "end"
+        SYMBOL "arrowhead"
+        COLOR  0 0 255
+        ANGLE AUTO
+        SIZE 15
+      END
+    END
+    
+  END
+
+END

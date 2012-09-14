@@ -19,7 +19,7 @@ Content-Transfer-Encoding: binary
   </gml:boundedBy>
                                                                                                                           
   <gml:featureMember>
-    <ogr:popplace fid="F0">
+    <ogr:popplace fid="popplace.0">
       <ogr:geometryProperty><gml:Point><gml:coordinates>2281604.25,340848.9375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>BACMK</ogr:UNIQUE_KEY>
       <ogr:NAME>Tignish</ogr:NAME>

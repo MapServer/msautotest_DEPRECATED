@@ -47,9 +47,9 @@ Content-Disposition: INLINE
 
 <PAMDataset>
   <Metadata>
+    <MDI key="TIFFTAG_RESOLUTIONUNIT">2</MDI>
     <MDI key="TIFFTAG_XRESOLUTION">72.000000</MDI>
     <MDI key="TIFFTAG_YRESOLUTION">72.000000</MDI>
-    <MDI key="TIFFTAG_RESOLUTIONUNIT">2</MDI>
   </Metadata>
 </PAMDataset>
 --wcs

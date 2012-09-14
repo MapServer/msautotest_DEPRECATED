@@ -1,3 +1,9 @@
+# RUN_PARMS: wmsclient.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: wmsclient.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: wmsclient.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: wmsclient.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: wmsclient.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
 #
 # Simple test of WMS client support.
 #
@@ -21,11 +27,11 @@ LAYER
   NAME "pop"
   TYPE RASTER
   STATUS DEFAULT
-  CONNECTION "http://sedac.ciesin.columbia.edu/mapserver/map/GPWv3?"
+  CONNECTION "http://vmap0.tiles.osgeo.org/wms/vmap0?"
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
-    "wms_name"            "GPWv3_1990_Pop_Density_tif"
+    "wms_name"            "basic"
     "wms_server_version"  "1.1.1"
     "wms_format"          "image/gif"
   END

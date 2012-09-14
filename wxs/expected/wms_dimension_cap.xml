@@ -1,3 +1,5 @@
+Content-type: application/vnd.ogc.wms_xml
+
 <?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
 <!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.0/capabilities_1_1_0.dtd"
  [
@@ -5,8 +7,6 @@
  ]>  <!-- end of DOCTYPE declaration -->
 
 <WMT_MS_Capabilities version="1.1.0">
-
-<!-- MapServer version 6.1-dev OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG OUTPUT=KML SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=CAIRO SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=GEOS INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
 
 <Service>
   <Name>OGC:WMS</Name>
@@ -78,16 +78,16 @@
     <Title>wms_dimesion</Title>
     <Abstract>wms_dimesion</Abstract>
     <SRS>EPSG:4326</SRS>
-    <LatLonBoundingBox minx="0.000178" miny="-0.002134" maxx="0.00342" maxy="0.000314" />
+    <LatLonBoundingBox minx="0.00017" miny="-0.00213" maxx="0.00342" maxy="0.00031" />
     <BoundingBox SRS="EPSG:4326"
-                minx="0.000178" miny="-0.002134" maxx="0.00342" maxy="0.000314" />
+                minx="0.00017" miny="-0.00213" maxx="0.00342" maxy="0.00031" />
     <Layer queryable="0" opaque="0" cascaded="0">
         <Name>lakes_elev</Name>
         <Title>Lakes</Title>
         <SRS>EPSG:4326</SRS>
-        <LatLonBoundingBox minx="0.000178263" miny="-0.002134" maxx="0.0034202" maxy="0.000313775" />
+        <LatLonBoundingBox minx="0.00017826" miny="-0.00213" maxx="0.003420" maxy="0.00031377" />
         <BoundingBox SRS="EPSG:4326"
-                    minx="0.000178263" miny="-0.002134" maxx="0.0034202" maxy="0.000313775" />
+                    minx="0.00017826" miny="-0.00213" maxx="0.003420" maxy="0.00031377" />
         <Dimension name="elevation" units="meters"/>
         <Extent name="elevation" default="500" nearestValue="0">500, 490, 480</Extent>
         <Dimension name="text_dimension" units="my_units"/>
@@ -105,9 +105,9 @@
         <Name>lakes_elev_range</Name>
         <Title>Lakes</Title>
         <SRS>EPSG:4326</SRS>
-        <LatLonBoundingBox minx="0.000178263" miny="-0.002134" maxx="0.0034202" maxy="0.000313775" />
+        <LatLonBoundingBox minx="0.00017826" miny="-0.00213" maxx="0.003420" maxy="0.00031377" />
         <BoundingBox SRS="EPSG:4326"
-                    minx="0.000178263" miny="-0.002134" maxx="0.0034202" maxy="0.000313775" />
+                    minx="0.00017826" miny="-0.00213" maxx="0.003420" maxy="0.00031377" />
         <Dimension name="elevation" units="meters"/>
         <Extent name="elevation" nearestValue="0">490/800</Extent>
         <Style>
@@ -123,9 +123,9 @@
         <Name>lakes_elev_multi_range</Name>
         <Title>Lakes</Title>
         <SRS>EPSG:4326</SRS>
-        <LatLonBoundingBox minx="0.000178263" miny="-0.002134" maxx="0.0034202" maxy="0.000313775" />
+        <LatLonBoundingBox minx="0.00017826" miny="-0.00213" maxx="0.003420" maxy="0.00031377" />
         <BoundingBox SRS="EPSG:4326"
-                    minx="0.000178263" miny="-0.002134" maxx="0.0034202" maxy="0.000313775" />
+                    minx="0.00017826" miny="-0.00213" maxx="0.003420" maxy="0.00031377" />
         <Dimension name="elevation" units="meters"/>
         <Extent name="elevation" nearestValue="0">480/500,800/900</Extent>
         <Style>

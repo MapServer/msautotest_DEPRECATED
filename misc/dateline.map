@@ -13,7 +13,7 @@ MAP
   SIZE 400 180
   
   PROJECTION
-    "+proj=latlong +datum=WGS84"
+    "+proj=latlong +datum=WGS84 +over"
   END
 
   LAYER
@@ -22,7 +22,7 @@ MAP
     STATUS DEFAULT
     DATA "data/dateline_boxes.shp"
     PROJECTION
-      "+proj=merc +datum=WGS84"
+      "+proj=merc +datum=WGS84 +over"
     END
     CLASS
       OUTLINECOLOR 0 0 0 
