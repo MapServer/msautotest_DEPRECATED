@@ -31,7 +31,7 @@ Content-type: text/xml
         <ms:POPPLACE_>8</ms:POPPLACE_>
         <ms:POPPLACE_I>1</ms:POPPLACE_I>
         <ms:UNIQUE_KEY>BACMK</ms:UNIQUE_KEY>
-        <ms:NAME>Tignish</ms:NAME>
+        <ms:NAME>&quot;Tignish</ms:NAME>
         <ms:NAME_E></ms:NAME_E>
         <ms:NAME_F></ms:NAME_F>
         <ms:UNIQUE_K_1></ms:UNIQUE_K_1>
@@ -62,7 +62,7 @@ Content-type: text/xml
         <ms:POPPLACE_>9</ms:POPPLACE_>
         <ms:POPPLACE_I>1</ms:POPPLACE_I>
         <ms:UNIQUE_KEY>CAGYX</ms:UNIQUE_KEY>
-        <ms:NAME>Cheticamp</ms:NAME>
+        <ms:NAME>&#39;Cheticamp</ms:NAME>
         <ms:NAME_E></ms:NAME_E>
         <ms:NAME_F></ms:NAME_F>
         <ms:UNIQUE_K_1></ms:UNIQUE_K_1>
@@ -124,7 +124,7 @@ Content-type: text/xml
         <ms:POPPLACE_>109</ms:POPPLACE_>
         <ms:POPPLACE_I>2</ms:POPPLACE_I>
         <ms:UNIQUE_KEY>BACII</ms:UNIQUE_KEY>
-        <ms:NAME>Souris</ms:NAME>
+        <ms:NAME>&#39;Souris&#39;</ms:NAME>
         <ms:NAME_E></ms:NAME_E>
         <ms:NAME_F></ms:NAME_F>
         <ms:UNIQUE_K_1></ms:UNIQUE_K_1>
@@ -155,7 +155,7 @@ Content-type: text/xml
         <ms:POPPLACE_>110</ms:POPPLACE_>
         <ms:POPPLACE_I>2</ms:POPPLACE_I>
         <ms:UNIQUE_KEY>CAGBW</ms:UNIQUE_KEY>
-        <ms:NAME>Canso</ms:NAME>
+        <ms:NAME>&quot;Canso&quot;</ms:NAME>
         <ms:NAME_E></ms:NAME_E>
         <ms:NAME_F></ms:NAME_F>
         <ms:UNIQUE_K_1></ms:UNIQUE_K_1>
@@ -279,7 +279,7 @@ Content-type: text/xml
         <ms:POPPLACE_>114</ms:POPPLACE_>
         <ms:POPPLACE_I>2</ms:POPPLACE_I>
         <ms:UNIQUE_KEY>CBPAK</ms:UNIQUE_KEY>
-        <ms:NAME>Windsor</ms:NAME>
+        <ms:NAME>&quot;Wind&quot;sor</ms:NAME>
         <ms:NAME_E></ms:NAME_E>
         <ms:NAME_F></ms:NAME_F>
         <ms:UNIQUE_K_1></ms:UNIQUE_K_1>

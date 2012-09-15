@@ -56,7 +56,7 @@ Content-type: text/xml
     </gml:featureMember>
     <gml:featureMember>
       <ms:popplace>
-        <ms:NAME>Truro</ms:NAME>
+        <ms:NAME>Tr&quot;uro</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
     <gml:featureMember>

@@ -335,6 +335,7 @@ def run_tests( argv ):
     noresult_count = 0
     keep_pass = 0
     valgrind = 0 
+    valgrind_log = ''
     shp2img = 'shp2img'
     renderer = None
     verbose = 0
@@ -457,8 +458,9 @@ def run_tests( argv ):
             (command, strip_items) = collect_strip_requests( command )
             
             if valgrind:
+                valgrind_log = 'result/%s.txt'%(out_file+".vgrind.txt")
                 command = command.strip()
-                command = 'valgrind --tool=memcheck --leak-check=full %s 2>result/%s.txt'%(command, out_file+".vgrind.txt")
+                command = 'valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
 
             if verbose:
                 print('')
@@ -478,6 +480,9 @@ def run_tests( argv ):
                 fixexponent_file( 'result/'+out_file )
                 truncate_one_decimal( 'result/'+out_file )
                 detimestamp_file( 'result/'+out_file )
+            if valgrind:
+                if os.path.getsize(valgrind_log) == 0:
+                   os.remove( valgrind_log )
 
             apply_strip_items_file( 'result/'+out_file, strip_items )
                 

@@ -1,0 +1,30 @@
+{
+   _dl_init memory leaks
+   Memcheck:Leak
+   ...
+   fun:_dl_init
+}
+
+{
+   CPLCreateMutex
+   Memcheck:Leak
+   fun:malloc
+   fun:CPLCreateMutex
+   ...
+}
+
+{
+   png/zlib inflate
+   Memcheck:Cond
+   fun:inflateReset2
+   fun:inflateInit2_
+   ...
+}
+
+{
+   libcurl global init
+   Memcheck:Cond
+   ...
+   fun:curl_global_init
+   ...
+}
