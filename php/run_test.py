@@ -3,6 +3,6 @@
 import sys
 import subprocess
 
-retcode = subprocess.call(['phpunit', '--process-isolation','.'])
+retcode = subprocess.call(['phpunit','.'])
 
 sys.exit(retcode)
