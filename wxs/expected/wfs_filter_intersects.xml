@@ -31,7 +31,7 @@ Content-type: text/xml
         <ms:POPPLACE_>110</ms:POPPLACE_>
         <ms:POPPLACE_I>2</ms:POPPLACE_I>
         <ms:UNIQUE_KEY>CAGBW</ms:UNIQUE_KEY>
-        <ms:NAME>Canso</ms:NAME>
+        <ms:NAME>&quot;Canso&quot;</ms:NAME>
         <ms:NAME_E></ms:NAME_E>
         <ms:NAME_F></ms:NAME_F>
         <ms:UNIQUE_K_1></ms:UNIQUE_K_1>

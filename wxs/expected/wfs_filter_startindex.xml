@@ -16,12 +16,12 @@ Content-type: text/xml
       </gml:boundedBy>
     <gml:featureMember>
       <ms:popplace>
-        <ms:NAME>Tignish</ms:NAME>
+        <ms:NAME>&quot;Tignish</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
     <gml:featureMember>
       <ms:popplace>
-        <ms:NAME>Cheticamp</ms:NAME>
+        <ms:NAME>&#39;Cheticamp</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
     <gml:featureMember>
@@ -31,12 +31,12 @@ Content-type: text/xml
     </gml:featureMember>
     <gml:featureMember>
       <ms:popplace>
-        <ms:NAME>Souris</ms:NAME>
+        <ms:NAME>&#39;Souris&#39;</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
     <gml:featureMember>
       <ms:popplace>
-        <ms:NAME>Canso</ms:NAME>
+        <ms:NAME>&quot;Canso&quot;</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
     <gml:featureMember>
@@ -56,7 +56,7 @@ Content-type: text/xml
     </gml:featureMember>
     <gml:featureMember>
       <ms:popplace>
-        <ms:NAME>Windsor</ms:NAME>
+        <ms:NAME>&quot;Wind&quot;sor</ms:NAME>
       </ms:popplace>
     </gml:featureMember>
     <gml:featureMember>

@@ -22,7 +22,7 @@ Content-Transfer-Encoding: binary
     <ogr:popplace fid="popplace.0">
       <ogr:geometryProperty><gml:Point><gml:coordinates>2503805.5,427872.65625</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>CAGYX</ogr:UNIQUE_KEY>
-      <ogr:NAME>Cheticamp</ogr:NAME>
+      <ogr:NAME>'Cheticamp</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
       <ogr:POP_CLASS>2</ogr:POP_CLASS>
     </ogr:popplace>
@@ -40,7 +40,7 @@ Content-Transfer-Encoding: binary
     <ogr:popplace fid="popplace.2">
       <ogr:geometryProperty><gml:Point><gml:coordinates>2434957.0,347013.59375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>BACII</ogr:UNIQUE_KEY>
-      <ogr:NAME>Souris</ogr:NAME>
+      <ogr:NAME>'Souris'</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
       <ogr:POP_CLASS>2</ogr:POP_CLASS>
     </ogr:popplace>

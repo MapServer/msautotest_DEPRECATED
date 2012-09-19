@@ -20,7 +20,7 @@ Content-type: application/json; subtype=geojson
      [640200, 465700]
    },
    "properties": {
-    "NAME": "Tignish",
+    "NAME": "&quot;Tignish",
     "CAPITAL": 0,
     "POP_RANGE": 1
    }
@@ -34,7 +34,7 @@ Content-type: application/json; subtype=geojson
      [610100, 463800]
    },
    "properties": {
-    "NAME": "Cheticamp",
+    "NAME": "&#39;Cheticamp",
     "CAPITAL": 0,
     "POP_RANGE": 2
    }
@@ -62,7 +62,7 @@ Content-type: application/json; subtype=geojson
      [621500, 462100]
    },
    "properties": {
-    "NAME": "Souris",
+    "NAME": "&#39;Souris&#39;",
     "CAPITAL": 0,
     "POP_RANGE": 2
    }
@@ -76,7 +76,7 @@ Content-type: application/json; subtype=geojson
      [610000, 452000]
    },
    "properties": {
-    "NAME": "Canso",
+    "NAME": "&quot;Canso&quot;",
     "CAPITAL": 0,
     "POP_RANGE": 2
    }
@@ -132,7 +132,7 @@ Content-type: application/json; subtype=geojson
      [640800, 445900]
    },
    "properties": {
-    "NAME": "Windsor",
+    "NAME": "&quot;Wind&quot;sor",
     "CAPITAL": 0,
     "POP_RANGE": 2
    }
@@ -258,7 +258,7 @@ Content-type: application/json; subtype=geojson
      [631600, 452200]
    },
    "properties": {
-    "NAME": "Truro",
+    "NAME": "Tr&quot;uro",
     "CAPITAL": 0,
     "POP_RANGE": 3
    }

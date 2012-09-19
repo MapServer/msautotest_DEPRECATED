@@ -7,6 +7,14 @@
 #
 # Verify PropertyIsEqualTo
 # RUN_PARMS: wfs_filter_property_is_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+
+# Test quotes in filter
+# RUN_PARMS: wfs_filter_property_is_equal_quote1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>\"Tignish</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal_quote2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>'Cheticamp</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal_quote3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>'Souris'</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal_quote4.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>\"Canso\"</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal_quote5.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>\"Wind\"sor</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal_quote6.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Tru\"ro</Literal></PropertyIsEqualTo></Filter>" > [RESULT]
 #
 # Verify PropertyIsNotEqualTo
 # RUN_PARMS: wfs_filter_is_not_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsNotEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsNotEqualTo></Filter>" > [RESULT]
@@ -44,6 +52,21 @@
 #
 # Verify PropertyIsEqualTo OR PropertyIsEqualTo
 # RUN_PARMS: wfs_filter_isequalto_or_isequalto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>5</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo (sydney or digby)
+# RUN_PARMS: wfs_filter_iseq_or_iseq_str1.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Sydney</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo ('souris' or digby)
+# RUN_PARMS: wfs_filter_iseq_or_iseq_str2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>'Souris'</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo ("Tignish or digby)
+# RUN_PARMS: wfs_filter_iseq_or_iseq_str3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>\"Tignish</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo ('souris' or "Tignish)
+# RUN_PARMS: wfs_filter_iseq_or_iseq_str4.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>'Souris'</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>\"Tignish</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
+#
+# Verify PropertyIsEqualTo OR PropertyIsEqualTo ("Tignish or 'souris')
+# RUN_PARMS: wfs_filter_iseq_or_iseq_str5.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>\"Tignish</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>NAME</PropertyName><Literal>'Souris'</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
 #
 # Verify PropertyIsEqualTo OR PropertyIsEqualTo reverse
 # RUN_PARMS: wfs_filter_isequalto_or_isequalto_reverse.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><OR><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>5</Literal></PropertyIsEqualTo><PropertyIsEqualTo><PropertyName>POP_RANGE</PropertyName><Literal>4</Literal></PropertyIsEqualTo></OR></Filter>" > [RESULT_DEVERSION]
@@ -105,7 +128,7 @@
 # RUN_PARMS: wfs_filter_startindex.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&propertyname=(NAME)&maxfeatures=10&startindex=0" > [RESULT]
 # RUN_PARMS: wfs_filter_startindex2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&propertyname=(NAME)&maxfeatures=10&startindex=10" > [RESULT]
 MAP
-
+CONFIG "MS_ERRORFILE" "stderr"
 NAME WFS_FILTER
 STATUS ON
 SIZE 400 300
@@ -117,15 +140,6 @@ IMAGECOLOR 255 255 255
 SHAPEPATH ./data
 SYMBOLSET etc/symbols.sym
 FONTSET etc/fonts.txt
-
-
-OUTPUTFORMAT
-  NAME GDPNG
-  DRIVER "GD/PNG"
-  MIMETYPE "image/png"
-  IMAGEMODE RGB
-  EXTENSION "png"
-END
 
 
 #
