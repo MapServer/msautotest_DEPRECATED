@@ -69,8 +69,7 @@ END
 
 LAYER
   NAME province
-  CONNECTIONTYPE postgis
-  CONNECTION "dbname=msautotest user=postgres"
+  INCLUDE "postgis.include"
   DATA "the_geom from (select * from province order by gid) as foo using unique gid using srid=3978"
   METADATA
     "wms_title"         "province"
@@ -97,8 +96,7 @@ END # Layer
 
 LAYER
   NAME popplace
-  CONNECTIONTYPE postgis
-  CONNECTION "dbname=msautotest user=postgres"
+  INCLUDE "postgis.include"
   DATA "the_geom from (select * from popplace order by gid) as foo using unique gid using srid=3978"
   METADATA
     "wms_title"         "popplace"
@@ -137,8 +135,7 @@ END # Layer
 
 LAYER
   NAME road
-  CONNECTIONTYPE postgis
-  CONNECTION "dbname=msautotest user=postgres"
+  INCLUDE "postgis.include"
   DATA "the_geom from (select * from road order by gid) as foo using unique gid using srid=3978"
   METADATA
     "wms_title"       "road"
