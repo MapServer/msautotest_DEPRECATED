@@ -30,6 +30,7 @@
 import sys
 import os
 import string
+import time
 from testlib import *
 
 have_pdiff = None
@@ -413,6 +414,7 @@ def run_tests( argv ):
         #######################################################################
         # Handle each RUN_PARMS item in this file.
         for run_item in runparms_list:
+            time.sleep(0.05)  #allow us to catch a ctrl-c
             out_file = run_item[0]
             command = run_item[1]
 
@@ -508,6 +510,9 @@ def run_tests( argv ):
                 fail_count = fail_count + 1
                 print('*    results dont match, TEST FAILED.')
             elif cmp == 'noresult':
+                f = open('result/'+out_file,"w")
+                print >>f, "Segmentation fault or other serious error"
+                f.close()
                 fail_count = fail_count + 1
                 noresult_count += 1
                 print('*    no result file generated, TEST FAILED.')
