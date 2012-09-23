@@ -444,11 +444,15 @@ def run_tests( argv ):
             # support for POST request method
             begin = command.find('[POST]')
             end = command.find('[/POST]')
+            post = ''
             if begin != -1 and end != -1 and begin < end:
                 post = command[begin+len('[POST]'):end]
                 tmp = command
                 post = post.replace( '"', '\'')
-                command = 'echo "' + post + '" | ' + tmp[:begin] + tmp[end+len('[/POST]'):]
+                if valgrind:
+                    command = tmp[:begin] + tmp[end+len('[/POST]'):]
+                else:
+                    command = 'echo "' + post + '" | ' + tmp[:begin] + tmp[end+len('[/POST]'):]
                 os.environ['CONTENT_LENGTH'] = str(len(post))
                 os.environ['REQUEST_METHOD'] = "POST"
                 os.environ['MS_MAPFILE'] = map
@@ -462,7 +466,10 @@ def run_tests( argv ):
             if valgrind:
                 valgrind_log = 'result/%s.txt'%(out_file+".vgrind.txt")
                 command = command.strip()
-                command = 'valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
+                if post == '':
+                  command = 'valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
+                else:
+                  command = 'echo "' + post + '" | valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
 
             if verbose:
                 print('')
