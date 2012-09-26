@@ -136,6 +136,7 @@ def compare_result( filename ):
     run_perceptualdiff = have_pdiff != 'false' and \
             ('\x49\x49\x2A\x00' in result \
             or '\x49\x49\x00\x2A' in result \
+            or '\x47\x49\x46\x38\x37\x61' in result \
             or '\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' in result)
 
     if run_perceptualdiff:
