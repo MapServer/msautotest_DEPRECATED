@@ -1,5 +1,6 @@
 Content-Type: multipart/mixed; boundary=wcs
 
+
 --wcs
 Content-Type: text/xml
 Content-ID: wcs.xml
@@ -15,6 +16,7 @@ Content-ID: wcs.xml
     <ows:Reference xlink:href="cid:coverage/out.grd"/>
   </Coverage>
 </Coverages>
+
 --wcs
 Content-Type: image/x-aaigrid
 Content-Description: coverage data
@@ -38,6 +40,7 @@ NODATA_value    -99
  -99 255 222 255 123 140 214 140 173 214 148 173
  -99 206 255 255 132 156 148 99 132 165 197 165
  -99 -99 -99 -99 -99 -99 -99 -99 -99 -99 -99 -99
+
 --wcs
 Content-Type: application/octet-stream
 Content-Description: coverage data
@@ -52,6 +55,7 @@ Content-Disposition: INLINE
     <MDI key="TIFFTAG_YRESOLUTION">72.000000</MDI>
   </Metadata>
 </PAMDataset>
+
 --wcs
 Content-Type: application/octet-stream
 Content-Description: coverage data
@@ -61,4 +65,3 @@ Content-Disposition: INLINE
 
 GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]
 --wcs--
-
