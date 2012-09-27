@@ -1,4 +1,4 @@
-Content-type: text/xml; subtype=gml/2.1.2
+Content-Type: text/xml; subtype=gml/2.1.2
 
 <?xml version='1.0' encoding="ISO-8859-1" ?>
 <wfs:FeatureCollection
