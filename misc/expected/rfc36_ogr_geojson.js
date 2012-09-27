@@ -1,4 +1,4 @@
-Content-type: application/json; subtype=geojson
+Content-Type: application/json; subtype=geojson
 
 
 {
