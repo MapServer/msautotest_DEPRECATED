@@ -3,11 +3,26 @@
 class LayerObjTest extends PHPUnit_Framework_TestCase
 {
     protected $layer;
+    protected $map;
 
     public function setUp()
     {
-        $map = new mapObj('maps/filter.map');
-        $this->layer = $map->getLayer(0);
+        $this->map = new mapObj('maps/filter.map');
+        $this->layer = $this->map->getLayer(0);
+    }
+
+    public function testSetFilter()
+    {
+        $this->assertEquals(0, $this->layer->setFilter("('[CTY_NAME]' = 'Itasca')"));
+        $this->assertEquals("('[CTY_NAME]' = 'Itasca')", $this->layer->getFilterString());
+        $this->layer->queryByRect($this->map->extent);
+        $this->assertEquals(1,$this->layer->getNumResults());
+        $this->assertEquals(0, $this->layer->setFilter("('[CTY_ABBR]' = 'BECK')"));
+        $this->layer->queryByRect($this->map->extent);
+        $this->assertEquals(1,$this->layer->getNumResults());
+        $this->assertEquals(0, $this->layer->setFilter("('[WRONG]' = 'wrong')"));
+        @$this->layer->queryByRect($this->map->extent);
+        $this->assertEquals(0,$this->layer->getNumResults());
     }
 
     public function testqueryByFilter()
