@@ -1,4 +1,4 @@
-Content-type: application/vnd.ogc.gml
+Content-Type: application/vnd.ogc.gml
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
 

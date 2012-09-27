@@ -30,6 +30,7 @@
 import sys
 import os
 import string
+import time
 from testlib import *
 
 have_pdiff = None
@@ -413,6 +414,7 @@ def run_tests( argv ):
         #######################################################################
         # Handle each RUN_PARMS item in this file.
         for run_item in runparms_list:
+            time.sleep(0.05)  #allow us to catch a ctrl-c
             out_file = run_item[0]
             command = run_item[1]
 
@@ -442,11 +444,15 @@ def run_tests( argv ):
             # support for POST request method
             begin = command.find('[POST]')
             end = command.find('[/POST]')
+            post = ''
             if begin != -1 and end != -1 and begin < end:
                 post = command[begin+len('[POST]'):end]
                 tmp = command
                 post = post.replace( '"', '\'')
-                command = 'echo "' + post + '" | ' + tmp[:begin] + tmp[end+len('[/POST]'):]
+                if valgrind:
+                    command = tmp[:begin] + tmp[end+len('[/POST]'):]
+                else:
+                    command = 'echo "' + post + '" | ' + tmp[:begin] + tmp[end+len('[/POST]'):]
                 os.environ['CONTENT_LENGTH'] = str(len(post))
                 os.environ['REQUEST_METHOD'] = "POST"
                 os.environ['MS_MAPFILE'] = map
@@ -460,7 +466,10 @@ def run_tests( argv ):
             if valgrind:
                 valgrind_log = 'result/%s.txt'%(out_file+".vgrind.txt")
                 command = command.strip()
-                command = 'valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
+                if post == '':
+                  command = 'valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
+                else:
+                  command = 'echo "' + post + '" | valgrind --tool=memcheck -q --suppressions=../valgrind-suppressions.txt --leak-check=full --show-reachable=yes %s 2>%s'%(command, valgrind_log)
 
             if verbose:
                 print('')
@@ -508,6 +517,9 @@ def run_tests( argv ):
                 fail_count = fail_count + 1
                 print('*    results dont match, TEST FAILED.')
             elif cmp == 'noresult':
+                f = open('result/'+out_file,"w")
+                print >>f, "Segmentation fault or other serious error"
+                f.close()
                 fail_count = fail_count + 1
                 noresult_count += 1
                 print('*    no result file generated, TEST FAILED.')

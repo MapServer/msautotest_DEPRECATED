@@ -139,8 +139,7 @@ END
 
 LAYER
   NAME road
-  CONNECTIONTYPE postgis
-  CONNECTION "dbname=msautotest user=postgres"
+  INCLUDE "postgis.include"
   DATA "the_geom from (select * from road order by gid) as foo using unique gid using srid=3978"
   TEMPLATE "ttt"
   METADATA

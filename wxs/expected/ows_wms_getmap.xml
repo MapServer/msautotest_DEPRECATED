@@ -1,4 +1,4 @@
-Content-type: application/vnd.ogc.se_xml
+Content-Type: application/vnd.ogc.se_xml
 
 <?xml version='1.0' encoding="ISO-8859-1" standalone="no" ?>
 <!DOCTYPE ServiceExceptionReport SYSTEM "http://schemas.opengis.net/wms/1.1.0/exception_1_1_0.dtd">
