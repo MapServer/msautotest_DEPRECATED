@@ -44,12 +44,20 @@ layer
         end
     end
     feature
-      points 0 50 600 60 end
-      text "left to right"
+      points 0 150 600 130 end
+      text "left to right (down)"
     end
     feature
-      points 600 80 0 90 end
-      text "right to left"
+      points 600 120 0 100 end
+      text "right to left (down)"
+    end
+    feature
+      points 0 30 600 50 end
+      text "left to right (up)"
+    end
+    feature
+      points 600 60 0 80 end
+      text "right to left (up)"
     end
 end
 
