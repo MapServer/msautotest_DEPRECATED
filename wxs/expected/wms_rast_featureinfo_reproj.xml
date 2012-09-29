@@ -14,8 +14,8 @@ Content-Type: application/vnd.ogc.gml
 					<gml:coordinates>-117.44501,44.71061 -117.44501,44.71061</gml:coordinates>
 				</gml:Box>
 			</gml:boundedBy>
-			<x>464750</x>
-			<y>4950900</y>
+			<x>-117.44501</x>
+			<y>44.71061</y>
 			<value_0>146</value_0>
 			<value_1>167</value_1>
 			<value_2>150</value_2>
