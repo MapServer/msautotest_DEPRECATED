@@ -123,10 +123,10 @@ Content-Type: application/vnd.ogc.wms_xml
     <SRS>EPSG:42101</SRS>
     <SRS>EPSG:4269</SRS>
     <SRS>EPSG:4326</SRS>
-    <LatLonBoundingBox minx="-67.5725" miny="42" maxx="-58.9275" maxy="48.5" />
+    <LatLonBoundingBox minx="-117.546" miny="44.6654" maxx="-117.387" maxy="44.7671" />
     <BoundingBox SRS="EPSG:4326"
-                minx="-67.5725" miny="42" maxx="-58.9275" maxy="48.5" />
-    <Layer queryable="0" opaque="0" cascaded="0">
+                minx="-117.546" miny="44.6654" maxx="-117.387" maxy="44.7671" />
+    <Layer queryable="1" opaque="0" cascaded="0">
         <Name>road</Name>
         <Title>road</Title>
         <SRS>EPSG:32611</SRS>
