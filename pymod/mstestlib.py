@@ -340,6 +340,7 @@ def run_tests( argv ):
     shp2img = 'shp2img'
     renderer = None
     verbose = 0
+    strict = 0
     skiparg = False
     ###########################################################################
     # Process arguments.
@@ -355,6 +356,8 @@ def run_tests( argv ):
             keep_pass = 1
         elif argv[i] == '-valgrind':
             valgrind = 1
+        elif argv[i] == '-strict':
+            strict = 1
         elif argv[i] == '-renderer':
             renderer = argv[i+1]
             skiparg = True
@@ -364,7 +367,7 @@ def run_tests( argv ):
             pass
         else:
             print( 'Unrecognised argument: %s' % argv[i] )
-            print( 'Usage: run_test.py [-v] [-keep] [-valgrind]\n' + 
+            print( 'Usage: run_test.py [-v] [-keep] [-valgrind] [-strict]\n' + 
                    '                   [-shp2img <file>] [-renderer <name>]\n' +
                    '                   [mapfilename]*' )
             sys.exit( 1 )
@@ -504,14 +507,22 @@ def run_tests( argv ):
                     os.remove( 'result/' + out_file )
                 print('     results match.')
             elif cmp ==  'files_differ_image_match':
-                succeed_count = succeed_count + 1
-                if keep_pass == 0:
-                    os.remove( 'result/' + out_file )
-                print('     result images match, though files differ.')
+                if strict:
+                   fail_count = fail_count + 1
+                   print('*    results dont match (though images match), TEST FAILED.')
+                else:
+                   succeed_count = succeed_count + 1
+                   if keep_pass == 0:
+                      os.remove( 'result/' + out_file )
+                   print('     result images match, though files differ.')
             elif cmp ==  'files_differ_image_nearly_match':
-                succeed_count = succeed_count + 1
-                if keep_pass == 0:
-                    os.remove( 'result/' + out_file )
+                if strict:
+                   fail_count = fail_count + 1
+                   print('*    results dont match (though images perceptually match), TEST FAILED.')
+                else:
+                   succeed_count = succeed_count + 1
+                   if keep_pass == 0:
+                      os.remove( 'result/' + out_file )
                 print('     result images perceptually match, though files differ.')
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
