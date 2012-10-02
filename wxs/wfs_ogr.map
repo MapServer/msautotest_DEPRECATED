@@ -46,6 +46,9 @@
 # WFS 1.1 request in EPSG:4326
 # RUN_PARMS: wfsogr11_ogrgml_ll.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=text/xml; subtype=gml/2.1.2; driver=ogr&srsName=urn:ogc:def:crs:EPSG::4326" > [RESULT]
 #
+# WFS 1.1 GetFeature CSV
+# RUN_PARMS: wfsogr11_ogrcsv.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=csv&MAXFEATURES=10" > [RESULT]
+#
 # 
 # WMS 1.1 - GetFeatureInfo
 #
