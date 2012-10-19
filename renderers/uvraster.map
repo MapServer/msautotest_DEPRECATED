@@ -63,7 +63,7 @@ END # symbol
     DATA data/wind_12.tif
     PROCESSING "BANDS=1,2"
     PROCESSING "UV_SPACING=40"
-    PROCESSING "UV_SIZE_SCALE=0.2"
+    PROCESSING "UV_SIZE_SCALE=0.5"
 CLASS
     STYLE
       SYMBOL "horizline"
