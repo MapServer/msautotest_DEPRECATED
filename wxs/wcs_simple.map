@@ -199,6 +199,8 @@
 # RUN_PARMS: wcs_20_exception_updatesequence_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities&UPDATESEQUENCE=2007-10-30T14:23:38Z" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_updatesequence_higher.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities&UPDATESEQUENCE=2008-01-13T14:23:38Z" > [RESULT_DEMIME]
 #
+# RUN_PARMS: wcs_20_exception_requestparseerror.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&CoverageId=grey&format=image/tiff&size=x(1.11)" > [RESULT_DEMIME]
+
 # InvalidParameterValue
 # RUN_PARMS: wcs_20_exception_invalidparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=InvalidRequest" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_invalidparam_request.txt [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=InvalidRequest" > [RESULT]
