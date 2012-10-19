@@ -1,3 +1,9 @@
+# RUN_PARMS: uvraster.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: uvraster.gif [SHP2IMG] -m [MAPFILE] -i gif -o [RESULT]
+# RUN_PARMS: uvraster.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: uvraster.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: uvraster.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+
 MAP
   NAME 'wind'
   #EXTENT 125000 4785000 789000 5489000
@@ -18,7 +24,7 @@ SYMBOL
   TYPE VECTOR
   POINTS
      0 0
-     5 0
+     1 0
   END # points
 END # symbol
 SYMBOL
