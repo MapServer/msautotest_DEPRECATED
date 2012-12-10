@@ -26,10 +26,10 @@ MAP
     DEBUG 10
     SCALETOKEN
       NAME "%shpfile%"
-      DEFAULT "data/shppoly/poly.shp"
       VALUES
-        "1000000/35000000" "../query/data/indx_q100kpy4.shp"
-        "35000000/50000000" "../query/data/bdry_counpy2"
+        "0" "data/shppoly/poly.shp"
+        "25000000" "../query/data/indx_q100kpy4.shp"
+        "35000000" "../query/data/bdry_counpy2"
       END
     END
     DATA '%shpfile%'
@@ -45,10 +45,10 @@ MAP
     DATA "data/shppoly/poly.shp"
     SCALETOKEN
       NAME "%filter%"
-      DEFAULT "([EAS_ID]=158)"
       VALUES
-        "200000/500000" "([EAS_ID]=166)"
-        "500000/1000000" ""
+        "0" "([EAS_ID]=158)"
+        "200000" "([EAS_ID]=166)"
+        "600000" ""
       END
     END
     FILTER "%filter%"
@@ -64,16 +64,16 @@ MAP
     DATA "data/shppoly/poly.shp"
     SCALETOKEN
       NAME "%filteritem%"
-      DEFAULT "EAS_ID"
       VALUES
-        "200000/500000" "PRFEDEA"
+        "0" "EAS_ID"
+        "200000" "PRFEDEA"
       END
     END
     SCALETOKEN
       NAME "%filter%"
-      DEFAULT "173"
       VALUES
-        "200000/500000" "35043369"
+        "0" "173"
+        "200000" "35043369"
       END
     END
     FILTERITEM "%filteritem%"
