@@ -62,6 +62,7 @@
 <se:FeatureTypeStyle>
 <se:Rule>
 <se:Name>TN.CommonTransportElements.TransportLink</se:Name>
+<se:MinScaleDenominator>5146.000000</se:MinScaleDenominator>
 <se:LineSymbolizer>
 <se:Stroke>
 <se:SvgParameter name="stroke">#000000</se:SvgParameter>
@@ -71,6 +72,7 @@
 </se:Rule>
 <se:Rule>
 <se:Name>TN.CommonTransportElements.TransportLink</se:Name>
+<se:MinScaleDenominator>5146.000000</se:MinScaleDenominator>
 <se:LineSymbolizer>
 <se:Stroke>
 <se:SvgParameter name="stroke">#000000</se:SvgParameter>

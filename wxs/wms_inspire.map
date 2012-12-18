@@ -338,6 +338,7 @@ MAP
 
     LAYER
         NAME TN.CommonTransportElements.TransportLink
+        MINSCALEDENOM 5146
         METADATA
             "wms_title.ger" "Generisches Verkehrssegment"
             "wms_title.eng" "Common transport link"
