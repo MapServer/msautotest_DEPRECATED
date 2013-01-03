@@ -81,6 +81,7 @@ LAYER
     "wms_enable_request" "GetCapabilities !GetMap"
     "wms_layer_group" "/roadgroup"
   END
+  MINSCALEDENOM 1500
   TYPE LINE
   STATUS ON
   PROJECTION
