@@ -27,7 +27,7 @@ LAYER
   NAME "pop"
   TYPE RASTER
   STATUS DEFAULT
-  CONNECTION "http://vmap0.tiles.osgeo.org/wms/vmap0?"
+  CONNECTION "http://mstest.tiles.osgeo.org/wms/vmap0?"
   CONNECTIONTYPE WMS
   METADATA
     "wms_srs"             "EPSG:4326"
