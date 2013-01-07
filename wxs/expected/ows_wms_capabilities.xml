@@ -16,6 +16,15 @@ Content-Type: text/xml
 
 <Capability>
   <Request>
+    <GetCapabilities>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/ows?"/></Get>
+          <Post><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost/path/to/ows?"/></Post>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
     <GetMap>
       <Format>image/png</Format>
       <Format>image/jpeg</Format>
@@ -77,6 +86,7 @@ Content-Type: text/xml
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="EPSG:43204"
                     minx="2.25898e+06" miny="-70747.9" maxx="2.61535e+06" maxy="495481" />
+        <MinScaleDenominator>1500</MinScaleDenominator>
         <Style>
           <Name>default</Name>
           <Title>default</Title>
