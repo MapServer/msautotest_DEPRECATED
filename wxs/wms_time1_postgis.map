@@ -28,7 +28,7 @@
 # Triggered a service exception with an out of extents range time values 
 # specified
 #
-# RUN_PARMS: wms_time_out_of_extents_single_range_postgis.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-132,4,-68,68&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=300&STYLES=&LAYERS=pattern4&Time=2004-01-01%2014:10:00/2004-12-03%17:23:00" > [RESULT]
+# RUN_PARMS: wms_time_out_of_extents_single_range_postgis.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-132,4,-68,68&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=300&STYLES=&LAYERS=pattern4&Time=2004-01-01%2014:10:00/2004-12-03%2017:23:00" > [RESULT]
 #
 # Triggered a service exception with an out of extents multiples ranges time 
 # values specified
