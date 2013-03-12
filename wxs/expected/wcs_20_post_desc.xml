@@ -49,7 +49,7 @@
     </gmlcov:rangeType>
     <wcs:ServiceParameters>
       <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>
-      <wcs:nativeFormat></wcs:nativeFormat>
+      <wcs:nativeFormat/>
     </wcs:ServiceParameters>
   </wcs:CoverageDescription>
 </wcs:CoverageDescriptions>
