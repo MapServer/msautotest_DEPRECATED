@@ -57,16 +57,16 @@ MAP
 
   LAYER
     NAME 'bdry_counpy2'
-    METADATA
-      qstring_validation_pattern '.'
+    VALIDATION
+      qstring '.'
     END
     INCLUDE 'include/bdry_counpy2_postgis.map'
   END
 
   LAYER
     NAME 'indx_q100kpy4'
-    METADATA
-      qstring_validation_pattern '.'
+    VALIDATION
+      qstring '.'
     END
     INCLUDE 'include/indx_q100kpy4_shapefile.map'
   END
