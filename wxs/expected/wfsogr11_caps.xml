@@ -149,8 +149,8 @@ Content-Type: text/xml
         <Format>MIDMIF</Format>
       </OutputFormats>
       <ows:WGS84BoundingBox dimensions="2">
-        <ows:LowerCorner>-7.5565511747376 49.766185807900</ows:LowerCorner>
-        <ows:UpperCorner>-7.5550662965057 49.767147580574</ows:UpperCorner>
+        <ows:LowerCorner>-7.5572625062256 49.76680723189</ows:LowerCorner>
+        <ows:UpperCorner>-7.5557777787773 49.767768904154</ows:UpperCorner>
       </ows:WGS84BoundingBox>
     </FeatureType>
   </FeatureTypeList>
