@@ -29,12 +29,12 @@ Content-Type: text/xml
     <GetCapabilities>
       <DCPType>
         <HTTP>
-          <Get onlineResource="http://localhost/path/to/wfs_simple?" />
+          <Get onlineResource="http://localhost/path/to/wfs_simple?myparam=something&amp;" />
         </HTTP>
       </DCPType>
       <DCPType>
         <HTTP>
-          <Post onlineResource="http://localhost/path/to/wfs_simple?" />
+          <Post onlineResource="http://localhost/path/to/wfs_simple?myparam=something&amp;" />
         </HTTP>
       </DCPType>
     </GetCapabilities>
@@ -44,12 +44,12 @@ Content-Type: text/xml
       </SchemaDescriptionLanguage>
       <DCPType>
         <HTTP>
-          <Get onlineResource="http://localhost/path/to/wfs_simple?" />
+          <Get onlineResource="http://localhost/path/to/wfs_simple?myparam=something&amp;" />
         </HTTP>
       </DCPType>
       <DCPType>
         <HTTP>
-          <Post onlineResource="http://localhost/path/to/wfs_simple?" />
+          <Post onlineResource="http://localhost/path/to/wfs_simple?myparam=something&amp;" />
         </HTTP>
       </DCPType>
     </DescribeFeatureType>
@@ -59,12 +59,12 @@ Content-Type: text/xml
       </ResultFormat>
       <DCPType>
         <HTTP>
-          <Get onlineResource="http://localhost/path/to/wfs_simple?" />
+          <Get onlineResource="http://localhost/path/to/wfs_simple?myparam=something&amp;" />
         </HTTP>
       </DCPType>
       <DCPType>
         <HTTP>
-          <Post onlineResource="http://localhost/path/to/wfs_simple?" />
+          <Post onlineResource="http://localhost/path/to/wfs_simple?myparam=something&amp;" />
         </HTTP>
       </DCPType>
     </GetFeature>
