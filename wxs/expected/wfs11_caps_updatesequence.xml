@@ -46,8 +46,8 @@ Content-Type: text/xml
     <ows:Operation name="GetCapabilities">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?"/>
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?myparam=something&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?myparam=something&amp;"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="service">
@@ -64,8 +64,8 @@ Content-Type: text/xml
     <ows:Operation name="DescribeFeatureType">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?"/>
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?myparam=something&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?myparam=something&amp;"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="outputFormat">
@@ -77,8 +77,8 @@ Content-Type: text/xml
     <ows:Operation name="GetFeature">
       <ows:DCP>
         <ows:HTTP>
-          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?"/>
-          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?"/>
+          <ows:Get xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?myparam=something&amp;"/>
+          <ows:Post xlink:type="simple" xlink:href="http://localhost/path/to/wfs_simple?myparam=something&amp;"/>
         </ows:HTTP>
       </ows:DCP>
       <ows:Parameter name="resultType">
