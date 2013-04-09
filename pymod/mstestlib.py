@@ -459,7 +459,11 @@ def run_tests( argv ):
                 os.environ['CONTENT_LENGTH'] = str(len(post))
                 os.environ['REQUEST_METHOD'] = "POST"
                 os.environ['MS_MAPFILE'] = map
-                    
+                if post[0] == '<':
+                  os.environ['CONTENT_TYPE'] = 'text/xml'
+                else:
+                  os.environ['CONTENT_TYPE'] = 'application/x-www-form-urlencoded'
+
             command = command.replace('[MAPSERV]', 'mapserv' )
             command = command.replace('[LEGEND]', 'legend' )
             command = command.replace('[SCALEBAR]', 'scalebar' )
