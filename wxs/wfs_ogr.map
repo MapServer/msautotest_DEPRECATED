@@ -35,6 +35,9 @@
 # Test fetching from two layers with a filter.
 # RUN_PARMS: wfsogr10_twolayer.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace,road&OUTPUTFORMAT=MultiMIDMIF&FILTER=(<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22EPSG:4326%22><coordinates>-65.86,44.56+-65.76,44.68</coordinates></Box></BBOX></Filter>)(<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22EPSG:4326%22><coordinates>-65.86,44.56+-65.76,44.68</coordinates></Box></BBOX></Filter>)" > [RESULT]
 #
+# Test writing features with null numeric fields (#4633)
+# RUN_PARMS: wfsogr10_nullnumeric.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=withnullvalues&OUTPUTFORMAT=CSV" > [RESULT]
+
 # WFS 1.1
 #
 # Do formats show up in the Capabilities
@@ -241,6 +244,30 @@ LAYER
     "wfs_geomtype"      "Geometry"
   END
   TYPE POLYGON
+  STATUS ON
+  PROJECTION
+    "init=epsg:27700"
+  END
+
+  DUMP TRUE
+END
+
+LAYER
+  NAME withnullvalues
+  CONNECTIONTYPE OGR
+  CONNECTION "data/withnullvalues.csv" 
+  
+  METADATA
+    "wfs_title"         "withnullvalues"
+    "wfs_description"   "withnullvalues testing"
+    "wfs_featureid"     "ID"
+    "wfs_srs"           "EPSG:27700"
+    "wfs_getfeature_formatlist" "csv,ogrgml,shapezip,midmif,geojson"
+    "gml_include_items" "all"
+    "gml_types"         "auto"
+    "wfs_geomtype"      "Geometry"
+  END
+  TYPE POINT
   STATUS ON
   PROJECTION
     "init=epsg:27700"
