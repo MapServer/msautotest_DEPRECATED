@@ -153,6 +153,23 @@ Content-Type: text/xml
         <ows:UpperCorner>-7.5557777787773 49.767768904154</ows:UpperCorner>
       </ows:WGS84BoundingBox>
     </FeatureType>
+    <FeatureType>
+      <Name>withnullvalues</Name>
+      <Title>withnullvalues</Title>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::27700</DefaultSRS>
+      <OutputFormats>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/csv</Format>
+        <Format>text/xml; subtype=gml/2.1.2; driver=ogr</Format>
+        <Format>application/shapefile</Format>
+        <Format>MIDMIF</Format>
+        <Format>application/json; subtype=geojson</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-7.5563410911676 49.766461043221</ows:LowerCorner>
+        <ows:UpperCorner>-7.5563410911676 49.766461043221</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
   </FeatureTypeList>
   <ogc:Filter_Capabilities>
     <ogc:Spatial_Capabilities>

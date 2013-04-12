@@ -100,6 +100,12 @@ Content-Type: text/xml
         <SRS>EPSG:27700</SRS>
         <LatLongBoundingBox minx="0" miny="0" maxx="100" maxy="100" />
     </FeatureType>
+    <FeatureType>
+        <Name>withnullvalues</Name>
+        <Title>withnullvalues</Title>
+        <SRS>EPSG:27700</SRS>
+        <LatLongBoundingBox minx="10" miny="30" maxx="10" maxy="30" />
+    </FeatureType>
 </FeatureTypeList>
 
 <ogc:Filter_Capabilities>
