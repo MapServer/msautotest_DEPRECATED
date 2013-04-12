@@ -166,8 +166,8 @@ Content-Type: text/xml
         <Format>application/json; subtype=geojson</Format>
       </OutputFormats>
       <ows:WGS84BoundingBox dimensions="2">
-        <ows:LowerCorner>-7.5563410911676 49.766461043221</ows:LowerCorner>
-        <ows:UpperCorner>-7.5563410911676 49.766461043221</ows:UpperCorner>
+        <ows:LowerCorner>-7.5570524339304 49.767082436309</ows:LowerCorner>
+        <ows:UpperCorner>-7.5570524339304 49.767082436309</ows:UpperCorner>
       </ows:WGS84BoundingBox>
     </FeatureType>
   </FeatureTypeList>
