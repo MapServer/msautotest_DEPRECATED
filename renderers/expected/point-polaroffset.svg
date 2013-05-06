@@ -10,9 +10,9 @@
 <path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 82.730469 91.464844 L 94.589844 80 L 78.730469 84.535156 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 81 89 C 81 91.667969 77 91.667969 77 89 C 77 86.332031 81 86.332031 81 89 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,100%,0%);fill-opacity:1;" d="M 98.320312 79 C 98.320312 81.667969 94.320312 81.667969 94.320312 79 C 94.320312 76.332031 98.320312 76.332031 98.320312 79 "/>
-<path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 60 66.320312 L 40 31.679688 "/>
-<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 47.464844 36.609375 L 36 24.75 L 40.535156 40.609375 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 52 49 C 52 51.667969 48 51.667969 48 49 C 48 46.332031 52 46.332031 52 49 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,100%,0%);fill-opacity:1;" d="M 32 14.359375 C 32 17.027344 28 17.027344 28 14.359375 C 28 11.691406 32 11.691406 32 14.359375 "/>
+<path style="fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 60 67.320312 L 40 32.679688 "/>
+<path style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 47.464844 37.609375 L 36 25.75 L 40.535156 41.609375 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 52 50 C 52 52.667969 48 52.667969 48 50 C 48 47.332031 52 47.332031 52 50 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,100%,0%);fill-opacity:1;" d="M 32 15.359375 C 32 18.027344 28 18.027344 28 15.359375 C 28 12.691406 32 12.691406 32 15.359375 "/>
 </g>
 </svg>
