@@ -7,8 +7,8 @@
 <g id="surface2">
 <rect x="0" y="0" width="200" height="150" style="fill:rgb(100%,78.431373%,0%);fill-opacity:1;stroke:none;"/>
 <use xlink:href="#image6" transform="matrix(1,0,0,1,9,108)"/>
-<use xlink:href="#image8" transform="matrix(1.21534,-1.21534,1.21534,1.21534,60.109127,50)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 29 124 C 29 129.332031 21 129.332031 21 124 C 21 118.667969 29 118.667969 29 124 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 103 50 C 103 55.332031 95 55.332031 95 50 C 95 44.667969 103 44.667969 103 50 "/>
+<use xlink:href="#image8" transform="matrix(1.21534,-1.21534,1.21534,1.21534,60.609127,49.666667)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 29 124.167969 C 29 129.5 21 129.5 21 124.167969 C 21 118.832031 29 118.832031 29 124.167969 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 103.5 49.667969 C 103.5 55 95.5 55 95.5 49.667969 C 95.5 44.332031 103.5 44.332031 103.5 49.667969 "/>
 </g>
 </svg>
