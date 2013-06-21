@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ###############################################################################
 #
 # Project:  MapServer
@@ -84,6 +85,22 @@ def ogr_query_2():
     return 'success'
 
 ###############################################################################
+#
+def check_EAS_ID_with_or_without_space(layer, s, expected_value):
+
+    name = 'EAS_ID'
+    actual_value = pmstestlib.get_item_value( layer, s, name )
+    if actual_value is None:
+        post_reason( 'missing expected attribute %s' % name )
+        return False
+    if actual_value == expected_value or actual_value == expected_value.strip():
+        return True
+    else:
+        post_reason( 'attribute %s is "%s" instead of expected "%s"' % \
+                        (name, actual_value, str(expected_value)) )
+        return False
+
+###############################################################################
 # Scan results, checking count and the first shape information.
 
 def ogr_query_3():
@@ -113,8 +130,7 @@ def ogr_query_3():
     
     s = layer.getShape( result )
     
-    if pmstestlib.check_items( layer, s,
-                               [('EAS_ID','        158')] ) == 0:
+    if not check_EAS_ID_with_or_without_space( layer, s,'        158' ):
         return 'fail'
 
     #########################################################################
@@ -153,8 +169,7 @@ def ogr_query_3():
     
     s = layer.getShape( result )
 
-    if pmstestlib.check_items( layer, s,
-                               [('EAS_ID','        165')] ) == 0:
+    if not check_EAS_ID_with_or_without_space( layer, s,'        165' ):
         return 'fail'
     
     layer.close() 
@@ -206,8 +221,7 @@ def ogr_query_5():
     
     s = layer.getShape( result )
     
-    if pmstestlib.check_items( layer, s,
-                               [('EAS_ID','        158')] ) == 0:
+    if not check_EAS_ID_with_or_without_space( layer, s,'        158' ):
         return 'fail'
 
     #########################################################################
@@ -246,8 +260,7 @@ def ogr_query_5():
     
     s = layer.getShape( result )
 
-    if pmstestlib.check_items( layer, s,
-                               [('EAS_ID','        165')] ) == 0:
+    if not check_EAS_ID_with_or_without_space( layer, s,'        165' ):
         return 'fail'
     
     layer.close() 
@@ -278,8 +291,7 @@ def ogr_query_6():
     s = mapscript.shapeObj( mapscript.MS_SHAPE_POLYGON )
     layer.resultsGetShape( s, 9, 0 )
     
-    if pmstestlib.check_items( layer, s,
-                               [('EAS_ID','        170')] ) == 0:
+    if not check_EAS_ID_with_or_without_space( layer, s,'        170' ):
         return 'fail'
 
     layer.close() 
@@ -321,8 +333,7 @@ def ogr_query_7():
     
     s = layer.getShape( result )
     
-    if pmstestlib.check_items( layer, s,
-                               [('EAS_ID','        168')] ) == 0:
+    if not check_EAS_ID_with_or_without_space( layer, s,'        168' ):
         return 'fail'
 
     layer.close() 
@@ -356,5 +367,5 @@ if __name__ == '__main__':
 
     pmstestlib.summarize()
 
-    mapscript.msCleanup()
+    mapscript.msCleanup(0)
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ###############################################################################
 # $Id: wkt.py 5742 2006-09-05 20:40:04Z frank $
 #
@@ -35,6 +36,7 @@ sys.path.append( '../pymod' )
 import pmstestlib
 
 import mapscript
+import os
 
 ###############################################################################
 # Attempt to verify that bug673 remains fixed.  This bug is trigger if
@@ -68,6 +70,10 @@ def bug_673():
     map.setExtent(-117.25,43.02,-117.21,43.05)
 
     img2 = map.draw()
+    try:
+        os.mkdir('result')
+    except:
+        pass
     img2.save( 'result/bug673.png' )
 
     # Verify we got the image we expected ... at least hopefully we didn't
