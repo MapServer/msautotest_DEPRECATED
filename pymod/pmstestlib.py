@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ###############################################################################
 # $Id$
 #
@@ -111,6 +112,8 @@ def summarize():
           % (failure_counter+blow_counter, blow_counter)
     print 'Skipped:   %d' % skip_counter
     print
+
+    return failure_counter + blow_counter
 
 def get_item_value( layer, shape_obj, name ):
     for i in range(layer.numitems):
