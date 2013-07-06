@@ -31,9 +31,9 @@ Content-Disposition: attachment; filename=road.mid
 Content-Type: application/binary
 Content-Transfer-Encoding: binary
 
-1030,1024,3,3,       6371.089,670,68,"",""
-1034,1030,3,3,       1729.789,673,68,"",""
-1030,1064,3,3,      41747.066,693,68,"",""
+1030,1024,3,3,6371.089,670,68,"",""
+1034,1030,3,3,1729.789,673,68,"",""
+1030,1064,3,3,41747.066,693,68,"",""
 
 --xxOGRBoundaryxx
 Content-Disposition: attachment; filename=road.mif
