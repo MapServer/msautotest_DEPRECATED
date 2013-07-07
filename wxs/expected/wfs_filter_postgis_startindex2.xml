@@ -59,10 +59,10 @@ Content-Type: text/xml
         <ms:name>Amherst</ms:name>
       </ms:popplace>
     </gml:featureMember>
-    <gml:featurember>
+    <gml:featureMember>
       <ms:popplace>
         <ms:name>Kentville</ms:name>
       </ms:popplace>
-    </gml:featurember>
+    </gml:featureMember>
 </wfs:FeatureCollection>
 
