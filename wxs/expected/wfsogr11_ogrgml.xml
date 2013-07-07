@@ -20,7 +20,7 @@ Content-Transfer-Encoding: binary
                                                                                                                           
   <gml:featureMember>
     <ogr:popplace fid="popplace.0">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2499190.0,194088.234375</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point srsName="EPSG:3978"><gml:coordinates>2499190.0,194088.234375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>CBIKA</ogr:UNIQUE_KEY>
       <ogr:NAME>Sheet Harbour</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
@@ -29,7 +29,7 @@ Content-Transfer-Encoding: binary
   </gml:featureMember>
   <gml:featureMember>
     <ogr:popplace fid="popplace.1">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2434957.0,347013.59375</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point srsName="EPSG:3978"><gml:coordinates>2434957.0,347013.59375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>BACII</ogr:UNIQUE_KEY>
       <ogr:NAME>'Souris'</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
@@ -38,7 +38,7 @@ Content-Transfer-Encoding: binary
   </gml:featureMember>
   <gml:featureMember>
     <ogr:popplace fid="popplace.2">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2578914.25,292073.09375</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point srsName="EPSG:3978"><gml:coordinates>2578914.25,292073.09375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>CAGBW</ogr:UNIQUE_KEY>
       <ogr:NAME>&quot;Canso&quot;</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>
