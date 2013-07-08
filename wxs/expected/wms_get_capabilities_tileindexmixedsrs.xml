@@ -76,7 +76,7 @@ Content-Type: application/vnd.ogc.wms_xml
     <Title>title</Title>
     <Abstract>TEST</Abstract>
     <SRS>EPSG:26711 EPSG:4326</SRS>
-    <LatLonBoundingBox minx="-117.641" miny="33.8482" maxx="-117.576" maxy="33.9027" />
+    <LatLonBoundingBox minx="-117.642" miny="33.8483" maxx="-117.577" maxy="33.9027" />
     <BoundingBox SRS="EPSG:26711"
                 minx="440720" miny="3.74532e+06" maxx="446720" maxy="3.75132e+06" />
     <Layer queryable="0" opaque="0" cascaded="0">
