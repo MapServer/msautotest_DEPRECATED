@@ -16,7 +16,7 @@ MAP
   LAYER
     NAME "text_test"
     STATUS default
-    TYPE ANNOTATION
+    TYPE POINT
     FEATURE 
       POINTS 10 25 END
       TEXT "bq"
@@ -38,7 +38,7 @@ MAP
     NAME "text_test2"
     STATUS default
     TEMPLATE "dummy.html"
-    TYPE ANNOTATION
+    TYPE POINT
     FEATURE 
       POINTS 50 25 END
       TEXT "aaa"
