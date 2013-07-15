@@ -27,7 +27,6 @@ Content-Type: text/xml
     </GetCapabilities>
     <GetMap>
       <Format>image/png</Format>
-      <Format>image/gif</Format>
       <Format>image/png; mode=24bit</Format>
       <Format>image/jpeg</Format>
       <Format>image/tiff</Format>
@@ -61,7 +60,6 @@ Content-Type: text/xml
     <sld:GetLegendGraphic>
       <Format>image/png</Format>
       <Format>image/jpeg</Format>
-      <Format>image/gif</Format>
       <Format>image/png; mode=8bit</Format>
       <DCPType>
         <HTTP>
