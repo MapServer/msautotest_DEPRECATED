@@ -59,7 +59,7 @@ MAP
       "init=epsg:4326"
     END
     GRID
-      LABELFORMAT DD
+      LABELFORMAT "DD"
       MAXARCS 10
       MAXINTERVAL 5
       MAXSUBDIVIDE 2

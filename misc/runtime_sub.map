@@ -3,11 +3,11 @@
 # REQUIRES: INPUT=SHAPEFILE OUTPUT=GIF
 # 
 # RUN_PARMS: runtime_sub_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer1&name1=bdry_counpy2' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
-# RUN_PARMS: runtime_sub_test002.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bdry_counpy2' > [RESULT_DEMIME]
+# RUN_PARMS: runtime_sub_test002.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bdry_counpy2' > [RESULT_DEMIME]
 # RUN_PARMS: runtime_sub_test003.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bad+value' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
-# RUN_PARMS: runtime_sub_test004.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer3&name3=bdry_counpy2' > [RESULT_DEMIME]
+# RUN_PARMS: runtime_sub_test004.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer3&name3=bdry_counpy2' > [RESULT_DEMIME]
 # RUN_PARMS: runtime_sub_test005.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer3&name3=bad+value' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
-# RUN_PARMS: runtime_sub_test008.gif [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer5' > [RESULT_DEMIME]
+# RUN_PARMS: runtime_sub_test008.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer5' > [RESULT_DEMIME]
 #
 MAP
   NAME 'runtime_sub'
@@ -16,7 +16,7 @@ MAP
   SIZE 500 500
   SHAPEPATH "."
 
-  IMAGETYPE GIF
+  IMAGETYPE PNG
 
   WEB
     VALIDATION 

@@ -33,16 +33,11 @@ LAYER
  STATUS DEFAULT
  FEATURE
   POINTS -120 -33 END
-  TEXT "Some label text"
+  TEXT "Some lapel text"
  END
 
 
  CLASS
-  STYLE
-    symbol "CIRCLE"
-    color 0 0 0
-    size 4
-  END
   LABEL
    FONT "default"
    TYPE truetype
@@ -60,6 +55,12 @@ LAYER
     COLOR 100 100 100
     SIZE 20
    END
+   STYLE
+    GEOMTRANSFORM LABELPNT
+    symbol "CIRCLE"
+    color 0 0 0
+    size 4
+   END
   END   
  END
 END
@@ -75,7 +76,7 @@ LAYER
     POINTS
       -122 33
     END
-    TEXT "Some label text"
+    TEXT "Some lapel text"
    END
    LABELCACHE OFF
    CLASS # Mountain
