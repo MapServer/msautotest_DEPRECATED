@@ -15,7 +15,7 @@
 <Capability>
   <Request>
     <Map>
-      <Format><GIF /><PNG /><JPEG /><SVG /></Format>
+      <Format><PNG /><JPEG /><SVG /></Format>
       <DCPType>
         <HTTP>
           <Get onlineResource="http://localhost/path/to/wms_empty?" />
