@@ -33,7 +33,7 @@ LAYER
  STATUS DEFAULT
  FEATURE
   POINTS -120 -33 END
-  TEXT "Some lapel text"
+  TEXT "Some label text"
  END
 
 
@@ -76,7 +76,7 @@ LAYER
     POINTS
       -122 33
     END
-    TEXT "Some lapel text"
+    TEXT "Some label text"
    END
    LABELCACHE OFF
    CLASS # Mountain
