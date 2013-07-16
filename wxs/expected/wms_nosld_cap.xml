@@ -30,7 +30,6 @@ Content-Type: application/vnd.ogc.wms_xml
     <GetMap>
       <Format>image/png</Format>
       <Format>image/jpeg</Format>
-      <Format>image/gif</Format>
       <Format>image/png; mode=8bit</Format>
       <Format>application/x-pdf</Format>
       <Format>image/svg+xml</Format>
@@ -81,7 +80,7 @@ Content-Type: application/vnd.ogc.wms_xml
         <Style>
           <Name>default</Name>
           <Title>default</Title>
-          <LegendURL width="91" height="23">
+          <LegendURL width="83" height="21">
              <Format>image/png</Format>
              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/path/to/wms_simple?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=province&amp;format=image/png&amp;STYLE=default"/>
           </LegendURL>
@@ -96,7 +95,7 @@ Content-Type: application/vnd.ogc.wms_xml
         <Style>
           <Name>default</Name>
           <Title>default</Title>
-          <LegendURL width="77" height="23">
+          <LegendURL width="71" height="21">
              <Format>image/png</Format>
              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/path/to/wms_simple?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=popplace&amp;format=image/png&amp;STYLE=default"/>
           </LegendURL>
@@ -111,7 +110,7 @@ Content-Type: application/vnd.ogc.wms_xml
         <Style>
           <Name>default</Name>
           <Title>default</Title>
-          <LegendURL width="70" height="23">
+          <LegendURL width="65" height="21">
              <Format>image/png</Format>
              <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost/path/to/wms_simple?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=road&amp;format=image/png&amp;STYLE=default"/>
           </LegendURL>
