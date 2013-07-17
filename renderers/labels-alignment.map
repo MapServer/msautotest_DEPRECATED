@@ -60,7 +60,7 @@ layer
         size 9
         color 0 0 0
         wrap " "
-        maxlength 5
+        maxlength 3
         buffer 4
         partials false
      end
@@ -99,7 +99,7 @@ layer
         size 9
         color 0 0 0
         wrap " "
-        maxlength 5
+        maxlength 3
         align right
         buffer 4
         partials false
@@ -139,7 +139,7 @@ layer
         size 9
         color 0 0 0
         wrap " "
-        maxlength 5
+        maxlength 3
         align left
         buffer 4
         partials false
@@ -179,7 +179,7 @@ layer
         size 9
         color 0 0 0
         wrap " "
-        maxlength 5
+        maxlength 3
         align center
         buffer 4
         partials false
