@@ -18,6 +18,10 @@
 # RUN_PARMS: label-align-default.png [SHP2IMG] -l default -m [MAPFILE] -i png -o [RESULT]
 # RUN_PARMS: label-align-default.cairo.png [SHP2IMG] -l default -m [MAPFILE] -i cairopng -o [RESULT]
 #
+# RUN_PARMS: label_latin_align_left.png    [SHP2IMG] -e -20000000 -200000000 20000000 200000000 -l latin_left -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: label_latin_align_right.png   [SHP2IMG] -e -20000000 -200000000 20000000 200000000 -l latin_right -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: label_latin_align_center.png  [SHP2IMG] -e -20000000 -200000000 20000000 200000000 -l latin_center -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: label_latin_align_default.png [SHP2IMG] -e -20000000 -200000000 20000000 200000000 -l latin_default -m [MAPFILE] -i png -o [RESULT]
 map
 
 imagetype png
@@ -186,5 +190,94 @@ layer
      end
    end
 end
+
+layer
+    type point
+    status off
+    name "latin_right"
+    class
+      label
+        font "default"
+        type truetype
+        size 9
+        color 0 0 0
+        wrap " "
+        maxlength 5
+        align right
+        partials false
+     end
+   end
+   feature
+     points 0 0 end
+     text "the big complex_shape"
+   end
+end
+
+layer
+    type point
+    status off
+    name "latin_left"
+    class
+      label
+        font "default"
+        type truetype
+        size 9
+        color 0 0 0
+        wrap " "
+        maxlength 5
+        align left
+        partials false
+     end
+   end
+   feature
+     points 0 0 end
+     text "the big complex_shape"
+   end
+end
+
+layer
+    type point
+    status off
+    name "latin_center"
+    class
+      label
+        font "default"
+        type truetype
+        size 9
+        color 0 0 0
+        wrap " "
+        maxlength 5
+        align center
+        partials false
+     end
+   end
+   feature
+     points 0 0 end
+     text "the big complex_shape"
+   end
+end
+
+layer
+    type point
+    status off
+    name "latin_default"
+    class
+      label
+        font "default"
+        type truetype
+        size 9
+        color 0 0 0
+        wrap " "
+        maxlength 5
+        partials false
+     end
+   end
+   feature
+     points 0 0 end
+     text "the big complex_shape"
+   end
+end
+
+
 
 end
