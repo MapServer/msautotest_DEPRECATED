@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ###############################################################################
 # $Id$
 #
@@ -47,6 +48,7 @@ import pmstestlib
 if __name__ == '__main__':
     pmstestlib.setup_run( 'all' )
     pmstestlib.run_all( '.', sys.argv[1:] )
-    pmstestlib.summarize()
+    errors = pmstestlib.summarize()
+    sys.exit(errors)
 
 

@@ -15,7 +15,7 @@ Content-Transfer-Encoding: binary
 Version 300
 Charset "Neutral"
 Delimiter ","
-CoordSys NonEarth Units "m"
+CoordSys Earth Projection 3, 74, "m", -95, 49, 49, 77, 0, 0
 Columns 4
   UNIQUE_KEY Char(5)
   NAME Char(50)
@@ -31,9 +31,9 @@ Content-Disposition: attachment; filename=road.mid
 Content-Type: application/binary
 Content-Transfer-Encoding: binary
 
-1030,1024,3,3,       6371.089,670,68,"",""
-1034,1030,3,3,       1729.789,673,68,"",""
-1030,1064,3,3,      41747.066,693,68,"",""
+1030,1024,3,3,6371.089,670,68,"",""
+1034,1030,3,3,1729.789,673,68,"",""
+1030,1064,3,3,41747.066,693,68,"",""
 
 --xxOGRBoundaryxx
 Content-Disposition: attachment; filename=road.mif
@@ -43,7 +43,7 @@ Content-Transfer-Encoding: binary
 Version 300
 Charset "Neutral"
 Delimiter ","
-CoordSys NonEarth Units "m"
+CoordSys Earth Projection 3, 74, "m", -95, 49, 49, 77, 0, 0
 Columns 9
   FNODE_ Integer(11)
   TNODE_ Integer(11)

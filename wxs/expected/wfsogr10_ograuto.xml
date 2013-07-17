@@ -20,7 +20,7 @@ Content-Transfer-Encoding: binary
                                                                                                                           
   <gml:featureMember>
     <ogr:popplace fid="popplace.0">
-      <ogr:geometryProperty><gml:Point><gml:coordinates>2281604.25,340848.9375</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:geometryProperty><gml:Point srsName="EPSG:3978"><gml:coordinates>2281604.25,340848.9375</gml:coordinates></gml:Point></ogr:geometryProperty>
       <ogr:UNIQUE_KEY>BACMK</ogr:UNIQUE_KEY>
       <ogr:NAME>&quot;Tignish</ogr:NAME>
       <ogr:CAPITAL>0</ogr:CAPITAL>

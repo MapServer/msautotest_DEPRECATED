@@ -66,6 +66,9 @@
 # GetObservation (all observations)
 # RUN_PARMS: sos_getobs_all.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality" > [RESULT]
 #
+# GetObservation (with srsName)
+# RUN_PARMS: sos_getobs_epsg_4326.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&srsName=EPSG:4326" > [RESULT]
+#
 # GetObservation (DataBlock format)
 # RUN_PARMS: sos_getobs_datablock.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&service=SOS&version=1.0.0&request=GetObservation&responseFormat=text/xml; subtype=\"om/1.0.0\"&offering=Water&observedProperty=WaterQuality&resultModel=om:Observation" > [RESULT]
 #

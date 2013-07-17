@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ###############################################################################
 # $Id$
 #
@@ -626,7 +627,7 @@ def rqtest_15():
         dist = math.pow(dist_sq,0.5)
         if dist > 200000.0:
             pmstestlib.post_reason(
-                'Got point %f from target, but tolerance was 200000.0.' % dst )
+                'Got point %f from target, but tolerance was 200000.0.' % dist )
             return 'fail'
                 
     
@@ -690,13 +691,13 @@ def rqtest_17():
         dist = math.pow(dist_sq,0.5)
         if dist > 200000.0:
             pmstestlib.post_reason(
-                'Got point %f from target, but tolerance was 200000.0.' % dst )
+                'Got point %f from target, but tolerance was 200000.0.' % dist )
             return 'fail'
                 
     
     if count != 4:
         pmstestlib.post_reason( 'got %d results instead of expected %d.' \
-                             % (count, 10) )
+                             % (count, 4) )
         return 'fail'
 
     layer.close() 
@@ -704,6 +705,55 @@ def rqtest_17():
 
     return 'success'
     
+###############################################################################
+# Test a layer with a tileindex with mixed SRS
+
+def rqtest_18():
+
+    pmstestlib.map = mapscript.mapObj('../gdal/tileindexmixedsrs.map')
+    pmstestlib.layer = pmstestlib.map.getLayer(0)
+
+    pmstestlib.map.setProjection("+proj=latlong +datum=WGS84")
+
+    pnt = mapscript.pointObj()
+    pnt.x =  -117.6
+    pnt.y =   33.9
+
+    pmstestlib.layer.queryByPoint( pmstestlib.map, pnt, mapscript.MS_SINGLE,
+                                   0.001 )
+
+    #########################################################################
+    # Check result count.
+    layer = pmstestlib.layer
+    layer.open()
+    count = 0
+    for i in range(1000):
+        result = layer.getResult( i )
+        if result is None:
+            break
+
+        count = count + 1
+
+        s = layer.getShape( result )
+        x = float(pmstestlib.get_item_value( layer, s, 'x' ))
+        y = float(pmstestlib.get_item_value( layer, s, 'y' ))
+        dist_sq = (x-pnt.x) * (x-pnt.x) + (y-pnt.y) * (y-pnt.y)
+        dist = math.pow(dist_sq,0.5)
+        if dist > 0.001:
+            pmstestlib.post_reason(
+                'Got point %f from target, but tolerance was 0.001.' % dist )
+            return 'fail'
+
+    if count != 1:
+        pmstestlib.post_reason( 'got %d results instead of expected %d.' \
+                             % (count, 1) )
+        return 'fail'
+
+    layer.close() 
+    layer.close() # discard resultset.
+
+    return 'success'
+
 ###############################################################################
 # Cleanup.
 
@@ -732,6 +782,7 @@ test_list = [
     rqtest_15,
     rqtest_16,
     rqtest_17,
+    rqtest_18,
     rqtest_cleanup ]
 
 if __name__ == '__main__':
@@ -742,5 +793,5 @@ if __name__ == '__main__':
 
     pmstestlib.summarize()
 
-    mapscript.msCleanup()
+    mapscript.msCleanup(0)
 

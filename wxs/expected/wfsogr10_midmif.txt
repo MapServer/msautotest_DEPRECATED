@@ -5,7 +5,7 @@ Content-Disposition: attachment; filename=result.mid
 Content-Type: application/binary
 Content-Transfer-Encoding: binary
 
-613,1511,0,0,      14862.892,1521,67,"",""
+613,1511,0,0,14862.892,1521,67,"",""
 
 --xxOGRBoundaryxx
 Content-Disposition: attachment; filename=result.mif
@@ -15,7 +15,7 @@ Content-Transfer-Encoding: binary
 Version 300
 Charset "Neutral"
 Delimiter ","
-CoordSys NonEarth Units "m"
+CoordSys Earth Projection 3, 74, "m", -95, 49, 49, 77, 0, 0
 Columns 9
   FNODE_ Integer(11)
   TNODE_ Integer(11)

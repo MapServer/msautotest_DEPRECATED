@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ###############################################################################
 # $Id$
 #
@@ -139,5 +140,5 @@ if __name__ == '__main__':
 
     pmstestlib.summarize()
 
-    mapscript.msCleanup()
+    mapscript.msCleanup(0)
 

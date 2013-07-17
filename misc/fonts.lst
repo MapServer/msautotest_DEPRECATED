@@ -1,4 +1,5 @@
 default        data/LucidaBrightRegular.ttf
 sans           data/DejaVuSans.ttf
 lucida         data/LucidaBrightRegular.ttf
-bogus          path/to/inexistant/file.ttf
+arabic         data/DroidNaskh-Regular.ttf
+bogus          /path/to/inexistant/file.ttf
