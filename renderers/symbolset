@@ -43,7 +43,7 @@ end
 symbol 
   name "svgicon"
   type svg
-  image "../misc/data/alpinehut.svg"
+  image "../misc/data/Road_Works.svg"
 end
 
 
