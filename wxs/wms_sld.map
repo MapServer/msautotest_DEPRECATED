@@ -43,6 +43,7 @@
 # RUN_PARMS: wms_get_map_repeated_layer_ext_sld.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=popplace&sld=http://localhost:8000/wxs/etc/repeat.sld" > [RESULT_DEMIME]
 # RUN_PARMS: wms_get_map_ext_sld_404.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=popplace&sld=http://localhost:8000/wxs/etc/repeat.sld.notfound" > [RESULT_DEMIME]
 # RUN_PARMS: wms_get_map_ext_sld_proto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=popplace&sld=myproto://localhost:8000/wxs/etc/repeat.sld.notfound" > [RESULT_DEMIME]
+# RUN_PARMS: wms_get_map_ext_sld_fileproto.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=popplace&sld=file:///etc/passwd" > [RESULT_DEMIME]
 # RUN_PARMS: wms_get_map_ext_sld_too_large.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=popplace&sld=http://localhost:8000/wxs/etc/largesld.sld" > [RESULT_DEMIME]
 
 
