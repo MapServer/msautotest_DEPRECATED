@@ -17,8 +17,8 @@ MAP
   SHAPEPATH "."
 
   IMAGETYPE PNG
-  DEBUG 10
-  CONFIG "MS_ERRORFILE" "stderr"
+  #DEBUG 10
+  #CONFIG "MS_ERRORFILE" "stderr"
 
   LAYER
     NAME 'layer1'
