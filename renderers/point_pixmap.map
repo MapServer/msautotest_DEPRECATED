@@ -58,6 +58,40 @@ LAYER
 END
 
 LAYER
+  NAME "symbol filename"
+  TYPE point
+  STATUS default
+  CLASS
+    NAME "test1"
+    STYLE
+        SYMBOL "../misc/data/gdalicon.png"
+    END
+  END
+  FEATURE
+    POINTS
+        50 200
+    END
+  END
+END
+
+LAYER
+  NAME "symbol url"
+  TYPE point
+  STATUS default
+  CLASS
+    NAME "test1"
+    STYLE
+        SYMBOL "http://localhost:8000/misc/data/gdalicon.png"
+    END
+  END
+  FEATURE
+    POINTS
+        200 50
+    END
+  END
+END
+
+LAYER
     NAME "anchors"
     TYPE POINT
     STATUS default
