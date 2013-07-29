@@ -1,11 +1,11 @@
 #
 # tests vertex geomtransform with auto angle
 #   
-# RUN_PARMS: geomtransform-vertex.png [SHP2IMG] -m [MAPFILE] -i png -l vertex1 -o [RESULT]
-# RUN_PARMS: geomtransform-vertex.gif [SHP2IMG] -m [MAPFILE] -i gif -l vertex1 -o [RESULT]
-# RUN_PARMS: geomtransform-vertex.pdf [SHP2IMG] -m [MAPFILE] -i pdf -l vertex1 -o [RESULT]
-# RUN_PARMS: geomtransform-vertex.svg [SHP2IMG] -m [MAPFILE] -i svg -l vertex1 -o [RESULT]
-# RUN_PARMS: geomtransform-vertex.cairo.png [SHP2IMG] -m [MAPFILE] -l vertex1 -i cairopng -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.png [SHP2IMG] -m [MAPFILE] -i png -l "centroid vertex1" -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.gif [SHP2IMG] -m [MAPFILE] -i gif -l "centroid vertex1" -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.pdf [SHP2IMG] -m [MAPFILE] -i pdf -l "centroid vertex1" -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.svg [SHP2IMG] -m [MAPFILE] -i svg -l "centroid vertex1" -o [RESULT]
+# RUN_PARMS: geomtransform-vertex.cairo.png [SHP2IMG] -m [MAPFILE] -l "centroid vertex1" -i cairopng -o [RESULT]
 # RUN_PARMS: geomtransform-vertex-layer.png [SHP2IMG] -m [MAPFILE] -i png -l vertex2 -o [RESULT]
 # RUN_PARMS: geomtransform-vertex-layer.gif [SHP2IMG] -m [MAPFILE] -i gif -l vertex2 -o [RESULT]
 # RUN_PARMS: geomtransform-vertex-layer.pdf [SHP2IMG] -m [MAPFILE] -i pdf -l vertex2 -o [RESULT]
@@ -30,10 +30,24 @@ MAP
   END
 
   SYMBOL
+    TYPE TRUETYPE
+    FONT "default"
+    NAME "arrowtail"
+    CHARACTER '<'
+  END
+
+  SYMBOL
     TYPE TRUETYPE 
     FONT "default"
     CHARACTER '|'
     NAME "segment"
+  END
+
+  SYMBOL
+    TYPE ELLIPSE
+    POINTS 1 1 END
+    NAME "circle"
+    FILLED true
   END
 
 LAYER
@@ -56,6 +70,13 @@ LAYER
       STYLE
         GEOMTRANSFORM "end"
         SYMBOL "arrowhead"
+        COLOR  0 0 255
+        ANGLE AUTO
+        SIZE 15
+      END
+      STYLE
+        GEOMTRANSFORM "start"
+        SYMBOL "arrowtail"
         COLOR  0 0 255
         ANGLE AUTO
         SIZE 15
@@ -94,6 +115,33 @@ LAYER
             SIZE 10
             COLOR 0 0 255
         END
+    END
+END
+
+DEBUG 10
+CONFIG "MS_ERRORFILE" "stderr"
+LAYER
+    NAME "centroid"
+    TYPE POLYGON 
+    STATUS ON
+DEBUG 10
+    CLASS
+      STYLE
+        GEOMTRANSFORM "centroid"
+        SYMBOL "circle"
+        COLOR  0 0 0
+        OUTLINECOLOR 255 0 0
+        SIZE 5
+      END
+    END
+    FEATURE
+      POINTS
+-166.245673 -55.551347
+174.019748 -55.551347
+174.019748 53.883753
+-166.245673 53.883753
+-166.245673 -55.551347
+      END
     END
 END
 
