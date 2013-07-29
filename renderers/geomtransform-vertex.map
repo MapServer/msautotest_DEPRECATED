@@ -118,13 +118,10 @@ LAYER
     END
 END
 
-DEBUG 10
-CONFIG "MS_ERRORFILE" "stderr"
 LAYER
     NAME "centroid"
     TYPE POLYGON 
     STATUS ON
-DEBUG 10
     CLASS
       STYLE
         GEOMTRANSFORM "centroid"
