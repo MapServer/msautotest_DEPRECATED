@@ -25,6 +25,11 @@ layer
             width 1
         end
         style
+            color 255  0 0
+            width 1
+            offset 12 -999
+        end
+        style
             color 0 255 255
             width 1
             offset 5 -99
@@ -36,5 +41,37 @@ layer
         end
     end
 end
+
+layer
+   type line
+   status default
+   name "geos_fail"
+   class
+        style
+            color 0 0 0
+        end
+        style
+            color 0 255 255
+            width 1
+            offset 5 -99
+        end
+   end
+   feature
+     points
+0 10
+     end
+     points
+-20 20
+20 20
+-20 -20
+0 -30
+20 -20
+-20 20
+-20 20
+30 30
+     end
+   end
+end
+   
 
 end
