@@ -8,10 +8,14 @@
 # RUN_PARMS: wcs_exception.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_exception-2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=a" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_exception-3.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=3.0.0&REQUEST=GetCoverage" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_exception-4.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.a&REQUEST=GetCoverage" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_exception-5.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.a&REQUEST=GetCoverage" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_exception-6.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.a&REQUEST=GetCoverage" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_exception-7.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.a.a&REQUEST=GetCoverage" > [RESULT_DEMIME]
 #
 # Capabilities
 #
-# Capabilities version negotiation (defaults to version 1.1.2)
+# Capabilities version negotiation (defaults to version 2.0.1)
 # RUN_PARMS: wcs_cap_noversion.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&REQUEST=getcapabilities" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_cap_highversion_x.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=100&REQUEST=GetCapabilities" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_cap_highversion_x.y.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=100.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
