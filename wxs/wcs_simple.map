@@ -217,6 +217,7 @@
 #
 #  InvalidAxisLabel
 # RUN_PARMS: wcs_20_exception_invalidaxislabel.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=invalid(0,1)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidaxislabel_2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=x(0,1)&subset=x(0,1)" > [RESULT_DEMIME]
 #
 # InvalidSubsetting
 # RUN_PARMS: wcs_20_exception_invalidsubsetting.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=x(1,0)" > [RESULT_DEMIME]
