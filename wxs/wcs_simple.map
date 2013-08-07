@@ -210,6 +210,7 @@
 # RUN_PARMS: wcs_20_exception_invalidparam_request.txt [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=InvalidRequest" > [RESULT]
 # RUN_PARMS: wcs_20_exception_invalidparam_format.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/invalid&COVERAGEID=grey" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_invalidparam_interpolation.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/png&INTERPOLATION=NOVALIDINTERPOLATION" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidparam_mediatype.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/png&MEDIATYPE=INVALID" > [RESULT_DEMIME]
 #
 # NoSuchCoverage
 # RUN_PARMS: wcs_20_exception_invalidparam_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=invalid" > [RESULT_DEMIME]
