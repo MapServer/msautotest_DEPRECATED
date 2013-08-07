@@ -208,9 +208,19 @@
 # InvalidParameterValue
 # RUN_PARMS: wcs_20_exception_invalidparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=InvalidRequest" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_invalidparam_request.txt [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=InvalidRequest" > [RESULT]
-# RUN_PARMS: wcs_20_exception_invalidparam_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=invalid" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_invalidparam_format.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/invalid&COVERAGEID=grey" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_exception_invalidparam_interpolation.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/png&INTERPOLATION=NOVALIDINTERPOLATION" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidparam_mediatype.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/png&MEDIATYPE=INVALID" > [RESULT_DEMIME]
+#
+# NoSuchCoverage
+# RUN_PARMS: wcs_20_exception_invalidparam_coverage.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=invalid" > [RESULT_DEMIME]
+#
+#  InvalidAxisLabel
+# RUN_PARMS: wcs_20_exception_invalidaxislabel.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=invalid(0,1)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidaxislabel_2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=x(0,1)&subset=x(0,1)" > [RESULT_DEMIME]
+#
+# InvalidSubsetting
+# RUN_PARMS: wcs_20_exception_invalidsubsetting.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=x(1,0)" > [RESULT_DEMIME]
 #
 # MissingParameterValue
 # RUN_PARMS: wcs_20_exception_missingparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1" > [RESULT_DEMIME]
