@@ -7,9 +7,13 @@
 # RUN_PARMS: resolution_polygon_1.png [MAPSERV] QUERY_STRING="map.resolution=72&WIDTH=25&HEIGHT=25&map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0,0,100,100&FORMAT=image/png&STYLES=&LAYERS=polygon" > [RESULT_DEMIME]
 # RUN_PARMS: resolution_polygon_2.png [MAPSERV] QUERY_STRING="map.resolution=144&WIDTH=50&HEIGHT=50&map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0,0,100,100&FORMAT=image/png&STYLES=&LAYERS=polygon" > [RESULT_DEMIME]
 # RUN_PARMS: resolution_polygon_4.png [MAPSERV] QUERY_STRING="map.resolution=288&WIDTH=100&HEIGHT=100&map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0,0,100,100&FORMAT=image/png&STYLES=&LAYERS=polygon" > [RESULT_DEMIME]
+# RUN_PARMS: resolution_text_1.png [MAPSERV] QUERY_STRING="map.resolution=72&WIDTH=25&HEIGHT=25&map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0,0,100,100&FORMAT=image/png&STYLES=&LAYERS=text" > [RESULT_DEMIME]
+# RUN_PARMS: resolution_text_2.png [MAPSERV] QUERY_STRING="map.resolution=144&WIDTH=50&HEIGHT=50&map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0,0,100,100&FORMAT=image/png&STYLES=&LAYERS=text" > [RESULT_DEMIME]
+# RUN_PARMS: resolution_text_4.png [MAPSERV] QUERY_STRING="map.resolution=288&WIDTH=100&HEIGHT=100&map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=0,0,100,100&FORMAT=image/png&STYLES=&LAYERS=text" > [RESULT_DEMIME]
 #
 # REQUIRES: OUTPUT=PNG
 #
+# map scale for these requests is 1259929152
 MAP
 
 STATUS ON
@@ -18,6 +22,7 @@ SIZE 50 50
 FONTSET "../misc/fonts.lst"
 IMAGETYPE png24
 DEFRESOLUTION 72
+UNITS dd
 
 PROJECTION
    "init=epsg:4326"
@@ -42,11 +47,22 @@ LAYER
   TYPE point
   STATUS on
   CLASS
+    MINSCALEDENOM 1259929150
+    MAXSCALEDENOM 1259929154
     NAME "test1"
     STYLE
         SYMBOL "circle"
         COLOR 0 0 255
         SIZE 10
+        MAXSIZE 15
+    END
+  END
+  CLASS
+    NAME "bogus class to check we got the scale calculation right"
+    STYLE
+        SYMBOL "circle"
+        COLOR 255 0 0
+        SIZE 20
         MAXSIZE 15
     END
   END
@@ -103,6 +119,33 @@ LAYER
   FEATURE
     POINTS
         20 20 20 80 80 80 80 20 20 20
+    END
+  END
+END
+
+LAYER
+  NAME "text"
+  TYPE point
+  STATUS on
+  CLASS
+    NAME "test1"
+    LABEL
+      TEXT "Text"
+      TYPE TRUETYPE
+      FONT "default"
+      SIZE 8
+      POSITION lc
+      STYLE
+        SYMBOL "circle"
+        COLOR 0 0 255
+        SIZE 4
+        MAXSIZE 5
+      END
+    END
+  END
+  FEATURE
+    POINTS
+        50 50
     END
   END
 END
