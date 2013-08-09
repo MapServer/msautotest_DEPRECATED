@@ -83,10 +83,10 @@
 # Verify BBOX Result:  Digby
 # RUN_PARMS: wfs_filter_bbox.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22EPSG:4326%22><coordinates>-65.86,44.56+-65.76,44.68</coordinates></Box></BBOX></Filter>" > [RESULT]
 #
-# Verify BBOX Result with epsg in http://www.opengis.net/gml/srs/epsg.xml format:  Cheticamp
+# Verify BBOX Result with epsg in http://www.opengis.net/gml/srs/epsg.xml format:  Digby
 # RUN_PARMS: wfs_filter_bbox_urlepsg.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22http://www.opengis.net/gml/srs/epsg.xml#26920%22><coordinates>272868.16,4938053.09+281261.3,4951109.39</coordinates></Box></BBOX></Filter>" > [RESULT]
 #
-# Verify BBOX Result with epsg in urn:ogc:def:crs:EPSG: format:  Cheticamp
+# Verify BBOX Result with epsg in urn:ogc:def:crs:EPSG: format:  Digby
 # RUN_PARMS: wfs_filter_bbox_urnepsg.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><BBOX><PropertyName>POINT</PropertyName><Box+srsName=%22urn:ogc:def:crs:EPSG:26920%22><coordinates>272868.16,4938053.09+281261.3,4951109.39</coordinates></Box></BBOX></Filter>" > [RESULT]
 #
 # Verify INTERSECTS Results:  Canso, Port Hawkesbury
