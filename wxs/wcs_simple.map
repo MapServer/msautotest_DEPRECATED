@@ -221,6 +221,7 @@
 #
 # InvalidSubsetting
 # RUN_PARMS: wcs_20_exception_invalidsubsetting.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=x(1,0)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_exception_invalidsubsetting_2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&subset=x(1)" > [RESULT_DEMIME]
 #
 # MissingParameterValue
 # RUN_PARMS: wcs_20_exception_missingparam_request.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1" > [RESULT_DEMIME]
