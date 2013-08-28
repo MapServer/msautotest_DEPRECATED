@@ -47,12 +47,6 @@ class SymbolObjTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(5.0, $this->symbol->minx = 5.0);
     }
-
-    public function test_setgetSvg_text()
-    {
-        $this->assertEquals('Text', $this->symbol->svg_text = 'Text');
-    }
-
 }
 
 ?>

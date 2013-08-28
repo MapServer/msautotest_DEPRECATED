@@ -128,7 +128,7 @@
 # RUN_PARMS: wfs_filter_postgis_startindex.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&propertyname=(name)&maxfeatures=10&startindex=0" > [RESULT]
 # RUN_PARMS: wfs_filter_postgis_startindex2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&propertyname=(name)&maxfeatures=10&startindex=10" > [RESULT]
 MAP
-CONFIG "MS_ERRORFILE" "stderr"
+#CONFIG "MS_ERRORFILE" "stderr"
 NAME WFS_FILTER
 STATUS ON
 SIZE 400 300

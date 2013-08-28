@@ -45,6 +45,34 @@ LAYER
         WIDTH 14
         ANGLE 45
     END
+    STYLE
+        COLOR 0 0 0
+        symbol "hatch"
+        SIZE 10
+        WIDTH 1
+        ANGLE 0
+    END
+    STYLE
+        COLOR 0 0 0
+        symbol "hatch"
+        SIZE 10
+        WIDTH 1
+        ANGLE 90
+    END
+    STYLE
+        COLOR 0 0 0
+        symbol "hatch"
+        SIZE 10
+        WIDTH 1
+        ANGLE 135
+    END
+    STYLE
+        COLOR 0 0 0
+        symbol "hatch"
+        SIZE 10
+        WIDTH 1
+        ANGLE 180
+    END
   END
 END
 

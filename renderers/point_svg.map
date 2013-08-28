@@ -18,8 +18,6 @@ FONTSET "../misc/fonts.lst"
 IMAGETYPE png24
 symbolset "symbolset"
 
-CONFIG MS_ERRORFILE "stderr"
-
 LAYER
   NAME "symbol"
   TYPE point

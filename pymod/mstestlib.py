@@ -341,6 +341,7 @@ def run_tests( argv ):
     renderer = None
     verbose = 0
     strict = 0
+    quiet = 0
     skiparg = False
     ###########################################################################
     # Process arguments.
@@ -363,6 +364,8 @@ def run_tests( argv ):
             skiparg = True
         elif argv[i] == '-v':
             verbose = 1
+        elif argv[i] == '-q':
+            quiet = 1
         elif argv[i][-4:] == '.map':
             pass
         else:
@@ -399,7 +402,8 @@ def run_tests( argv ):
 
     for map in map_files:
 
-        print(' Processing: %s' % map)
+        if not quiet:
+           print(' Processing: %s' % map)
         (runparms_list, requires_list) = read_test_directives( map )
         for i in range(len(runparms_list)):
             if renderer is not None:
@@ -410,7 +414,10 @@ def run_tests( argv ):
                    runparms_list[i] = ("%s.%s%s"%(resultbase,renderer,resultext),runparms_list[i][1])
 
         if not has_requires( version_info, requires_list ):
-            print('    missing some or all of required components, skip.')
+            if not quiet:
+                print('    missing some or all of required components, skip.')
+            else:
+                print('%s: missing some or all of required components, skip.'%(map))
             skip_count += len(runparms_list)
             continue
         
@@ -421,7 +428,7 @@ def run_tests( argv ):
             out_file = run_item[0]
             command = run_item[1]
 
-            if len(runparms_list) > 1:
+            if len(runparms_list) > 1 and not quiet:
                 print('   test %s' % out_file)
 
             if command.find('[RESULT_DEMIME]') != -1:
@@ -508,38 +515,65 @@ def run_tests( argv ):
             if cmp == 'match':
                 succeed_count = succeed_count + 1
                 if keep_pass == 0:
-                    os.remove( 'result/' + out_file )
-                print('     results match.')
+                   os.remove( 'result/' + out_file )
+                if not quiet:
+                   print('     results match.')
+                else:
+                   sys.stdout.write('.')
+                   sys.stdout.flush()
             elif cmp ==  'files_differ_image_match':
                 if strict:
                    fail_count = fail_count + 1
-                   print('*    results dont match (though images match), TEST FAILED.')
+                   if not quiet:
+                       print('*    results dont match (though images match), TEST FAILED.')
+                   else:
+                       print('%s: results dont match (though images match), TEST FAILED.'%(out_file))
                 else:
                    succeed_count = succeed_count + 1
                    if keep_pass == 0:
                       os.remove( 'result/' + out_file )
-                   print('     result images match, though files differ.')
+                   if not quiet:
+                      print('     result images match, though files differ.')
+                   else:
+                      sys.stdout.write('.')
+                      sys.stdout.flush()
             elif cmp ==  'files_differ_image_nearly_match':
                 if strict:
                    fail_count = fail_count + 1
-                   print('*    results dont match (though images perceptually match), TEST FAILED.')
+                   if not quiet:
+                       print('*    results dont match (though images perceptually match), TEST FAILED.')
+                   else:
+                       print('%s: results dont match (though images perceptually match), TEST FAILED.'%(out_file))
                 else:
                    succeed_count = succeed_count + 1
                    if keep_pass == 0:
                       os.remove( 'result/' + out_file )
-                print('     result images perceptually match, though files differ.')
+                   if not quiet:
+                      print('     result images perceptually match, though files differ.')
+                   else:
+                      print('%s: result images perceptually match, though files differ.'%(out_file))
             elif cmp ==  'nomatch':
                 fail_count = fail_count + 1
-                print('*    results dont match, TEST FAILED.')
+                if not quiet:
+                    print('*    results dont match, TEST FAILED.')
+                else:
+                    print('%s: results dont match, TEST FAILED.'%(out_file))
+
             elif cmp == 'noresult':
                 f = open('result/'+out_file,"w")
                 print >>f, "Segmentation fault or other serious error"
                 f.close()
                 fail_count = fail_count + 1
                 noresult_count += 1
-                print('*    no result file generated, TEST FAILED.')
+                if not quiet:
+                    print('*    no result file generated, TEST FAILED.')
+                else:
+                    print('%s: no result file generated, TEST FAILED.'%(out_file))
             elif cmp == 'noexpected':
-                print('     no expected file exists, accepting result as expected.')
+                if not quiet:
+                    print('     no expected file exists, accepting result as expected.')
+                else:
+                    print('%s: no expected file exists, accepting result as expected.'%(out_file))
                 init_count = init_count + 1
                 os.rename( 'result/' + out_file, 'expected/' + out_file )
 
