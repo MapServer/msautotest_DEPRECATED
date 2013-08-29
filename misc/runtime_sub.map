@@ -1,6 +1,6 @@
 # Test Runtime Substitutions
 #
-# REQUIRES: INPUT=SHAPEFILE OUTPUT=GIF
+# REQUIRES: INPUT=SHAPEFILE
 # 
 # RUN_PARMS: runtime_sub_test001.txt [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer1&name1=bdry_counpy2' > [RESULT_DEVERSION] [STRIP:ShapefileOpen]
 # RUN_PARMS: runtime_sub_test002.png [MAPSERV] QUERY_STRING='map=[MAPFILE]&mode=map&layer=layer2&name2=bdry_counpy2' > [RESULT_DEMIME]
