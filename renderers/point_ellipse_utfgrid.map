@@ -1,0 +1,37 @@
+# RUN_PARMS: point_ellipse_utfgrid.json [SHP2IMG] -m [MAPFILE] -i json -o [RESULT]
+#
+# entity-encoded text rendering test.
+# this test may potentially segfault
+#   
+#
+MAP
+
+STATUS ON
+EXTENT 0 0 400 300
+SIZE 200 150
+FONTSET "../misc/fonts.lst"
+IMAGETYPE png24
+symbolset "symbolset"
+
+CONFIG MS_ERRORFILE "stderr"
+
+LAYER
+  NAME "symbol"
+  TYPE point
+  STATUS default
+  CLASS
+    NAME "test1"
+    STYLE
+        SYMBOL "ellipse"
+        COLOR 0 0 255
+        SIZE 20
+    END
+  END
+  FEATURE
+    POINTS
+        50 50
+    END
+  END
+END
+
+END

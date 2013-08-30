@@ -1,0 +1,35 @@
+# RUN_PARMS: point_vector_utfgrid.json [SHP2IMG] -m [MAPFILE] -i json -o [RESULT]
+#
+#
+# entity-encoded text rendering test.
+# this test may potentially segfault
+#   
+MAP
+
+STATUS ON
+EXTENT 0 0 400 300
+SIZE 200 150
+FONTSET "../misc/fonts.lst"
+IMAGETYPE png24
+symbolset "symbolset"
+
+LAYER
+  NAME "symbol"
+  TYPE point
+  STATUS default
+  CLASS
+    NAME "test1"
+    STYLE
+        SYMBOL "vector arrow"
+        COLOR 0 0 0
+        SIZE 5
+    END
+  END
+  FEATURE
+    POINTS
+        50 50
+    END
+  END
+END
+
+END
