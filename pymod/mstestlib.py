@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ###############################################################################
 # $Id$
 #
@@ -152,6 +153,37 @@ def deversion_file( filename ):
         open(filename,'wb').write(bytes(new_data, 'iso-8859-1'))
     else:
         open(filename,'wb').write(new_data)
+    return
+
+###############################################################################
+# Strip GDAL version from file.
+
+def degdalversion_file( filename ):
+
+    data = open(filename,'rb').read()
+
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
+    # Remove GDAL version from GPX file
+    start = data.find('creator="GDAL ')
+    if start == -1:
+        return
+
+    end = start + 14
+    length = len(data)
+    while end < length and data[end] != '"':
+        end = end + 1
+    if data[end] != '"':
+        return
+
+    data = data[:start-1] + data[end+1:]
+
+    if version_info >= (3,0,0):
+        open(filename,'wb').write(bytes(data, 'iso-8859-1'))
+    else:
+        open(filename,'wb').write(data)
     return
 
 ###############################################################################
@@ -500,6 +532,7 @@ def run_tests( argv ):
                 demime_file( 'result/'+out_file )
             if deversion:
                 deversion_file( 'result/'+out_file )
+                degdalversion_file( 'result/'+out_file )
                 fixexponent_file( 'result/'+out_file )
                 truncate_one_decimal( 'result/'+out_file )
                 detimestamp_file( 'result/'+out_file )

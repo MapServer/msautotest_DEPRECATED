@@ -20,6 +20,9 @@
 # Generate dump streamed directly to CSV
 # RUN_PARMS: wfsogr10_csvstream.txt [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=road&featureid=road.1521&OUTPUTFORMAT=CSVSTREAM" > [RESULT]
 #
+# Generate dump streamed directly to GPX (test #4776)
+# RUN_PARMS: wfsogr10_gpx.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=road&featureid=road.1521&OUTPUTFORMAT=OGRGPX" > [RESULT_DEVERSION]
+#
 # Generate dump to SHAPEZIP
 # RUN_PARMS: wfsogr10_shapezip.zip [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=road&featureid=road.1521&OUTPUTFORMAT=SHAPEZIP" > [RESULT]
 #
@@ -109,6 +112,17 @@ OUTPUTFORMAT
 END
 
 OUTPUTFORMAT
+  NAME "OGRGPX"
+  DRIVER "OGR/GPX"
+  MIMETYPE "application/gpx+xml; streamed"
+  FORMATOPTION "DSCO:GPX_USE_EXTENSIONS=YES"
+  FORMATOPTION "STORAGE=stream"
+  FORMATOPTION "FORM=simple"
+  FORMATOPTION "FILENAME=result.gpx"
+END
+
+
+OUTPUTFORMAT
   NAME "SHAPEZIP"
   DRIVER "OGR/ESRI Shapefile"
   MIMETYPE "application/shapefile"
@@ -192,7 +206,7 @@ LAYER
     "ows_title"         "road"
     "ows_description"   "road"
     "wfs_featureid"     "ROAD_ID" 
-    "wfs_getfeature_formatlist" "csv,csvstream,ogrgml,ogrgmlstream,shapezip,midmif,multimidmif"
+    "wfs_getfeature_formatlist" "csv,csvstream,ogrgml,ogrgpx,ogrgmlstream,shapezip,midmif,multimidmif"
     "gml_include_items" "all"
     "gml_exclude_items" "ROAD_"
     "gml_types"         "auto"
