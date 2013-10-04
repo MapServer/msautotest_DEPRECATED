@@ -1,0 +1,66 @@
+# Test support for handling datasource encoding
+
+# RUN_PARMS: encodings.png [SHP2IMG] -m [MAPFILE] -o [RESULT]  
+map
+  name "test encoding"
+  size 50 50
+  name "test encoding"
+  size 50 50
+  extent -1.5 0 -0.5 1
+
+  imagetype png
+
+  symbol
+    type ellipse
+    name "circle"
+    points 1 1 end
+    filled false
+  end
+
+  layer
+    name "encoded"
+    data "data/latin1.shp"
+    type point
+    encoding "latin1"
+    classitem "name"
+    status on
+    class
+     expression "éà toto"
+     style
+      symbol "circle"
+      size 2
+      color 255 0 0
+     end
+    end
+    class
+     style
+      symbol "circle"
+      size 2
+      color 0 0 0
+     end
+    end
+  end
+  
+  layer
+    name "not encoded"
+    data "data/latin1.shp"
+    type point
+    classitem "name"
+    status on
+    class
+     expression "éà toto"
+     style
+      symbol "circle"
+      size 8
+      color 255 0 0
+     end
+    end
+    class
+     style
+      symbol "circle"
+      size 8
+      color 0 0 0
+     end
+    end
+  end
+end
