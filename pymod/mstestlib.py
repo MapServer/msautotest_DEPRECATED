@@ -33,6 +33,7 @@ import os
 import string
 import time
 from testlib import *
+import validate
 
 have_pdiff = None
 
@@ -409,6 +410,7 @@ def run_tests( argv ):
     verbose = 0
     strict = 0
     quiet = 0
+    validate_xml = True
     skiparg = False
     ###########################################################################
     # Process arguments.
@@ -433,6 +435,8 @@ def run_tests( argv ):
             verbose = 1
         elif argv[i] == '-q':
             quiet = 1
+        elif argv[i] == '-dontvalidatexml':
+            validate_xml = False
         elif argv[i][-4:] == '.map':
             pass
         else:
@@ -462,7 +466,16 @@ def run_tests( argv ):
             return
     except:
         pass
-    
+
+    ###########################################################################
+    # Must we and can we validate XML stuff ?
+    ogc_schemas_location = None
+    if validate_xml:
+        if validate.has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
+            ogc_schemas_location = 'SCHEMAS_OPENGIS_NET'
+        else:
+            print('Cannot validate XML because SCHEMAS_OPENGIS_NET not found. Run "validate.py -download_ogc_schemas" from msautotest/wxs')
+
     ###########################################################################
     # Process all mapfiles.
     map_files = get_mapfile_list( argv )
@@ -541,6 +554,8 @@ def run_tests( argv ):
                 os.environ['MS_MAPFILE'] = map
                 if post[0] == '<':
                   os.environ['CONTENT_TYPE'] = 'text/xml'
+                  if ogc_schemas_location is not None:
+                      validate.validate(post, ogc_schemas_location = ogc_schemas_location)
                 else:
                   os.environ['CONTENT_TYPE'] = 'application/x-www-form-urlencoded'
 
