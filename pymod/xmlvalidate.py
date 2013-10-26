@@ -434,17 +434,11 @@ def download_inspire_schemas(target_dir = '.', \
     except:
         download('http://inspire.ec.europa.eu/schemas/inspire_vs/1.0.1.zip', target_dir + '/' + 'inspire_vs_1.0.1.zip')
 
-    try:
-        os.stat(target_dir + '/' + 'inspire_dls-1.0.3.zip')
-    except:
-        download('http://inspire.ec.europa.eu/schemas/inspire_dls/inspire_dls-1.0.3.zip', target_dir + '/' + 'inspire_dls-1.0.3.zip')
-
-    try:
-        os.mkdir(target_dir + '/' + target_subdir)
-        os.mkdir(target_dir + '/' + target_subdir + '/common')
-        os.mkdir(target_dir + '/' + target_subdir + '/inspire_vs')
-    except:
-        pass
+    for subdir in [ '', '/common', '/inspire_vs', '/inspire_dls', '/inspire_dls/1.0']:
+        try:
+            os.mkdir(target_dir + '/' + target_subdir + subdir)
+        except:
+            pass
 
     try:
         os.stat(target_dir + '/' + target_subdir + '/common/1.0')
@@ -467,14 +461,9 @@ def download_inspire_schemas(target_dir = '.', \
             sys.exit(1)
 
     try:
-        os.stat(target_dir + '/' + target_subdir + '/inspire_dls/1.0')
+        os.stat(target_dir + '/' + target_subdir + '/inspire_dls/1.0/inspire_dls.xsd')
     except:
-        unzip(target_dir + '/' + 'inspire_dls-1.0.3.zip', target_dir + '/' + target_subdir)
-        try:
-            os.stat(target_dir + '/' + target_subdir + '/inspire_dls/1.0')
-        except:
-            print('Cannot unzip inspire_dls-1.0.3.zip.zip')
-            sys.exit(1)
+        download('http://inspire.ec.europa.eu/schemas/inspire_dls/1.0/inspire_dls.xsd', target_dir + '/' + target_subdir + '/inspire_dls/1.0/inspire_dls.xsd')
 
     transform_inspire_abs_links_to_ref_links(target_dir + '/' + target_subdir)
 
