@@ -62,11 +62,21 @@ def substitute_ogc_schemas_location(location, ogc_schemas_location):
     return location
 
 ###############################################################################
+# Replace http://inspire.ec.europa.eu/schemas/foo by $(inspire_schemas_location)/foo
+
+def substitute_inspire_schemas_location(location, inspire_schemas_location):
+    if inspire_schemas_location is not None and \
+        location.startswith('http://inspire.ec.europa.eu/schemas/'):
+        location = inspire_schemas_location + '/' + location[len('http://inspire.ec.europa.eu/schemas/'):]
+    return location
+
+###############################################################################
 # Validation function
 
 def validate(xml_filename_or_content, xsd_filename = None, \
              application_schema_ns = None, \
-             ogc_schemas_location = None):
+             ogc_schemas_location = None, \
+             inspire_schemas_location = None):
 
     try:
         if xml_filename_or_content.find('<?xml') == 0:
@@ -83,6 +93,7 @@ def validate(xml_filename_or_content, xsd_filename = None, \
             if child.tag == '{http://www.w3.org/2001/XMLSchema}import':
                     location = child.get('schemaLocation')
                     location = substitute_ogc_schemas_location(location, ogc_schemas_location)
+                    location = substitute_inspire_schemas_location(location, inspire_schemas_location)
                     child.set('schemaLocation', location)
         try:
             etree.XMLSchema(etree.XML(etree.tostring(doc)))
@@ -113,6 +124,7 @@ def validate(xml_filename_or_content, xsd_filename = None, \
     )
 
     tempfiles = []
+    import_dict = {}
 
     # Special case for the main application schema
     for ns, location in zip(locations[::2], locations[1::2]):
@@ -136,28 +148,34 @@ def validate(xml_filename_or_content, xsd_filename = None, \
                     sub_ns = child.get('namespace')
                     sub_location = child.get('schemaLocation')
                     sub_location = substitute_ogc_schemas_location(sub_location, ogc_schemas_location)
+                    sub_location = substitute_inspire_schemas_location(sub_location, inspire_schemas_location)
                     etree.SubElement(schema_def, "import", attrib={
                         "namespace": sub_ns,
                         "schemaLocation": sub_location
                         }
                     )
+                    import_dict[sub_ns] = sub_location
 
             etree.SubElement(schema_def, "import", attrib={
                     "namespace": ns,
                     "schemaLocation": location
                 }
             )
+            import_dict[ns] = location
 
     # Add each schemaLocation as an import
     for ns, location in zip(locations[::2], locations[1::2]):
         if ns == application_schema_ns:
             continue
         location = substitute_ogc_schemas_location(location, ogc_schemas_location)
-        etree.SubElement(schema_def, "import", attrib={
-                "namespace": ns,
-                "schemaLocation": location
-            }
-        )
+        location = substitute_inspire_schemas_location(location, inspire_schemas_location)
+        if ns not in import_dict:
+            etree.SubElement(schema_def, "import", attrib={
+                    "namespace": ns,
+                    "schemaLocation": location
+                }
+            )
+            import_dict[ns] = location
 
     # TODO: ugly workaround. But otherwise, the doc is not recognized as schema
     #print(etree.tostring(schema_def))
@@ -323,6 +341,42 @@ def transform_abs_links_to_ref_links(path, level = 0):
                 f.close()
 
 ###############################################################################
+# Transform absolute schemaLocations into relative ones
+
+def transform_inspire_abs_links_to_ref_links(path, level = 0):
+    for file in os.listdir(path):
+        filename=path + '/' + file
+        if os.path.isdir(filename) and filename.find('examples') < 0:
+            transform_inspire_abs_links_to_ref_links(filename, level+1)
+        elif filename.endswith('.xsd'):
+            #print(level)
+            #print(filename)
+            f = open(filename, 'rb')
+            lines = f.readlines()
+            f.close()
+            rewrite = False
+            for i in range(len(lines)):
+                l = lines[i]
+                if l[-1] == '\n':
+                    l = l[0:-1]
+
+                pos = l.find('http://schemas.opengis.net/')
+                if pos >= 0:
+                    rewrite = True
+                    s = l[0:pos]
+                    for j in range(level):
+                        s = s + "../"
+                    s = s + "../SCHEMAS_OPENGIS_NET/"
+                    s = s + l[pos + len('http://schemas.opengis.net/'):]
+                    l = s
+                    lines[i] = l
+
+            if rewrite:
+                f = open(filename, 'wb')
+                f.writelines(lines)
+                f.close()
+
+###############################################################################
 # Download OGC schemas
 
 def download_ogc_schemas(ogc_schemas_url = 'http://schemas.opengis.net/SCHEMAS_OPENGIS_NET.zip', \
@@ -333,7 +387,7 @@ def download_ogc_schemas(ogc_schemas_url = 'http://schemas.opengis.net/SCHEMAS_O
     try:
         os.stat(target_dir + '/' + 'SCHEMAS_OPENGIS_NET.zip')
     except:
-        schemas = download(ogc_schemas_url, target_dir + '/' + 'SCHEMAS_OPENGIS_NET.zip')
+        download(ogc_schemas_url, target_dir + '/' + 'SCHEMAS_OPENGIS_NET.zip')
 
     try:
         os.stat(target_dir + '/' + target_subdir + '/wfs')
@@ -353,14 +407,76 @@ def download_ogc_schemas(ogc_schemas_url = 'http://schemas.opengis.net/SCHEMAS_O
     try:
         os.stat(target_dir + '/' + target_subdir + '/xlink.xsd')
     except:
-        schemas = download(xlink_xsd_url, target_dir + '/' + target_subdir + '/xlink.xsd')
+         download(xlink_xsd_url, target_dir + '/' + target_subdir + '/xlink.xsd')
 
     try:
         os.stat(target_dir + '/' + target_subdir + '/xml.xsd')
     except:
-        schemas = download(xml_xsd_url, target_dir + '/' + target_subdir + '/xml.xsd')
+        download(xml_xsd_url, target_dir + '/' + target_subdir + '/xml.xsd')
 
     transform_abs_links_to_ref_links(target_dir + '/' + target_subdir)
+
+###############################################################################
+# Download INSPIRE schemas
+
+def download_inspire_schemas(target_dir = '.', \
+                             target_subdir = 'inspire_schemas'):
+
+    download_ogc_schemas()
+
+    try:
+        os.stat(target_dir + '/' + 'inspire_common_1.0.1.zip')
+    except:
+        download('http://inspire.ec.europa.eu/schemas/common/1.0.1.zip', target_dir + '/' + 'inspire_common_1.0.1.zip')
+
+    try:
+        os.stat(target_dir + '/' + 'inspire_vs_1.0.1.zip')
+    except:
+        download('http://inspire.ec.europa.eu/schemas/inspire_vs/1.0.1.zip', target_dir + '/' + 'inspire_vs_1.0.1.zip')
+
+    try:
+        os.stat(target_dir + '/' + 'inspire_dls-1.0.3.zip')
+    except:
+        download('http://inspire.ec.europa.eu/schemas/inspire_dls/inspire_dls-1.0.3.zip', target_dir + '/' + 'inspire_dls-1.0.3.zip')
+
+    try:
+        os.mkdir(target_dir + '/' + target_subdir)
+        os.mkdir(target_dir + '/' + target_subdir + '/common')
+        os.mkdir(target_dir + '/' + target_subdir + '/inspire_vs')
+    except:
+        pass
+
+    try:
+        os.stat(target_dir + '/' + target_subdir + '/common/1.0')
+    except:
+        unzip(target_dir + '/' + 'inspire_common_1.0.1.zip', target_dir + '/' + target_subdir + '/common')
+        try:
+            os.stat(target_dir + '/' + target_subdir + '/common/1.0')
+        except:
+            print('Cannot unzip inspire_common_1.0.1.zip')
+            sys.exit(1)
+
+    try:
+        os.stat(target_dir + '/' + target_subdir + '/inspire_vs/1.0')
+    except:
+        unzip(target_dir + '/' + 'inspire_vs_1.0.1.zip', target_dir + '/' + target_subdir + '/inspire_vs')
+        try:
+            os.stat(target_dir + '/' + target_subdir + '/inspire_vs/1.0')
+        except:
+            print('Cannot unzip inspire_vs_1.0.1.zip')
+            sys.exit(1)
+
+    try:
+        os.stat(target_dir + '/' + target_subdir + '/inspire_dls/1.0')
+    except:
+        unzip(target_dir + '/' + 'inspire_dls-1.0.3.zip', target_dir + '/' + target_subdir)
+        try:
+            os.stat(target_dir + '/' + target_subdir + '/inspire_dls/1.0')
+        except:
+            print('Cannot unzip inspire_dls-1.0.3.zip.zip')
+            sys.exit(1)
+
+    transform_inspire_abs_links_to_ref_links(target_dir + '/' + target_subdir)
 
 ###############################################################################
 # has_local_ogc_schemas()
@@ -396,10 +512,26 @@ def has_local_ogc_schemas(path):
         return False
 
 ###############################################################################
+# has_local_inspire_schemas()
+
+def has_local_inspire_schemas(path):
+
+    # Autodetect INSPIRE schemas
+    try:
+        os.stat(path + '/common/1.0/common.xsd')
+        os.stat(path + '/inspire_vs/1.0/inspire_vs.xsd')
+        os.stat(path + '/inspire_dls/1.0/inspire_dls.xsd')
+
+        return True
+    except:
+        return False
+
+###############################################################################
 # Usage function
 
 def Usage():
     print('Usage: validate.py [-download_ogc_schemas]] [-ogc_schemas_location path]')
+    print('                   [-download_inspire_schemas] [-inspire_schemas_location path]')
     print('                   [-app_schema_ns ns] [-schema some.xsd')
     print('                   some.xml')
     sys.exit(255)
@@ -413,14 +545,23 @@ if __name__ == '__main__':
     filename = None
     xsd_filename = None
     ogc_schemas_location = None
+    inspire_schemas_location = None
     application_schema_ns = 'http://mapserver.gis.umn.edu/mapserver'
     
     if has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
         ogc_schemas_location = 'SCHEMAS_OPENGIS_NET'
+    
+    if has_local_inspire_schemas('inspire_schemas'):
+        inspire_schemas_location = 'inspire_schemas'
+        #transform_inspire_abs_links_to_ref_links('inspire_schemas')
 
     while i < len(argv):
         if argv[i] == "-download_ogc_schemas":
             download_ogc_schemas()
+            if i == len(argv)-1:
+                sys.exit(0)
+        elif argv[i] == "-download_inspire_schemas":
+            download_inspire_schemas()
             if i == len(argv)-1:
                 sys.exit(0)
         elif argv[i] == "-schema":
@@ -429,6 +570,9 @@ if __name__ == '__main__':
         elif argv[i] == "-ogc_schemas_location":
             i = i + 1
             ogc_schemas_location = argv[i]
+        elif argv[i] == "-inspire_schemas_location":
+            i = i + 1
+            inspire_schemas_location = argv[i]
         elif argv[i] == "-app_schema_ns":
             i = i + 1
             application_schema_ns = argv[i]
@@ -446,7 +590,8 @@ if __name__ == '__main__':
 
     if validate(filename, xsd_filename = xsd_filename, \
                 application_schema_ns = application_schema_ns, \
-                ogc_schemas_location = ogc_schemas_location):
+                ogc_schemas_location = ogc_schemas_location,
+                inspire_schemas_location = inspire_schemas_location):
         sys.exit(0)
     else:
         sys.exit(1)
