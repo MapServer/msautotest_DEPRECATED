@@ -214,6 +214,41 @@ def detimestamp_file( filename ):
     return
 
 ###############################################################################
+# Keep version="" string
+
+def extract_service_version_file( filename ):
+
+    data = open(filename,'rb').read()
+
+    from sys import version_info
+    if version_info >= (3,0,0):
+        data = str(data, 'iso-8859-1')
+
+    # Remove GDAL version from GPX file
+    start = data.find('WFS_Capabilities')
+    if start == -1:
+        return
+    data = data[start:]
+    start = data.find('version="')
+    if start == -1:
+        return
+
+    end = start + len('version="')
+    length = len(data)
+    result = ''
+    while end < length and data[end] != '"':
+        result = result + data[end]
+        end = end + 1
+    if data[end] != '"':
+        return
+
+    if version_info >= (3,0,0):
+        open(filename,'wb').write(bytes(result, 'iso-8859-1'))
+    else:
+        open(filename,'wb').write(result)
+    return
+    
+###############################################################################
 # Collect all the [STRIP:] directives from a command string and remove them
 # from the command string.
 
@@ -473,9 +508,15 @@ def run_tests( argv ):
             else:
                 deversion = 0
 
+            if command.find('[EXTRACT_SERVICE_VERSION]') != -1:
+                extractserviceversion = 1
+            else:
+                extractserviceversion = 0
+
             command = command.replace('[RESULT]', 'result/'+out_file )
             command = command.replace('[RESULT_DEMIME]', 'result/'+out_file )
             command = command.replace('[RESULT_DEVERSION]', 'result/'+out_file )
+            command = command.replace('[EXTRACT_SERVICE_VERSION]', 'result/'+out_file )
             command = command.replace('[MAPFILE]', map )
             command = command.replace('[SHP2IMG]', shp2img )
             if renderer is not None:
@@ -536,6 +577,8 @@ def run_tests( argv ):
                 fixexponent_file( 'result/'+out_file )
                 truncate_one_decimal( 'result/'+out_file )
                 detimestamp_file( 'result/'+out_file )
+            if extractserviceversion:
+                extract_service_version_file( 'result/'+out_file )
             if valgrind:
                 if os.path.getsize(valgrind_log) == 0:
                    os.remove( valgrind_log )
