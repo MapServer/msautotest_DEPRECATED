@@ -33,7 +33,7 @@ import os
 import string
 import time
 from testlib import *
-import validate
+import xmlvalidate
 
 have_pdiff = None
 
@@ -436,7 +436,7 @@ def run_tests( argv ):
     # Must we and can we validate XML stuff ?
     ogc_schemas_location = None
     if validate_xml:
-        if validate.has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
+        if xmlvalidate.has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
             ogc_schemas_location = 'SCHEMAS_OPENGIS_NET'
         else:
             print('Cannot validate XML because SCHEMAS_OPENGIS_NET not found. Run "validate.py -download_ogc_schemas" from msautotest/wxs')
@@ -514,7 +514,7 @@ def run_tests( argv ):
                 if post[0] == '<':
                   os.environ['CONTENT_TYPE'] = 'text/xml'
                   if ogc_schemas_location is not None:
-                      validate.validate(post, ogc_schemas_location = ogc_schemas_location)
+                      xmlvalidate.validate(post, ogc_schemas_location = ogc_schemas_location)
                 else:
                   os.environ['CONTENT_TYPE'] = 'application/x-www-form-urlencoded'
 
