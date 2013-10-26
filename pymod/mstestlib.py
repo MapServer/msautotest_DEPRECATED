@@ -33,7 +33,13 @@ import os
 import string
 import time
 from testlib import *
-import xmlvalidate
+try:
+    import xmlvalidate
+    xmlvalidate_ok = True
+except:
+    print('Cannot import xmlvalidate. Likely lxml missing')
+    xmlvalidate_ok = False
+    pass
 
 have_pdiff = None
 
@@ -435,7 +441,7 @@ def run_tests( argv ):
     ###########################################################################
     # Must we and can we validate XML stuff ?
     ogc_schemas_location = None
-    if validate_xml:
+    if validate_xml and xmlvalidate_ok:
         if xmlvalidate.has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
             ogc_schemas_location = 'SCHEMAS_OPENGIS_NET'
         else:
