@@ -65,7 +65,7 @@ def substitute_ogc_schemas_location(location, ogc_schemas_location):
 # Validation function
 
 def validate(xml_filename_or_content, xsd_filename = None, \
-             application_schema_ns = 'http://mapserver.gis.umn.edu/mapserver', \
+             application_schema_ns = None, \
              ogc_schemas_location = None):
 
     try:
@@ -399,7 +399,9 @@ def has_local_ogc_schemas(path):
 # Usage function
 
 def Usage():
-    print('Usage: validate.py [-download_ogc_schemas] [-schema some.xsd] [-ogc_schemas_location path] some.xml')
+    print('Usage: validate.py [-download_ogc_schemas]] [-ogc_schemas_location path]')
+    print('                   [-app_schema_ns ns] [-schema some.xsd')
+    print('                   some.xml')
     sys.exit(255)
 
 ###############################################################################
@@ -411,6 +413,7 @@ if __name__ == '__main__':
     filename = None
     xsd_filename = None
     ogc_schemas_location = None
+    application_schema_ns = 'http://mapserver.gis.umn.edu/mapserver'
     
     if has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
         ogc_schemas_location = 'SCHEMAS_OPENGIS_NET'
@@ -426,6 +429,9 @@ if __name__ == '__main__':
         elif argv[i] == "-ogc_schemas_location":
             i = i + 1
             ogc_schemas_location = argv[i]
+        elif argv[i] == "-app_schema_ns":
+            i = i + 1
+            application_schema_ns = argv[i]
         elif argv[i][0] == '-':
             print('Unhandled option : %s' % argv[i])
             print('')
@@ -438,7 +444,9 @@ if __name__ == '__main__':
     if filename is None:
         Usage()
 
-    if validate(filename, xsd_filename = xsd_filename, ogc_schemas_location = ogc_schemas_location):
+    if validate(filename, xsd_filename = xsd_filename, \
+                application_schema_ns = application_schema_ns, \
+                ogc_schemas_location = ogc_schemas_location):
         sys.exit(0)
     else:
         sys.exit(1)
