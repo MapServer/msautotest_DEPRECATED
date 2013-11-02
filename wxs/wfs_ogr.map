@@ -58,6 +58,8 @@
 # WFS 1.1 GetFeature CSV
 # RUN_PARMS: wfsogr11_ogrcsv.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.1.0&REQUEST=GetFeature&TYPENAME=popplace&OUTPUTFORMAT=csv&MAXFEATURES=10" > [RESULT]
 #
+# Exception when requesting layers with different SRS
+# RUN_PARMS: wfsogr_exception_not_same_srs.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=multi,withnullvalues,popplace,road" > [RESULT]
 # 
 # WMS 1.1 - GetFeatureInfo
 #
