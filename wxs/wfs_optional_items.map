@@ -2,6 +2,25 @@
 # Test optional GML items
 #
 # REQUIRES: INPUT=OGR SUPPORTS=WFS
+
+#
+# -------------------
+# GetPropertyValue
+#
+# RUN_PARMS: wfs_200_getpropertyvalue.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province&VALUEREFERENCE=NAME" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_getpropertyvalue_with_ns.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=ms:province&VALUEREFERENCE=NAME" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_getpropertyvalue_alias.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province&VALUEREFERENCE=NomFrancais" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_getpropertyvalue_geometry.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province&VALUEREFERENCE=msGeometry" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_getpropertyvalue_all_options_hits.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAME=province&VALUEREFERENCE=msGeometry&COUNT=5&STARTINDEX=0&SRSNAME=EPSG:4269&FILTER=<fes:Filter><fes:FeatureId rid='province.1009'/></fes:Filter>&OUTPUTFORMAT=application/gml%2Bxml;%20version=3.2&RESULTTYPE=hits" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getpropertyvalue_invalid_typename.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=foo&VALUEREFERENCE=foo" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getpropertyvalue_excluded_property.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province&VALUEREFERENCE=REG_CODE" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getpropertyvalue_invalid_property.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province&VALUEREFERENCE=foo" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getpropertyvalue_invalid_outputformat.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province&VALUEREFERENCE=NAME&OUTPUTFORMAT=foo" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getpropertyvalue_missing_typenames.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&VALUEREFERENCE=NAME" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getpropertyvalue_missing_valuereference.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAMES=province" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_getpropertyvalue.xml [MAPSERV] [POST]<GetPropertyValue service="WFS" version="2.0.0" valueReference="NAME" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="province"/></GetPropertyValue>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_getpropertyvalue_all_options.xml [MAPSERV] [POST]<GetPropertyValue service="WFS" version="2.0.0" valueReference="msGeometry" startIndex="2" count="5" outputFormat="application/gml+xml; version=3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="province" srsName="EPSG:4269"><PropertyName>ignored_hopefully</PropertyName><fes:Filter><fes:PropertyIsEqualTo><fes:ValueReference>NAME</fes:ValueReference><fes:Literal></fes:Literal></fes:PropertyIsEqualTo></fes:Filter></Query></GetPropertyValue>[/POST] > [RESULT_DEVERSION]
+#
 #
 # RUN_PARMS: wfs_optional_items_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeFeatureType&TYPENAME=province" > [RESULT]
 
