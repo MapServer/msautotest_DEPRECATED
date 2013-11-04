@@ -18,6 +18,8 @@
 # RUN_PARMS: wfs_200_allgeoms_getfeature_3857_bbox.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=point,multipoint,linestring,multilinestring,polygon,multipolygon&SRSNAME=EPSG:3857&BBOX=222638,6274861,333959,6446276,EPSG:3857" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_allgeoms_getfeature_bbox_none.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=point,multipoint,linestring,multilinestring,polygon,multipolygon&BBOX=0,0,0,0" > [RESULT_DEVERSION]
 #
+# RUN_PARMS: wfs_200_exception_allgeoms_getfeature_invalid_typename.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=foo" > [RESULT_DEVERSION]
+#
 # Multi-layer POST GetFeature
 # RUN_PARMS: wfs_200_allgeoms_post_getfeature.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature outputFormat="text/xml; subtype=gml/3.1.1" service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point" /><Query typeNames="multipoint" /></GetFeature>[/POST] > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_allgeoms_post_getfeature_count_1.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature count="1" outputFormat="text/xml; subtype=gml/3.1.1" service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point" /><Query typeNames="multipoint" /></GetFeature>[/POST] > [RESULT_DEVERSION]
