@@ -185,12 +185,15 @@
 #
 # ResourceId
 # RUN_PARMS: wfs_200_getfeature_resourceid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&RESOURCEID=province.977" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeature_resourceid_disable_layer.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&RESOURCEID=disabled_province.977" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_getfeature_several_resourceid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&RESOURCEID=province.977,province.978" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_getfeature_resourceid_notypenames.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&RESOURCEID=province.977" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_exception_getfeature_resourceid_inexisting.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&RESOURCEID=province.123456" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_exception_getfeature_resourceid_badstructure.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&RESOURCEID=foo" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_exception_getfeature_resourceid_invalid_typename.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&RESOURCEID=foo.123456" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeature_resourceid_filter_invalid_typename.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&FILTER=(<Filter><ResourceId rid='foo.977'/></Filter>)" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_post_getfeature_resourceid.xml [MAPSERV] [POST]<?xml version="1.0"?><GetFeature service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"><Query typeNames="province"><fes:Filter><fes:ResourceId rid="province.977"/></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_post_getfeature_resourceid_disable_layer.xml [MAPSERV] [POST]<?xml version="1.0"?><GetFeature service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"><Query typeNames="disabled_province"><fes:Filter><fes:ResourceId rid="disabled_province.977"/></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_post_getfeature_several_resourceid.xml [MAPSERV] [POST]<?xml version="1.0"?><GetFeature service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"><Query typeNames="province"><fes:Filter><fes:ResourceId rid="province.977"/><fes:ResourceId rid="province.978"/></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
 #
 # Paging support
@@ -212,7 +215,45 @@
 # RUN_PARMS: wfs_200_getfeature_startindex_20_count2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&STARTINDEX=20&COUNT=2" > [RESULT_DEVERSION]
 # Should return 0 feature. No previous uri : behaviour not defined in WFS 2.0 spec
 # RUN_PARMS: wfs_200_getfeature_startindex_21_count2.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&STARTINDEX=21&COUNT=2" > [RESULT_DEVERSION]
-
+#
+# -------------------
+# ListStoredQueries
+#
+# RUN_PARMS: wfs_200_liststoredqueries.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=ListStoredQueries" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_liststoredqueries.xml [MAPSERV] [POST]<wfs:ListStoredQueries version="2.0.0" service="WFS" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"/>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# DescribeStoredQueries
+#
+# RUN_PARMS: wfs_200_describestoredqueries.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_describestoredqueries_with_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_describestoredqueries_with_invalid_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries&STOREDQUERY_ID=invalidid" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_describestoredqueries.xml [MAPSERV] [POST]<wfs:DescribeStoredQueries version="2.0.0" service="WFS" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"/>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_describestoredqueries_with_id.xml [MAPSERV] [POST]<wfs:DescribeStoredQueries version="2.0.0" service="WFS" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQueryId>urn:ogc:def:query:OGC-WFS::GetFeatureById</StoredQueryId></wfs:DescribeStoredQueries>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_exception_describestoredqueries_with_invalid_id.xml [MAPSERV] [POST]<wfs:DescribeStoredQueries version="2.0.0" service="WFS" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQueryId>invalid</StoredQueryId></wfs:DescribeStoredQueries>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# GetFeature with stored query
+#
+# RUN_PARMS: wfs_200_getfeaturebyid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=province.977" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_getfeaturebyid_hits.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=province.977&RESULTTYPE=hits" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_getfeaturebyid_count0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=province.977&COUNT=0" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeaturebyid_nofeature.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=province.12345" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeaturebyid_invalid_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=foo" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeaturebyid_no_such_typename.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=foo.12345" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeaturebyid_wrong_queryid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=foo" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeaturebyid_missing_param.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_getfeaturebyid.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"><Parameter name="ID">province.977</Parameter></StoredQuery></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_exception_getfeaturebyid_missing_queryid.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery/></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_exception_getfeaturebyid_wrong_queryid.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="foo"/></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_exception_getfeaturebyid_missing_param.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"></StoredQuery></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_exception_getfeaturebyid_invalid_param.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"><Parameter/></StoredQuery></GetFeature>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# GetPropertyValue with stored query
+#
+# RUN_PARMS: wfs_200_getpropertyvalue_getfeaturebyid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=province.977&VALUEREFERENCE=ms:msGeometry" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_getpropertyvalue_getfeaturebyid.xml [MAPSERV] [POST]<GetPropertyValue service="WFS" version="2.0.0" valueReference="ms:msGeometry" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"><Parameter name="ID">province.977</Parameter></StoredQuery></GetPropertyValue>[/POST] > [RESULT_DEVERSION]
 
 MAP
 
@@ -301,5 +342,34 @@ LAYER
   END
 END # Layer
 
+
+
+LAYER
+  NAME disabled_province
+  DATA province
+  METADATA
+    "wfs_title"         "province"
+    "wfs_description"   "province"
+    "wfs_featureid"     "PROVINCE_I"
+    "gml_geometries"    "msGeometry"
+    "gml_msGeometry_type" "polygon"
+    "wfs_enable_request" "!*" 
+  END
+  TYPE POINT
+  STATUS ON
+  PROJECTION
+    "init=./data/epsg2:42304"
+#    "init=epsg:42304"
+  END
+
+  DUMP TRUE
+  CLASSITEM "Name_e"
+
+  CLASS
+    NAME "Province"
+    COLOR 200 255 0
+    OUTLINECOLOR 120 120 120
+  END
+END # Layer
 
 END # Map File

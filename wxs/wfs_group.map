@@ -18,6 +18,7 @@
 
 # Asks for 2 optional parameter in a group. No geometry
 # RUN_PARMS: wfs_group_get_feature_two_in_group.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=province&PROPERTYNAME=namegroup/NAME,namegroup/NomFrancais" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_group_get_feature_two_in_group_with_ns.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=province&PROPERTYNAME=ns:namegroup/ns:NAME,ns:namegroup/ns:NomFrancais" > [RESULT_DEVERSION]
 
 # Filter with a filter with a PropertyName in a group, with namespaces
 # RUN_PARMS: wfs_group_get_feature_filter.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=province&FILTER=<Filter><PropertyIsEqualTo><PropertyName>ms:namegroup/ms:NomFrancais</PropertyName><Literal>Nouvelle-Ecosse</Literal></PropertyIsEqualTo></Filter>&RESULTTYPE=hits" > [RESULT_DEVERSION]

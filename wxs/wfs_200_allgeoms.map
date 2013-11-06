@@ -24,12 +24,48 @@
 # RUN_PARMS: wfs_200_allgeoms_post_getfeature.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature outputFormat="text/xml; subtype=gml/3.1.1" service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point" /><Query typeNames="multipoint" /></GetFeature>[/POST] > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_allgeoms_post_getfeature_count_1.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature count="1" outputFormat="text/xml; subtype=gml/3.1.1" service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point" /><Query typeNames="multipoint" /></GetFeature>[/POST] > [RESULT_DEVERSION]
 #
+# RUN_PARMS: wfs_200_allgeoms_getfeature_all_filters.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=point,multipoint&FILTER=(<Filter><ResourceId rid='point.1'/></Filter>)(<Filter><ResourceId rid='multipoint.1'/></Filter>)" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_getfeature_all_filters.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0"  xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point"><fes:Filter><fes:ResourceId rid="point.1"/></fes:Filter></Query><Query typeNames="multipoint"><fes:Filter><fes:ResourceId rid="multipoint.1"/></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_getfeature_filter_first_layer.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0"  xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point"><fes:Filter><fes:ResourceId rid="point.1"/></fes:Filter></Query><Query typeNames="multipoint"></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_getfeature_filter_second_layer.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature service="WFS" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0"  xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point"></Query><Query typeNames="multipoint"><fes:Filter><fes:ResourceId rid="multipoint.1"/></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+#
 # Test numberMatched behaviour
 # RUN_PARMS: wfs_200_allgeoms_getfeature_count_0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=point,multipoint,linestring,multilinestring,polygon,multipolygon&COUNT=0" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_allgeoms_getfeature_bbox_count_0.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=point,multipoint,linestring,multilinestring,polygon,multipolygon&BBOX=222638,6274861,333959,6446276,EPSG:3857&COUNT=0" > [RESULT_DEVERSION]
 #
 # StartIndex with several layers
 # RUN_PARMS: wfs_200_allgeoms_getfeature_start_index.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=point,multipoint,linestring,multilinestring,polygon,multipolygon&COUNT=1&STARTINDEX=0" > [RESULT_DEVERSION]
+#
+# RUN_PARMS: wfs_200_allgeoms_getfeature_multilayer_rid_count.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&COUNT=1&RESOURCEID=point.1,multipoint.1" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_getfeature_multilayer_filter_count.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&COUNT=1&TYPENAMES=point,multipoint&FILTER=(<Filter><ResourceId rid='point.1'/></Filter>)(<Filter><ResourceId rid='multipoint.1'/></Filter>)" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_getfeature_filter_first_layer_count.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature service="WFS" count="1" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0"  xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point"><fes:Filter><fes:ResourceId rid="point.1"/></fes:Filter></Query><Query typeNames="multipoint"></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_getfeature_filter_second_layer_count.xml [MAPSERV] [POST]<?xml version="1.0" ?><GetFeature service="WFS" count="1" version="2.0.0" xmlns="http://www.opengis.net/wfs/2.0"  xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><Query typeNames="point"></Query><Query typeNames="multipoint"><fes:Filter><fes:ResourceId rid="multipoint.1"/></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# ListStoredQueries
+#
+# RUN_PARMS: wfs_200_allgeoms_liststoredqueries.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=ListStoredQueries" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_liststoredqueries.xml [MAPSERV] [POST]<wfs:ListStoredQueries version="2.0.0" service="WFS" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"/>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# DescribeStoredQueries
+#
+# RUN_PARMS: wfs_200_allgeoms_describestoredqueries.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_describestoredqueries_with_predefined_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_describestoredqueries_with_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries&STOREDQUERY_ID=myquery" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_describestoredqueries_with_two_id.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeStoredQueries&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById,myquery" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_describestoredqueries_with_two_id.xml [MAPSERV] [POST]<wfs:DescribeStoredQueries version="2.0.0" service="WFS" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs/2.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQueryId>urn:ogc:def:query:OGC-WFS::GetFeatureById</StoredQueryId><StoredQueryId>myquery</StoredQueryId></wfs:DescribeStoredQueries>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# GetFeature with stored query
+#
+# RUN_PARMS: wfs_200_allgeoms_getfeaturebyid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=point.1" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_exception_invalidquery.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=invalidquery" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_exception_myquery_missing_param.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=myquery" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_myquery.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&STOREDQUERY_ID=myquery&LONGMIN=2&LATMIN=49&LONGMAX=2&LATMAX=49" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_several_getfeaturebyid.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"><Parameter name="ID">point.1</Parameter></StoredQuery><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"><Parameter name="ID">multipoint.1</Parameter></StoredQuery></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_allgeoms_post_exception_invalidquery.xml [MAPSERV] [POST]<GetFeature xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" service="WFS" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="invalidquery"></StoredQuery></GetFeature>[/POST] > [RESULT_DEVERSION]
+
 
 MAP
 
@@ -60,6 +96,12 @@ WEB
     "wfs_title"        "Test simple wfs"
     "wfs_onlineresource"   "http://localhost/path/to/wfs_simple?myparam=something&"
     "wfs_srs"          "EPSG:4326 EPSG:3857"
+
+    "wfs_storedqueries" "myquery,invalidquery,filestoredquery"
+    "wfs_myquery_inlinedef" "<StoredQueryDescription xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:gml=\"http://www.opengis.net/gml/3.2\" id=\"myquery\"><Title>query title</Title><Abstract>query abstract</Abstract><Parameter name=\"longmin\" type=\"xs:double\"/><Parameter name=\"latmin\" type=\"xs:double\"/><Parameter name=\"longmax\" type=\"xs:double\"/><Parameter name=\"latmax\" type=\"xs:double\"/><QueryExpressionText isPrivate=\"false\" language=\"urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression\" xmlns:ms=\"http://mapserver.gis.umn.edu/mapserver\" returnFeatureTypes=\"ms:point\"><Query xmlns:fes=\"http://www.opengis.net/fes/2.0\" typeNames=\"ms:point\"><fes:Filter><fes:BBOX><fes:ValueReference>msGeometry</fes:ValueReference><gml:Envelope srsName=\"urn:ogc:def:crs:EPSG::4326\"><gml:lowerCorner>${latmin} ${longmin}</gml:lowerCorner><gml:upperCorner>${latmax} ${longmax}</gml:upperCorner></gml:Envelope></fes:BBOX></fes:Filter></Query></QueryExpressionText></StoredQueryDescription>"
+    "wfs_filestoredquery_filedef" "data/wfs_200_allgeoms_filestoredquery.xml"
+    "wfs_invalidquery_inlinedef" "invalid"
+
     "ows_abstract"    "Test WFS Abstract"
     "ows_keywordlist" "ogc,wfs,gml,om"
     "ows_service_onlineresource" "http://localhost"
