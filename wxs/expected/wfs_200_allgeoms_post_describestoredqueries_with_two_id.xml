@@ -15,8 +15,19 @@ Content-Type: text/xml; charset=UTF-8
     <Parameter name="latmin" type="xs:double"/>
     <Parameter name="longmax" type="xs:double"/>
     <Parameter name="latmax" type="xs:double"/>
-    <QueryExpressionText xmlns:ms="http://mapserver.gis.umn.edu/mapserver" isPrivate="false" language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression" returnFeatureTypes="ms:point">
+    <QueryExpressionText xmlns:ms="http://mapserver.gis.umn.edu/mapserver" isPrivate="false" language="urn:ogc:def:queryLanguage:OGC-WFS::WFS_QueryExpression" returnFeatureTypes="ms:point ms:multipoint">
       <Query xmlns:fes="http://www.opengis.net/fes/2.0" typeNames="ms:point">
+        <fes:Filter>
+          <fes:BBOX>
+            <fes:ValueReference>msGeometry</fes:ValueReference>
+            <gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+              <gml:lowerCorner>${latmin} ${longmin}</gml:lowerCorner>
+              <gml:upperCorner>${latmax} ${longmax}</gml:upperCorner>
+            </gml:Envelope>
+          </fes:BBOX>
+        </fes:Filter>
+      </Query>
+      <Query xmlns:fes="http://www.opengis.net/fes/2.0" typeNames="ms:multipoint">
         <fes:Filter>
           <fes:BBOX>
             <fes:ValueReference>msGeometry</fes:ValueReference>

@@ -14,6 +14,7 @@ Content-Type: text/xml; charset=UTF-8
   <StoredQuery id="myquery">
     <Title>query title</Title>
     <ReturnFeatureType>ms:point</ReturnFeatureType>
+    <ReturnFeatureType>ms:multipoint</ReturnFeatureType>
   </StoredQuery>
   <!--WARNING: Definition for stored query invalidquery is invalid-->
   <StoredQuery id="filestoredquery">
