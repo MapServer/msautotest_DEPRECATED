@@ -14,6 +14,7 @@ Content-Type: text/xml; subtype=gml/3.2.1; charset=UTF-8
       		<gml:upperCorner>47.62759 -61.43322</gml:upperCorner>
       	</gml:Envelope>
       </wfs:boundedBy>
+<!-- WARNING: No featureid defined for typename 'province'. Output will not validate. -->
     <wfs:member>
       <ms:province>
         <gml:boundedBy>
