@@ -21,6 +21,7 @@ Content-Type: application/gml+xml; version=3.2; charset=UTF-8
       <extension base="gml:AbstractFeatureType">
         <sequence>
           <element name="msGeometry" type="gml:GeometryPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="gid" minOccurs="0" type="string"/>
           <element name="time" minOccurs="0" type="gml:TimeInstantType"/>
         </sequence>
       </extension>

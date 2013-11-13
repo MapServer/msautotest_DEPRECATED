@@ -418,6 +418,8 @@ def run_tests( argv ):
     quiet = 0
     validate_xml = True
     skiparg = False
+    valgrind_non_empty_count = 0
+
     ###########################################################################
     # Process arguments.
     
@@ -603,6 +605,10 @@ def run_tests( argv ):
             if valgrind:
                 if os.path.getsize(valgrind_log) == 0:
                    os.remove( valgrind_log )
+                else:
+                    valgrind_non_empty_count = valgrind_non_empty_count + 1
+                    if not quiet:
+                        print('     Valgrind log non empty.')
 
             apply_strip_items_file( 'result/'+out_file, strip_items )
                 
@@ -683,6 +689,8 @@ def run_tests( argv ):
     print('%d tests succeeded' % succeed_count)
     print('%d tests failed' %fail_count)
     print('%d test results initialized' % init_count)
+    if valgrind:
+        print('%d test have non-empty Valgrind log' % valgrind_non_empty_count)
 
     if noresult_count > 0:
         print('%d of failed tests produced *no* result! Serious Failure!' % noresult_count)

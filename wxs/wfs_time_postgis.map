@@ -81,7 +81,8 @@ LAYER
     "DESCRIPTION" "time"
     "wfs_title" "time"
     "wfs_featureid" "gid"
-    "gml_include_items" "time"
+    "gml_include_items" "time,gid"
+    "gml_default_items" "time"
     "gml_time_type" "Date"
   END
 
