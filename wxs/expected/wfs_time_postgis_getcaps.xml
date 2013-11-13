@@ -203,10 +203,6 @@ Content-Type: text/xml; charset=UTF-8
       <ows:NoValues/>
       <ows:DefaultValue>FALSE</ows:DefaultValue>
     </ows:Constraint>
-    <ows:Constraint name="CountDefault">
-      <ows:NoValues/>
-      <ows:DefaultValue>1000</ows:DefaultValue>
-    </ows:Constraint>
     <ows:Constraint name="QueryExpressions">
       <ows:AllowedValues>
         <ows:Value>wfs:Query</ows:Value>
@@ -216,20 +212,17 @@ Content-Type: text/xml; charset=UTF-8
   </ows:OperationsMetadata>
   <FeatureTypeList>
     <FeatureType>
-      <Name>province</Name>
-      <Title>province</Title>
+      <Name>time</Name>
+      <Title>time</Title>
       <DefaultCRS>urn:ogc:def:crs:EPSG::4326</DefaultCRS>
-      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
       <OutputFormats>
         <Format>application/gml+xml; version=3.2</Format>
         <Format>text/xml; subtype=gml/3.2.1</Format>
         <Format>text/xml; subtype=gml/3.1.1</Format>
         <Format>text/xml; subtype=gml/2.1.2</Format>
       </OutputFormats>
-      <ows:WGS84BoundingBox dimensions="2">
-        <ows:LowerCorner>-66.724329085098 41.770507630784</ows:LowerCorner>
-        <ows:UpperCorner>-57.721680231574 48.477313848494</ows:UpperCorner>
-      </ows:WGS84BoundingBox>
+      <ows:WGS84BoundingBox/>
+      <!--WARNING: Optional WGS84BoundingBox could not be established for this layer.  Consider setting the EXTENT in the LAYER object, or wfs_extent metadata. Also check that your data exists in the DATA statement-->
     </FeatureType>
   </FeatureTypeList>
   <fes:Filter_Capabilities>
@@ -280,7 +273,7 @@ Content-Type: text/xml; charset=UTF-8
       </fes:Constraint>
       <fes:Constraint name="ImplementsSorting">
         <ows:NoValues/>
-        <ows:DefaultValue>FALSE</ows:DefaultValue>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
       </fes:Constraint>
       <fes:Constraint name="ImplementsExtendedOperators">
         <ows:NoValues/>

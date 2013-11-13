@@ -169,6 +169,7 @@
 # RUN_PARMS: wfs_200_post_getfeature_filter_full_bbox_gml311.xml [MAPSERV] [POST]<?xml version="1.0"?><GetFeature service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"><Query typeNames="province"><fes:Filter><fes:BBOX><fes:ValueReference>msGeometry</fes:ValueReference><gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326"><gml:lowerCorner>43 -67</gml:lowerCorner><gml:upperCorner>48 -59</gml:upperCorner></gml:Envelope></fes:BBOX></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
 # And 2.1.2
 # RUN_PARMS: wfs_200_post_getfeature_filter_full_bbox_gml212.xml [MAPSERV] [POST]<?xml version="1.0"?><GetFeature service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml http://schemas.opengis.net/gml/2.1.2/feature.xsd"><Query typeNames="province"><fes:Filter><fes:BBOX><fes:ValueReference>msGeometry</fes:ValueReference><gml:Box srsName="EPSG:4326"><gml:coordinates>43,-67 48,-59</gml:coordinates></gml:Box></fes:BBOX></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_exception_getfeature_bbox_wrong_number_of_args.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&BBOX=1" > [RESULT_DEVERSION]
 #
 # Filter and BBOX are exclusive
 # RUN_PARMS: wfs_200_exception_getfeature_filter_bbox.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&BBOX=43,-67,48,59&FILTER=foo" > [RESULT_DEVERSION]
@@ -254,6 +255,12 @@
 #
 # RUN_PARMS: wfs_200_getpropertyvalue_getfeaturebyid.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&STOREDQUERY_ID=urn:ogc:def:query:OGC-WFS::GetFeatureById&ID=province.977&VALUEREFERENCE=ms:msGeometry" > [RESULT_DEVERSION]
 # RUN_PARMS: wfs_200_post_getpropertyvalue_getfeaturebyid.xml [MAPSERV] [POST]<GetPropertyValue service="WFS" version="2.0.0" valueReference="ms:msGeometry" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd"><StoredQuery id="urn:ogc:def:query:OGC-WFS::GetFeatureById"><Parameter name="ID">province.977</Parameter></StoredQuery></GetPropertyValue>[/POST] > [RESULT_DEVERSION]
+#
+# -------------------
+# SortBy
+#
+# RUN_PARMS: wfs_200_post_exception_sortby.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=province&SORTBY=foo" > [RESULT_DEVERSION]
+# RUN_PARMS: wfs_200_post_exception_getpropertyvalue_sortby.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetPropertyValue&TYPENAME=province&SORTBY=foo&VALUEREFERENCE=ms:msGeometry" > [RESULT_DEVERSION]
 
 MAP
 
