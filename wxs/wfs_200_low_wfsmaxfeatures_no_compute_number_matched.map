@@ -3,6 +3,9 @@
 #
 # REQUIRES: INPUT=OGR SUPPORTS=WFS
 #
+# We don't know how many features are matched, but we know there are more than
+# one, so 'next' will be filled
+# RUN_PARMS: wfs_200_low_wfsmaxfeatures_no_compute_number_matched.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&COUNT=1" > [RESULT_DEVERSION]
 # Should return 10
 # RUN_PARMS: wfs_200_low_wfsmaxfeatures_no_compute_number_matched_hits.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=province&RESULTTYPE=hits" > [RESULT_DEVERSION]
 # Should return 0
