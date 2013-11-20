@@ -199,25 +199,35 @@ def degdalversion_file( filename ):
 def detimestamp_file( filename ):
 
     data = open(filename,'rb').read()
+    has_found_timestamp = False
 
     from sys import version_info
     if version_info >= (3,0,0):
         data = str(data, 'iso-8859-1')
 
-    start = data.find( 'timeStamp="' )
-    if start == -1:
+    start_find_idx = 0
+    while True:
+        start = data[start_find_idx:].find( 'timeStamp="' )
+        if start == -1:
+            break
+        start = start + start_find_idx
+        has_found_timestamp = True
+
+        start = start + 11
+        end = start
+        while data[end+1] != '"':
+            end = end + 1
+
+        data = data[:start] + data[end+1:]
+        start_find_idx = start + 11
+
+    if not has_found_timestamp:
         return
 
-    start = start + 11
-    end = start
-    while data[end+1] != '"':
-        end = end + 1
-
-    new_data = data[:start] + data[end+1:]
     if version_info >= (3,0,0):
-        open(filename,'wb').write(bytes(new_data, 'iso-8859-1'))
+        open(filename,'wb').write(bytes(data, 'iso-8859-1'))
     else:
-        open(filename,'wb').write(new_data)
+        open(filename,'wb').write(data)
     return
 
 ###############################################################################

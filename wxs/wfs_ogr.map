@@ -79,6 +79,9 @@
 # RUN_PARMS: wfsogr_exception_sortby_wrong_syntax.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=popplace&SORTBY=POP_CLASS+crescendo&COUNT=3" > [RESULT_DEVERSION]
 # RUN_PARMS: wfsogr_getpropertyvalue_sortby.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=popplace&SORTBY=POP_CLASS+DESC&COUNT=3&VALUEREFERENCE=POP_CLASS" > [RESULT_DEVERSION]
 # RUN_PARMS: wfsogr_post_sortby.xml [MAPSERV] [POST]<GetFeature count="3" service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"><Query typeNames="popplace"><fes:SortBy><fes:SortProperty><fes:ValueReference>POP_CLASS</fes:ValueReference></fes:SortProperty><fes:SortProperty><fes:ValueReference>UNIQUE_KEY</fes:ValueReference><fes:SortOrder>DESC</fes:SortOrder></fes:SortProperty></fes:SortBy></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
+#
+# RUN_PARMS: wfsogr_200_multiplelayers.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=road,popplace&PROPERTYNAME=(ms:msGeometry)(ms:msGeometry)" > [RESULT_DEVERSION]
+# RUN_PARMS: wfsogr_200_multiplelayers_with_count.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=road,popplace&COUNT=80&PROPERTYNAME=(ms:msGeometry)(ms:msGeometry)" > [RESULT_DEVERSION]
 
 MAP
 
