@@ -79,7 +79,7 @@ def validate(xml_filename_or_content, xsd_filename = None, \
              inspire_schemas_location = None):
 
     try:
-        if xml_filename_or_content.find('<?xml') == 0:
+        if xml_filename_or_content.find('<') == 0:
             doc = etree.XML(xml_filename_or_content)
         else:
             doc = etree.XML(ingest_file_and_strip_mime(xml_filename_or_content))
