@@ -221,8 +221,10 @@ Content-Type: text/xml; charset=UTF-8
         <Format>text/xml; subtype=gml/3.1.1</Format>
         <Format>text/xml; subtype=gml/2.1.2</Format>
       </OutputFormats>
-      <ows:WGS84BoundingBox/>
-      <!--WARNING: Optional WGS84BoundingBox could not be established for this layer.  Consider setting the EXTENT in the LAYER object, or wfs_extent metadata. Also check that your data exists in the DATA statement-->
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-131.020004 33.650002</ows:LowerCorner>
+        <ows:UpperCorner>-119.849998 48.389999</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
     </FeatureType>
   </FeatureTypeList>
   <fes:Filter_Capabilities>
