@@ -251,7 +251,7 @@
         <inspire_common:MetadataDate/>
         <inspire_common:SpatialDataServiceType>download</inspire_common:SpatialDataServiceType>
         <!-- WARNING: Mandatory metadata '..._inspire_keyword' was missing in this context. -->
-        <inspire_common:MandatoryKeyword xsi:type="inspire_common:classificationOfSpatialDataService">
+        <inspire_common:MandatoryKeyword>
           <inspire_common:KeywordValue/>
         </inspire_common:MandatoryKeyword>
         <!-- WARNING: Mandatory metadata '..._languages' was missing in this context. -->
