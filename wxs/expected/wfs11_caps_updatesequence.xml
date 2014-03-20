@@ -106,6 +106,7 @@ Content-Type: text/xml; charset=UTF-8
         <ows:LowerCorner>-66.724329085098 41.770507630784</ows:LowerCorner>
         <ows:UpperCorner>-57.721680231574 48.477313848494</ows:UpperCorner>
       </ows:WGS84BoundingBox>
+      <MetadataURL format="text/xml" type="FGDC">http://path/to/metadata_url</MetadataURL>
     </FeatureType>
   </FeatureTypeList>
   <ogc:Filter_Capabilities>
