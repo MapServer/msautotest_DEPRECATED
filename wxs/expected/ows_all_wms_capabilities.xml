@@ -163,8 +163,6 @@ Content-Type: text/xml; charset=UTF-8
             <southBoundLatitude>41.7705</southBoundLatitude>
             <northBoundLatitude>48.4773</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS=""
-                    minx="2.25336e+06" miny="-76361.8" maxx="2.74765e+06" maxy="515489" />
         <Style>
           <Name>default</Name>
           <Title>default</Title>
