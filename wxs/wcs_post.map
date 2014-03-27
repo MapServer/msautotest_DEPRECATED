@@ -108,6 +108,10 @@
 # RUN_PARMS: wcs_20_post_getcov_interpolation_average.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:Size dimension="x">20</wcs:Size><wcs:Size dimension="y">20</wcs:Size><wcs:Interpolation>AVERAGE</wcs:Interpolation></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_getcov_interpolation_bilinear.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:Size dimension="x">20</wcs:Size><wcs:Size dimension="y">20</wcs:Size><wcs:Interpolation>BILINEAR</wcs:Interpolation></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 #
+# GeoTIFF parameters
+#
+# RUN_PARMS: wcs_20_post_getcov_geotiff_compression_jpeg.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:geotiff="http://www.opengis.net/gmlcov/geotiff/1.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:Extension><geotiff:parameters><geotiff:compression>JPEG</geotiff:compression><geotiff:jpeg_quality>10</geotiff:jpeg_quality></geotiff:parameters></wcs:Extension></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+#
 # InvalidParameterValue
 # RUN_PARMS: wcs_20_post_exception_invalidparam_request.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:InvalidRequest xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"/>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_exception_invalidparam_coverage.xml [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>invalid</wcs:CoverageId></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
@@ -197,7 +201,8 @@ WEB
    "ows_contactinstructions" "during hours of service"
    "ows_role" "staff"
    "ows_enable_request" "*" 
-
+   "ows_srs"	"EPSG:32611 EPSG:4326"
+   
    # OGC:WCS
    "wcs_label"    "Test Label"
    "wcs_description" "Test description"
