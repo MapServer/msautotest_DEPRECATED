@@ -192,6 +192,14 @@
 # RUN_PARMS: wcs_20_getcov_scaling_size_resolution.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(10)&RESOLUTION=y(5)" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_getcov_scaling_resolution_size.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(5)&SIZE=y(10)" > [RESULT_DEMIME]
 #
+# scaling according to scaling extension
+#
+# RUN_PARMS: wcs_20_getcov_scaling_size_full.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&SCALESIZE=x(10),y(20)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_scalefactor.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&SCALEFACTOR=1.5" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_scalefactor_per_axis.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&SCALEAXES=x(1.5),y(2.0)" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_getcov_scaling_extent.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&SCALEEXTENT=x(10:20),y(20:30)" > [RESULT_DEMIME]
+#
+#
 # GetCoverage 2.0 Interpolation
 # RUN_PARMS: wcs_20_getcov_interpolation_nearest.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(20)&SIZE=y(20)&INTERPOLATION=NEAREST" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_getcov_interpolation_average.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SIZE=x(20)&SIZE=y(20)&INTERPOLATION=AVERAGE" > [RESULT_DEMIME]
