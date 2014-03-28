@@ -81,6 +81,11 @@
 # RUN_PARMS: wcs_20_post_getcov_origCRS.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:DimensionTrim><wcs:Dimension crs="http://www.opengis.net/def/crs/EPSG/0/32611">x</wcs:Dimension><wcs:TrimLow>0</wcs:TrimLow><wcs:TrimHigh>50</wcs:TrimHigh></wcs:DimensionTrim><wcs:DimensionTrim><wcs:Dimension crs="http://www.opengis.net/def/crs/EPSG/0/32611">y</wcs:Dimension><wcs:TrimLow>0</wcs:TrimLow><wcs:TrimHigh>50</wcs:TrimHigh></wcs:DimensionTrim></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_getcov_reproj.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:DimensionTrim><wcs:Dimension crs="http://www.opengis.net/def/crs/EPSG/0/4326">lon</wcs:Dimension><wcs:TrimLow>-121.488</wcs:TrimLow><wcs:TrimHigh>-121.487</wcs:TrimHigh></wcs:DimensionTrim><wcs:DimensionTrim><wcs:Dimension crs="http://www.opengis.net/def/crs/EPSG/0/4326">lat</wcs:Dimension><wcs:TrimLow>0.000</wcs:TrimLow><wcs:TrimHigh>0.001</wcs:TrimHigh></wcs:DimensionTrim></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 #
+# SubsettingCRS/OutputCRS (CRS Extension)
+#
+# RUN_PARMS: wcs_20_post_getcov_subsettingcrs.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:wcscrs="http://www.opengis.net/wcs/crs/1.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:DimensionTrim><wcs:Dimension>x</wcs:Dimension><wcs:TrimLow>0</wcs:TrimLow><wcs:TrimHigh>50</wcs:TrimHigh></wcs:DimensionTrim><wcs:DimensionTrim><wcs:Dimension crs="http://www.opengis.net/def/crs/EPSG/0/32611">y</wcs:Dimension><wcs:TrimLow>0</wcs:TrimLow><wcs:TrimHigh>50</wcs:TrimHigh></wcs:DimensionTrim><wcs:Extension><wcscrs:subsettingCrs>http://www.opengis.net/def/crs/EPSG/0/32611</wcscrs:subsettingCrs></wcs:Extension></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_post_getcov_subsettingcrs_outputcrs.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:wcscrs="http://www.opengis.net/wcs/crs/1.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:DimensionTrim><wcs:Dimension>x</wcs:Dimension><wcs:TrimLow>0</wcs:TrimLow><wcs:TrimHigh>50</wcs:TrimHigh></wcs:DimensionTrim><wcs:DimensionTrim><wcs:Dimension crs="http://www.opengis.net/def/crs/EPSG/0/32611">y</wcs:Dimension><wcs:TrimLow>0</wcs:TrimLow><wcs:TrimHigh>50</wcs:TrimHigh></wcs:DimensionTrim><wcs:Extension><wcscrs:subsettingCrs>http://www.opengis.net/def/crs/EPSG/0/32611</wcscrs:subsettingCrs><wcscrs:outputCrs>http://www.opengis.net/def/crs/EPSG/0/4326</wcscrs:outputCrs></wcs:Extension></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
+#
 # Scaling 
 # RUN_PARMS: wcs_20_post_getcov_scaling_size_full.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:Size dimension="x">10</wcs:Size><wcs:Size dimension="y">20</wcs:Size></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_post_getcov_scaling_resolution_full.tif [MAPSERV] -nh [POST]<?xml version="1.0" encoding="UTF-8"?><wcs:GetCoverage xmlns:wcs="http://www.opengis.net/wcs/2.0" service="WCS" version="2.0.1"><wcs:format>image/tiff</wcs:format><wcs:CoverageId>grey</wcs:CoverageId><wcs:Resolution dimension="x">20</wcs:Resolution><wcs:Resolution dimension="y">20</wcs:Resolution></wcs:GetCoverage>[/POST] > [RESULT_DEMIME]
@@ -202,7 +207,7 @@ WEB
    "ows_role" "staff"
    "ows_enable_request" "*" 
    "ows_srs"	"EPSG:32611 EPSG:4326"
-   
+
    # OGC:WCS
    "wcs_label"    "Test Label"
    "wcs_description" "Test description"
