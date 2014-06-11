@@ -23,6 +23,9 @@
 # Generate dump streamed directly to GPX (test #4776)
 # RUN_PARMS: wfsogr10_gpx.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=road&featureid=road.1521&OUTPUTFORMAT=OGRGPX" > [RESULT_DEVERSION]
 #
+# Generate dump to GPX in ZIP (test #4933)
+# RUN_PARMS: wfsogr10_gpxzip.zip [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=road&featureid=road.1521&OUTPUTFORMAT=OGRGPXZIP" > [RESULT_DEVERSION]
+#
 # Generate dump to SHAPEZIP
 # RUN_PARMS: wfsogr10_shapezip.zip [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=road&featureid=road.1521&OUTPUTFORMAT=SHAPEZIP" > [RESULT]
 #
@@ -139,6 +142,16 @@ OUTPUTFORMAT
   FORMATOPTION "FILENAME=result.gpx"
 END
 
+OUTPUTFORMAT
+  NAME "OGRGPXZIP"
+  DRIVER "OGR/GPX"
+  MIMETYPE "application/zip; driver=ogr/gpx"
+  FORMATOPTION "DSCO:GPX_USE_EXTENSIONS=YES"
+  FORMATOPTION "STORAGE=memory"
+  FORMATOPTION "FORM=zip"
+  FORMATOPTION "FILENAME=result.gpx.zip"
+END
+
 
 OUTPUTFORMAT
   NAME "SHAPEZIP"
@@ -224,7 +237,7 @@ LAYER
     "ows_title"         "road"
     "ows_description"   "road"
     "wfs_featureid"     "ROAD_ID" 
-    "wfs_getfeature_formatlist" "csv,csvstream,ogrgml,ogrgpx,ogrgmlstream,shapezip,midmif,multimidmif"
+    "wfs_getfeature_formatlist" "csv,csvstream,ogrgml,ogrgpx,ogrgpxzip,ogrgmlstream,shapezip,midmif,multimidmif"
     "gml_include_items" "all"
     "gml_exclude_items" "ROAD_"
     "gml_types"         "auto"
