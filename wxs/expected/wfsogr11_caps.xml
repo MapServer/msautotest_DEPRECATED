@@ -142,6 +142,46 @@ Content-Type: text/xml; charset=UTF-8
       </ows:WGS84BoundingBox>
     </FeatureType>
     <FeatureType>
+      <Name>road_with_addfiles</Name>
+      <Title>road_with_addfiles</Title>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::3978</DefaultSRS>
+      <OutputFormats>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/csv</Format>
+        <Format>text/csv; streamed</Format>
+        <Format>text/xml; subtype=gml/2.1.2; driver=ogr</Format>
+        <Format>application/gpx+xml; streamed</Format>
+        <Format>application/zip; driver=ogr/bna</Format>
+        <Format>application/shapefile</Format>
+        <Format>MIDMIF</Format>
+        <Format>MultiMIDMIF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-66.633317770969 42.382053788395</ows:LowerCorner>
+        <ows:UpperCorner>-59.292113839180 48.295511938680</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType>
+      <Name>road2_with_addfiles</Name>
+      <Title>road2_with_addfiles</Title>
+      <DefaultSRS>urn:ogc:def:crs:EPSG::3978</DefaultSRS>
+      <OutputFormats>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/csv</Format>
+        <Format>text/csv; streamed</Format>
+        <Format>text/xml; subtype=gml/2.1.2; driver=ogr</Format>
+        <Format>application/gpx+xml; streamed</Format>
+        <Format>application/zip; driver=ogr/bna</Format>
+        <Format>application/shapefile</Format>
+        <Format>MIDMIF</Format>
+        <Format>MultiMIDMIF</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-66.633317770969 42.382053788395</ows:LowerCorner>
+        <ows:UpperCorner>-59.292113839180 48.295511938680</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+    </FeatureType>
+    <FeatureType>
       <Name>multi</Name>
       <Title>multi</Title>
       <DefaultSRS>urn:ogc:def:crs:EPSG::27700</DefaultSRS>
