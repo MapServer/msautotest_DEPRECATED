@@ -39,14 +39,16 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
         </gml:boundedBy>
         <ms:msGeometry>
           <gml:MultiPoint srsName="EPSG:27700">
-            <gml:pointMembers>
+            <gml:pointMember>
               <gml:Point>
                 <gml:pos srsDimension="3">1.000000 2.000000 3.000000</gml:pos>
               </gml:Point>
+            </gml:pointMember>
+            <gml:pointMember>
               <gml:Point>
                 <gml:pos srsDimension="3">4.000000 5.000000 6.000000</gml:pos>
               </gml:Point>
-            </gml:pointMembers>
+            </gml:pointMember>
           </gml:MultiPoint>
         </ms:msGeometry>
       </ms:multipoint3d>
@@ -76,14 +78,16 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
         </gml:boundedBy>
         <ms:msGeometry>
           <gml:MultiCurve srsName="EPSG:27700">
-            <gml:curveMembers>
+            <gml:curveMember>
               <gml:LineString>
                 <gml:posList srsDimension="3">1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 </gml:posList>
               </gml:LineString>
+            </gml:curveMember>
+            <gml:curveMember>
               <gml:LineString>
                 <gml:posList srsDimension="3">7.000000 8.000000 9.000000 10.000000 11.000000 12.000000 </gml:posList>
               </gml:LineString>
-            </gml:curveMembers>
+            </gml:curveMember>
           </gml:MultiCurve>
         </ms:msGeometry>
       </ms:multilinestring3d>
@@ -117,7 +121,7 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
         </gml:boundedBy>
         <ms:msGeometry>
           <gml:MultiSurface srsName="EPSG:27700">
-            <gml:surfaceMembers>
+            <gml:surfaceMember>
               <gml:Polygon>
                 <gml:exterior>
                   <gml:LinearRing>
@@ -130,7 +134,7 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
                   </gml:LinearRing>
                 </gml:interior>
               </gml:Polygon>
-            </gml:surfaceMembers>
+            </gml:surfaceMember>
           </gml:MultiSurface>
         </ms:msGeometry>
       </ms:polygon3d>
@@ -145,7 +149,7 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
         </gml:boundedBy>
         <ms:msGeometry>
           <gml:MultiSurface srsName="EPSG:27700">
-            <gml:surfaceMembers>
+            <gml:surfaceMember>
               <gml:Polygon>
                 <gml:exterior>
                   <gml:LinearRing>
@@ -158,6 +162,8 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
                   </gml:LinearRing>
                 </gml:interior>
               </gml:Polygon>
+            </gml:surfaceMember>
+            <gml:surfaceMember>
               <gml:Polygon>
                 <gml:exterior>
                   <gml:LinearRing>
@@ -165,7 +171,7 @@ Content-Type: text/xml; subtype=gml/3.1.1; charset=UTF-8
                   </gml:LinearRing>
                 </gml:exterior>
               </gml:Polygon>
-            </gml:surfaceMembers>
+            </gml:surfaceMember>
           </gml:MultiSurface>
         </ms:msGeometry>
       </ms:multipolygon3d>

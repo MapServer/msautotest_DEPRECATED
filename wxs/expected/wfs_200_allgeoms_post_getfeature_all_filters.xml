@@ -57,14 +57,16 @@ Content-Type: text/xml; subtype="gml/3.2.1"; charset=UTF-8
         </gml:boundedBy>
         <ms:msGeometry>
           <gml:MultiPoint gml:id="multipoint.1.1" srsName="urn:ogc:def:crs:EPSG::4326">
-            <gml:pointMembers>
+            <gml:pointMember>
               <gml:Point gml:id="multipoint.1.2">
                 <gml:pos>49.00000 2.00000</gml:pos>
               </gml:Point>
+            </gml:pointMember>
+            <gml:pointMember>
               <gml:Point gml:id="multipoint.1.3">
                 <gml:pos>50.00000 3.00000</gml:pos>
               </gml:Point>
-            </gml:pointMembers>
+            </gml:pointMember>
           </gml:MultiPoint>
         </ms:msGeometry>
       </ms:multipoint>
