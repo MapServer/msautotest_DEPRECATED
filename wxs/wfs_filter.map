@@ -27,6 +27,7 @@
 # Test parenthesis in filter (#4986)
 #
 # RUN_PARMS: wfs_filter_property_is_equal_parenthesis.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=(<Filter><PropertyIsEqualTo foo='>bar<'><PropertyName>NAME</PropertyName><Literal>f'oo(bar</Literal></PropertyIsEqualTo></Filter>)" > [RESULT]
+# RUN_PARMS: wfs_filter_property_is_equal_parenthesis_post.xml [MAPSERV] [MAPSERV] [POST]<?xml version="1.0"?><GetFeature service="WFS" version="2.0.0" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/fes/2.0 http://schemas.opengis.net/filter/2.0/filterAll.xsd http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"><Query typeNames="popplace"><fes:Filter><fes:PropertyIsEqualTo matchCase="false"><fes:ValueReference>NAME</fes:ValueReference><fes:Literal>f'oo(bar</fes:Literal></fes:PropertyIsEqualTo></fes:Filter></Query></GetFeature>[/POST] > [RESULT_DEVERSION]
 #
 # Verify PropertyIsNotEqualTo
 # RUN_PARMS: wfs_filter_is_not_equal.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=popplace&FILTER=<Filter><PropertyIsNotEqualTo><PropertyName>NAME</PropertyName><Literal>Digby</Literal></PropertyIsNotEqualTo></Filter>" > [RESULT]
