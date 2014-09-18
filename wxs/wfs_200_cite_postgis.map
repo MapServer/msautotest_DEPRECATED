@@ -88,7 +88,7 @@ LAYER
   METADATA
     "wfs_title"         "province"
     "wfs_description"   "province"
-    "wfs_featureid"     "PROVINCE_I"
+    "wfs_featureid"     "province_i"
 # We need to define wfs_extent so that WGS84BoundingBox is set in GetCapabilities, to please CITE
     "wfs_extent"        "2253355.750000 -76361.773438 2747648.500000 515489.031250"
     "gml_geometries"    "msGeometry"
