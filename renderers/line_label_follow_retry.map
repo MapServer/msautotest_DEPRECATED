@@ -1,0 +1,103 @@
+# RUN_PARMS: line_label_follow_retry.png [SHP2IMG] -m [MAPFILE] -i png -o [RESULT]
+# RUN_PARMS: line_label_follow_retry.pdf [SHP2IMG] -m [MAPFILE] -i pdf -o [RESULT]
+# RUN_PARMS: line_label_follow_retry.svg [SHP2IMG] -m [MAPFILE] -i svg -o [RESULT]
+# RUN_PARMS: line_label_follow_retry.cairo.png [SHP2IMG] -m [MAPFILE] -i cairopng -o [RESULT]
+#
+map
+
+imagetype png
+size 400 300
+extent 0 0 400 300
+fontset "../misc/fonts.lst"
+symbolset "symbolset"
+debug 10
+config "MS_ERRORFILE" "stderr"
+
+
+layer
+    type line
+    status default
+    name "lines"
+    class
+        style
+            color 0 0 255
+            width 1
+        end
+        label
+            type truetype
+            font "default"
+            size 8
+            angle follow
+            color 0 0 0
+            maxoverlapangle 30
+        end
+    end
+    feature
+      points
+        0 -80 200 70 400 -80
+      end
+      text "   starting_spaces"
+    end
+    feature
+      points
+        0 -60 200 90 400 -60
+      end
+      text "ending_spaces   "
+    end
+    feature
+      points
+        0 -40 200 110 400 -40
+      end
+      text "aa   multiple_space   b"
+    end
+    feature
+      points
+        0 -20 200 130 400 -20
+      end
+      text "aa   multiple_space   bbbbb"
+    end
+    feature
+      points
+        0 0 200 150 400 0
+      end
+      text "a b"
+    end
+    feature
+      points
+        0 20 200 170 400 20
+      end
+      text "abc def ghijk"
+    end
+    feature
+      points
+        0 40 200 190 400 40
+      end
+      text "abcdefghijk lm"
+    end
+    feature
+      points
+        0 60 200 210 400 60
+      end
+      text "ab cdefghijklmnopqrstuvwxyz"
+    end
+    feature
+      points
+        0 80 200 230 400 80
+      end
+      text "abcdefghijkl mnopq rs tuvwxyz"
+    end
+    feature
+      points
+        10 110 200 250 400 100
+      end
+      text "after_bendfoobarfoobarfoobarfoobar b"
+    end
+    feature
+      points
+        0 120 200 270 390 130
+      end
+      text "f barbaz_before_bend"
+    end
+end
+
+end
