@@ -6,7 +6,9 @@
     <!--WARNING: Optional metadata "ows_abstract" was missing for ows:Abstract-->
     <!--WARNING: Optional metadata "ows_keywordlist" was missing for ows:KeywordList-->
     <ows:ServiceType codeSpace="OGC">OGC WCS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.1</ows:ServiceTypeVersion>
     <ows:ServiceTypeVersion>1.1.1</ows:ServiceTypeVersion>
+    <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
     <ows:Fees/>
     <!--WARNING: Optional metadata "ows_fees" was missing for ows:Fees-->
     <ows:AccessConstraints/>

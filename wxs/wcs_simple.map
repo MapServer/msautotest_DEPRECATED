@@ -67,7 +67,7 @@
 # Generate error if requested coverage exceeds maxsize
 # RUN_PARMS: wcs_getcov_exception_maxsize.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&WIDTH=5001&HEIGHT=5001&FORMAT=PNG&BBOX=500,500,1000,1000&COVERAGE=grey&CRS=EPSG:32611" > [RESULT_DEMIME]
 #
-# Use bilinear resampling. 
+# Use bilinear resampling.
 # RUN_PARMS: wcs_bilinear.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&WIDTH=120&HEIGHT=90&FORMAT=PNG&BBOX=0.1,0.1,399.9,299.9&COVERAGE=grey&CRS=EPSG:32611&INTERPOLATION=BILINEAR" > [RESULT_DEMIME]
 #
 # Downsample oddly (per #2180).
@@ -82,28 +82,28 @@
 # RUN_PARMS: wcs11_cap.txt [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCapabilities" > [RESULT_DEVERSION] [RESULT]
 #
 # Coverage description 1.1
-# RUN_PARMS: wcs11_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=DescribeCoverage&IDENTIFIER=grey" > [RESULT_DEMIME]
+# RUN_PARMS: wcs11_describe.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=DescribeCoverage&IDENTIFIER=grey" > [RESULT_DEMIME]
 #
 # GetCoverage to AAIGRID 1.0
 # RUN_PARMS: wcs_getcov_grd_10.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&RESX=30&RESY=30&FORMAT=AAIGRID&BBOX=0,0,400,300&COVERAGE=grey&CRS=EPSG:32611" > [RESULT]
 #
-# GetCoverage exception (invalid bands value) 
+# GetCoverage exception (invalid bands value)
 # RUN_PARMS: wcs_getcov_exception_bands.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.0.0&REQUEST=GetCoverage&RESX=30&RESY=30&FORMAT=AAIGRID&BBOX=0,0,400,300&COVERAGE=grey&CRS=EPSG:32611&bands=FOO" > [RESULT_DEMIME]
 #
 # GetCoverage to AAIGRID 1.1 (normal CRS)
-# RUN_PARMS: wcs_getcov_grd_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,400,300,urn:ogc:def:crs:EPSG::32611&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,295&GridOffsets=30,-30" > [RESULT]
+# RUN_PARMS: wcs_getcov_grd_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,400,300,urn:ogc:def:crs:EPSG::32611&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,295&GridOffsets=30,-30" > [RESULT]
 #
 # GetCoverage to AAIGRID 1.1 (imageCRS)
-# RUN_PARMS: wcs_getcov_grd_11_imagecrs.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,39,29,urn:ogc:def:crs:OGC::imageCRS&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,0&GridOffsets=3,3" > [RESULT]
+# RUN_PARMS: wcs_getcov_grd_11_imagecrs.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCoverage&FORMAT=AAIGRID&BOUNDINGBOX=0,0,39,29,urn:ogc:def:crs:OGC::imageCRS&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0,0&GridOffsets=3,3" > [RESULT]
 #
 # GetCoverage to AAIGRID 1.1 (EPSG 4326 with reversed axes)
-# RUN_PARMS: wcs_getcov_grd_11_4326.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
+# RUN_PARMS: wcs_getcov_grd_11_4326.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
 #
 # GetCoverage to AAIGRID 1.1 (WGS84 (non-EPSG - normal axes)
-# RUN_PARMS: wcs_getcov_grd_11_wgs84.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&BOUNDINGBOX=-121.48874388968,0,-121.48516027717,0.0027058261133485,urn:ogc:def:crs:OGC::CRS84&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=-121.48874388968,0.0027058261133485&GridOffsets=0.0003,-0.0003" > [RESULT]
+# RUN_PARMS: wcs_getcov_grd_11_wgs84.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&BOUNDINGBOX=-121.48874388968,0,-121.48516027717,0.0027058261133485,urn:ogc:def:crs:OGC::CRS84&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=-121.48874388968,0.0027058261133485&GridOffsets=0.0003,-0.0003" > [RESULT]
 #
 # GetCoverage to PNG 1.1 (Test non-GDAL output)
-# RUN_PARMS: wcs_getcov_png8_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.0&REQUEST=GetCoverage&FORMAT=image/png;%20mode=8bit&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
+# RUN_PARMS: wcs_getcov_png8_11.dat [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=1.1.1&REQUEST=GetCoverage&FORMAT=image/png;%20mode=8bit&BOUNDINGBOX=0,-121.48874388968,0.0027058261133485,-121.48516027717,urn:ogc:def:crs:EPSG::4326&IDENTIFIER=grey&GridCS=urn:ogc:def:crs:OGC::imageCRS&GridType=urn:ogc:def:method:WCS:1.1:2dGridIn2dCrs&GridOrigin=0.0027058261133485,-121.48874388968&GridOffsets=-0.0003,0.0003" > [RESULT]
 #
 #
 # WCS 2.0
@@ -111,8 +111,8 @@
 # GetCapabilities 2.0
 # RUN_PARMS: wcs_20_cap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities&unknownparameter=a" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_cap.txt [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities" > [RESULT]
-# RUN_PARMS: wcs_20_cap_200.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.0&REQUEST=GetCapabilities" > [RESULT_DEMIME]
-# RUN_PARMS: wcs_20_cap_accept_versions.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities&ACCEPTVERSIONS=2.0.1,2.0.0,1.1.2,1.0.0" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_200.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities" > [RESULT_DEMIME]
+# RUN_PARMS: wcs_20_cap_accept_versions.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities&ACCEPTVERSIONS=2.0.1,2.0.0,1.1.2,1.1.1,1.0.0" > [RESULT_DEMIME]
 # RUN_PARMS: wcs_20_cap_updatesequence.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities&UPDATESEQUENCE=2007-10-30T14:23:37Z" > [RESULT_DEMIME]
 #
 # GetCapabilities 2.0 Sections
@@ -215,7 +215,7 @@
 # GetCoverage 2.0 SubsettingCRS
 #
 # RUN_PARMS: wcs_20_getcov_subsettingcrs.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&SUBSET=long(-121.488,-121.487)&SUBSET=lat(0,0.001)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326" > [RESULT_DEMIME]
-# 
+#
 # GetCoverage 2.0 OutputCRS
 #
 # RUN_PARMS: wcs_20_getcov_outputcrs.tif [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326" > [RESULT_DEMIME]
@@ -256,7 +256,7 @@
 # ExtentError
 # RUN_PARMS: wcs_20_exception_extent_nooverlap.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/png&COVERAGEID=grey&SUBSET=x(1000,2000)&SUBSET=y(1000,2000)" > [RESULT_DEMIME]
 #
-# ScalingError 
+# ScalingError
 # RUN_PARMS: wcs_20_exception_scaling.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=grey&FORMAT=image/tiff&RESOLUTION=x(5)&SIZE=x(10)" > [RESULT_DEMIME]
 #
 # Generate error if requested coverage exceeds maxsize
@@ -337,7 +337,7 @@ WEB
   END
 END
 
-LAYER 
+LAYER
   NAME grey
   TYPE raster
   STATUS ON
@@ -348,7 +348,7 @@ LAYER
   PROJECTION
     "init=epsg:32611"
   END
-  METADATA   
+  METADATA
    "ows_extent" "0 0 400 300"
    "wcs_label" "Test label"
    "ows_srs"	"EPSG:32611 EPSG:4326"
