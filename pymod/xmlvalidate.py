@@ -519,10 +519,10 @@ def has_local_inspire_schemas(path):
 # Usage function
 
 def Usage():
-    print('Usage: validate.py [-download_ogc_schemas]] [-ogc_schemas_location path]')
-    print('                   [-download_inspire_schemas] [-inspire_schemas_location path]')
-    print('                   [-app_schema_ns ns] [-schema some.xsd')
-    print('                   some.xml')
+    print('Usage: xmlvalidate.py [-download_ogc_schemas]] [-ogc_schemas_location path]')
+    print('                      [-download_inspire_schemas] [-inspire_schemas_location path]')
+    print('                      [-app_schema_ns ns] [-schema some.xsd')
+    print('                      some.xml')
     sys.exit(255)
 
 ###############################################################################
