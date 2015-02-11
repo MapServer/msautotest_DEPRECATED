@@ -555,6 +555,20 @@ def run_tests( argv ):
             else:
                 command = command.replace('[RENDERER]', '' )
 
+            #support for environment variable of type [ENV foo=bar]
+            begin = command.find('[ENV')
+            envirkey = ''
+            if begin != -1:
+                end = command[begin:].find(']')
+                equal = command[begin:].find('=')
+                #print("equal is %d"%equal)
+                envirkey = command[begin+len('[ENV '):begin+equal]
+                envirval = command[equal+1:end]
+                os.environ[envirkey] = envirval
+                tmp = command
+                command = tmp[:begin] + tmp[end+1:]
+                #print('added environment variable (%s)=(%s); new command:%s' % (envirkey,envirval,command))
+
             # support for POST request method
             begin = command.find('[POST]')
             end = command.find('[/POST]')
@@ -601,6 +615,9 @@ def run_tests( argv ):
                 del os.environ['CONTENT_LENGTH']
                 del os.environ['REQUEST_METHOD']
                 del os.environ['MS_MAPFILE']
+
+            if envirkey != '':
+                del os.environ[envirkey]
 
             if demime:
                 demime_file( 'result/'+out_file )
