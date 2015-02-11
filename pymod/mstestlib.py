@@ -492,7 +492,7 @@ def run_tests( argv ):
         if xmlvalidate.has_local_ogc_schemas('SCHEMAS_OPENGIS_NET'):
             ogc_schemas_location = 'SCHEMAS_OPENGIS_NET'
         else:
-            print('Cannot validate XML because SCHEMAS_OPENGIS_NET not found. Run "validate.py -download_ogc_schemas" from msautotest/wxs')
+            print('Cannot validate XML because SCHEMAS_OPENGIS_NET not found. Run "python ../pymod/xmlvalidate.py -download_ogc_schemas" from msautotest/wxs')
 
     ###########################################################################
     # Process all mapfiles.
