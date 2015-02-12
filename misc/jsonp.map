@@ -1,0 +1,64 @@
+
+#
+# JSONP wrapper support.
+#
+# REQUIRES: INPUT=OGR
+# Test with default value
+# RUN_PARMS: jsonp_default.js [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=test_jsonp&OUTPUTFORMAT=jsonp" > [RESULT]
+#
+# Test with value supplied through url (normal case)
+# RUN_PARMS: jsonp.js [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=test_jsonp&OUTPUTFORMAT=jsonp&callback=url_callback" > [RESULT]
+#
+MAP
+  NAME 'test_points'
+  SIZE 475 600
+  EXTENT 0 0 50000 50000
+  PROJECTION
+    "init=epsg:3978"
+  END
+
+  OUTPUTFORMAT
+    NAME 'jsonp'
+    DRIVER 'OGR/GEOJSON'
+    MIMETYPE 'text/javascript; charset=utf-8'
+    FORMATOPTION 'LCO:COORDINATE_PRECISION=5'
+    FORMATOPTION 'STORAGE=stream'
+    FORMATOPTION 'FORM=simple'
+    FORMATOPTION 'JSONP=%callback%'
+  END
+
+  WEB
+    METADATA
+      ows_onlineresource "http://localhost/wxs"
+      wfs_getfeature_formatlist "jsonp"
+    END
+    VALIDATION
+      callback '.*'
+      default_callback 'my_callback'
+    END
+  END
+
+  IMAGETYPE jsonp
+
+  LAYER
+    NAME 'test_jsonp'
+    PROCESSING "ITEMS=id"
+    METADATA
+      ows_enable_request "*"
+      wfs_getfeature_formatlist "jsonp"
+      ows_featureid "id"
+      gml_include_items "all"
+    END
+    TYPE POINT
+    STATUS DEFAULT
+    FEATURE
+      POINTS 12000 15000 END
+      TEXT 'ABSOLUTE at 12000,15000'
+      ITEMS "1"
+    END
+    CLASS
+      LABEL SIZE TINY COLOR 0 0 0 END
+    END
+  END
+
+END
