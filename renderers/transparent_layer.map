@@ -46,7 +46,9 @@ LAYER
   TYPE polygon
   STATUS on
   DATA "world_testpoly"
-  OPACITY 50
+  COMPOSITE
+    OPACITY 50
+  END
   CLASS
     NAME "test1"
     STYLE

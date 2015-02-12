@@ -918,7 +918,9 @@ MAP
             END
         END
         
-        OPACITY 50
+        COMPOSITE
+          OPACITY 50
+        END
     END
 
 END
