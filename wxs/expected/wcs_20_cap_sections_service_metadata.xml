@@ -5,6 +5,7 @@
     <wcs:formatSupported>image/png; mode=8bit</wcs:formatSupported>
     <wcs:formatSupported>image/x-aaigrid</wcs:formatSupported>
     <wcs:formatSupported>image/png</wcs:formatSupported>
+    <wcs:formatSupported>image/jpeg</wcs:formatSupported>
     <wcs:Extension>
       <int:InterpolationMetadata>
         <int:InterpolationSupported>NEAREST</int:InterpolationSupported>
