@@ -529,15 +529,20 @@ def run_tests( argv ):
             if len(runparms_list) > 1 and not quiet:
                 print('   test %s' % out_file)
 
-            if command.find('[RESULT_DEMIME]') != -1:
+
+            if command.find('[RESULT_DEMIME_DEVERSION]') != -1:
                 demime = 1
-            else:
-                demime = 0
-                
-            if command.find('[RESULT_DEVERSION]') != -1:
                 deversion = 1
             else:
-                deversion = 0
+                if command.find('[RESULT_DEMIME]') != -1:
+                    demime = 1
+                else:
+                    demime = 0
+                    
+                if command.find('[RESULT_DEVERSION]') != -1:
+                    deversion = 1
+                else:
+                    deversion = 0
 
             if command.find('[EXTRACT_SERVICE_VERSION]') != -1:
                 extractserviceversion = 1
@@ -547,6 +552,7 @@ def run_tests( argv ):
             command = command.replace('[RESULT]', 'result/'+out_file )
             command = command.replace('[RESULT_DEMIME]', 'result/'+out_file )
             command = command.replace('[RESULT_DEVERSION]', 'result/'+out_file )
+            command = command.replace('[RESULT_DEMIME_DEVERSION]', 'result/'+out_file )
             command = command.replace('[EXTRACT_SERVICE_VERSION]', 'result/'+out_file )
             command = command.replace('[MAPFILE]', map )
             command = command.replace('[SHP2IMG]', shp2img )
