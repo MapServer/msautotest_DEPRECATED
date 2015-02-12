@@ -55,7 +55,7 @@ MAP
     NAME 'tmpl'
     DRIVER 'TEMPLATE'
     MIMETYPE 'text/html'
-    FORMATOPTION "FILE=template/query.tmpl"
+    FORMATOPTION "FILE=template/query_postgis.tmpl"
   END
 
   LAYER
