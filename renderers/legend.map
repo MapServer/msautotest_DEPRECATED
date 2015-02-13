@@ -166,6 +166,15 @@ LAYER
       font "default"
     END
   END
+  CLASS
+    NAME 'line with outline'
+    STYLE
+      color '#4186f0'
+      width 3
+      outlinewidth 1
+      outlinecolor '#000000'
+    END
+  END
 END
 LAYER
   NAME shppoly
