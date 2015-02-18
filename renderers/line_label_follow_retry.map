@@ -6,8 +6,8 @@
 map
 
 imagetype png
-size 400 300
-extent 0 0 400 300
+size 400 600
+extent 0 0 400 600
 fontset "../misc/fonts.lst"
 symbolset "symbolset"
 debug 10
@@ -97,6 +97,18 @@ layer
         0 120 200 270 390 130
       end
       text "f barbaz_before_bend"
+    end
+    feature
+      points
+        0 140 200 290 280 240 400 340
+      end
+      text "colision after retry because of second bend"
+    end
+    feature
+      points
+        0 160 200 310 280 260 400 360
+      end
+      text "this one has multiple spaces    to allow for second bend"
     end
 end
 
