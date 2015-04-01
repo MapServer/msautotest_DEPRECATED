@@ -208,7 +208,7 @@ layer
             size 8
             angle follow
             color 0 0 0
-            maxoverlapangle 30
+            maxoverlapangle 10
             repeatdistance 135
         end
     end
@@ -226,6 +226,18 @@ layer
     end
     feature
       points
+        180 440 200 450 390 310
+      end
+      text "too long to fit this label along the line even if we apply displacements"
+    end
+    feature
+      points
+        250 430 300 405 340 390
+      end
+      text "simple overshoot test"
+    end
+    feature
+      points
         220 900 200 910 10 770
       end
       text "foob arbaz"
@@ -235,6 +247,18 @@ layer
         390 790 200 930 180 920
       end
       text "zabar boof"
+    end
+    feature
+      points
+       390 810 200 950 180 940 
+      end
+      text "too long to fit this label along the line even if we apply displacements"
+    end
+    feature
+      points
+       340 890 300 905 250 930 
+      end
+      text "simple overshoot test"
     end
   end
 
