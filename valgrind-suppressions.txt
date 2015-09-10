@@ -75,5 +75,21 @@
    ...
    fun:getpwuid_r*
    ...
-   fun:PQconnectStart
+}
+
+{
+   rasdaman_leak
+   Memcheck:Leak
+   fun:malloc
+   fun:_Z13initTextTablev
+   fun:_ZN6RMInitC1Ec
+   fun:_GLOBAL__I_rpcclientcomm.cc
+   obj:/home/even/gdal/svn/1.10/gdal/libgdal.so
+   obj:/home/even/gdal/svn/1.10/gdal/libgdal.so
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
+   obj:*
 }
