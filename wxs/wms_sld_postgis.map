@@ -83,6 +83,30 @@
 # Generate map image by using multi styles using sld for the same layer
 # RUN_PARMS: wms_get_map_multi_styles_sld_same_layer_postgis.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&CRS=EPSG:4326&WIDTH=560&HEIGHT=350&LAYERS=road_styles,road_styles,road_styles&FORMAT=image/png&BGCOLOR=0xFFFFFF&TRANSPARENT=FALSE&EXCEPTIONS=INIMAGE&BBOX=44.6139013125,-66.998804375,48.0904731875,-61.436289375&SLD_BODY=%3CStyledLayerDescriptor%20version%3D%221.0.0%22%3E%0A%3CNamedLayer%3E%0A%3CName%3Eroad_styles%3C%2FName%3E%0A%3CUserStyle%3E%0A%3CTitle%3Exxx%3C%2FTitle%3E%0A%3CFeatureTypeStyle%3E%0A%3CRule%3E%0A%3CLineSymbolizer%3E%0A%3CGeometry%3E%0A%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E%0A%3C%2FGeometry%3E%0A%3CStroke%3E%0A%3CCssParameter%20name%3D%22stroke%22%3E%23ff0000%3C%2FCssParameter%3E%0A%3CCssParameter%20name%3D%22stroke-width%22%3E16%3C%2FCssParameter%3E%0A%3C%2FStroke%3E%0A%3C%2FLineSymbolizer%3E%0A%3C%2FRule%3E%0A%3C%2FFeatureTypeStyle%3E%0A%3C%2FUserStyle%3E%0A%3C%2FNamedLayer%3E%0A%3CNamedLayer%3E%0A%3CName%3Eroad_styles%3C%2FName%3E%0A%3CUserStyle%3E%0A%3CTitle%3Exxx%3C%2FTitle%3E%0A%3CFeatureTypeStyle%3E%0A%3CRule%3E%0A%3CLineSymbolizer%3E%0A%3CGeometry%3E%0A%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E%0A%3C%2FGeometry%3E%0A%3CStroke%3E%0A%3CCssParameter%20name%3D%22stroke%22%3E%2300ff00%3C%2FCssParameter%3E%0A%3CCssParameter%20name%3D%22stroke-width%22%3E8%3C%2FCssParameter%3E%0A%3C%2FStroke%3E%0A%3C%2FLineSymbolizer%3E%0A%3C%2FRule%3E%0A%3C%2FFeatureTypeStyle%3E%0A%3C%2FUserStyle%3E%0A%3C%2FNamedLayer%3E%0A%3CNamedLayer%3E%0A%3CName%3Eroad_styles%3C%2FName%3E%0A%3CUserStyle%3E%0A%3CTitle%3Exxx%3C%2FTitle%3E%0A%3CFeatureTypeStyle%3E%0A%3CRule%3E%0A%3CLineSymbolizer%3E%0A%3CGeometry%3E%0A%3CPropertyName%3Ecenter-line%3C%2FPropertyName%3E%0A%3C%2FGeometry%3E%0A%3CStroke%3E%0A%3CCssParameter%20name%3D%22stroke%22%3E%230000ff%3C%2FCssParameter%3E%0A%3CCssParameter%20name%3D%22stroke-width%22%3E2%3C%2FCssParameter%3E%0A%3C%2FStroke%3E%0A%3C%2FLineSymbolizer%3E%0A%3C%2FRule%3E%0A%3C%2FFeatureTypeStyle%3E%0A%3C%2FUserStyle%3E%0A%3C%2FNamedLayer%3E%0A%3C%2FStyledLayerDescriptor%3E%0A" > [RESULT_DEMIME]
 
+# Test NamedStyle
+# RUN_PARMS: wms_get_map_namedstyle_postgis.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road_styles&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road_styles</Name><NamedStyle><Name>style_green</Name></NamedStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Test NamedStyle with a LayerFeatureConstraints
+# RUN_PARMS: wms_get_map_namedstyle_layerfeatureconstraints_postgis.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road_styles&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road_styles</Name><LayerFeatureConstraints><FeatureTypeConstraint><Filter><PropertyIsLessThan><PropertyName>road_id</PropertyName><Literal>900</Literal></PropertyIsLessThan></Filter></FeatureTypeConstraint></LayerFeatureConstraints><NamedStyle><Name>style_green</Name></NamedStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Test UserStyle with a LayerFeatureConstraints
+# RUN_PARMS: wms_get_map_userstyle_layerfeatureconstraints_postgis.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road</Name><LayerFeatureConstraints><FeatureTypeConstraint><Filter><PropertyIsLessThan><PropertyName>road_id</PropertyName><Literal>900</Literal></PropertyIsLessThan></Filter></FeatureTypeConstraint></LayerFeatureConstraints><UserStyle><Title>xxx</Title><FeatureTypeStyle><Rule><LineSymbolizer><Geometry><PropertyName>center-line</PropertyName></Geometry><Stroke><CssParameter name=%22stroke%22>#0000ff</CssParameter><CssParameter name=%22stroke-width%22>5.0</CssParameter></Stroke></LineSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Test UserStyle with Filter and ElseFilter, and with a LayerFeatureConstraints
+# RUN_PARMS: wms_get_map_userstyle_filters_layerfeatureconstraints_postgis.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road</Name><LayerFeatureConstraints><FeatureTypeConstraint><Filter><PropertyIsLessThan><PropertyName>road_id</PropertyName><Literal>900</Literal></PropertyIsLessThan></Filter></FeatureTypeConstraint></LayerFeatureConstraints><UserStyle><Title>xxx</Title><FeatureTypeStyle><Rule><Filter><PropertyIsLessThan><PropertyName>road_id</PropertyName><Literal>100</Literal></PropertyIsLessThan></Filter><LineSymbolizer><Geometry><PropertyName>center-line</PropertyName></Geometry><Stroke><CssParameter name=%22stroke%22>#0000ff</CssParameter><CssParameter name=%22stroke-width%22>5.0</CssParameter></Stroke></LineSymbolizer></Rule><Rule><ElseFilter/><LineSymbolizer><Geometry><PropertyName>center-line</PropertyName></Geometry><Stroke><CssParameter name=%22stroke%22>#00ffff</CssParameter><CssParameter name=%22stroke-width%22>5.0</CssParameter></Stroke></LineSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Test UserStyle with a LayerFeatureConstraints on a layer with already a FILTER
+# RUN_PARMS: wms_get_map_userstyle_layerfeatureconstraints_layer_with_filter_postgis.png [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road_with_filter&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road_with_filter</Name><LayerFeatureConstraints><FeatureTypeConstraint><Filter><PropertyIsLessThan><PropertyName>road_id</PropertyName><Literal>900</Literal></PropertyIsLessThan></Filter></FeatureTypeConstraint></LayerFeatureConstraints><UserStyle><Title>xxx</Title><FeatureTypeStyle><Rule><LineSymbolizer><Geometry><PropertyName>center-line</PropertyName></Geometry><Stroke><CssParameter name=%22stroke%22>#0000ff</CssParameter><CssParameter name=%22stroke-width%22>5.0</CssParameter></Stroke></LineSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Unsupported: multiple FeatureTypeConstraint
+# RUN_PARMS: wms_get_map_unsupported_multiple_featuretypeconstraints.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road_styles&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road_styles</Name><LayerFeatureConstraints><FeatureTypeConstraint><Filter><PropertyIsLessThan><PropertyName>road_id</PropertyName><Literal>900</Literal></PropertyIsLessThan></Filter></FeatureTypeConstraint><FeatureTypeConstraint/></LayerFeatureConstraints><NamedStyle><Name>style_green</Name></NamedStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Unsupported: FeatureTypeName
+# RUN_PARMS: wms_get_map_unsupported_featuretypename.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road_styles&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road_styles</Name><LayerFeatureConstraints><FeatureTypeConstraint><FeatureTypeName>foo</FeatureTypeName></FeatureTypeConstraint></LayerFeatureConstraints><NamedStyle><Name>style_green</Name></NamedStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
+# Unsupported: Extent
+# RUN_PARMS: wms_get_map_unsupported_featuretypeconstraints_extent.xml [MAPSERV] QUERY_STRING="map=[MAPFILE]&SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&SRS=EPSG:4326&BBOX=-68.125,42,-58.375,48.5&FORMAT=image/png; mode=24bit&WIDTH=300&HEIGHT=200&STYLES=&LAYERS=road_styles&sld_body=<StyledLayerDescriptor version=%221.0.0%22><NamedLayer><Name>road_styles</Name><LayerFeatureConstraints><FeatureTypeConstraint><Extent><Name>foo</Name><Value>foo</Value></Extent></FeatureTypeConstraint></LayerFeatureConstraints><NamedStyle><Name>style_green</Name></NamedStyle></NamedLayer></StyledLayerDescriptor>" > [RESULT_DEMIME]
+
 MAP
 
 NAME WMS_SLD
@@ -212,6 +236,26 @@ LAYER
     SYMBOL 0 
     COLOR 220 0 0
   END
+END # Layer
+
+
+
+LAYER
+  NAME road_with_filter
+  INCLUDE "postgis.include"
+  DATA "the_geom from (select * from road order by gid) as foo using unique gid using srid=3978"
+  FILTER "road_id > 100"
+  METADATA
+    "wms_title"       "road_with_filter"
+    "wms_description" "Roads of I.P.E."
+  END
+  TYPE LINE
+  STATUS ON
+  PROJECTION
+    "init=epsg:3978"
+  END
+
+  DUMP TRUE
 END # Layer
 
 
