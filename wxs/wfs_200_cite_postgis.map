@@ -41,6 +41,7 @@ WEB
 
   METADATA
     "wfs_maxfeatures" "1000"
+    "wfs_ignore_maxfeatures_for_hits" "false"
 
     # Hack so that getCapabilities_missingServiceParam() CITE test works
     # we tell msOWSDispatch() to handle a REQUEST=GetCapabilities request without any
